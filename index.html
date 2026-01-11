@@ -75,21 +75,39 @@
             background: linear-gradient(to bottom, #4b68e9, #e2e8f0);
         }
         .hero-blob { position: absolute; filter: blur(80px); opacity: 0.15; z-index: -1; }
+        
+        /* Ensure Babel-compiled content is hidden until ready to prevent flicker */
+        [data-cloak] { display: none !important; }
     </style>
 
+    <!-- Import Map for React -->
     <script type="importmap">
-    {
-      "imports": {
-        "react/": "https://esm.sh/react@^19.2.3/",
-        "react": "https://esm.sh/react@^19.2.3",
-        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-        "react-dom/client": "https://esm.sh/react-dom@^19.2.3/client"
-      }
-    }
-    </script>
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+
+    <!-- Babel Standalone for TSX Browser Transpilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body class="font-sans text-text-primary bg-bg-primary overflow-x-hidden">
-    <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
+    <div id="root" data-cloak></div>
+    
+    <!-- We use text/babel and data-type=module to allow Babel to handle the TSX imports -->
+    <script type="text/babel" data-type="module" data-presets="typescript,react" src="./index.tsx"></script>
+    
+    <script>
+      // Remove cloak once React starts rendering
+      window.addEventListener('load', () => {
+        const root = document.getElementById('root');
+        if (root) root.removeAttribute('data-cloak');
+      });
+    </script>
 </body>
 </html>

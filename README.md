@@ -1,20 +1,20 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Bogi Horvath - Process Transformation Expert Landing Page
 
-# Run and deploy your AI Studio app
+This is a high-performance, responsive landing page built with React, Tailwind CSS, and TypeScript.
 
-This contains everything you need to run your app locally.
+## 🚀 How to View Locally
+Simply open `index.html` in a modern web browser.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1rVaRI0EaD5oDb81R3tGbVvPNuz4iTsWL
+## 🌐 How to Deploy to GitHub Pages
+1. Create a new repository on GitHub.
+2. Upload all files from this directory to the `main` branch.
+3. Go to **Settings > Pages**.
+4. Set the source to **Deploy from a branch**.
+5. Select the **main** branch and **/(root)** folder.
+6. Click **Save**. Your site will be live at `https://<your-username>.github.io/<repo-name>/` in a few moments.
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🛠 Tech Stack
+- **React 19** (via ESM)
+- **Tailwind CSS** (via CDN)
+- **TypeScript** (via Babel Standalone for zero-build deployment)
+- **Lucide/FontAwesome** icons
