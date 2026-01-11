@@ -1,4 +1,5 @@
 import React from 'react';
+import SmartImage from '../UI/SmartImage';
 
 const AboutMe: React.FC = () => {
   return (
@@ -27,10 +28,11 @@ const AboutMe: React.FC = () => {
             {/* Image Column */}
             <div className="lg:col-span-5 relative sticky top-24">
               <div className="relative rounded-[40px] overflow-hidden shadow-2xl border-[8px] border-white">
-                <img 
+                <SmartImage 
                   src="./image-1.png" 
                   alt="Boglarka Paczari-Horvath" 
-                  className="w-full h-auto object-cover"
+                  fallbackPrompt="Professional portrait of a confident business woman with strawberry blonde hair wearing a grey blazer, soft natural lighting, outdoor background with trees, bokeh, 4k resolution"
+                  className="w-full h-auto object-cover min-h-[600px]"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-accent text-white p-6 rounded-2xl shadow-xl hidden md:block">

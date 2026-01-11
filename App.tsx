@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TopBar from './components/Layout/TopBar';
 import Header from './components/Layout/Header';
 import Hero from './components/Sections/Hero';
+import Expertise from './components/Sections/Expertise';
 import Features from './components/Sections/Features';
 import Insights from './components/Sections/Insights';
 import Services from './components/Sections/Services';
@@ -80,6 +81,7 @@ const App: React.FC = () => {
         return (
           <>
             <Hero onOpenBooking={() => setIsBookingOpen(true)} />
+            <Expertise />
             <div id="how"><Features /></div>
             <Insights />
             <div id="services"><Services /></div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import SmartImage from '../UI/SmartImage';
 
 interface BlogPost {
   id: string;
@@ -173,7 +174,12 @@ const Blog: React.FC<{ postId?: string | null }> = ({ postId }) => {
           <div className="mt-20 pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-8">
              <div className="flex items-center gap-4">
                <div className="w-16 h-16 rounded-full overflow-hidden bg-accent-subtle shadow-md ring-2 ring-white">
-                  <img src="./image.png" alt="Bogi" className="w-full h-full object-cover" />
+                  <SmartImage 
+                    src="./image.png" 
+                    alt="Bogi" 
+                    fallbackPrompt="Professional corporate headshot of a confident woman with reddish-blonde hair, wearing a blue blazer, high quality"
+                    className="w-full h-full object-cover" 
+                  />
                </div>
                <div>
                  <div className="font-bold text-text-primary text-lg">Bogi Horvath</div>
