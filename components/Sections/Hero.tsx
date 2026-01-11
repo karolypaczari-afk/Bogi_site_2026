@@ -69,7 +69,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               
               <div className="relative rounded-[45px] overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.15)] ring-8 ring-white">
                 <img 
-                  src="https://bogihorvath.com/wp-content/uploads/2024/08/image-27.png" 
+                  src="./image-26.png" 
                   alt="Boglarka Paczari-Horvath" 
                   className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
                 />

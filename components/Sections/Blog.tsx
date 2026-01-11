@@ -173,7 +173,7 @@ const Blog: React.FC<{ postId?: string | null }> = ({ postId }) => {
           <div className="mt-20 pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-8">
              <div className="flex items-center gap-4">
                <div className="w-16 h-16 rounded-full overflow-hidden bg-accent-subtle shadow-md ring-2 ring-white">
-                  <img src="https://bogihorvath.com/wp-content/uploads/2024/08/image-27.png" alt="Bogi" className="w-full h-full object-cover" />
+                  <img src="./image-26.png" alt="Bogi" className="w-full h-full object-cover" />
                </div>
                <div>
                  <div className="font-bold text-text-primary text-lg">Bogi Horvath</div>
