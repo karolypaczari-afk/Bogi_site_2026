@@ -1,16 +1,15 @@
 import React from 'react';
-// We use ESM imports which are relative to this file's location in the theme folder
-import TopBar from './components/Layout/TopBar';
-import Header from './components/Layout/Header';
-import Hero from './components/Sections/Hero';
-import Features from './components/Sections/Features';
-import Services from './components/Sections/Services';
-import Achievements from './components/Sections/Achievements';
-import Timeline from './components/Sections/Timeline';
-import Testimonials from './components/Sections/Testimonials';
-import Certs from './components/Sections/Certs';
-import Contact from './components/Sections/Contact';
-import Footer from './components/Layout/Footer';
+import TopBar from './components/Layout/TopBar.tsx';
+import Header from './components/Layout/Header.tsx';
+import Hero from './components/Sections/Hero.tsx';
+import Features from './components/Sections/Features.tsx';
+import Services from './components/Sections/Services.tsx';
+import Achievements from './components/Sections/Achievements.tsx';
+import Timeline from './components/Sections/Timeline.tsx';
+import Testimonials from './components/Sections/Testimonials.tsx';
+import Certs from './components/Sections/Certs.tsx';
+import Contact from './components/Sections/Contact.tsx';
+import Footer from './components/Layout/Footer.tsx';
 
 const App: React.FC = () => {
   return (

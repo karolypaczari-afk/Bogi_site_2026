@@ -75,12 +75,9 @@
             background: linear-gradient(to bottom, #4b68e9, #e2e8f0);
         }
         .hero-blob { position: absolute; filter: blur(80px); opacity: 0.15; z-index: -1; }
-        
-        /* Ensure Babel-compiled content is hidden until ready to prevent flicker */
-        [data-cloak] { display: none !important; }
     </style>
 
-    <!-- Import Map for React -->
+    <!-- Import Map for React - Using absolute URLs to ensure consistency -->
     <script type="importmap">
 {
   "imports": {
@@ -97,17 +94,10 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body class="font-sans text-text-primary bg-bg-primary overflow-x-hidden">
-    <div id="root" data-cloak></div>
+    <div id="root"></div>
     
-    <!-- We use text/babel and data-type=module to allow Babel to handle the TSX imports -->
+    <!-- We use text/babel with data-type=module to allow Babel to handle the TSX imports -->
+    <!-- NOTE: All imports in the TSX files MUST include the .tsx extension for this to work on static hosts like GitHub -->
     <script type="text/babel" data-type="module" data-presets="typescript,react" src="./index.tsx"></script>
-    
-    <script>
-      // Remove cloak once React starts rendering
-      window.addEventListener('load', () => {
-        const root = document.getElementById('root');
-        if (root) root.removeAttribute('data-cloak');
-      });
-    </script>
 </body>
 </html>
