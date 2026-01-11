@@ -2,9 +2,9 @@ import React from 'react';
 
 const Hero: React.FC = () => {
   const stats = [
-    { value: '€700k+', label: 'Cost Savings', subLabel: 'Documented' },
+    { value: '€700k+', label: 'Documented', subLabel: 'Cost Savings' },
     { value: '14+', label: 'Years of', subLabel: 'Expertise' },
-    { value: '10+', label: 'Professional', subLabel: 'Certs' },
+    { value: '10+', label: 'Professional', subLabel: 'Certifications' },
     { value: '100%', label: 'Remote', subLabel: 'Operations' },
   ];
 
@@ -74,8 +74,8 @@ const Hero: React.FC = () => {
                     <i className="fas fa-check-circle"></i>
                   </div>
                   <div>
-                    <div className="text-2xl font-extrabold text-text-primary">15+</div>
-                    <div className="text-xs font-bold text-text-muted uppercase tracking-wider">FTE Savings Reached</div>
+                    <div className="text-2xl font-extrabold text-text-primary">€700k+</div>
+                    <div className="text-xs font-bold text-text-muted uppercase tracking-wider">Documented Cost Savings</div>
                   </div>
                 </div>
               </div>

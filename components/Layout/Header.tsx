@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { View } from '../../App';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  currentView: View;
+}
+
+const Header: React.FC<HeaderProps> = ({ currentView }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -11,32 +16,35 @@ const Header: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { label: 'How I Help', href: '#how' },
-    { label: 'Services', href: '#services' },
-    { label: 'Results', href: '#achievements' },
-    { label: 'Insights', href: '#insights' },
-    { label: 'Experience', href: '#experience' },
-    { label: 'References', href: '#references' },
+    { label: 'Home', href: '#' },
+    { label: 'About Me', href: '#about' },
+    { label: 'Blog', href: '#blog' },
+    { label: 'How I Help', href: '#how', homeOnly: true },
+    { label: 'Results', href: '#achievements', homeOnly: true },
+    { label: 'Experience', href: '#experience', homeOnly: true },
   ];
 
   return (
     <header className={`sticky top-0 z-[100] transition-all duration-300 ${isScrolled ? 'py-3 glass shadow-lg' : 'py-6 bg-white'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <a href="/" className="font-serif text-2xl font-extrabold tracking-tight text-text-primary group">
+        <a href="#" className="font-serif text-2xl font-extrabold tracking-tight text-text-primary group">
           Bogi<span className="text-accent group-hover:text-accent-dark transition-colors">Horvath</span>
         </a>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <a 
-              key={link.label} 
-              href={link.href} 
-              className="text-[14px] font-semibold text-text-secondary hover:text-accent transition-all relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent after:transition-all hover:after:w-full"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            if (link.homeOnly && currentView !== 'home') return null;
+            return (
+              <a 
+                key={link.label} 
+                href={link.href} 
+                className="text-[14px] font-semibold text-text-secondary hover:text-accent transition-all relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent after:transition-all hover:after:w-full"
+              >
+                {link.label}
+              </a>
+            );
+          })}
           <a 
             href="#contact" 
             className="bg-accent hover:bg-accent-dark text-white px-7 py-3 rounded-xl font-bold transition-all transform hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/30 active:scale-95"
