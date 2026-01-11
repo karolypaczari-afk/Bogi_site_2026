@@ -1,13 +1,15 @@
-/*
-Theme Name: Bogi Horvath Transformation Lead
-Theme URI: https://bogihorvath.com
-Author: Bogi Horvath
-Author URI: https://bogihorvath.com
-Description: High-conversion professional landing page for Bogi Horvath, Strategic Process Transformation Lead.
-Version: 1.1.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: bogi-horvath
+/* 
+   Global Styles for Bogi Horvath Landing Page 
+   Tailwind CSS is used for the majority of styling.
 */
 
-/* Reset and base styles are handled via Tailwind CDN in index.php */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
