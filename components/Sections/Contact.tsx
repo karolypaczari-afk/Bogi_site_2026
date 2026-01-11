@@ -48,7 +48,7 @@ const Contact: React.FC = () => {
                 I'm currently open to selective consulting engagements and strategic leadership roles. If you're looking for high-impact process optimization, let's start with a conversation.
               </p>
               
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <div className="flex items-center gap-6 group">
                   <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-accent-light text-xl border border-white/10 group-hover:bg-accent group-hover:text-white transition-all">
                     <i className="far fa-envelope"></i>
@@ -59,7 +59,13 @@ const Contact: React.FC = () => {
                   <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-accent-light text-xl border border-white/10 group-hover:bg-accent group-hover:text-white transition-all">
                     <i className="fab fa-linkedin-in"></i>
                   </div>
-                  <a href="https://www.linkedin.com/in/boglarka-paczari-horvath/" target="_blank" className="text-xl font-semibold text-white hover:text-accent-light transition-colors underline decoration-accent/30 underline-offset-8">LinkedIn Profile</a>
+                  <a href="https://www.linkedin.com/in/boglarka-paczari-horvath/" target="_blank" rel="noopener noreferrer" className="text-xl font-semibold text-white hover:text-accent-light transition-colors underline decoration-accent/30 underline-offset-8">LinkedIn Profile</a>
+                </div>
+                <div className="flex items-center gap-6 group">
+                  <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-accent-light text-xl border border-white/10 group-hover:bg-accent group-hover:text-white transition-all">
+                    <i className="far fa-file-pdf"></i>
+                  </div>
+                  <a href="./Bogi_CV.pdf" target="_blank" rel="noopener noreferrer" className="text-xl font-semibold text-white hover:text-accent-light transition-colors underline decoration-accent/30 underline-offset-8">Download Resume</a>
                 </div>
               </div>
             </div>

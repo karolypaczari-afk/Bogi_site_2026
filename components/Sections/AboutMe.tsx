@@ -28,7 +28,7 @@ const AboutMe: React.FC = () => {
             <div className="lg:col-span-5 relative sticky top-24">
               <div className="relative rounded-[40px] overflow-hidden shadow-2xl border-[8px] border-white">
                 <img 
-                  src="https://bogihorvath.com/wp-content/uploads/2024/08/image-27.png" 
+                  src="./profile.png" 
                   alt="Boglarka Paczari-Horvath" 
                   className="w-full h-auto object-cover"
                 />

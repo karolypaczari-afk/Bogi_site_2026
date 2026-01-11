@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
                 <i className="far fa-calendar-alt"></i>
                 Book a Free Consultation
               </a>
-              <a href="https://bogihorvath.com/wp-content/uploads/2025/12/Bogi_CV_EN_2025_12_19.pdf" target="_blank" className="bg-white hover:bg-bg-secondary text-text-primary px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 border-2 border-slate-100 transition-all shadow-sm">
+              <a href="./Bogi_CV.pdf" target="_blank" rel="noopener noreferrer" className="bg-white hover:bg-bg-secondary text-text-primary px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 border-2 border-slate-100 transition-all shadow-sm">
                 <i className="far fa-file-alt"></i>
                 View My Resume
               </a>
@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
               
               <div className="relative rounded-[45px] overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.15)] ring-8 ring-white">
                 <img 
-                  src="https://bogihorvath.com/wp-content/uploads/2024/08/image-27.png" 
+                  src="./profile.png" 
                   alt="Boglarka Paczari-Horvath" 
                   className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
                 />
