@@ -75,29 +75,43 @@
             background: linear-gradient(to bottom, #4b68e9, #e2e8f0);
         }
         .hero-blob { position: absolute; filter: blur(80px); opacity: 0.15; z-index: -1; }
+        
+        /* Loading indicator while ESM.sh/run initializes */
+        #root:empty::before {
+            content: "Initializing Application...";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #4b68e9;
+            font-weight: 600;
+        }
     </style>
 
-    <!-- Import Map for React - Using absolute URLs to ensure consistency -->
-    <script type="importmap">
+    <!-- Modern ESM Loader that supports TSX/JSX modules in the browser -->
+    <script type="module" src="https://esm.sh/run"></script>
+<script type="importmap">
 {
   "imports": {
-    "react": "https://esm.sh/react@19.0.0",
-    "react-dom": "https://esm.sh/react-dom@19.0.0",
-    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/"
   }
 }
 </script>
-
-    <!-- Babel Standalone for TSX Browser Transpilation -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body class="font-sans text-text-primary bg-bg-primary overflow-x-hidden">
     <div id="root"></div>
     
-    <!-- We use text/babel with data-type=module to allow Babel to handle the TSX imports -->
-    <!-- NOTE: All imports in the TSX files MUST include the .tsx extension for this to work on static hosts like GitHub -->
-    <script type="text/babel" data-type="module" data-presets="typescript,react" src="./index.tsx"></script>
+    <!-- Using type="text/tsx" for esm.sh/run to handle the entry point -->
+    <script type="text/tsx">
+      import React from 'react';
+      import ReactDOM from 'react-dom/client';
+      import App from './App.tsx';
+
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App />);
+    </script>
 </body>
 </html>
