@@ -13,48 +13,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        accent: {
-                            DEFAULT: '#4b68e9',
-                            dark: '#3b58d9',
-                            light: '#6a82ef',
-                            subtle: '#f0f4ff',
-                        },
-                        text: {
-                            primary: '#0f172a',
-                            secondary: '#334155',
-                            muted: '#64748b',
-                        },
-                        bg: {
-                            primary: '#ffffff',
-                            secondary: '#f8fafc',
-                            muted: '#f1f5f9',
-                            dark: '#0f172a',
-                        }
+                        accent: { DEFAULT: '#4b68e9', dark: '#3b58d9', light: '#6a82ef', subtle: '#f0f4ff' },
+                        text: { primary: '#0f172a', secondary: '#334155', muted: '#64748b' },
+                        bg: { primary: '#ffffff', secondary: '#f8fafc', muted: '#f1f5f9', dark: '#0f172a' }
                     },
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
+                    animation: { 'float': 'float 6s ease-in-out infinite', 'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite' },
+                    keyframes: { float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-20px)' } } }
                 }
             }
         }
@@ -62,35 +37,16 @@
     
     <style>
         html { scroll-behavior: smooth; }
-        ::selection { background-color: #4b68e9; color: white; }
         .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
-        .text-gradient { background: linear-gradient(135deg, #4b68e9 0%, #3b58d9 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .timeline-line::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #4b68e9, #e2e8f0);
-        }
+        .timeline-line::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #4b68e9, #e2e8f0); }
         .hero-blob { position: absolute; filter: blur(80px); opacity: 0.15; z-index: -1; }
-        
-        /* Loading indicator while ESM.sh/run initializes */
-        #root:empty::before {
-            content: "Initializing Application...";
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: #4b68e9;
-            font-weight: 600;
-        }
     </style>
 
-    <!-- Modern ESM Loader that supports TSX/JSX modules in the browser -->
-    <script type="module" src="https://esm.sh/run"></script>
+    <!-- React 19 UMD - Reliable for no-build hosting -->
+    <script src="https://unpkg.com/react@19/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@19/umd/react-dom.production.min.js"></script>
+    <!-- Babel for browser-side TSX support -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="importmap">
 {
   "imports": {
@@ -103,15 +59,6 @@
 </head>
 <body class="font-sans text-text-primary bg-bg-primary overflow-x-hidden">
     <div id="root"></div>
-    
-    <!-- Using type="text/tsx" for esm.sh/run to handle the entry point -->
-    <script type="text/tsx">
-      import React from 'react';
-      import ReactDOM from 'react-dom/client';
-      import App from './App.tsx';
-
-      const root = ReactDOM.createRoot(document.getElementById('root'));
-      root.render(<App />);
-    </script>
+    <script type="text/babel" data-presets="typescript,react" src="App.tsx"></script>
 </body>
 </html>
