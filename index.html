@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,17 +36,16 @@
     </script>
     
     <style>
-        html { scroll-behavior: smooth; }
         .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
         .timeline-line::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #4b68e9, #e2e8f0); }
         .hero-blob { position: absolute; filter: blur(80px); opacity: 0.15; z-index: -1; }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-pulse-slow { animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
     </style>
-
-    <!-- React 19 UMD - Reliable for no-build hosting -->
-    <script src="https://unpkg.com/react@19/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@19/umd/react-dom.production.min.js"></script>
-    <!-- Babel for browser-side TSX support -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="importmap">
 {
   "imports": {
@@ -58,7 +57,275 @@
 </script>
 </head>
 <body class="font-sans text-text-primary bg-bg-primary overflow-x-hidden">
-    <div id="root"></div>
-    <script type="text/babel" data-presets="typescript,react" src="App.tsx"></script>
+
+    <!-- Top Bar -->
+    <div class="bg-bg-dark text-white py-2.5 text-[13px] font-medium tracking-wide border-b border-white/5">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="https://www.linkedin.com/in/boglarka-paczari-horvath/" target="_blank" rel="noopener" class="flex items-center gap-2 text-slate-400 hover:text-accent-light transition-colors group">
+                    <i class="fab fa-linkedin text-sm group-hover:scale-110 transition-transform"></i>
+                    <span>LinkedIn Profile</span>
+                </a>
+                <a href="mailto:horvath.boglarka@hotmail.com" class="flex items-center gap-2 text-slate-400 hover:text-accent-light transition-colors group">
+                    <i class="far fa-envelope text-sm group-hover:scale-110 transition-transform"></i>
+                    <span>horvath.boglarka@hotmail.com</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-6">
+                <span class="hidden md:inline text-slate-500">Available for Global Projects</span>
+                <a href="https://bogihorvath.com/wp-content/uploads/2025/12/Bogi_CV_EN_2025_12_19.pdf" target="_blank" class="flex items-center gap-2 text-white hover:text-accent-light transition-colors">
+                    <i class="far fa-file-alt"></i>
+                    <span>Resume (PDF)</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="main-header" class="sticky top-0 z-[100] transition-all duration-300 py-6 bg-transparent">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="font-serif text-2xl font-extrabold tracking-tight text-text-primary group">
+                Bogi<span class="text-accent group-hover:text-accent-dark transition-colors">Horvath</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-10">
+                <a href="#how" class="text-[14px] font-semibold text-text-secondary hover:text-accent transition-all relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent after:transition-all hover:after:w-full">Process</a>
+                <a href="#services" class="text-[14px] font-semibold text-text-secondary hover:text-accent transition-all relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent after:transition-all hover:after:w-full">Services</a>
+                <a href="#achievements" class="text-[14px] font-semibold text-text-secondary hover:text-accent transition-all relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent after:transition-all hover:after:w-full">Results</a>
+                <a href="#experience" class="text-[14px] font-semibold text-text-secondary hover:text-accent transition-all relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent after:transition-all hover:after:w-full">Experience</a>
+                <a href="#contact" class="bg-accent hover:bg-accent-dark text-white px-7 py-3 rounded-xl font-bold transition-all transform hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/30 active:scale-95">Let's Talk</a>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-toggle" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-accent-subtle text-accent" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-bg-dark/95 z-50 md:hidden transition-all duration-300 opacity-0 pointer-events-none">
+            <div class="flex flex-col items-center justify-center h-full gap-8 text-center p-6">
+                <button id="menu-close" class="absolute top-6 right-6 text-white text-3xl">&times;</button>
+                <a href="#how" class="mobile-link text-2xl font-bold text-white hover:text-accent">Process</a>
+                <a href="#services" class="mobile-link text-2xl font-bold text-white hover:text-accent">Services</a>
+                <a href="#achievements" class="mobile-link text-2xl font-bold text-white hover:text-accent">Results</a>
+                <a href="#experience" class="mobile-link text-2xl font-bold text-white hover:text-accent">Experience</a>
+                <a href="#contact" class="mobile-link bg-accent text-white w-full max-w-xs py-5 rounded-2xl font-bold text-xl mt-4">Book a Discussion</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative pt-8 pb-24 lg:pt-16 lg:pb-32 bg-white overflow-hidden">
+            <div class="hero-blob w-[500px] h-[500px] bg-accent -top-20 -left-20 animate-pulse-slow"></div>
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                    <div class="lg:col-span-7 order-2 lg:order-1 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 bg-accent-subtle border border-accent/10 text-accent px-5 py-2.5 rounded-full text-sm font-bold mb-10 shadow-sm">
+                            <span class="relative flex h-2 w-2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                            </span>
+                            Currently: Functional Lead at S.W.I.F.T.
+                        </div>
+                        <h1 class="font-serif text-5xl md:text-7xl lg:text-[80px] font-bold leading-[1] text-text-primary mb-8 tracking-tight">
+                            Unlock Your Team's <br />
+                            <span class="text-accent italic">Full Potential</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-text-secondary mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                            Strategic Process Transformation Lead delivering <span class="text-text-primary font-bold border-b-2 border-accent/20">€700k+ in documented cost savings</span>. I merge tactical execution with high-level strategy to scale complex operations.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start mb-16">
+                            <a href="#contact" class="bg-accent hover:bg-accent-dark text-white px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 transition-all shadow-2xl shadow-accent/40 transform hover:-translate-y-1.5">
+                                <i class="far fa-calendar-alt"></i>
+                                Book a Free Consultation
+                            </a>
+                            <a href="https://bogihorvath.com/wp-content/uploads/2025/12/Bogi_CV_EN_2025_12_19.pdf" target="_blank" class="bg-white hover:bg-bg-secondary text-text-primary px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 border-2 border-slate-100 transition-all shadow-sm">
+                                <i class="far fa-file-alt"></i>
+                                View My Resume
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 order-1 lg:order-2">
+                        <div class="relative mx-auto max-w-[440px] group">
+                            <div class="absolute -inset-4 border-2 border-accent/20 rounded-[50px] -z-10 transform translate-x-6 translate-y-6"></div>
+                            <div class="relative rounded-[45px] overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.15)] ring-8 ring-white">
+                                <img src="https://bogihorvath.com/wp-content/uploads/2024/08/image-27.png" alt="Boglarka Paczari-Horvath" class="w-full h-auto object-cover transform transition-transform duration-700 hover:scale-105">
+                            </div>
+                            <div class="absolute -bottom-10 -left-10 md:-left-20 bg-white p-6 rounded-3xl shadow-2xl border border-slate-50 animate-float hidden md:block">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-2xl font-extrabold text-text-primary">15+</div>
+                                        <div class="text-xs font-bold text-text-muted uppercase tracking-wider">FTE Savings Reached</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-24 grid grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-8 rounded-[32px] shadow-sm flex flex-col items-center justify-center text-center border border-slate-50 hover:shadow-xl transition-all group">
+                        <span class="block font-serif text-4xl md:text-5xl font-bold text-accent mb-3 group-hover:scale-110 transition-transform">€700k+</span>
+                        <div class="text-sm md:text-base text-text-secondary font-semibold">Cost Savings <span class="text-text-muted block font-normal">Delivered</span></div>
+                    </div>
+                    <div class="bg-white p-8 rounded-[32px] shadow-sm flex flex-col items-center justify-center text-center border border-slate-50 hover:shadow-xl transition-all group">
+                        <span class="block font-serif text-4xl md:text-5xl font-bold text-accent mb-3 group-hover:scale-110 transition-transform">14+</span>
+                        <div class="text-sm md:text-base text-text-secondary font-semibold">Years of <span class="text-text-muted block font-normal">Expertise</span></div>
+                    </div>
+                    <div class="bg-white p-8 rounded-[32px] shadow-sm flex flex-col items-center justify-center text-center border border-slate-50 hover:shadow-xl transition-all group">
+                        <span class="block font-serif text-4xl md:text-5xl font-bold text-accent mb-3 group-hover:scale-110 transition-transform">10+</span>
+                        <div class="text-sm md:text-base text-text-secondary font-semibold">Professional <span class="text-text-muted block font-normal">Certs</span></div>
+                    </div>
+                    <div class="bg-white p-8 rounded-[32px] shadow-sm flex flex-col items-center justify-center text-center border border-slate-50 hover:shadow-xl transition-all group">
+                        <span class="block font-serif text-4xl md:text-5xl font-bold text-accent mb-3 group-hover:scale-110 transition-transform">100%</span>
+                        <div class="text-sm md:text-base text-text-secondary font-semibold">Remote <span class="text-text-muted block font-normal">Operations</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="how" class="py-24 bg-bg-secondary relative">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <span class="text-accent font-extrabold uppercase tracking-[0.2em] text-xs mb-4 block">The Approach</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-text-primary mb-6">Bridging Strategy and <span class="italic">Excellence</span></h2>
+                    <p class="text-text-secondary text-lg leading-relaxed">I apply Lean Six Sigma, Agile, and ITIL frameworks to build resilient operations that scale effortlessly.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-10 rounded-[35px] shadow-sm hover:shadow-2xl transition-all border border-slate-50">
+                        <div class="w-16 h-16 bg-accent-subtle text-accent rounded-2xl flex items-center justify-center mb-8 text-2xl"><i class="fas fa-chart-line"></i></div>
+                        <h3 class="text-2xl font-bold text-text-primary mb-4">Lean Efficiency</h3>
+                        <p class="text-text-secondary text-base">Identify structural waste and eliminate bottlenecks to increase team velocity by 15-20%.</p>
+                    </div>
+                    <div class="bg-white p-10 rounded-[35px] shadow-sm hover:shadow-2xl transition-all border border-slate-50">
+                        <div class="w-16 h-16 bg-accent-subtle text-accent rounded-2xl flex items-center justify-center mb-8 text-2xl"><i class="fas fa-cogs"></i></div>
+                        <h3 class="text-2xl font-bold text-text-primary mb-4">Digital Architecture</h3>
+                        <p class="text-text-secondary text-base">Modernize tech stacks (S4HANA, PEGA) with seamless API integrations and automation.</p>
+                    </div>
+                    <div class="bg-white p-10 rounded-[35px] shadow-sm hover:shadow-2xl transition-all border border-slate-50">
+                        <div class="w-16 h-16 bg-accent-subtle text-accent rounded-2xl flex items-center justify-center mb-8 text-2xl"><i class="fas fa-users"></i></div>
+                        <h3 class="text-2xl font-bold text-text-primary mb-4">Change Leadership</h3>
+                        <p class="text-text-secondary text-base">Guiding global teams through complex cultural and technical transformations with empathy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="py-24 bg-bg-dark relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/10 blur-[120px] rounded-full"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <span class="inline-block text-accent-light font-extrabold uppercase tracking-[0.2em] text-xs mb-4">Hard Metrics</span>
+                    <h2 class="font-serif text-4xl md:text-6xl font-bold text-white mb-6">Proven Business Impact</h2>
+                    <p class="text-slate-400 text-lg leading-relaxed">I deliver measurable financial results reflected on the bottom line.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-10 bg-white/5 border border-white/10 rounded-[40px] hover:bg-white/[0.08] transition-all">
+                        <div class="w-16 h-16 bg-accent text-white rounded-[20px] flex items-center justify-center text-2xl mb-8"><i class="fas fa-euro-sign"></i></div>
+                        <h3 class="text-2xl font-bold text-white mb-4 leading-tight">€700k+ Documented Savings</h3>
+                        <p class="text-slate-400">Aggregated savings across license optimization and automation ROI.</p>
+                    </div>
+                    <div class="p-10 bg-white/5 border border-white/10 rounded-[40px] hover:bg-white/[0.08] transition-all">
+                        <div class="w-16 h-16 bg-accent text-white rounded-[20px] flex items-center justify-center text-2xl mb-8"><i class="fas fa-bolt"></i></div>
+                        <h3 class="text-2xl font-bold text-white mb-4 leading-tight">20% Efficiency Gain</h3>
+                        <p class="text-slate-400">Average throughput increase through lean workflow redesign.</p>
+                    </div>
+                    <div class="p-10 bg-white/5 border border-white/10 rounded-[40px] hover:bg-white/[0.08] transition-all">
+                        <div class="w-16 h-16 bg-accent text-white rounded-[20px] flex items-center justify-center text-2xl mb-8"><i class="fas fa-users-cog"></i></div>
+                        <h3 class="text-2xl font-bold text-white mb-4 leading-tight">15+ FTE Capacity Created</h3>
+                        <p class="text-slate-400">Automated quality workflows, freeing specialists for strategic work.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline -->
+        <section id="experience" class="py-24 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center mb-16">
+                    <h2 class="font-serif text-4xl font-bold text-text-primary">Career Journey</h2>
+                </div>
+                <div class="relative timeline-line">
+                    <div class="pl-12 pb-12 relative">
+                        <div class="absolute left-[-6.5px] top-2 w-4 h-4 rounded-full bg-accent border-4 border-white shadow-sm"></div>
+                        <span class="text-accent font-bold text-sm block mb-1">2025 – Present</span>
+                        <h3 class="text-xl font-bold text-text-primary mb-1">Functional Lead — E-form Optimization</h3>
+                        <div class="text-accent-light text-sm font-medium mb-3">S.W.I.F.T. | Belgium (Remote)</div>
+                        <p class="text-text-muted text-sm">Leading team of 3-5 specialists driving E-form optimization and API consolidation.</p>
+                    </div>
+                    <div class="pl-12 pb-12 relative">
+                        <div class="absolute left-[-6.5px] top-2 w-4 h-4 rounded-full bg-accent border-4 border-white shadow-sm"></div>
+                        <span class="text-accent font-bold text-sm block mb-1">2024 – 2025</span>
+                        <h3 class="text-xl font-bold text-text-primary mb-1">Senior Process Optimization Lead</h3>
+                        <div class="text-accent-light text-sm font-medium mb-3">S.W.I.F.T. | Belgium (Remote)</div>
+                        <p class="text-text-muted text-sm">Delivered 20% productivity improvement via SAP S/4HANA to PEGA migration.</p>
+                    </div>
+                    <div class="pl-12 pb-12 relative">
+                        <div class="absolute left-[-6.5px] top-2 w-4 h-4 rounded-full bg-accent border-4 border-white shadow-sm"></div>
+                        <span class="text-accent font-bold text-sm block mb-1">2022 – 2024</span>
+                        <h3 class="text-xl font-bold text-text-primary mb-1">Principal Business Operations Specialist</h3>
+                        <div class="text-accent-light text-sm font-medium mb-3">NTT Ltd. | Remote</div>
+                        <p class="text-text-muted text-sm">Led Opp2Cash value stream standardization. €500k+ license savings.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="bg-bg-dark rounded-[60px] p-8 md:p-16 text-white text-center shadow-2xl overflow-hidden relative">
+                    <div class="absolute -top-20 -right-20 w-80 h-80 bg-accent opacity-20 blur-[100px] rounded-full"></div>
+                    <h2 class="font-serif text-4xl md:text-6xl font-bold mb-8 relative z-10 leading-tight">Ready to Transform?</h2>
+                    <p class="text-slate-400 text-lg mb-12 max-w-2xl mx-auto relative z-10">Get in touch to discuss how we can optimize your global operations.</p>
+                    <div class="flex flex-col md:flex-row justify-center gap-8 relative z-10">
+                        <a href="mailto:horvath.boglarka@hotmail.com" class="bg-accent text-white px-12 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-all">Email Me Directly</a>
+                        <a href="https://www.linkedin.com/in/boglarka-paczari-horvath/" target="_blank" class="bg-white/10 border border-white/20 px-12 py-5 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all">LinkedIn Profile</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#0a0f1a] py-12 text-slate-500 text-center border-t border-white/5">
+        <p class="text-sm">&copy; 2025 Boglarka Paczari-Horvath. All rights reserved.</p>
+        <p class="text-xs mt-2 opacity-50 uppercase tracking-[0.2em]">Process Transformation Expert</p>
+    </footer>
+
+    <script>
+        // Header Scroll Effect
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('glass', 'shadow-lg', 'py-3');
+                header.classList.remove('bg-transparent', 'py-6');
+            } else {
+                header.classList.remove('glass', 'shadow-lg', 'py-3');
+                header.classList.add('bg-transparent', 'py-6');
+            }
+        });
+
+        // Mobile Menu Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('opacity-0');
+            mobileMenu.classList.toggle('pointer-events-none');
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuClose.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+    </script>
 </body>
 </html>
