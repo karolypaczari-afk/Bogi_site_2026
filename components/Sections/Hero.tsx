@@ -70,7 +70,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               
               <div className="relative rounded-[45px] overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.15)] ring-8 ring-white">
                 <SmartImage 
-                  src="./image.png" 
+                  src="./bogi.png" 
                   alt="Boglarka Paczari-Horvath" 
                   fallbackPrompt="Professional corporate headshot of a confident woman with reddish-blonde hair, wearing a blue blazer and light blue shirt, green plant in soft focus background, high quality, 4k, photorealistic"
                   className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105 min-h-[500px]"
