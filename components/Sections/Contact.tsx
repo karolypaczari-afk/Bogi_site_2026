@@ -35,6 +35,7 @@ const Contact: React.FC = () => {
         setFormState('error');
       }
     } catch (err) {
+      console.error(err);
       setFormState('error');
     }
   };
@@ -135,7 +136,10 @@ const Contact: React.FC = () => {
                   </div>
 
                   {formState === 'error' && (
-                    <p className="text-red-500 text-sm font-bold text-center">Something went wrong. Please try again or email directly.</p>
+                    <div className="bg-red-50 text-red-600 p-4 rounded-xl text-center text-sm">
+                      <p className="font-bold mb-1">Something went wrong.</p>
+                      <p>Please try again or <a href="mailto:horvath.boglarka@hotmail.com" className="underline decoration-red-300 underline-offset-2">email me directly</a>.</p>
+                    </div>
                   )}
 
                   <button 

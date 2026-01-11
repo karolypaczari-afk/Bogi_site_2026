@@ -40,6 +40,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
         setFormState('error');
       }
     } catch (err) {
+      console.error(err);
       setFormState('error');
     }
   };
@@ -109,7 +110,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
                 </div>
 
                 {formState === 'error' && (
-                  <p className="text-red-500 text-xs font-bold text-center bg-red-50 py-2 rounded-lg">Submission failed. Please email horvath.boglarka@hotmail.com directly.</p>
+                   <p className="text-red-500 text-xs font-bold text-center bg-red-50 py-2 rounded-lg">Submission failed. Please <a href="mailto:horvath.boglarka@hotmail.com" className="underline">email directly</a>.</p>
                 )}
 
                 <button 
