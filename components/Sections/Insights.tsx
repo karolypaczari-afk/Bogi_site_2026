@@ -21,23 +21,24 @@ const Insights: React.FC = () => {
 
   const caseStudies = [
     {
+      id: 'pega-migration',
       category: 'Digital Migration',
       title: 'SAP S/4HANA to PEGA: A Strategic Shift',
       desc: 'Led the functional design for a high-stakes migration at S.W.I.F.T., delivering 20% productivity improvement and zero-downtime transition.',
-      link: 'https://bogihorvath.com/case-study-pega-migration/',
       dark: true
     },
     {
+      id: 'ntt-standardization',
       category: 'Operational Excellence',
       title: 'Standardizing Opp2Cash Value Streams',
       desc: 'Executed global standardization for NTT Ltd., securing €500k+ in documented license savings and harmonizing 12 regional entities.',
-      link: 'https://bogihorvath.com/case-study-ntt-standardization/',
       dark: false
     }
   ];
 
   const blogPosts = [
     {
+      id: 'ai-process-optimization',
       icon: 'fa-microchip',
       category: 'AI & Tools',
       title: 'Leveraging Copilot for Business Analysis',
@@ -46,6 +47,7 @@ const Insights: React.FC = () => {
       iconColor: 'text-accent/30'
     },
     {
+      id: 'change-management-global',
       icon: 'fa-project-diagram',
       category: 'Methodology',
       title: 'The Lean-Agile Hybrid Model',
@@ -54,6 +56,7 @@ const Insights: React.FC = () => {
       iconColor: 'text-slate-300'
     },
     {
+      id: 'kpi-power-frameworks',
       icon: 'fa-globe-americas',
       category: 'Leadership',
       title: 'Remote Process Management at Scale',
@@ -93,8 +96,8 @@ const Insights: React.FC = () => {
                 <p className={`text-base mb-8 leading-relaxed ${study.dark ? 'text-slate-400' : 'text-text-secondary'}`}>
                   {study.desc}
                 </p>
-                <a href={study.link} target="_blank" className={`inline-flex items-center gap-2 font-bold hover:gap-4 transition-all ${study.dark ? 'text-white' : 'text-text-primary'}`}>
-                  Explore Result <i className={`fas fa-arrow-right ${study.dark ? 'text-accent-light' : 'text-accent'}`}></i>
+                <a href={`#blog/${study.id}`} className={`inline-flex items-center gap-2 font-bold hover:gap-4 transition-all ${study.dark ? 'text-white' : 'text-text-primary'}`}>
+                  Read Full Case Study <i className={`fas fa-arrow-right ${study.dark ? 'text-accent-light' : 'text-accent'}`}></i>
                 </a>
               </div>
             ))}
@@ -106,11 +109,11 @@ const Insights: React.FC = () => {
           <div className="flex items-center gap-4 mb-10">
             <h3 className="text-xl font-bold">Recent Insights</h3>
             <div className="h-[2px] flex-grow bg-slate-100"></div>
-            <a href="https://bogihorvath.com/blog/" target="_blank" className="text-accent font-bold text-sm hover:underline">Browse Full Blog</a>
+            <a href="#blog" className="text-accent font-bold text-sm hover:underline">Browse All Posts</a>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {blogPosts.map((post, idx) => (
-              <div key={idx} className="group cursor-pointer">
+              <a key={idx} href={`#blog/${post.id}`} className="group cursor-pointer block">
                 <div className="mb-6 overflow-hidden rounded-[24px]">
                   <div className={`${post.color} w-full h-48 flex items-center justify-center group-hover:scale-105 transition-transform duration-500`}>
                     <i className={`fas ${post.icon} text-5xl ${post.iconColor}`}></i>
@@ -122,7 +125,7 @@ const Insights: React.FC = () => {
                 <span className="text-[12px] font-bold text-text-primary flex items-center gap-2">
                   Read Article <i className="fas fa-chevron-right text-[10px] text-accent"></i>
                 </span>
-              </div>
+              </a>
             ))}
           </div>
         </div>

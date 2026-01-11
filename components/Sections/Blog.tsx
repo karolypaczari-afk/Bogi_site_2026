@@ -13,6 +13,42 @@ interface BlogPost {
 
 const POSTS: BlogPost[] = [
   {
+    id: 'pega-migration',
+    title: 'SAP S/4HANA to PEGA: A Strategic Migration',
+    category: 'Case Study',
+    date: 'February 15, 2025',
+    excerpt: 'Detailed breakdown of a zero-downtime migration at S.W.I.F.T., resulting in 20% productivity gains.',
+    icon: 'fa-server',
+    color: 'bg-indigo-50',
+    content: [
+      "The Challenge: S.W.I.F.T. faced a critical need to modernize its order fulfillment architecture. The legacy reliance on disjointed SAP modules and manual E-forms was creating data silos and slowing down transaction velocity.",
+      "The Solution: As Functional Lead, I architected the business process transition from SAP S/4HANA to a unified PEGA workflow. This wasn't just a technical 'lift and shift'; it was a complete reimaging of the Opp2Cash value stream.",
+      "Key Actions:",
+      "• Value Stream Mapping: We identified 14 redundant approval steps that could be automated via PEGA's decisioning engine.",
+      "• API Consolidation: Reduced the number of custom API endpoints by 50%, simplifying the maintenance burden and improving system uptime.",
+      "• Stakeholder Alignment: Facilitated weekly workshops between the Brussels HQ and remote technical teams to ensure the functional design met real-world needs.",
+      "The Outcome: The project went live with zero critical defects. Post-migration metrics showed a 20% increase in order processing speed and a significant reduction in manual data entry errors."
+    ]
+  },
+  {
+    id: 'ntt-standardization',
+    title: 'Standardizing Opp2Cash at NTT Ltd.',
+    category: 'Case Study',
+    date: 'January 10, 2025',
+    excerpt: 'Harmonizing 12 regional entities into one global standard, saving €500k+ in annual licensing costs.',
+    icon: 'fa-globe',
+    color: 'bg-emerald-50',
+    content: [
+      "The Context: Following a major merger, NTT Ltd. was operating with 12 distinct regional variations of the Opportunity-to-Cash (Opp2Cash) process. This fragmentation made global reporting impossible and inflated software licensing costs.",
+      "The Strategy: My role was to drive the 'One NTT' standard. This required a delicate balance of diplomatic stakeholder management and ruthless process elimination.",
+      "Execution:",
+      "• Global Audit: We conducted a comprehensive audit of all regional tools, identifying over €500k in redundant software licenses.",
+      "• The 'Golden Path': We defined a single, standard process flow for 80% of standard deals, allowing customization only for complex edge cases.",
+      "• Change Champions: We appointed local process owners in each region to champion the new standard and handle local training.",
+      "Results: The standardization project delivered the documented €500k savings in the first year alone. More importantly, it enabled the executive team to see real-time, comparable sales data across all regions for the first time."
+    ]
+  },
+  {
     id: 'ai-process-optimization',
     title: 'The Future of Process Optimization: AI-Driven Insights',
     category: 'Technology',
@@ -98,7 +134,7 @@ const Blog: React.FC<{ postId?: string | null }> = ({ postId }) => {
                </div>
              </div>
              <a href="#contact" className="bg-accent text-white px-8 py-4 rounded-2xl font-bold hover:bg-accent-dark transition-all shadow-lg shadow-accent/20">
-               Discuss This Article
+               Discuss This Topic
              </a>
           </div>
         </div>
