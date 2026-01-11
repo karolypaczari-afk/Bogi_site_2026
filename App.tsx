@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import TopBar from './components/Layout/TopBar';
 import Header from './components/Layout/Header';
@@ -17,13 +18,10 @@ import Blog from './components/Sections/Blog';
 import AILab from './components/Sections/AILab';
 import BookingModal from './components/Modals/BookingModal';
 
-// Declare global type for aistudio
+// Declare global type for aistudio using the expected AIStudio type from the environment to resolve the conflict
 declare global {
   interface Window {
-    aistudio?: {
-      hasSelectedApiKey: () => Promise<boolean>;
-      openSelectKey: () => Promise<void>;
-    }
+    aistudio?: AIStudio;
   }
 }
 
@@ -37,6 +35,19 @@ const App: React.FC = () => {
   // API Key State
   const [hasApiKey, setHasApiKey] = useState(false);
   const [checkingKey, setCheckingKey] = useState(true);
+
+  // Key selection helper
+  const handleSelectKey = async () => {
+    if (window.aistudio) {
+      try {
+        await window.aistudio.openSelectKey();
+        // Assume success to mitigate race condition
+        setHasApiKey(true);
+      } catch (e) {
+        console.error("Key selection failed:", e);
+      }
+    }
+  };
 
   useEffect(() => {
     const checkKey = async () => {
@@ -56,21 +67,17 @@ const App: React.FC = () => {
       }
     };
     checkKey();
-  }, []);
 
-  const handleSelectKey = async () => {
-    if (window.aistudio) {
-      try {
-        await window.aistudio.openSelectKey();
-        // Assume success to mitigate race condition
-        setHasApiKey(true);
-      } catch (e) {
-        console.error("Key selection failed:", e);
-        // Force re-check or simple reload might be needed in extreme cases, 
-        // but typically user just needs to try again.
+    // Fix: Handle mandatory "Requested entity was not found." error reset as per guidelines
+    const handleRejection = (event: PromiseRejectionEvent) => {
+      if (event.reason?.message?.includes("Requested entity was not found.")) {
+        setHasApiKey(false);
+        handleSelectKey();
       }
-    }
-  };
+    };
+    window.addEventListener('unhandledrejection', handleRejection);
+    return () => window.removeEventListener('unhandledrejection', handleRejection);
+  }, []);
 
   useEffect(() => {
     const handleNavigation = () => {
