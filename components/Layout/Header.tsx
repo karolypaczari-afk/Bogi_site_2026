@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 
 const Header: React.FC = () => {
@@ -6,28 +5,29 @@ const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { label: 'Process', href: '#how' },
+    { label: 'How I Help', href: '#how' },
     { label: 'Services', href: '#services' },
     { label: 'Results', href: '#achievements' },
+    { label: 'Insights', href: '#insights' },
     { label: 'Experience', href: '#experience' },
     { label: 'References', href: '#references' },
   ];
 
   return (
-    <header className={`sticky top-0 z-[100] transition-all duration-300 ${isScrolled ? 'py-3 glass shadow-lg' : 'py-6 bg-transparent'}`}>
+    <header className={`sticky top-0 z-[100] transition-all duration-300 ${isScrolled ? 'py-3 glass shadow-lg' : 'py-6 bg-white'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
         <a href="/" className="font-serif text-2xl font-extrabold tracking-tight text-text-primary group">
           Bogi<span className="text-accent group-hover:text-accent-dark transition-colors">Horvath</span>
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
             <a 
               key={link.label} 
@@ -47,7 +47,7 @@ const Header: React.FC = () => {
 
         {/* Mobile Menu Toggle */}
         <button 
-          className="md:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-accent-subtle text-accent"
+          className="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-accent-subtle text-accent"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle Menu"
         >
@@ -56,7 +56,7 @@ const Header: React.FC = () => {
       </div>
 
       {/* Mobile Nav Overlay */}
-      <div className={`fixed inset-0 bg-bg-dark/95 z-50 md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+      <div className={`fixed inset-0 bg-bg-dark/95 z-50 lg:hidden transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
         <div className="flex flex-col items-center justify-center h-full gap-8 text-center p-6">
           <button onClick={() => setIsMobileMenuOpen(false)} className="absolute top-6 right-6 text-white text-3xl">&times;</button>
           {navLinks.map((link) => (
