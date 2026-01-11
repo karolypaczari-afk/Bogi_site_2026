@@ -9,16 +9,23 @@ const Contact: React.FC = () => {
     
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
+    
+    const submissionData = {
+        ...data,
+        _subject: `New Contact Message from ${data.name}`,
+        _template: 'table'
+    };
 
     try {
-      // Using Formspree as a reliable way to send emails from static sites
-      const response = await fetch('https://formspree.io/f/karolypaczari@gmail.com', {
+      // Using FormSubmit.co for reliable static site email delivery
+      // Requires one-time activation on first submission
+      const response = await fetch('https://formsubmit.co/ajax/horvath.boglarka@hotmail.com', {
         method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(submissionData)
       });
 
       if (response.ok) {
@@ -87,6 +94,8 @@ const Contact: React.FC = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  <input type="hidden" name="_captcha" value="false" />
+                  
                   <div className="text-center mb-8">
                     <h3 className="text-2xl font-extrabold text-text-primary mb-2">Send a Message</h3>
                     <p className="text-text-muted text-sm">Start your journey towards operational excellence.</p>

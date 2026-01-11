@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  onOpenBooking?: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
   const stats = [
     { value: '€700k+', label: 'Documented', subLabel: 'Cost Savings' },
     { value: '14+', label: 'Years of', subLabel: 'Expertise' },
@@ -36,10 +40,13 @@ const Hero: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start mb-16">
-              <a href="#contact" className="bg-accent hover:bg-accent-dark text-white px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 transition-all shadow-xl shadow-accent/40 transform hover:-translate-y-1.5 active:scale-95">
+              <button 
+                onClick={onOpenBooking}
+                className="bg-accent hover:bg-accent-dark text-white px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 transition-all shadow-xl shadow-accent/40 transform hover:-translate-y-1.5 active:scale-95"
+              >
                 <i className="far fa-calendar-alt"></i>
                 Book a Free Consultation
-              </a>
+              </button>
               <a href="./Bogi_CV.pdf" target="_blank" rel="noopener noreferrer" className="bg-white hover:bg-bg-secondary text-text-primary px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 border-2 border-slate-100 transition-all shadow-sm">
                 <i className="far fa-file-alt"></i>
                 View My Resume
