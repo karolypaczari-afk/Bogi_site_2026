@@ -23,41 +23,41 @@ const Insights: React.FC = () => {
     {
       category: 'Digital Migration',
       title: 'SAP S/4HANA to PEGA: A Strategic Shift',
-      desc: 'How we achieved 20% productivity improvement and consolidated disparate workflows into a single, automated source of truth at S.W.I.F.T.',
-      link: '#',
+      desc: 'Led the functional design for a high-stakes migration at S.W.I.F.T., delivering 20% productivity improvement and zero-downtime transition.',
+      link: 'https://bogihorvath.com/case-study-pega-migration/',
       dark: true
     },
     {
       category: 'Operational Excellence',
       title: 'Standardizing Opp2Cash Value Streams',
-      desc: 'Documenting the delivery of €500k+ in license savings through global standardization and stakeholder alignment at NTT Ltd.',
-      link: '#',
+      desc: 'Executed global standardization for NTT Ltd., securing €500k+ in documented license savings and harmonizing 12 regional entities.',
+      link: 'https://bogihorvath.com/case-study-ntt-standardization/',
       dark: false
     }
   ];
 
   const blogPosts = [
     {
-      icon: 'fa-robot',
-      category: 'Technology',
-      title: 'The Future of AI in Modern Process Automation',
-      desc: 'Exploring how LLMs and Copilots are redefining documentation and decision-making for ICT specialists.',
+      icon: 'fa-microchip',
+      category: 'AI & Tools',
+      title: 'Leveraging Copilot for Business Analysis',
+      desc: 'How AI-augmented documentation is reducing BA overhead by 40% in large-scale ICT projects.',
       color: 'bg-accent-subtle',
       iconColor: 'text-accent/30'
     },
     {
-      icon: 'fa-laptop-house',
-      category: 'Leadership',
-      title: 'Managing Lean Transformation in Remote Teams',
-      desc: 'Actionable strategies for identifying structural waste when your team is distributed across the globe.',
+      icon: 'fa-project-diagram',
+      category: 'Methodology',
+      title: 'The Lean-Agile Hybrid Model',
+      desc: 'Why strict adherence to one framework fails in enterprise environments, and how to blend them for ROI.',
       color: 'bg-slate-100',
       iconColor: 'text-slate-300'
     },
     {
-      icon: 'fa-balance-scale',
-      category: 'Methodology',
-      title: 'Lean vs. Agile: Finding the Strategic Balance',
-      desc: 'Why a hybrid approach is often required for large-scale enterprise transformation projects.',
+      icon: 'fa-globe-americas',
+      category: 'Leadership',
+      title: 'Remote Process Management at Scale',
+      desc: 'Best practices for driving cultural change and process adherence in 100% distributed global teams.',
       color: 'bg-blue-50',
       iconColor: 'text-blue-200'
     }
@@ -93,8 +93,8 @@ const Insights: React.FC = () => {
                 <p className={`text-base mb-8 leading-relaxed ${study.dark ? 'text-slate-400' : 'text-text-secondary'}`}>
                   {study.desc}
                 </p>
-                <a href={study.link} className={`inline-flex items-center gap-2 font-bold hover:gap-4 transition-all ${study.dark ? 'text-white' : 'text-text-primary'}`}>
-                  Read Case Study <i className={`fas fa-arrow-right ${study.dark ? 'text-accent-light' : 'text-accent'}`}></i>
+                <a href={study.link} target="_blank" className={`inline-flex items-center gap-2 font-bold hover:gap-4 transition-all ${study.dark ? 'text-white' : 'text-text-primary'}`}>
+                  Explore Result <i className={`fas fa-arrow-right ${study.dark ? 'text-accent-light' : 'text-accent'}`}></i>
                 </a>
               </div>
             ))}
@@ -106,7 +106,7 @@ const Insights: React.FC = () => {
           <div className="flex items-center gap-4 mb-10">
             <h3 className="text-xl font-bold">Recent Insights</h3>
             <div className="h-[2px] flex-grow bg-slate-100"></div>
-            <a href="#" className="text-accent font-bold text-sm hover:underline">View All Posts</a>
+            <a href="https://bogihorvath.com/blog/" target="_blank" className="text-accent font-bold text-sm hover:underline">Browse Full Blog</a>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {blogPosts.map((post, idx) => (

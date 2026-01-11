@@ -1,9 +1,8 @@
-
 import React from 'react';
 
 const Hero: React.FC = () => {
   const stats = [
-    { value: '€700k+', label: 'Cost Savings', subLabel: 'Delivered' },
+    { value: '€700k+', label: 'Cost Savings', subLabel: 'Documented' },
     { value: '14+', label: 'Years of', subLabel: 'Expertise' },
     { value: '10+', label: 'Professional', subLabel: 'Certs' },
     { value: '100%', label: 'Remote', subLabel: 'Operations' },
@@ -13,10 +12,8 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative pt-8 pb-24 lg:pt-16 lg:pb-32 bg-white overflow-hidden">
-      {/* Decorative Background Elements */}
       <div className="hero-blob w-[500px] h-[500px] bg-accent -top-20 -left-20 animate-pulse-slow"></div>
-      <div className="hero-blob w-[400px] h-[400px] bg-blue-300 top-1/2 -right-20"></div>
-
+      
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
@@ -38,19 +35,17 @@ const Hero: React.FC = () => {
               Strategic Process Transformation Lead delivering <span className="text-text-primary font-bold border-b-2 border-accent/20">€700k+ in documented cost savings</span>. I merge tactical execution with high-level strategy to scale complex operations.
             </p>
 
-            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start mb-16">
-              <a href="#contact" className="bg-accent hover:bg-accent-dark text-white px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 transition-all shadow-2xl shadow-accent/40 transform hover:-translate-y-1.5 active:scale-95">
+              <a href="#contact" className="bg-accent hover:bg-accent-dark text-white px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 transition-all shadow-xl shadow-accent/40 transform hover:-translate-y-1.5 active:scale-95">
                 <i className="far fa-calendar-alt"></i>
                 Book a Free Consultation
               </a>
-              <a href="https://bogihorvath.com/wp-content/uploads/2025/12/Bogi_CV_EN_2025_12_19.pdf" target="_blank" className="bg-white hover:bg-bg-secondary text-text-primary px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 border-2 border-slate-100 transition-all shadow-sm hover:shadow-md">
+              <a href="https://bogihorvath.com/wp-content/uploads/2025/12/Bogi_CV_EN_2025_12_19.pdf" target="_blank" className="bg-white hover:bg-bg-secondary text-text-primary px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 border-2 border-slate-100 transition-all shadow-sm">
                 <i className="far fa-file-alt"></i>
                 View My Resume
               </a>
             </div>
 
-            {/* Trust Badges */}
             <div className="flex flex-col gap-4 items-center lg:items-start opacity-70">
               <span className="text-xs uppercase tracking-[0.3em] font-bold text-text-muted">Proven Experience At</span>
               <div className="flex flex-wrap justify-center lg:justify-start gap-x-10 gap-y-6">
@@ -61,11 +56,9 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Profile Image Section */}
           <div className="lg:col-span-5 order-1 lg:order-2">
             <div className="relative mx-auto max-w-[440px] group">
-              {/* Decorative Frame */}
-              <div className="absolute -inset-4 border-2 border-accent/20 rounded-[50px] -z-10 transform translate-x-6 translate-y-6 group-hover:translate-x-3 group-hover:translate-y-3 transition-transform duration-500"></div>
+              <div className="absolute -inset-4 border-2 border-accent/20 rounded-[50px] -z-10 transform translate-x-6 translate-y-6"></div>
               
               <div className="relative rounded-[45px] overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.15)] ring-8 ring-white">
                 <img 
@@ -75,7 +68,6 @@ const Hero: React.FC = () => {
                 />
               </div>
 
-              {/* Floating Achievement Card */}
               <div className="absolute -bottom-10 -left-10 md:-left-20 bg-white p-6 rounded-3xl shadow-2xl border border-slate-50 animate-float hidden md:block">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center">
@@ -91,12 +83,11 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Floating Stats Section - High Contrast */}
         <div className="mt-24 grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, idx) => (
-            <div key={idx} className="bg-white p-8 rounded-[32px] shadow-[0_12px_48px_rgba(75,104,233,0.06)] flex flex-col items-center justify-center text-center border border-slate-50 hover:shadow-xl hover:shadow-accent/5 transition-all group">
-              <span className="block font-serif text-4xl md:text-5xl font-bold text-accent mb-3 group-hover:scale-110 transition-transform duration-300">{stat.value}</span>
-              <div className="text-sm md:text-base text-text-secondary font-semibold leading-snug">
+            <div key={idx} className="bg-white p-8 rounded-[32px] shadow-sm flex flex-col items-center justify-center text-center border border-slate-50 hover:shadow-xl transition-all group">
+              <span className="block font-serif text-4xl md:text-5xl font-bold text-accent mb-3 group-hover:scale-110 transition-transform">{stat.value}</span>
+              <div className="text-sm md:text-base text-text-secondary font-semibold">
                 {stat.label} <span className="text-text-muted block font-normal">{stat.subLabel}</span>
               </div>
             </div>
