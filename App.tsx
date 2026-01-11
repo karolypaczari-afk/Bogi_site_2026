@@ -20,9 +20,8 @@ const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<View>('home');
   const [selectedPostId, setSelectedPostId] = useState<string | null>(null);
 
-  // Simple hash-based routing for GitHub Pages compatibility
   useEffect(() => {
-    const handleHashChange = () => {
+    const handleNavigation = () => {
       const hash = window.location.hash;
       if (hash.startsWith('#blog/')) {
         setCurrentView('post');
@@ -34,13 +33,13 @@ const App: React.FC = () => {
       } else {
         setCurrentView('home');
       }
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    window.addEventListener('hashchange', handleHashChange);
-    handleHashChange(); // Initial check
+    window.addEventListener('hashchange', handleNavigation);
+    handleNavigation(); // Initial check
 
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleNavigation);
   }, []);
 
   const renderContent = () => {
@@ -54,11 +53,11 @@ const App: React.FC = () => {
         return (
           <>
             <Hero />
-            <Features />
+            <div id="how"><Features /></div>
             <Insights />
-            <Services />
-            <Achievements />
-            <Timeline />
+            <div id="services"><Services /></div>
+            <div id="achievements"><Achievements /></div>
+            <div id="experience"><Timeline /></div>
             <Testimonials />
             <Certs />
             <Contact />

@@ -18,11 +18,19 @@ const Header: React.FC<HeaderProps> = ({ currentView }) => {
   const navLinks = [
     { label: 'Home', href: '#' },
     { label: 'About Me', href: '#about' },
+    { label: 'How I Help', href: '#how' },
+    { label: 'Services', href: '#services' },
+    { label: 'Results', href: '#achievements' },
+    { label: 'Experience', href: '#experience' },
     { label: 'Blog', href: '#blog' },
-    { label: 'How I Help', href: '#how', homeOnly: true },
-    { label: 'Results', href: '#achievements', homeOnly: true },
-    { label: 'Experience', href: '#experience', homeOnly: true },
   ];
+
+  const handleLinkClick = (href: string) => {
+    setIsMobileMenuOpen(false);
+    if (href.startsWith('#') && href.length > 1 && currentView !== 'home') {
+      window.location.href = '/' + href;
+    }
+  };
 
   return (
     <header className={`sticky top-0 z-[100] transition-all duration-300 ${isScrolled ? 'py-3 glass shadow-lg' : 'py-6 bg-white'}`}>
@@ -32,19 +40,17 @@ const Header: React.FC<HeaderProps> = ({ currentView }) => {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-10">
-          {navLinks.map((link) => {
-            if (link.homeOnly && currentView !== 'home') return null;
-            return (
-              <a 
-                key={link.label} 
-                href={link.href} 
-                className="text-[14px] font-semibold text-text-secondary hover:text-accent transition-all relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent after:transition-all hover:after:w-full"
-              >
-                {link.label}
-              </a>
-            );
-          })}
+        <nav className="hidden lg:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <a 
+              key={link.label} 
+              href={link.href}
+              onClick={() => handleLinkClick(link.href)}
+              className="text-[14px] font-semibold text-text-secondary hover:text-accent transition-all relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent after:transition-all hover:after:w-full"
+            >
+              {link.label}
+            </a>
+          ))}
           <a 
             href="#contact" 
             className="bg-accent hover:bg-accent-dark text-white px-7 py-3 rounded-xl font-bold transition-all transform hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/30 active:scale-95"
@@ -72,7 +78,7 @@ const Header: React.FC<HeaderProps> = ({ currentView }) => {
               key={link.label} 
               href={link.href} 
               className="text-2xl font-bold text-white hover:text-accent transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => handleLinkClick(link.href)}
             >
               {link.label}
             </a>
@@ -82,7 +88,7 @@ const Header: React.FC<HeaderProps> = ({ currentView }) => {
             className="bg-accent text-white w-full max-w-xs py-5 rounded-2xl font-bold text-xl mt-4"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            Book a Discussion
+            Contact
           </a>
         </div>
       </div>

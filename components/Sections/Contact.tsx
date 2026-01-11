@@ -1,7 +1,37 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 
 const Contact: React.FC = () => {
+  const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormState('submitting');
+    
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData);
+
+    try {
+      // Using Formspree as a reliable way to send emails from static sites
+      const response = await fetch('https://formspree.io/f/karolypaczari@gmail.com', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setFormState('success');
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setFormState('error');
+      }
+    } catch (err) {
+      setFormState('error');
+    }
+  };
+
   return (
     <section id="contact" className="py-24 bg-white relative">
       <div className="container mx-auto px-6">
@@ -35,23 +65,75 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="bg-white p-10 md:p-12 rounded-[40px] shadow-2xl">
-              <div className="text-center">
-                <div className="w-20 h-20 bg-accent-subtle text-accent rounded-3xl flex items-center justify-center text-3xl mx-auto mb-8">
-                  <i className="far fa-calendar-check"></i>
+              {formState === 'success' ? (
+                <div className="text-center py-10 animate-fadeIn">
+                  <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-4xl mx-auto mb-6">
+                    <i className="fas fa-check"></i>
+                  </div>
+                  <h3 className="text-2xl font-bold text-text-primary mb-2">Message Sent!</h3>
+                  <p className="text-text-muted mb-8">Thank you for reaching out. Bogi will get back to you shortly.</p>
+                  <button 
+                    onClick={() => setFormState('idle')}
+                    className="text-accent font-bold hover:underline"
+                  >
+                    Send another message
+                  </button>
                 </div>
-                <h3 className="text-2xl font-extrabold text-text-primary mb-4">Book a Discovery Call</h3>
-                <p className="text-text-muted mb-8 font-medium">
-                  A free 20-minute discussion to evaluate your process bottlenecks and identify immediate ROI opportunities.
-                </p>
-                <a 
-                  href="mailto:horvath.boglarka@hotmail.com?subject=Process%20Optimization%20Inquiry" 
-                  className="w-full inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-dark text-white px-8 py-5 rounded-2xl font-bold text-lg transition-all transform hover:-translate-y-1 shadow-xl shadow-accent/20"
-                >
-                  Schedule Your Free Call
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-                <p className="text-[11px] text-text-muted mt-6 uppercase tracking-widest font-bold opacity-60">Usually responds within 24 hours</p>
-              </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div className="text-center mb-8">
+                    <h3 className="text-2xl font-extrabold text-text-primary mb-2">Send a Message</h3>
+                    <p className="text-text-muted text-sm">Start your journey towards operational excellence.</p>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-[13px] font-bold text-text-muted uppercase tracking-wider mb-2">Full Name</label>
+                    <input 
+                      required
+                      name="name"
+                      type="text" 
+                      placeholder="John Doe"
+                      className="w-full px-6 py-4 rounded-2xl bg-bg-secondary border border-slate-100 focus:border-accent focus:ring-4 focus:ring-accent/5 outline-none transition-all"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-[13px] font-bold text-text-muted uppercase tracking-wider mb-2">Email Address</label>
+                    <input 
+                      required
+                      name="email"
+                      type="email" 
+                      placeholder="john@example.com"
+                      className="w-full px-6 py-4 rounded-2xl bg-bg-secondary border border-slate-100 focus:border-accent focus:ring-4 focus:ring-accent/5 outline-none transition-all"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-[13px] font-bold text-text-muted uppercase tracking-wider mb-2">Your Message</label>
+                    <textarea 
+                      required
+                      name="message"
+                      rows={4}
+                      placeholder="How can I help your organization?"
+                      className="w-full px-6 py-4 rounded-2xl bg-bg-secondary border border-slate-100 focus:border-accent focus:ring-4 focus:ring-accent/5 outline-none transition-all resize-none"
+                    ></textarea>
+                  </div>
+
+                  {formState === 'error' && (
+                    <p className="text-red-500 text-sm font-bold text-center">Something went wrong. Please try again or email directly.</p>
+                  )}
+
+                  <button 
+                    type="submit"
+                    disabled={formState === 'submitting'}
+                    className={`w-full bg-accent hover:bg-accent-dark text-white px-8 py-5 rounded-2xl font-bold text-lg transition-all transform hover:-translate-y-1 shadow-xl shadow-accent/20 flex items-center justify-center gap-3 ${formState === 'submitting' ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  >
+                    {formState === 'submitting' ? 'Sending...' : 'Send Message'}
+                    <i className="fas fa-paper-plane"></i>
+                  </button>
+                  <p className="text-[11px] text-text-muted mt-6 uppercase tracking-widest font-bold opacity-60 text-center">Responses usually within 24 hours</p>
+                </form>
+              )}
             </div>
           </div>
         </div>
