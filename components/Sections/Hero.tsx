@@ -69,8 +69,8 @@ const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               <div className="absolute -inset-4 border-2 border-accent/20 rounded-[50px] -z-10 transform translate-x-6 translate-y-6"></div>
               
               <div className="relative rounded-[45px] overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.15)] ring-8 ring-white">
-                <SmartImage 
-                  src="./bogi.png" 
+                <SmartImage
+                  src="/bogi.png"
                   alt="Boglarka Paczari-Horvath" 
                   fallbackPrompt="Professional corporate headshot of a confident woman with reddish-blonde hair, wearing a blue blazer and light blue shirt, green plant in soft focus background, high quality, 4k, photorealistic"
                   className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105 min-h-[500px]"
