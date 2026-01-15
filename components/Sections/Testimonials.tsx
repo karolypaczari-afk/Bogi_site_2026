@@ -3,46 +3,46 @@ import SmartImage from '../UI/SmartImage';
 
 const Testimonials: React.FC = () => {
   const testimonials = [
-    { 
-      text: "Relentlessly progressing against all odds on complex projects requiring coordination across departments.", 
-      author: "Miquel Herrero", 
-      role: "VP Global Standards, NTT Ltd.", 
-      image: "./miquel-herrero.png",
+    {
+      text: "Relentlessly progressing against all odds on complex projects requiring coordination across departments.",
+      author: "Miquel Herrero",
+      role: "VP Global Standards, NTT Ltd.",
+      image: "/miquel-herrero.png",
       prompt: "Professional headshot of a male corporate executive in a suit, confident smile, modern office background"
     },
-    { 
-      text: "Crucial during immense organizational change. Dedicated professional with clever techniques for process management and measurable benefits.", 
-      author: "Mark Shepherd", 
-      role: "Global Director, NTT Ltd.", 
-      image: "./mark-sheperd.png",
+    {
+      text: "Crucial during immense organizational change. Dedicated professional with clever techniques for process management and measurable benefits.",
+      author: "Mark Shepherd",
+      role: "Global Director, NTT Ltd.",
+      image: "/mark-sheperd.png",
       prompt: "Professional headshot of a senior male director in business casual attire, friendly expression"
     },
-    { 
-      text: "Energetic, positive, excellent BA and PM. Clear professional communication and a natural problem solver who brings clarity to chaos.", 
-      author: "Justin Strohmenger", 
-      role: "Principal IT Solutions Architect", 
-      image: "./justin-strohmenger.png",
+    {
+      text: "Energetic, positive, excellent BA and PM. Clear professional communication and a natural problem solver who brings clarity to chaos.",
+      author: "Justin Strohmenger",
+      role: "Principal IT Solutions Architect",
+      image: "/justin-strohmenger.png",
       prompt: "Professional portrait of a male IT architect, smart casual, tech office environment"
     },
-    { 
-      text: "Exceptional leadership, adept problem-solving. Can-do attitude and doesn't shy from challenges. A truly reliable partner for transformation.", 
-      author: "Saimah Shakeel", 
-      role: "Project/Program Management Specialist", 
-      image: "./saimah-shakeel.png",
+    {
+      text: "Exceptional leadership, adept problem-solving. Can-do attitude and doesn't shy from challenges. A truly reliable partner for transformation.",
+      author: "Saimah Shakeel",
+      role: "Project/Program Management Specialist",
+      image: "/saimah-shakeel.png",
       prompt: "Professional headshot of a female project manager, professional attire, confident smile"
     },
-    { 
-      text: "Patiently worked with globally dispersed SMEs, brokered stakeholder discussions. Attention to detail and organizational skills are second to none.", 
-      author: "Grace Chan", 
-      role: "Chief of Staff, NTT Ltd.", 
-      image: "./grace-chan.png",
+    {
+      text: "Patiently worked with globally dispersed SMEs, brokered stakeholder discussions. Attention to detail and organizational skills are second to none.",
+      author: "Grace Chan",
+      role: "Chief of Staff, NTT Ltd.",
+      image: "/grace-chan.png",
       prompt: "Professional portrait of a female Chief of Staff, elegant business wear, bright office background"
     },
-    { 
-      text: "Real team player, deeply collaborative, precise. The best from the BA sphere I've worked with in over a decade of process improvement.", 
-      author: "Peter Ujfalusi", 
-      role: "Process Design & Improvement, BT", 
-      image: "./peter-ujfalusi.png",
+    {
+      text: "Real team player, deeply collaborative, precise. The best from the BA sphere I've worked with in over a decade of process improvement.",
+      author: "Peter Ujfalusi",
+      role: "Process Design & Improvement, BT",
+      image: "/peter-ujfalusi.png",
       prompt: "Professional headshot of a male process improvement specialist, business shirt, neutral background"
     },
   ];

@@ -28,8 +28,8 @@ const AboutMe: React.FC = () => {
             {/* Image Column */}
             <div className="lg:col-span-5 relative sticky top-24">
               <div className="relative rounded-[40px] overflow-hidden shadow-2xl border-[8px] border-white">
-                <SmartImage 
-                  src="./image-1.png" 
+                <SmartImage
+                  src="/image-1.png"
                   alt="Boglarka Paczari-Horvath" 
                   fallbackPrompt="Professional portrait of a confident business woman with strawberry blonde hair wearing a grey blazer, soft natural lighting, outdoor background with trees, bokeh, 4k resolution"
                   className="w-full h-auto object-cover min-h-[600px]"
