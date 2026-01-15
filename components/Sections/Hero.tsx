@@ -7,10 +7,10 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
   const stats = [
-    { value: '€700k+', label: 'Documented', subLabel: 'Cost Savings' },
-    { value: '14+', label: 'Years of', subLabel: 'Expertise' },
-    { value: '10+', label: 'Professional', subLabel: 'Certifications' },
-    { value: '100%', label: 'Remote', subLabel: 'Operations' },
+    { value: '€700k+', label: 'Total Documented', subLabel: 'Cost Savings', icon: 'fa-chart-line' },
+    { value: '50%', label: 'API Reduction', subLabel: 'at S.W.I.F.T.', icon: 'fa-code-branch' },
+    { value: '15+ FTE', label: 'Equivalent Savings', subLabel: 'via Automation', icon: 'fa-robot' },
+    { value: '5+ Years', label: '100% Remote', subLabel: 'Global Teams', icon: 'fa-globe' },
   ];
 
   const clients = ['S.W.I.F.T.', 'NTT Ltd.', 'British Telecom', 'T-Systems'];
@@ -23,12 +23,19 @@ const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
           <div className="lg:col-span-7 order-2 lg:order-1 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 bg-accent-subtle border border-accent/10 text-accent px-5 py-2.5 rounded-full text-sm font-bold mb-10 shadow-sm">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-              </span>
-              Currently: Functional Lead at S.W.I.F.T.
+            {/* Availability Banner */}
+            <div className="inline-flex flex-col gap-3 mb-8">
+              <div className="inline-flex items-center gap-2 bg-green-50 border border-green-500/30 text-green-700 px-5 py-2.5 rounded-full text-sm font-bold shadow-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                Available for Contract/Interim Roles Globally
+              </div>
+              <div className="inline-flex items-center gap-2 bg-accent-subtle border border-accent/10 text-accent px-5 py-2.5 rounded-full text-sm font-bold shadow-sm">
+                <i className="fas fa-briefcase text-xs"></i>
+                Currently: Functional Lead at S.W.I.F.T.
+              </div>
             </div>
             
             <h1 className="font-serif text-5xl md:text-7xl lg:text-[80px] font-bold leading-[1] text-text-primary mb-8 tracking-tight">
@@ -36,9 +43,25 @@ const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               <span className="text-accent italic">Full Potential</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-text-secondary mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
-              Strategic Process Transformation Lead delivering <span className="text-text-primary font-bold border-b-2 border-accent/20">€700k+ in documented cost savings</span>. I merge tactical execution with high-level strategy to scale complex operations.
+            <p className="text-lg md:text-xl text-text-secondary mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
+              Certified ITIL, 6Sigma & Lean expert delivering <span className="text-text-primary font-bold border-b-2 border-accent/20">€700k+ in documented cost savings</span>. 14+ years transforming Telecom, FinTech & ICT operations with 5+ years leading 100% remote global teams.
             </p>
+
+            {/* Key Highlights for Recruiters */}
+            <div className="flex flex-wrap gap-3 mb-12 justify-center lg:justify-start">
+              <span className="bg-gradient-to-r from-accent to-accent-dark text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                <i className="fas fa-check-circle mr-2"></i>SAP S/4HANA
+              </span>
+              <span className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                <i className="fas fa-check-circle mr-2"></i>PEGA
+              </span>
+              <span className="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                <i className="fas fa-check-circle mr-2"></i>ServiceNow
+              </span>
+              <span className="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                <i className="fas fa-robot mr-2"></i>AI-Augmented
+              </span>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start mb-16">
               <button 
@@ -94,11 +117,15 @@ const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
 
         <div className="mt-24 grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, idx) => (
-            <div key={idx} className="bg-white p-8 rounded-[32px] shadow-sm flex flex-col items-center justify-center text-center border border-slate-50 hover:shadow-xl transition-all group">
-              <span className="block font-serif text-4xl md:text-5xl font-bold text-accent mb-3 group-hover:scale-110 transition-transform">{stat.value}</span>
-              <div className="text-sm md:text-base text-text-secondary font-semibold">
-                {stat.label} <span className="text-text-muted block font-normal">{stat.subLabel}</span>
+            <div key={idx} className="bg-gradient-to-br from-white to-bg-secondary p-8 rounded-[32px] shadow-md flex flex-col items-center justify-center text-center border-2 border-slate-100 hover:border-accent/30 hover:shadow-2xl transition-all group">
+              <div className="w-12 h-12 bg-accent/10 text-accent rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <i className={`fas ${stat.icon} text-xl`}></i>
               </div>
+              <span className="block font-serif text-3xl md:text-4xl font-bold text-text-primary mb-2 group-hover:text-accent transition-colors">{stat.value}</span>
+              <div className="text-xs md:text-sm text-text-secondary font-bold leading-tight">
+                {stat.label}
+              </div>
+              <div className="text-xs text-text-muted font-normal mt-1">{stat.subLabel}</div>
             </div>
           ))}
         </div>
