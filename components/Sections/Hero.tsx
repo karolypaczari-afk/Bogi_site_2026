@@ -48,7 +48,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 <i className="far fa-calendar-alt"></i>
                 Book a Free Consultation
               </button>
-              <a href="./Bogi_CV.pdf" target="_blank" rel="noopener noreferrer" className="bg-white hover:bg-bg-secondary text-text-primary px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 border-2 border-slate-100 transition-all shadow-sm">
+              <a href="/Bogi_CV.pdf" target="_blank" rel="noopener noreferrer" className="bg-white hover:bg-bg-secondary text-text-primary px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 border-2 border-slate-100 transition-all shadow-sm">
                 <i className="far fa-file-alt"></i>
                 View My Resume
               </a>
