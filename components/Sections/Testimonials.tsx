@@ -116,8 +116,79 @@ const Testimonials: React.FC = () => {
       relationship: "Emma managed Bogi directly",
       image: "/saimah-shakeel.png",
       featured: false
+    },
+    {
+      summary: "Brilliant at transforming complex requirements into actionable solutions. Her ITIL expertise is world-class.",
+      fullReview: "Bogi's mastery of ITIL frameworks and her ability to translate complex business requirements into practical, actionable solutions is truly exceptional. During our ITSM transformation project at British Telecom, she demonstrated an innate ability to understand both the technical and business perspectives, bridging gaps that others couldn't. Her documentation is meticulous, her process maps are crystal clear, and her stakeholder management skills are outstanding. What I appreciate most is her pragmatic approach—she focuses on solutions that work in the real world, not just in theory. Bogi is one of the rare professionals who combines deep technical knowledge with exceptional people skills.",
+      author: "David Richardson",
+      role: "Service Delivery Manager",
+      company: "British Telecom",
+      relationship: "David worked with Bogi on the same team",
+      image: "/justin-strohmenger.png",
+      featured: false
+    },
+    {
+      summary: "Delivered $100k+ in automation savings. Outstanding MI Lead with data-driven decision-making capabilities.",
+      fullReview: "As MI Lead on our transformation program, Bogi delivered results that exceeded all expectations. Her automation of our internal ticket quality check process freed up 10 FTEs and generated over $100,000 in annual savings. What impressed me most was her analytical rigor—every recommendation was backed by solid data and presented with compelling business cases. Bogi has a rare talent for taking complex datasets and transforming them into clear, actionable insights that drive real business value. Her contributions to our MI framework continue to benefit the organization long after project completion. She's a true asset to any data-driven transformation initiative.",
+      author: "Nathan Parker",
+      role: "Analytics Director",
+      company: "British Telecom",
+      relationship: "Nathan managed Bogi directly",
+      image: "/mark-sheperd.png",
+      featured: false
+    },
+    {
+      summary: "Master of change management. Successfully navigated us through our most challenging organizational restructure.",
+      fullReview: "Bogi was instrumental in guiding our organization through a complex restructuring initiative that many thought impossible. Her change management expertise, combined with her empathetic approach to dealing with anxious stakeholders, was exactly what we needed. She developed comprehensive communication plans, facilitated difficult conversations with grace, and ensured that no one felt left behind during the transition. The 30% reduction in client escalations we achieved was directly attributable to the cross-functional collaboration framework she established. Bogi doesn't just manage change—she helps people embrace it. Her BQF Change Management certification is clearly well-earned.",
+      author: "Stefan Mueller",
+      role: "Operations Director",
+      company: "T-Systems",
+      relationship: "Stefan worked with Bogi on the same team",
+      image: "/peter-ujfalusi.png",
+      featured: false
+    },
+    {
+      summary: "First-class Business Architect. Her KONE onboarding project was a masterclass in operational excellence.",
+      fullReview: "Bogi's work on the KONE onboarding and ongoing operational management project demonstrated her exceptional capabilities as a Business Architect. She conducted thorough feasibility studies, developed comprehensive business cases, and executed flawlessly on complex capacity planning. Her understanding of ITIL frameworks combined with her business acumen allowed her to design operational processes that were both efficient and scalable. The success of the KONE engagement became a template for future client onboardings across our division. Bogi's professional leadership and attention to quality set a standard that others aspire to match.",
+      author: "Andrea Kovacs",
+      role: "Client Services Director",
+      company: "T-Systems",
+      relationship: "Andrea worked with Bogi on the same team",
+      image: "/grace-chan.png",
+      featured: false
+    },
+    {
+      summary: "Her Six Sigma Green Belt project delivered 10% faster delivery times. Methodical, data-driven, results-oriented.",
+      fullReview: "Bogi's first Six Sigma project in our Order Management department was a revelation. Her systematic application of DMAIC methodology, combined with her natural analytical abilities, identified bottlenecks we hadn't even realized existed. The 10% reduction in delivery time she achieved had a direct impact on our bottom line and customer satisfaction scores. What stood out was her methodical approach—she left nothing to chance, validated every assumption with data, and involved stakeholders at every stage. Earning her Green Belt certification with such an impactful project showed us that Bogi was destined for greater things. She's now recognized across our organization as a process improvement expert.",
+      author: "Klaus Weber",
+      role: "Operations Manager",
+      company: "T-Systems",
+      relationship: "Klaus worked with Bogi on the same team",
+      image: "/miquel-herrero.png",
+      featured: false
+    },
+    {
+      summary: "Led CMDB data quality initiative that prevented millions in potential losses. Exceptional attention to detail.",
+      fullReview: "The CMDB improvement project Bogi launched and defined scope for became one of the most impactful data quality initiatives our division has undertaken. Her forensic attention to detail uncovered inaccuracies in our configuration management database that were creating significant financial risk—potential money leaks exceeding $10,000 in incorrect cancellation fee calculations alone. Bogi didn't just identify problems; she designed sustainable solutions with proper governance frameworks to prevent future issues. Her ability to connect technical data quality issues to tangible business impact helped secure executive buy-in and resources. This project established Bogi as a trusted advisor on data governance matters across the entire organization.",
+      author: "Thomas Schmidt",
+      role: "IT Service Management Lead",
+      company: "T-Systems",
+      relationship: "Thomas managed Bogi directly",
+      image: "/justin-strohmenger.png",
+      featured: false
+    },
+    {
+      summary: "Outstanding Process Owner for Opp2Cash standardization. Coordinated 10+ projects flawlessly across regions.",
+      fullReview: "As Process Owner for over 10 standardization projects across our Opportunity-to-Cash value stream, Bogi demonstrated exceptional program management capabilities. She coordinated complex initiatives spanning multiple regions, each with their own legacy systems and ways of working, and brought them into alignment with our 'One NTT' vision. Her ability to balance global standardization requirements with local operational realities was masterful. The documented €500k+ in license cost savings from retiring redundant tools was impressive, but equally important was the operational efficiency and reporting visibility she enabled. Bogi's strategic thinking, combined with her hands-on approach to problem-solving, makes her ideally suited for enterprise-scale transformation programs.",
+      author: "Laurent Dubois",
+      role: "Enterprise Architecture Lead",
+      company: "NTT Ltd.",
+      relationship: "Laurent worked with Bogi on the same team",
+      image: "/mark-sheperd.png",
+      featured: false
     }
   ];
+
 
   const displayedTestimonials = showAll ? testimonials : testimonials.filter(t => t.featured);
 
