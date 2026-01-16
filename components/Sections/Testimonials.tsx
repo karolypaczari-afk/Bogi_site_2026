@@ -13,7 +13,6 @@ interface Testimonial {
 }
 
 const Testimonials: React.FC = () => {
-  const [showAll, setShowAll] = useState(false);
   const [expandedId, setExpandedId] = useState<number | null>(null);
 
   const testimonials: Testimonial[] = [
@@ -190,7 +189,8 @@ const Testimonials: React.FC = () => {
   ];
 
 
-  const displayedTestimonials = showAll ? testimonials : testimonials.filter(t => t.featured);
+  // Show only top 6 featured recommendations
+  const displayedTestimonials = testimonials.filter(t => t.featured).slice(0, 6);
 
   return (
     <section id="references" className="py-24 bg-white">
@@ -201,7 +201,7 @@ const Testimonials: React.FC = () => {
             Trusted by <span className="text-accent italic">Global Leaders</span>
           </h2>
           <p className="text-text-secondary text-lg">
-            Verified recommendations from VPs, Directors, and Senior Leaders across S.W.I.F.T., NTT Ltd., and British Telecom.
+            Top 6 verified recommendations from VPs, Directors, and Senior Leaders across S.W.I.F.T., NTT Ltd., and British Telecom.
           </p>
         </div>
 
@@ -251,33 +251,17 @@ const Testimonials: React.FC = () => {
           ))}
         </div>
 
-        {!showAll && (
-          <div className="text-center">
-            <button
-              onClick={() => setShowAll(true)}
-              className="bg-accent hover:bg-accent-dark text-white px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 transition-all shadow-xl shadow-accent/40 transform hover:-translate-y-1.5 active:scale-95"
-            >
-              <i className="fas fa-plus-circle"></i>
-              View All {testimonials.length} Recommendations
-            </button>
-          </div>
-        )}
-
-        {showAll && (
-          <div className="text-center">
-            <button
-              onClick={() => {
-                setShowAll(false);
-                setExpandedId(null);
-                window.scrollTo({ top: document.getElementById('references')?.offsetTop || 0, behavior: 'smooth' });
-              }}
-              className="bg-white hover:bg-bg-secondary text-text-primary px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 border-2 border-slate-100 transition-all shadow-sm"
-            >
-              <i className="fas fa-chevron-up"></i>
-              Show Top 6 Only
-            </button>
-          </div>
-        )}
+        <div className="text-center">
+          <a
+            href="https://www.linkedin.com/in/boglarka-paczari-horvath/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 transition-all shadow-xl shadow-blue-600/40 transform hover:-translate-y-1.5 active:scale-95"
+          >
+            <i className="fab fa-linkedin text-2xl"></i>
+            View My 15+ Recommendations on LinkedIn
+          </a>
+        </div>
       </div>
     </section>
   );

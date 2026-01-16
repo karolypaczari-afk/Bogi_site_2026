@@ -8,7 +8,7 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
   const stats = [
     { value: '€700k+', label: 'Total Documented', subLabel: 'Cost Savings', icon: 'fa-chart-line' },
-    { value: '50%', label: 'API Reduction', subLabel: 'at S.W.I.F.T.', icon: 'fa-code-branch' },
+    { value: '20%', label: 'Productivity', subLabel: 'Improvement', icon: 'fa-rocket' },
     { value: '15+ FTE', label: 'Equivalent Savings', subLabel: 'via Automation', icon: 'fa-robot' },
     { value: '5+ Years', label: '100% Remote', subLabel: 'Global Teams', icon: 'fa-globe' },
   ];
@@ -24,17 +24,13 @@ const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           
           <div className="lg:col-span-7 order-2 lg:order-1 text-center lg:text-left">
             {/* Availability Banner */}
-            <div className="inline-flex flex-col gap-3 mb-8">
-              <div className="inline-flex items-center gap-2 bg-green-50 border border-green-500/30 text-green-700 px-5 py-2.5 rounded-full text-sm font-bold shadow-sm">
-                <span className="relative flex h-2 w-2">
+            <div className="inline-flex mb-10">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-500 text-green-700 px-6 py-3 rounded-full text-sm font-extrabold shadow-lg">
+                <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
                 </span>
-                Available for Contract/Interim Roles Globally
-              </div>
-              <div className="inline-flex items-center gap-2 bg-accent-subtle border border-accent/10 text-accent px-5 py-2.5 rounded-full text-sm font-bold shadow-sm">
-                <i className="fas fa-briefcase text-xs"></i>
-                Currently: Functional Lead at S.W.I.F.T.
+                Available for Senior Business Analyst / Transformation Lead / Process Optimization Expert Roles - 100% Remote
               </div>
             </div>
             
@@ -55,26 +51,23 @@ const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               <span className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
                 <i className="fas fa-check-circle mr-2"></i>PEGA
               </span>
-              <span className="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
-                <i className="fas fa-check-circle mr-2"></i>ServiceNow
-              </span>
               <span className="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
                 <i className="fas fa-robot mr-2"></i>AI-Augmented
               </span>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start mb-16">
-              <button 
+              <a href="/Bogi_CV.pdf" target="_blank" rel="noopener noreferrer" className="bg-accent hover:bg-accent-dark text-white px-10 py-5 rounded-2xl font-extrabold text-xl inline-flex items-center justify-center gap-3 transition-all shadow-xl shadow-accent/40 transform hover:-translate-y-1.5 active:scale-95">
+                <i className="far fa-file-alt text-2xl"></i>
+                View My Resume
+              </a>
+              <button
                 onClick={onOpenBooking}
-                className="bg-accent hover:bg-accent-dark text-white px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 transition-all shadow-xl shadow-accent/40 transform hover:-translate-y-1.5 active:scale-95"
+                className="bg-white hover:bg-bg-secondary text-text-primary px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 border-2 border-slate-100 transition-all shadow-sm"
               >
                 <i className="far fa-calendar-alt"></i>
                 Book a Free Consultation
               </button>
-              <a href="/Bogi_CV.pdf" target="_blank" rel="noopener noreferrer" className="bg-white hover:bg-bg-secondary text-text-primary px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 border-2 border-slate-100 transition-all shadow-sm">
-                <i className="far fa-file-alt"></i>
-                View My Resume
-              </a>
             </div>
 
             <div className="flex flex-col gap-4 items-center lg:items-start opacity-70">

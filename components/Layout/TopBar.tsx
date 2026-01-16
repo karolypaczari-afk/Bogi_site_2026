@@ -14,11 +14,17 @@ const TopBar: React.FC = () => {
             <span>horvath.boglarka@hotmail.com</span>
           </a>
         </div>
-        <div className="flex items-center gap-6">
-          <span className="hidden md:inline text-slate-500">Available for Global Projects</span>
-          <a href="./Bogi_CV.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-accent-light transition-colors">
+        <div className="flex items-center gap-4">
+          <span className="hidden lg:inline text-green-400 font-bold flex items-center gap-2">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
+            </span>
+            Available for Senior BA / Transformation Lead / Process Optimization Expert Roles - 100% Remote
+          </span>
+          <a href="/Bogi_CV.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-accent hover:bg-accent-dark text-white px-4 py-2 rounded-lg font-bold transition-all shadow-md hover:shadow-lg">
             <i className="far fa-file-alt"></i>
-            <span>Resume (PDF)</span>
+            <span>View Resume</span>
           </a>
         </div>
       </div>

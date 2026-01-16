@@ -4,11 +4,11 @@ import React from 'react';
 const Achievements: React.FC = () => {
   const achievements = [
     { icon: 'fa-euro-sign', title: '€700k+ Documented Savings', desc: 'Aggregated savings across license optimization, automation ROI, and process waste elimination.' },
-    { icon: 'fa-code-branch', title: '50% API Reduction', desc: 'Currently consolidating complex E-form endpoints at S.W.I.F.T. to improve system reliability.' },
-    { icon: 'fa-bolt', title: '20% Efficiency Gain', desc: 'Average throughput increase for order fulfillment teams through lean workflow redesign.' },
+    { icon: 'fa-bolt', title: '20% Productivity Improvement', desc: 'Average throughput increase for order fulfillment teams through lean workflow redesign and SAP S/4HANA to PEGA migration.' },
     { icon: 'fa-users-cog', title: '15+ FTE Capacity Created', desc: 'Automated ticket quality workflows, freeing up high-value specialists for strategic work.' },
     { icon: 'fa-chart-pie', title: '50% Lower Incident Volume', desc: 'Eliminated "hung-line" bottlenecks at BT, significantly reducing operational firefighting.' },
     { icon: 'fa-user-check', title: '21% Higher Tool Adoption', desc: 'Led user-centric change management for PEGA deployments, ensuring digital tool ROI.' },
+    { icon: 'fa-globe', title: '5+ Years Remote Leadership', desc: 'Successfully leading global teams across 12 time zones with 100% remote operations, driving cultural change and process adherence.' },
   ];
 
   return (
