@@ -1,0 +1,29 @@
+{
+  "name": "bogihorvath-email-api",
+  "version": "1.0.0",
+  "description": "Email API backend for bogihorvath.com using Hostinger SMTP",
+  "main": "send-email.js",
+  "scripts": {
+    "start": "node send-email.js",
+    "dev": "nodemon send-email.js",
+    "test": "node test-email.js"
+  },
+  "keywords": [
+    "email",
+    "smtp",
+    "hostinger",
+    "api"
+  ],
+  "author": "Boglarka Paczari Horvath",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
