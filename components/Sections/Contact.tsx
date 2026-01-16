@@ -14,7 +14,7 @@ const Contact: React.FC = () => {
         ...data,
         _subject: `New Contact Message from ${data.name}`,
         _template: 'table',
-        _cc: 'karolypaczari@gmail.com,hbogica1987@gmail.com',
+        _cc: 'karolypaczari@gmail.com,hbogica1987@gmail.com,info@bogihorvath.com',
         _replyto: data.email
     };
 
