@@ -17,11 +17,13 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
     
-    // Add a subject line for the email
+    // Add a subject line for the email and CC karolypaczari@gmail.com
     const submissionData = {
       ...data,
       _subject: `New Consultation Request from ${data.name}`,
-      _template: 'table'
+      _template: 'table',
+      _cc: 'karolypaczari@gmail.com',
+      _replyto: data.email
     };
 
     try {
