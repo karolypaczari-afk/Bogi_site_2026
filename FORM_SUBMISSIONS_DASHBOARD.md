@@ -10,6 +10,7 @@ All form submissions from https://bogihorvath.com are sent to the following addr
 ### **CC Recipients:**
 - `karolypaczari@gmail.com` (receives copy of all submissions)
 - `hbogica1987@gmail.com` (receives copy of all submissions)
+- `info@bogihorvath.com` (receives copy of all submissions)
 
 ### **Reply-To:**
 - Sender's email address (allows direct replies to inquirers)
@@ -77,7 +78,8 @@ After deploying to https://bogihorvath.com, verify:
 - [ ] Check `horvath.boglarka@hotmail.com` inbox
 - [ ] Check `karolypaczari@gmail.com` inbox
 - [ ] Check `hbogica1987@gmail.com` inbox
-- [ ] Verify all 3 emails received identical copies
+- [ ] Check `info@bogihorvath.com` inbox
+- [ ] Verify all 4 emails received identical copies
 
 ### **Dashboard Access Test:**
 - [ ] Visit dashboard URL
@@ -100,7 +102,7 @@ After deploying to https://bogihorvath.com, verify:
 {
   _subject: "New Contact Message from [Name]",
   _template: "table",
-  _cc: "karolypaczari@gmail.com,hbogica1987@gmail.com",
+  _cc: "karolypaczari@gmail.com,hbogica1987@gmail.com,info@bogihorvath.com",
   _replyto: sender.email,
   _captcha: false
 }
@@ -115,7 +117,7 @@ Content-Type: application/json
 ### **Email Format:**
 - **From:** noreply@formsubmit.co
 - **To:** horvath.boglarka@hotmail.com
-- **CC:** karolypaczari@gmail.com, hbogica1987@gmail.com
+- **CC:** karolypaczari@gmail.com, hbogica1987@gmail.com, info@bogihorvath.com
 - **Reply-To:** [Sender's Email]
 - **Format:** Table layout with all form fields
 
@@ -123,11 +125,11 @@ Content-Type: application/json
 
 ## 🚨 Important Notes
 
-1. **Verification Required:** The first submission to each form requires email verification. Check all 3 inboxes for verification emails from FormSubmit.co.
+1. **Verification Required:** The first submission to each form requires email verification. Check all 4 inboxes for verification emails from FormSubmit.co.
 
 2. **Dashboard Login:** Uses "magic link" authentication - no password needed. A new link is sent to your email each time you want to access the dashboard.
 
-3. **Spam Folder:** If you don't receive form submissions, check spam/junk folders for all 3 email addresses.
+3. **Spam Folder:** If you don't receive form submissions, check spam/junk folders for all 4 email addresses.
 
 4. **Rate Limiting:** FormSubmit.co has rate limits. If you receive many submissions in a short time, some may be delayed.
 
@@ -140,7 +142,7 @@ Content-Type: application/json
 If you experience issues with form submissions:
 
 1. **Check FormSubmit Status:** https://formsubmit.co/status
-2. **Verify Email Configuration:** Ensure all 3 email addresses are valid and can receive emails
+2. **Verify Email Configuration:** Ensure all 4 email addresses are valid and can receive emails
 3. **Test Forms:** Submit test messages and track delivery
 4. **Alternative:** Use `mailto:` links as fallback
 
@@ -156,4 +158,4 @@ If you experience issues with form submissions:
 ---
 
 **Last Updated:** 2026-01-16
-**Version:** 2.0 (Added hbogica1987@gmail.com CC)
+**Version:** 2.1 (Added info@bogihorvath.com CC - now 4 total recipients)
