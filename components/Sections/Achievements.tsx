@@ -8,7 +8,7 @@ const Achievements: React.FC = () => {
     { icon: 'fa-users-cog', title: '15+ FTE Capacity Created', desc: 'Automated ticket quality workflows, freeing up high-value specialists for strategic work.' },
     { icon: 'fa-chart-pie', title: '50% Lower Incident Volume', desc: 'Eliminated "hung-line" bottlenecks at BT, significantly reducing operational firefighting.' },
     { icon: 'fa-user-check', title: '21% Higher Tool Adoption', desc: 'Led user-centric change management for PEGA deployments, ensuring digital tool ROI.' },
-    { icon: 'fa-globe', title: '5+ Years Remote Leadership', desc: 'Successfully leading global teams across 12 time zones with 100% remote operations, driving cultural change and process adherence.' },
+    { icon: 'fa-globe', title: '5+ Years Remote Leadership', desc: 'Successfully leading distributed teams with 100% remote operations, driving cultural change and process adherence across global organizations.' },
   ];
 
   return (

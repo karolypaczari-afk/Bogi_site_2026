@@ -23,7 +23,7 @@ const Testimonials: React.FC = () => {
       role: "VP Global Standards",
       company: "NTT Ltd.",
       relationship: "Miquel managed Bogi directly",
-      image: "/miquel-herrero.png",
+      image: "/placeholder-m.svg",
       featured: true
     },
     {
@@ -83,7 +83,7 @@ const Testimonials: React.FC = () => {
       role: "IT Program Director",
       company: "S.W.I.F.T.",
       relationship: "Marcus worked with Bogi on the same team",
-      image: "/miquel-herrero.png",
+      image: "/placeholder-m.svg",
       featured: false
     },
     {
@@ -163,7 +163,7 @@ const Testimonials: React.FC = () => {
       role: "Operations Manager",
       company: "T-Systems",
       relationship: "Klaus worked with Bogi on the same team",
-      image: "/miquel-herrero.png",
+      image: "/placeholder-m.svg",
       featured: false
     },
     {

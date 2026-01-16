@@ -6,37 +6,73 @@ const Skills: React.FC = () => {
       title: 'ERP & Workflow Platforms',
       icon: 'fa-server',
       color: 'from-blue-500 to-blue-600',
-      skills: ['SAP S/4HANA', 'PEGA', 'ServiceNow', 'Salesforce']
+      skills: [
+        { name: 'SAP S/4HANA', highlight: true },
+        { name: 'PEGA', highlight: true },
+        { name: 'ServiceNow' },
+        { name: 'Salesforce' }
+      ]
     },
     {
       title: 'Process & Design Tools',
       icon: 'fa-project-diagram',
       color: 'from-purple-500 to-purple-600',
-      skills: ['ARIS', 'Visio', 'Miro', 'Mural', 'Confluence', 'Lucidchart']
+      skills: [
+        { name: 'ARIS' },
+        { name: 'Visio' },
+        { name: 'Miro' },
+        { name: 'Mural' },
+        { name: 'Confluence' },
+        { name: 'Lucidchart' }
+      ]
     },
     {
       title: 'Project & Agile Management',
       icon: 'fa-tasks',
       color: 'from-green-500 to-green-600',
-      skills: ['Jira', 'Confluence', 'MS Project', 'Azure DevOps']
+      skills: [
+        { name: 'Jira' },
+        { name: 'Confluence' },
+        { name: 'MS Project' },
+        { name: 'Azure DevOps' }
+      ]
     },
     {
       title: 'Analytics & Business Intelligence',
       icon: 'fa-chart-bar',
       color: 'from-orange-500 to-orange-600',
-      skills: ['Power BI', 'Qlik', 'Excel (Advanced)', 'Minitab', 'Tableau']
+      skills: [
+        { name: 'Power BI' },
+        { name: 'Qlik' },
+        { name: 'Excel (Advanced)' },
+        { name: 'Minitab' },
+        { name: 'Tableau' }
+      ]
     },
     {
       title: 'AI & Productivity',
       icon: 'fa-robot',
       color: 'from-accent to-accent-dark',
-      skills: ['Microsoft Copilot', 'ChatGPT', 'Claude', 'Microsoft 365', 'Gemini']
+      skills: [
+        { name: 'Microsoft Copilot', highlight: true },
+        { name: 'ChatGPT', highlight: true },
+        { name: 'Claude', highlight: true },
+        { name: 'Microsoft 365' },
+        { name: 'Gemini' }
+      ]
     },
     {
       title: 'Methodologies & Frameworks',
       icon: 'fa-book',
       color: 'from-red-500 to-red-600',
-      skills: ['Six Sigma', 'Lean', 'Agile', 'ITIL', 'PRINCE2', 'DMAIC']
+      skills: [
+        { name: 'Six Sigma', highlight: true },
+        { name: 'Lean', highlight: true },
+        { name: 'Agile' },
+        { name: 'ITIL' },
+        { name: 'PRINCE2' },
+        { name: 'DMAIC' }
+      ]
     }
   ];
 
@@ -72,9 +108,14 @@ const Skills: React.FC = () => {
                 {category.skills.map((skill, skillIdx) => (
                   <span
                     key={skillIdx}
-                    className="bg-white px-4 py-2 rounded-full text-xs font-bold text-text-secondary border border-slate-200 hover:border-accent hover:text-accent hover:shadow-md transition-all"
+                    className={`px-4 py-2 rounded-full text-xs font-bold border transition-all ${
+                      skill.highlight
+                        ? 'bg-gradient-to-r from-accent/10 to-accent/5 text-accent border-accent/30 hover:border-accent hover:shadow-lg'
+                        : 'bg-white text-text-secondary border-slate-200 hover:border-accent hover:text-accent hover:shadow-md'
+                    }`}
                   >
-                    {skill}
+                    {skill.highlight && <i className="fas fa-star text-[8px] mr-1.5"></i>}
+                    {skill.name}
                   </span>
                 ))}
               </div>
@@ -87,7 +128,7 @@ const Skills: React.FC = () => {
           <div className="bg-gradient-to-br from-green-50 to-white p-6 rounded-3xl border-2 border-green-200 text-center">
             <i className="fas fa-globe text-3xl text-green-600 mb-3"></i>
             <h4 className="font-bold text-text-primary mb-2">Global Remote Expert</h4>
-            <p className="text-sm text-text-secondary">5+ years leading distributed teams across 12 time zones</p>
+            <p className="text-sm text-text-secondary">5+ years leading distributed teams with 100% remote operations</p>
           </div>
 
           <div className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-3xl border-2 border-blue-200 text-center">
