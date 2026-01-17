@@ -6,38 +6,47 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormState('submitting');
-    
+
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
-    
+
+    // Get access key from environment variable or form data
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || data.access_key as string;
+
+    // Build submission data for Web3Forms
     const submissionData = {
-        ...data,
-        _subject: `New Contact Message from ${data.name}`,
-        _template: 'table',
-        _cc: 'karolypaczari@gmail.com,hbogica1987@gmail.com,info@bogihorvath.com',
-        _replyto: data.email
+        access_key: accessKey,
+        name: data.name,
+        email: data.email,
+        message: data.message,
+        subject: `New Contact Message from ${data.name}`,
+        cc: 'karolypaczari@gmail.com,hbogica1987@gmail.com,info@bogihorvath.com',
+        from_name: 'Bogi Horvath Website',
+        replyto: data.email
     };
 
     try {
-      // Using FormSubmit.co for reliable static site email delivery
-      // Requires one-time activation on first submission
-      const response = await fetch('https://formsubmit.co/ajax/horvath.boglarka@hotmail.com', {
+      // Using Web3Forms - Free, reliable, no verification needed
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 
+        headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
         body: JSON.stringify(submissionData)
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (result.success) {
         setFormState('success');
         (e.target as HTMLFormElement).reset();
       } else {
+        console.error('Web3Forms error:', result);
         setFormState('error');
       }
     } catch (err) {
-      console.error(err);
+      console.error('Form submission error:', err);
       setFormState('error');
     }
   };
@@ -97,8 +106,9 @@ const Contact: React.FC = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <input type="hidden" name="_captcha" value="false" />
-                  
+                  {/* Access key will be added via JavaScript from env var or this hidden field */}
+                  <input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || ''} />
+
                   <div className="text-center mb-8">
                     <h3 className="text-2xl font-extrabold text-text-primary mb-2">Send a Message</h3>
                     <p className="text-text-muted text-sm">Start your journey towards operational excellence.</p>
