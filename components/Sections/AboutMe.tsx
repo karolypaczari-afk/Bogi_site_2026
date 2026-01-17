@@ -13,9 +13,25 @@ const AboutMe: React.FC = () => {
             <h1 className="font-serif text-5xl md:text-6xl font-bold text-text-primary mb-8">
               Hi, I'm <span className="text-accent">Bogi</span>.
             </h1>
-            <p className="text-xl text-text-secondary leading-relaxed font-medium">
+            <p className="text-xl text-text-secondary leading-relaxed font-medium mb-10">
               A Business Improvement Specialist with over 14 years of experience turning complex operational challenges into streamlined, efficient realities.
             </p>
+
+            <div className="flex flex-col sm:flex-row gap-5 justify-center">
+              <a href="/Bogi_CV.pdf" target="_blank" rel="noopener noreferrer" className="bg-accent hover:bg-accent-dark text-white px-10 py-5 rounded-2xl font-extrabold text-xl inline-flex items-center justify-center gap-3 transition-all shadow-xl shadow-accent/40 transform hover:-translate-y-1.5 active:scale-95">
+                <i className="far fa-file-alt text-2xl"></i>
+                View My Resume
+              </a>
+              <a
+                href="https://www.linkedin.com/in/boglarka-paczari-horvath/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white hover:bg-bg-secondary text-text-primary px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 border-2 border-slate-100 transition-all shadow-sm"
+              >
+                <i className="fab fa-linkedin"></i>
+                Connect with me on LinkedIn
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -116,9 +132,21 @@ const AboutMe: React.FC = () => {
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
             Whether you need a full process audit or a strategic partner for a digital migration, I am here to help.
           </p>
-          <a href="#contact" className="bg-white text-accent px-10 py-4 rounded-2xl font-bold text-lg hover:bg-slate-100 transition-all inline-flex items-center gap-2 shadow-xl">
-            Let's Collaborate <i className="fas fa-arrow-right"></i>
-          </a>
+          <div className="flex flex-col sm:flex-row gap-5 justify-center">
+            <a href="/Bogi_CV.pdf" target="_blank" rel="noopener noreferrer" className="bg-white text-accent hover:bg-slate-100 px-10 py-5 rounded-2xl font-extrabold text-xl inline-flex items-center justify-center gap-3 transition-all shadow-xl transform hover:-translate-y-1.5 active:scale-95">
+              <i className="far fa-file-alt text-2xl"></i>
+              View My Resume
+            </a>
+            <a
+              href="https://www.linkedin.com/in/boglarka-paczari-horvath/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white/10 hover:bg-white/20 text-white px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 border-2 border-white/30 transition-all shadow-sm"
+            >
+              <i className="fab fa-linkedin"></i>
+              Connect with me on LinkedIn
+            </a>
+          </div>
         </div>
       </section>
     </div>
