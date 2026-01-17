@@ -10,8 +10,8 @@ const Contact: React.FC = () => {
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
 
-    // Get access key from environment variable or form data
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || data.access_key as string;
+    // Web3Forms access key (safe to hardcode - public API key)
+    const accessKey = '0909516c-58b1-4bb3-80f4-e6f68f1e68ac';
 
     // Build submission data for Web3Forms
     const submissionData = {
@@ -106,8 +106,8 @@ const Contact: React.FC = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  {/* Access key will be added via JavaScript from env var or this hidden field */}
-                  <input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || ''} />
+                  {/* Web3Forms access key - hardcoded for reliability */}
+                  <input type="hidden" name="access_key" value="0909516c-58b1-4bb3-80f4-e6f68f1e68ac" />
 
                   <div className="text-center mb-8">
                     <h3 className="text-2xl font-extrabold text-text-primary mb-2">Send a Message</h3>
