@@ -80,7 +80,7 @@ const App: React.FC = () => {
       default:
         return (
           <>
-            <Hero onOpenBooking={() => setIsBookingOpen(true)} />
+            <Hero />
             <div id="how"><Features /></div>
             <div id="services"><Services /></div>
             <Skills />

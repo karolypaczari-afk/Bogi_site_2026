@@ -1,11 +1,7 @@
 import React from 'react';
 import SmartImage from '../UI/SmartImage';
 
-interface HeroProps {
-  onOpenBooking?: () => void;
-}
-
-const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
+const Hero: React.FC = () => {
   const stats = [
     { value: '€700k+', label: 'Total Documented', subLabel: 'Cost Savings', icon: 'fa-chart-line' },
     { value: '20%', label: 'Productivity', subLabel: 'Improvement', icon: 'fa-rocket' },
@@ -61,13 +57,15 @@ const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 <i className="far fa-file-alt text-2xl"></i>
                 View My Resume
               </a>
-              <button
-                onClick={onOpenBooking}
+              <a
+                href="https://www.linkedin.com/in/boglarka-paczari-horvath/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white hover:bg-bg-secondary text-text-primary px-10 py-5 rounded-2xl font-extrabold text-lg inline-flex items-center justify-center gap-3 border-2 border-slate-100 transition-all shadow-sm"
               >
-                <i className="far fa-calendar-alt"></i>
-                Book a Free Consultation
-              </button>
+                <i className="fab fa-linkedin"></i>
+                Connect with me on LinkedIn
+              </a>
             </div>
 
             <div className="flex flex-col gap-4 items-center lg:items-start opacity-70">
