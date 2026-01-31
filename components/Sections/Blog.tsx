@@ -1,6 +1,8 @@
 import React from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import SmartImage from '../UI/SmartImage';
 import ReadingProgress from '../UI/ReadingProgress';
+import AnimatedSection, { StaggerContainer, StaggerItem } from '../Motion/AnimatedSection';
 
 interface BlogPost {
   id: string;
@@ -178,135 +180,213 @@ const Blog: React.FC<{ postId?: string | null }> = ({ postId }) => {
 
   if (postId && selectedPost) {
     return (
-      <>
-        <ReadingProgress />
-        <section className="py-24 bg-white animate-fadeIn min-h-screen">
-          <div className="container mx-auto px-6 max-w-4xl">
-            <a href="#blog" className="inline-flex items-center gap-2 text-accent font-bold mb-10 hover:gap-3 transition-all">
-              <i className="fas fa-arrow-left"></i> Back to All Articles
-            </a>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={selectedPost.id}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.5 }}
+        >
+          <ReadingProgress />
+          <section className="py-24 bg-white min-h-screen">
+            <div className="container mx-auto px-6 max-w-4xl">
+              <motion.a
+                href="#blog"
+                className="inline-flex items-center gap-2 text-accent font-bold mb-10 hover:gap-3 transition-all"
+                whileHover={{ gap: '1rem' }}
+              >
+                <i className="fas fa-arrow-left"></i> Back to All Articles
+              </motion.a>
 
-            <div className="mb-12">
-              <span className="text-accent font-bold uppercase tracking-widest text-xs mb-4 block">{selectedPost.category} — {selectedPost.date}</span>
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-8 tracking-tight leading-tight">
-                {selectedPost.title}
-              </h1>
-            </div>
+              <div className="mb-12">
+                <motion.span
+                  className="text-accent font-bold uppercase tracking-widest text-xs mb-4 block"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  {selectedPost.category} — {selectedPost.date}
+                </motion.span>
+                <motion.h1
+                  className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-8 tracking-tight leading-tight"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  {selectedPost.title}
+                </motion.h1>
+              </div>
 
-            {/* Cover Image */}
-            <div className="w-full h-[300px] md:h-[500px] rounded-3xl overflow-hidden mb-12 shadow-2xl">
-              <SmartImage
-                src={selectedPost.coverImage}
-                alt={selectedPost.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
+              {/* Cover Image */}
+              <motion.div
+                className="w-full h-[300px] md:h-[500px] rounded-3xl overflow-hidden mb-12 shadow-2xl"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+              >
+                <SmartImage
+                  src={selectedPost.coverImage}
+                  alt={selectedPost.title}
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
 
-            {/* Quick Summary Box */}
-            <div className="bg-gradient-to-r from-accent-subtle to-blue-50 p-8 md:p-10 rounded-3xl border-l-4 border-accent mb-12 shadow-lg">
-              <h3 className="text-accent font-bold uppercase tracking-widest text-xs mb-4">Executive Summary</h3>
-              <p className="text-lg md:text-xl font-medium text-text-primary leading-relaxed">
-                {selectedPost.summary}
-              </p>
-            </div>
+              {/* Quick Summary Box */}
+              <motion.div
+                className="bg-gradient-to-r from-accent-subtle to-blue-50 p-8 md:p-10 rounded-3xl border-l-4 border-accent mb-12 shadow-lg"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-accent font-bold uppercase tracking-widest text-xs mb-4">Executive Summary</h3>
+                <p className="text-lg md:text-xl font-medium text-text-primary leading-relaxed">
+                  {selectedPost.summary}
+                </p>
+              </motion.div>
 
-            {/* Article Content with optimized readability */}
-            <div className="prose prose-lg lg:prose-xl max-w-none space-y-6 text-text-secondary leading-loose">
-              {selectedPost.content.map((line, i) => {
-                if (line.startsWith('# ')) {
+              {/* Article Content */}
+              <div className="prose prose-lg lg:prose-xl max-w-none space-y-6 text-text-secondary leading-loose">
+                {selectedPost.content.map((line, i) => {
+                  if (line.startsWith('# ')) {
+                    return (
+                      <AnimatedSection key={i} animation="fadeUp">
+                        <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-primary mt-16 mb-8 first:mt-0">
+                          {line.replace('# ', '')}
+                        </h2>
+                      </AnimatedSection>
+                    );
+                  }
+                  if (line.startsWith('## ')) {
+                    return (
+                      <AnimatedSection key={i} animation="fadeUp">
+                        <h3 className="font-serif text-2xl md:text-3xl font-bold text-text-primary mt-12 mb-6">
+                          {line.replace('## ', '')}
+                        </h3>
+                      </AnimatedSection>
+                    );
+                  }
+                  if (line.startsWith('• ')) {
+                    return (
+                      <AnimatedSection key={i} animation="fadeUp" className="flex gap-4 items-start pl-4 my-4">
+                        <motion.span
+                          className="text-accent mt-2 text-sm flex-shrink-0"
+                          whileInView={{ scale: [1, 1.5, 1] }}
+                        >
+                          <i className="fas fa-circle"></i>
+                        </motion.span>
+                        <p className="m-0 text-lg">{line.replace('• ', '')}</p>
+                      </AnimatedSection>
+                    );
+                  }
                   return (
-                    <h2 key={i} className="font-serif text-3xl md:text-4xl font-bold text-text-primary mt-16 mb-8 first:mt-0">
-                      {line.replace('# ', '')}
-                    </h2>
+                    <AnimatedSection key={i} animation="fadeUp">
+                      <p className="text-lg md:text-xl leading-relaxed">{line}</p>
+                    </AnimatedSection>
                   );
-                }
-                if (line.startsWith('## ')) {
-                  return (
-                    <h3 key={i} className="font-serif text-2xl md:text-3xl font-bold text-text-primary mt-12 mb-6">
-                      {line.replace('## ', '')}
-                    </h3>
-                  );
-                }
-                if (line.startsWith('• ')) {
-                  return (
-                    <div key={i} className="flex gap-4 items-start pl-4 my-4">
-                      <span className="text-accent mt-2 text-sm flex-shrink-0"><i className="fas fa-circle"></i></span>
-                      <p className="m-0 text-lg">{line.replace('• ', '')}</p>
-                    </div>
-                  );
-                }
-                return <p key={i} className="text-lg md:text-xl leading-relaxed">{line}</p>;
-              })}
-            </div>
+                })}
+              </div>
 
-            {/* Author Bio Footer */}
-            <div className="mt-20 pt-12 border-t-2 border-slate-100 flex flex-col md:flex-row justify-between items-center gap-8 bg-gradient-to-r from-bg-secondary to-white p-10 rounded-3xl">
-               <div className="flex items-center gap-4">
-                 <div className="w-20 h-20 rounded-full overflow-hidden bg-accent-subtle shadow-lg ring-4 ring-white">
+              {/* Author Bio Footer */}
+              <AnimatedSection animation="scaleIn" className="mt-20 pt-12 border-t-2 border-slate-100 flex flex-col md:flex-row justify-between items-center gap-8 bg-gradient-to-r from-bg-secondary to-white p-10 rounded-3xl">
+                <div className="flex items-center gap-4">
+                  <motion.div
+                    className="w-20 h-20 rounded-full overflow-hidden bg-accent-subtle shadow-lg ring-4 ring-white"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                  >
                     <SmartImage
                       src="/image.png"
                       alt="Bogi"
                       className="w-full h-full object-cover"
                     />
-                 </div>
-                 <div>
-                   <div className="font-bold text-text-primary text-xl">Bogi Horvath</div>
-                   <div className="text-sm text-text-muted font-medium">Strategic Transformation Expert</div>
-                 </div>
-               </div>
-               <a href="#contact" className="bg-accent text-white px-10 py-5 rounded-2xl font-extrabold hover:bg-accent-dark transition-all shadow-lg shadow-accent/30 hover:-translate-y-1">
-                 Discuss This Article
-               </a>
+                  </motion.div>
+                  <div>
+                    <div className="font-bold text-text-primary text-xl">Bogi Horvath</div>
+                    <div className="text-sm text-text-muted font-medium">Strategic Transformation Expert</div>
+                  </div>
+                </div>
+                <motion.a
+                  href="#contact"
+                  className="bg-accent text-white px-10 py-5 rounded-2xl font-extrabold shadow-lg shadow-accent/30"
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Discuss This Article
+                </motion.a>
+              </AnimatedSection>
             </div>
-          </div>
-        </section>
-      </>
+          </section>
+        </motion.div>
+      </AnimatePresence>
     );
   }
 
   return (
-    <section id="blog" className="py-24 bg-bg-secondary min-h-screen">
+    <section id="blog" className="py-24 bg-bg-secondary min-h-screen overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="text-accent font-bold uppercase tracking-widest text-xs mb-4 block">Insights & Case Studies</span>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-6">
-            Thoughts from the <span className="italic text-accent">Field</span>
-          </h2>
-          <p className="text-text-secondary text-lg md:text-xl">Real-world case studies and insights into process optimization, digital transformation, and strategic leadership.</p>
-        </div>
+        <AnimatedSection animation="fadeUp" delay={0.1}>
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <span className="text-accent font-bold uppercase tracking-widest text-xs mb-4 block">Insights & Case Studies</span>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-6">
+              Thoughts from the <span className="italic text-accent">Field</span>
+            </h2>
+            <p className="text-text-secondary text-lg md:text-xl">Real-world case studies and insights into process optimization, digital transformation, and strategic leadership.</p>
+          </div>
+        </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" staggerDelay={0.1}>
           {POSTS.map((post) => (
-            <div key={post.id} className="group bg-white rounded-[40px] overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 border border-slate-100 flex flex-col h-full">
-              <div className="h-64 overflow-hidden relative">
-                <SmartImage
-                  src={post.coverImage}
-                  alt={post.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </div>
-              <div className="p-10 flex flex-col flex-grow">
-                <div className="flex justify-between items-center mb-6 text-[11px] font-bold uppercase tracking-widest">
-                  <span className="text-accent bg-accent-subtle px-3 py-1.5 rounded-full">{post.category}</span>
-                  <span className="text-text-muted">{post.date}</span>
+            <StaggerItem key={post.id} animation="fadeUp">
+              <motion.div
+                className="group bg-white rounded-[40px] overflow-hidden shadow-md border border-slate-100 flex flex-col h-full"
+                whileHover={{
+                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15)',
+                  y: -12
+                }}
+                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              >
+                <div className="h-64 overflow-hidden relative">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.7 }}
+                    className="w-full h-full"
+                  >
+                    <SmartImage
+                      src={post.coverImage}
+                      alt={post.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
-                <h3 className="text-2xl font-bold text-text-primary mb-4 leading-snug group-hover:text-accent transition-colors line-clamp-2">
-                  {post.title}
-                </h3>
-                <p className="text-text-secondary text-sm md:text-base leading-relaxed mb-8 flex-grow line-clamp-4">
-                  {post.summary}
-                </p>
-                <a
-                  href={`#blog/${post.id}`}
-                  className="inline-flex items-center gap-2 font-extrabold text-text-primary hover:text-accent transition-colors mt-auto group/link"
-                >
-                  Read Full Article <i className="fas fa-chevron-right text-xs group-hover/link:translate-x-1 transition-transform"></i>
-                </a>
-              </div>
-            </div>
+                <div className="p-10 flex flex-col flex-grow">
+                  <div className="flex justify-between items-center mb-6 text-[11px] font-bold uppercase tracking-widest">
+                    <motion.span
+                      className="text-accent bg-accent-subtle px-3 py-1.5 rounded-full"
+                      whileHover={{ backgroundColor: 'rgb(75, 104, 233)', color: 'white' }}
+                    >
+                      {post.category}
+                    </motion.span>
+                    <span className="text-text-muted">{post.date}</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-text-primary mb-4 leading-snug group-hover:text-accent transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-text-secondary text-sm md:text-base leading-relaxed mb-8 flex-grow line-clamp-4">
+                    {post.summary}
+                  </p>
+                  <motion.a
+                    href={`#blog/${post.id}`}
+                    className="inline-flex items-center gap-2 font-extrabold text-text-primary hover:text-accent transition-colors mt-auto group/link"
+                    whileHover={{ x: 5 }}
+                  >
+                    Read Full Article <i className="fas fa-chevron-right text-xs transition-transform"></i>
+                  </motion.a>
+                </div>
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

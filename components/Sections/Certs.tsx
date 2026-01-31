@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import AnimatedSection, { StaggerContainer, StaggerItem } from '../Motion/AnimatedSection';
 
 const Certs: React.FC = () => {
   const certCategories = [
@@ -41,40 +43,60 @@ const Certs: React.FC = () => {
   ];
 
   return (
-    <section id="certifications" className="py-24 bg-gradient-to-br from-bg-secondary to-white">
+    <section id="certifications" className="py-24 bg-gradient-to-br from-bg-secondary to-white overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-accent font-bold uppercase tracking-widest text-xs mb-3 block">Professional Standards</span>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-text-primary mb-4">Accreditations & Credentials</h2>
-          <p className="text-text-secondary text-lg max-w-2xl mx-auto">Industry-recognized certifications demonstrating expertise in process excellence, IT service management, and enterprise transformation</p>
-        </div>
+        <AnimatedSection animation="fadeUp" delay={0.1}>
+          <div className="text-center mb-16">
+            <span className="text-accent font-bold uppercase tracking-widest text-xs mb-3 block">Professional Standards</span>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-text-primary mb-4">Accreditations & Credentials</h2>
+            <p className="text-text-secondary text-lg max-w-2xl mx-auto">Industry-recognized certifications demonstrating expertise in process excellence, IT service management, and enterprise transformation</p>
+          </div>
+        </AnimatedSection>
 
         <div className="max-w-7xl mx-auto space-y-12">
           {certCategories.map((category, catIdx) => (
-            <div key={catIdx} className="bg-white rounded-3xl p-8 shadow-lg border border-slate-100">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center text-white shadow-md">
-                  <i className={`fas ${category.icon} text-xl`}></i>
+            <AnimatedSection key={catIdx} animation="fadeUp" delay={0.1 * catIdx}>
+              <div className="bg-white rounded-3xl p-8 shadow-lg border border-slate-100">
+                <div className="flex items-center gap-4 mb-6">
+                  <motion.div
+                    className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center text-white shadow-md"
+                    whileHover={{ rotate: 10, scale: 1.1 }}
+                  >
+                    <i className={`fas ${category.icon} text-xl`}></i>
+                  </motion.div>
+                  <h3 className="text-2xl font-bold text-text-primary">{category.category}</h3>
                 </div>
-                <h3 className="text-2xl font-bold text-text-primary">{category.category}</h3>
-              </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                {category.certs.map((cert, certIdx) => (
-                  <div key={certIdx} className="bg-gradient-to-br from-bg-secondary to-white p-5 rounded-2xl border border-slate-100 hover:shadow-lg hover:border-accent/30 transition-all cursor-default group">
-                    <div className="flex items-start gap-4">
-                      <div className={`flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br ${cert.color} flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform`}>
-                        <i className={`fas ${cert.icon} text-xl`}></i>
-                      </div>
-                      <div className="flex-grow">
-                        <h4 className="text-sm font-bold text-text-primary mb-1 leading-tight group-hover:text-accent transition-colors">{cert.name}</h4>
-                        <span className="text-xs text-text-muted font-medium">{cert.org}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" staggerDelay={0.08}>
+                  {category.certs.map((cert, certIdx) => (
+                    <StaggerItem key={certIdx} animation="scaleIn">
+                      <motion.div
+                        className="bg-gradient-to-br from-bg-secondary to-white p-5 rounded-2xl border border-slate-100 cursor-default h-full"
+                        whileHover={{
+                          borderColor: 'rgba(75, 104, 233, 0.3)',
+                          boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1)',
+                          y: -5
+                        }}
+                        transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                      >
+                        <div className="flex items-start gap-4">
+                          <motion.div
+                            className={`flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br ${cert.color} flex items-center justify-center text-white shadow-md`}
+                            whileHover={{ rotate: 12, scale: 1.1 }}
+                          >
+                            <i className={`fas ${cert.icon} text-xl`}></i>
+                          </motion.div>
+                          <div className="flex-grow">
+                            <h4 className="text-sm font-bold text-text-primary mb-1 leading-tight group-hover:text-accent transition-colors">{cert.name}</h4>
+                            <span className="text-xs text-text-muted font-medium">{cert.org}</span>
+                          </div>
+                        </div>
+                      </motion.div>
+                    </StaggerItem>
+                  ))}
+                </StaggerContainer>
               </div>
-            </div>
+            </AnimatedSection>
           ))}
         </div>
       </div>

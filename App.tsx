@@ -15,6 +15,7 @@ import Footer from './components/Layout/Footer';
 import AboutMe from './components/Sections/AboutMe';
 import Blog from './components/Sections/Blog';
 import BookingModal from './components/Modals/BookingModal';
+import StructuredData from './components/SEO/StructuredData';
 
 export type View = 'home' | 'about' | 'blog' | 'post';
 
@@ -103,6 +104,9 @@ const App: React.FC = () => {
       </main>
       <Footer />
       <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
+
+      {/* SEO Widgets */}
+      <StructuredData />
     </div>
   );
 };

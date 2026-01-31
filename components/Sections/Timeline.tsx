@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import AnimatedSection, { StaggerContainer, StaggerItem } from '../Motion/AnimatedSection';
 
 const Timeline: React.FC = () => {
   const events = [
@@ -59,43 +61,92 @@ const Timeline: React.FC = () => {
   ];
 
   return (
-    <section id="experience" className="py-24 bg-bg-secondary">
+    <section id="experience" className="py-24 bg-bg-secondary overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-accent font-bold uppercase tracking-widest text-xs">Career Journey</span>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mt-4 mb-6">14+ Years of Strategic Impact</h2>
-          <p className="text-text-secondary text-lg">A track record of driving efficiency and digital transformation across global ICT organizations.</p>
-        </div>
+        <AnimatedSection delay={0.1} animation="fadeUp">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-accent font-bold uppercase tracking-widest text-xs">Career Journey</span>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mt-4 mb-6">
+              14+ Years of Strategic Impact
+            </h2>
+            <p className="text-text-secondary text-lg">
+              A track record of driving efficiency and digital transformation across global ICT organizations.
+            </p>
+          </div>
+        </AnimatedSection>
 
-        <div className="max-w-4xl mx-auto relative timeline-line">
-          {events.map((event, idx) => (
-            <div key={idx} className="pl-12 pb-12 relative group">
-              <div className="absolute left-[-6.5px] top-2 w-4 h-4 rounded-full bg-accent border-4 border-bg-secondary shadow-sm"></div>
-              <div className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-accent/20 transition-all">
-                <div className="flex items-start gap-6">
-                  <div className={`flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br ${event.logoColor} flex items-center justify-center text-white font-bold text-sm shadow-lg group-hover:scale-105 transition-transform`}>
-                    {event.logo}
-                  </div>
-                  <div className="flex-grow">
-                    <span className="text-accent font-bold text-sm block mb-2">{event.date}</span>
-                    <h3 className="text-xl font-bold text-text-primary mb-2 leading-tight">{event.title}</h3>
-                    <div className="text-accent-light text-sm font-medium mb-4">{event.company}</div>
-                    <p className="text-text-muted text-sm leading-relaxed mb-4">{event.desc}</p>
-                    {event.highlights && (
-                      <div className="flex flex-wrap gap-2">
-                        {event.highlights.map((highlight, hidx) => (
-                          <span key={hidx} className="inline-flex items-center gap-1.5 bg-accent/5 border border-accent/10 text-accent px-3 py-1.5 rounded-full text-xs font-bold">
-                            <i className="fas fa-check-circle text-[10px]"></i>
-                            {highlight}
-                          </span>
-                        ))}
+        <div className="max-w-4xl mx-auto relative">
+          {/* Timeline line */}
+          <motion.div
+            className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-accent to-slate-200"
+            initial={{ scaleY: 0, originY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+          />
+
+          <StaggerContainer className="space-y-0" staggerDelay={0.15}>
+            {events.map((event, idx) => (
+              <StaggerItem key={idx} animation="slideRight">
+                <div className="pl-12 pb-12 relative group">
+                  {/* Timeline dot */}
+                  <motion.div
+                    className="absolute left-[-6.5px] top-2 w-4 h-4 rounded-full bg-accent border-4 border-bg-secondary shadow-sm"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 + idx * 0.15, type: 'spring', stiffness: 400 }}
+                    whileHover={{ scale: 1.5, borderColor: 'rgba(75, 104, 233, 0.5)' }}
+                  />
+
+                  <motion.div
+                    className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm"
+                    whileHover={{
+                      borderColor: 'rgba(75, 104, 233, 0.2)',
+                      boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)',
+                      x: 10
+                    }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                  >
+                    <div className="flex items-start gap-6">
+                      <motion.div
+                        className={`flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br ${event.logoColor} flex items-center justify-center text-white font-bold text-sm shadow-lg`}
+                        whileHover={{ scale: 1.15, rotate: 5 }}
+                        transition={{ type: 'spring', stiffness: 400 }}
+                      >
+                        {event.logo}
+                      </motion.div>
+                      <div className="flex-grow">
+                        <span className="text-accent font-bold text-sm block mb-2">{event.date}</span>
+                        <h3 className="text-xl font-bold text-text-primary mb-2 leading-tight">{event.title}</h3>
+                        <div className="text-accent-light text-sm font-medium mb-4">{event.company}</div>
+                        <p className="text-text-muted text-sm leading-relaxed mb-4">{event.desc}</p>
+                        {event.highlights && (
+                          <div className="flex flex-wrap gap-2">
+                            {event.highlights.map((highlight, hidx) => (
+                              <motion.span
+                                key={hidx}
+                                className="inline-flex items-center gap-1.5 bg-accent/5 border border-accent/10 text-accent px-3 py-1.5 rounded-full text-xs font-bold cursor-default"
+                                whileHover={{
+                                  backgroundColor: 'rgba(75, 104, 233, 0.1)',
+                                  borderColor: 'rgba(75, 104, 233, 0.3)',
+                                  scale: 1.05
+                                }}
+                                transition={{ type: 'spring', stiffness: 400 }}
+                              >
+                                <i className="fas fa-check-circle text-[10px]"></i>
+                                {highlight}
+                              </motion.span>
+                            ))}
+                          </div>
+                        )}
                       </div>
-                    )}
-                  </div>
+                    </div>
+                  </motion.div>
                 </div>
-              </div>
-            </div>
-          ))}
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </div>
     </section>
