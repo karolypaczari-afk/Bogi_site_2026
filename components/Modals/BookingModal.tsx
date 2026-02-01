@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { saveFormSubmission } from '../../lib/supabase';
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -25,6 +26,17 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
     };
 
     try {
+      // 1. Save to Supabase
+      const dataToSave = {
+        name: data.name as string,
+        email: data.email as string,
+        message: `Topic: ${data.topic}\nPreferred Time: ${data.datetime}\nContext: ${data.message}`,
+        source: 'booking_modal'
+      };
+
+      saveFormSubmission(dataToSave).catch(err => console.error('Supabase Save Error:', err));
+
+      // 2. Send via FormSubmit
       const response = await fetch('https://formsubmit.co/ajax/horvath.boglarka@hotmail.com', {
         method: 'POST',
         headers: {

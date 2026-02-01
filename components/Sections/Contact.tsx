@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedSection from '../Motion/AnimatedSection';
+import { saveFormSubmission } from '../../lib/supabase';
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -24,7 +25,18 @@ const Contact: React.FC = () => {
     };
 
     try {
-      // 1. Send email (Supabase disabled for this push)
+      // 1. Save to Supabase (Database)
+      const dataToSave = {
+        name: data.name as string,
+        email: data.email as string,
+        message: data.message as string,
+        source: 'contact_form'
+      };
+
+      // We don't await this to block the UI, but we log errors if any
+      saveFormSubmission(dataToSave).catch(err => console.error('Supabase Save Error:', err));
+
+      // 2. Send email (Web3Forms)
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
