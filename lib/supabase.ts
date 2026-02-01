@@ -1,3 +1,4 @@
+
 import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
@@ -80,11 +81,13 @@ export const saveChatLead = async (data: ChatLead): Promise<boolean> => {
     return true;
 };
 
+// Public Access (Restricted View)
 export const getRecentSubmissions = async (limit: number = 5): Promise<Pick<FormSubmission, 'name' | 'created_at'>[]> => {
     if (!supabase) return [];
 
+    // Query the public view, not the table, to bypass RLS restrictions for Anon
     const { data, error } = await supabase
-        .from('form_submissions')
+        .from('public_recent_submissions') // Uses View
         .select('name, created_at')
         .order('created_at', { ascending: false })
         .limit(limit);
@@ -92,6 +95,39 @@ export const getRecentSubmissions = async (limit: number = 5): Promise<Pick<Form
     if (error) {
         console.error('Supabase fetch error:', error);
         return [];
+    }
+
+    return (data as any[]) || [];
+};
+
+// Admin Access (Authenticate First)
+export const getAllSubmissions = async (): Promise<FormSubmission[]> => {
+    if (!supabase) return [];
+
+    const { data, error } = await supabase
+        .from('form_submissions')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+    if (error) {
+        console.error('Admin Fetch Error:', error);
+        throw error;
+    }
+
+    return data || [];
+};
+
+export const getAllChatLeads = async (): Promise<ChatLead[]> => {
+    if (!supabase) return [];
+
+    const { data, error } = await supabase
+        .from('chat_leads')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+    if (error) {
+        console.error('Admin Fetch Error:', error);
+        throw error;
     }
 
     return data || [];

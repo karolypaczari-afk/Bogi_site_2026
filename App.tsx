@@ -16,8 +16,10 @@ import AboutMe from './components/Sections/AboutMe';
 import Blog from './components/Sections/Blog';
 import BookingModal from './components/Modals/BookingModal';
 import StructuredData from './components/SEO/StructuredData';
+import Login from './components/Admin/Login';
+import Dashboard from './components/Admin/Dashboard';
 
-export type View = 'home' | 'about' | 'blog' | 'post';
+export type View = 'home' | 'about' | 'blog' | 'post' | 'login' | 'admin';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<View>('home');
@@ -45,6 +47,19 @@ const App: React.FC = () => {
 
       if (hash === '#blog') {
         setCurrentView('blog');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
+      // Handle Admin Routes
+      if (hash === '#login') {
+        setCurrentView('login');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
+      if (hash === '#admin') {
+        setCurrentView('admin');
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
       }
@@ -78,6 +93,10 @@ const App: React.FC = () => {
       case 'blog':
       case 'post':
         return <Blog postId={selectedPostId} />;
+      case 'login':
+        return <Login />;
+      case 'admin':
+        return <Dashboard />;
       default:
         return (
           <>
