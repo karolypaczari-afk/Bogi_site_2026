@@ -17,6 +17,9 @@ ogImageAlt: "Boglárka Paczari-Horvath — Senior Business Analyst & Digital Tra
 {% set c = certs %}
 {% set co = contact %}
 
+{# ============================================================
+   HERO — proof-first, CV-primary
+   ============================================================ #}
 <section class="hero">
     <div class="hero-blob hero-blob--1" aria-hidden="true"></div>
     <div class="hero-blob hero-blob--2" aria-hidden="true"></div>
@@ -30,39 +33,55 @@ ogImageAlt: "Boglárka Paczari-Horvath — Senior Business Analyst & Digital Tra
 
                 <h1 class="hero__headline reveal">
                     {{ h.headingLead }} <br>
-                    <em>{{ h.headingAccent }}</em>
+                    <em>{{ h.headingAccent }}</em><br>
+                    <span class="hero__headline-tail">{{ h.headingTail }}</span>
                 </h1>
 
                 <p class="hero__subhead reveal">{{ h.subhead | safe }}</p>
 
-                <div class="hero__badges reveal" data-stagger>
-                    {% for b in h.skillBadges %}
-                    <span class="badge badge--{{ b.variant }}">
-                        <i class="fas {{ b.icon }}" aria-hidden="true"></i>
-                        {{ b.text }}
-                    </span>
-                    {% endfor %}
-                </div>
-
-                <div class="hero__ctas reveal">
-                    <a class="btn btn--primary" href="{{ site.contact.resume }}" target="_blank" rel="noopener noreferrer">
-                        <i class="far fa-file-alt" aria-hidden="true"></i>
-                        View My Resume
-                    </a>
-                    <a class="btn btn--secondary" href="{{ site.contact.linkedin }}" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-linkedin" aria-hidden="true"></i>
-                        Connect on LinkedIn
-                    </a>
-                </div>
-
-                <div class="hero__clients reveal">
-                    <span class="hero__clients-label">Proven Experience At</span>
+                <div class="hero__clients hero__clients--inline reveal">
+                    <span class="hero__clients-label">Proven at</span>
                     <div class="hero__clients-row">
                         {% for client in h.clients %}
                         <span class="hero__client">{{ client }}</span>
                         {% endfor %}
                     </div>
                 </div>
+
+                <div class="hero__ctas reveal">
+                    <a class="btn btn--primary hero__cta-primary"
+                       href="{{ site.contact.resume }}"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       data-cta-location="hero_primary">
+                        <i class="far fa-file-pdf" aria-hidden="true"></i>
+                        <span class="hero__cta-primary-text">
+                            <span class="hero__cta-primary-label">{{ h.primaryCta.label }}</span>
+                            <span class="hero__cta-primary-sub">{{ h.primaryCta.sub }}</span>
+                        </span>
+                    </a>
+                    <a class="btn btn--secondary"
+                       href="{{ site.contact.linkedin }}"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       data-cta-location="hero_secondary">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        {{ h.secondaryCta.label }}
+                    </a>
+                </div>
+
+                <details class="hero__value-stack reveal">
+                    <summary class="hero__value-stack-summary">
+                        <i class="fas fa-list-check" aria-hidden="true"></i>
+                        What's in the 2-page CV
+                        <i class="fas fa-chevron-down hero__value-stack-chevron" aria-hidden="true"></i>
+                    </summary>
+                    <ul class="hero__value-stack-list">
+                        {% for item in h.valueStack.items %}
+                        <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </details>
             </div>
 
             <div class="hero__portrait-wrap reveal reveal--scale">
@@ -93,106 +112,14 @@ ogImageAlt: "Boglárka Paczari-Horvath — Senior Business Analyst & Digital Tra
     </div>
 </section>
 
-<section class="features" id="how">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="eyebrow">{{ f.eyebrow }}</span>
-            <h2 class="section-title">{{ f.heading | safe }}</h2>
-            <p class="section-lead">{{ f.subhead }}</p>
-        </div>
+{# ============================================================
+   FOR RECRUITERS — 10-second scan card
+   ============================================================ #}
+{% include "partials/for-recruiters-card.njk" %}
 
-        <div class="features__grid" data-stagger>
-            {% for card in f.approach %}
-            <article class="approach-card reveal">
-                <div class="approach-card__icon"><i class="fas {{ card.icon }}" aria-hidden="true"></i></div>
-                <h3 class="approach-card__title">{{ card.title }}</h3>
-                <p class="approach-card__desc">{{ card.desc }}</p>
-                {% if card.aiTools %}
-                <div class="approach-card__ai-tools" aria-label="AI tools">
-                    <span class="ai-tool ai-tool--chatgpt" title="ChatGPT">CG</span>
-                    <span class="ai-tool ai-tool--copilot" title="Microsoft Copilot"><i class="fab fa-microsoft" aria-hidden="true"></i></span>
-                    <span class="ai-tool ai-tool--claude" title="Claude">C</span>
-                    <span class="ai-tool ai-tool--gemini" title="Gemini">G</span>
-                </div>
-                {% endif %}
-            </article>
-            {% endfor %}
-        </div>
-
-        <div class="expertise">
-            <div class="section-header reveal">
-                <span class="eyebrow">My Expertise</span>
-                <h3 class="section-title" style="font-size:clamp(1.75rem,3vw,2.25rem)">{{ f.expertiseHeading }}</h3>
-            </div>
-            <div class="expertise__grid" data-stagger>
-                {% for item in f.expertise %}
-                <article class="expertise-card reveal reveal--scale">
-                    <div class="expertise-card__icon"><i class="fas {{ item.icon }}" aria-hidden="true"></i></div>
-                    <h4 class="expertise-card__title">{{ item.title }}</h4>
-                    <p class="expertise-card__desc">{{ item.desc }}</p>
-                </article>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="services" id="services">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="eyebrow">{{ s.eyebrow }}</span>
-            <h2 class="section-title">{{ s.heading | safe }}</h2>
-            <p class="section-lead">{{ s.subhead }}</p>
-        </div>
-        <div class="services__grid" data-stagger>
-            {% for svc in s.items %}
-            <article class="service-card reveal">
-                <span class="service-card__num">{{ svc.num }}</span>
-                <h3 class="service-card__title">{{ svc.title }}</h3>
-                <p class="service-card__desc">{{ svc.desc }}</p>
-            </article>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<section class="skills" id="skills">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="eyebrow">{{ k.eyebrow }}</span>
-            <h2 class="section-title">{{ k.heading | safe }}</h2>
-            <p class="section-lead">{{ k.subhead }}</p>
-        </div>
-        <div class="skills__grid" data-stagger>
-            {% for cat in k.categories %}
-            <article class="skill-card reveal reveal--scale">
-                <div class="skill-card__head">
-                    <div class="skill-card__icon skill-card__icon--{{ cat.color }}">
-                        <i class="fas {{ cat.icon }}" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="skill-card__title">{{ cat.title }}</h3>
-                </div>
-                <div class="skill-tags">
-                    {% for skill in cat.skills %}
-                    <span class="skill-tag {% if skill.highlight %}skill-tag--highlight{% endif %}">{{ skill.name }}</span>
-                    {% endfor %}
-                </div>
-            </article>
-            {% endfor %}
-        </div>
-
-        <div class="value-props" data-stagger>
-            {% for vp in k.valueProps %}
-            <div class="value-prop value-prop--{{ vp.color }} reveal reveal--scale">
-                <i class="fas {{ vp.icon }} value-prop__icon" aria-hidden="true"></i>
-                <h4 class="value-prop__title">{{ vp.title }}</h4>
-                <p class="value-prop__desc">{{ vp.desc }}</p>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
+{# ============================================================
+   ACHIEVEMENTS — moved up, hard metrics second
+   ============================================================ #}
 <section class="achievements" id="achievements">
     <div class="achievements__blob" aria-hidden="true"></div>
     <div class="container">
@@ -213,6 +140,65 @@ ogImageAlt: "Boglárka Paczari-Horvath — Senior Business Analyst & Digital Tra
     </div>
 </section>
 
+{# ---- Inline CTA #1 — after Achievements ---- #}
+{% set inlineCtaLocation = "inline_after_achievements" %}
+{% set inlineCtaHeading = "Seen the numbers. Want the details?" %}
+{% set inlineCtaSub = "Every € and % above is sourced to a specific project, client, and year in the CV." %}
+{% include "partials/inline-cv-cta.njk" %}
+
+{# ============================================================
+   TESTIMONIALS — moved up, social proof after metrics
+   ============================================================ #}
+<section class="testimonials" id="references">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="eyebrow">{{ t.eyebrow }}</span>
+            <h2 class="section-title">{{ t.heading | safe }}</h2>
+            <p class="section-lead">{{ t.subhead }}</p>
+        </div>
+        <div class="testimonials__grid" data-stagger>
+            {% for item in t.items %}
+            <article class="testimonial-card reveal" data-testimonial data-expanded="false">
+                <span class="testimonial-card__quote" aria-hidden="true">&ldquo;</span>
+                <p class="testimonial-card__text" data-testimonial-text data-summary="{{ item.summary | escape }}" data-full="{{ item.fullReview | escape }}">{{ item.summary }}</p>
+                <button class="testimonial-card__toggle" type="button" data-testimonial-toggle aria-label="Toggle full review">
+                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+                    <span class="label-more">Read Full Review</span>
+                    <span class="label-less">Show Less</span>
+                </button>
+                <footer class="testimonial-card__footer">
+                    <div class="testimonial-card__avatar">
+                        <img src="{{ item.image }}" alt="{{ item.author }}" width="56" height="56" loading="lazy">
+                    </div>
+                    <div>
+                        <h4 class="testimonial-card__author">{{ item.author }}</h4>
+                        <p class="testimonial-card__role">{{ item.role }}</p>
+                        <p class="testimonial-card__company">{{ item.company }}</p>
+                        <p class="testimonial-card__relationship">{{ item.relationship }}</p>
+                    </div>
+                </footer>
+            </article>
+            {% endfor %}
+        </div>
+        <div class="testimonials__cta reveal">
+            <a class="btn btn--linkedin" href="{{ site.contact.linkedin }}" target="_blank" rel="noopener noreferrer" data-cta-location="testimonials_linkedin">
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                See all 15+ recommendations on LinkedIn
+            </a>
+        </div>
+    </div>
+</section>
+
+{# ---- Inline CTA #2 — after Testimonials ---- #}
+{% set inlineCtaLocation = "inline_after_testimonials" %}
+{% set inlineCtaHeading = "Convinced? Skip the recruiter chain." %}
+{% set inlineCtaSub = "One tap, 2 pages, no signup. Direct contact details inside the PDF." %}
+{% include "partials/inline-cv-cta.njk" %}
+
+{# ============================================================
+   TIMELINE — kept, not moved up
+   ============================================================ #}
 <section class="timeline" id="experience">
     <div class="container">
         <div class="section-header reveal">
@@ -247,80 +233,120 @@ ogImageAlt: "Boglárka Paczari-Horvath — Senior Business Analyst & Digital Tra
     </div>
 </section>
 
-<section class="testimonials" id="references">
+{# ============================================================
+   HOW I WORK — compressed to 4 outcome cards (was "features")
+   ============================================================ #}
+<section class="features" id="how">
     <div class="container">
         <div class="section-header reveal">
-            <span class="eyebrow">{{ t.eyebrow }}</span>
-            <h2 class="section-title">{{ t.heading | safe }}</h2>
-            <p class="section-lead">{{ t.subhead }}</p>
+            <span class="eyebrow">{{ f.eyebrow }}</span>
+            <h2 class="section-title">{{ f.heading | safe }}</h2>
+            <p class="section-lead">{{ f.subhead }}</p>
         </div>
-        <div class="testimonials__grid" data-stagger>
-            {% for item in t.items %}
-            <article class="testimonial-card reveal" data-testimonial data-expanded="false">
-                <span class="testimonial-card__quote" aria-hidden="true">&ldquo;</span>
-                <p class="testimonial-card__text" data-testimonial-text data-summary="{{ item.summary | escape }}" data-full="{{ item.fullReview | escape }}">{{ item.summary }}</p>
-                <button class="testimonial-card__toggle" type="button" data-testimonial-toggle aria-label="Toggle full review">
-                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                    <i class="fas fa-chevron-up" aria-hidden="true"></i>
-                    <span class="label-more">Read Full Review</span>
-                    <span class="label-less">Show Less</span>
-                </button>
-                <footer class="testimonial-card__footer">
-                    <div class="testimonial-card__avatar">
-                        <img src="{{ item.image }}" alt="{{ item.author }}" width="56" height="56" loading="lazy">
-                    </div>
-                    <div>
-                        <h4 class="testimonial-card__author">{{ item.author }}</h4>
-                        <p class="testimonial-card__role">{{ item.role }}</p>
-                        <p class="testimonial-card__company">{{ item.company }}</p>
-                        <p class="testimonial-card__relationship">{{ item.relationship }}</p>
-                    </div>
-                </footer>
+
+        <div class="features__grid" data-stagger>
+            {% for card in f.approach %}
+            <article class="approach-card reveal">
+                <div class="approach-card__icon"><i class="fas {{ card.icon }}" aria-hidden="true"></i></div>
+                <h3 class="approach-card__title">{{ card.title }}</h3>
+                <p class="approach-card__desc">{{ card.desc }}</p>
+                {% if card.aiTools %}
+                <div class="approach-card__ai-tools" aria-label="AI tools">
+                    <span class="ai-tool ai-tool--chatgpt" title="ChatGPT">CG</span>
+                    <span class="ai-tool ai-tool--copilot" title="Microsoft Copilot"><i class="fab fa-microsoft" aria-hidden="true"></i></span>
+                    <span class="ai-tool ai-tool--claude" title="Claude">C</span>
+                    <span class="ai-tool ai-tool--gemini" title="Gemini">G</span>
+                </div>
+                {% endif %}
             </article>
             {% endfor %}
-        </div>
-        <div class="testimonials__cta reveal">
-            <a class="btn btn--linkedin" href="{{ site.contact.linkedin }}" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-linkedin" aria-hidden="true"></i>
-                View My 15+ Recommendations on LinkedIn
-            </a>
         </div>
     </div>
 </section>
 
-<section class="certs" id="certifications">
+{# ============================================================
+   SERVICES — compressed to 4 delivery categories
+   ============================================================ #}
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="eyebrow">{{ s.eyebrow }}</span>
+            <h2 class="section-title">{{ s.heading | safe }}</h2>
+            <p class="section-lead">{{ s.subhead }}</p>
+        </div>
+        <div class="services__grid" data-stagger>
+            {% for svc in s.items %}
+            <article class="service-card reveal">
+                <span class="service-card__num">{{ svc.num }}</span>
+                <h3 class="service-card__title">{{ svc.title }}</h3>
+                <p class="service-card__desc">{{ svc.desc }}</p>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{# ---- Inline CTA #3 — after Services ---- #}
+{% set inlineCtaLocation = "inline_after_services" %}
+{% set inlineCtaHeading = "Need this playbook for your org?" %}
+{% set inlineCtaSub = "Full experience, stack, and engagement options in the 2-page CV." %}
+{% include "partials/inline-cv-cta.njk" %}
+
+{# ============================================================
+   SKILLS — compressed to single-row tech stack
+   ============================================================ #}
+<section class="skills skills--compact" id="skills">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="eyebrow">{{ k.eyebrow }}</span>
+            <h2 class="section-title">{{ k.heading | safe }}</h2>
+        </div>
+        <div class="skills-strip reveal" data-stagger>
+            {% for cat in k.categories %}
+            <div class="skills-strip__row">
+                <div class="skills-strip__head">
+                    <span class="skills-strip__icon skills-strip__icon--{{ cat.color }}">
+                        <i class="fas {{ cat.icon }}" aria-hidden="true"></i>
+                    </span>
+                    <span class="skills-strip__title">{{ cat.title }}</span>
+                </div>
+                <div class="skills-strip__tags">
+                    {% for skill in cat.skills %}
+                    <span class="skill-tag {% if skill.highlight %}skill-tag--highlight{% endif %}">{{ skill.name }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{# ============================================================
+   CERTIFICATIONS — compressed to pill list
+   ============================================================ #}
+<section class="certs certs--compact" id="certifications">
     <div class="container">
         <div class="section-header reveal">
             <span class="eyebrow">{{ c.eyebrow }}</span>
             <h2 class="section-title">{{ c.heading }}</h2>
-            <p class="section-lead">{{ c.subhead }}</p>
         </div>
-        <div class="certs__list">
+        <div class="certs-pills reveal">
             {% for cat in c.categories %}
-            <article class="cert-category reveal">
-                <header class="cert-category__head">
-                    <div class="cert-category__icon"><i class="fas {{ cat.icon }}" aria-hidden="true"></i></div>
-                    <h3 class="cert-category__title">{{ cat.category }}</h3>
-                </header>
-                <div class="cert-grid" data-stagger>
-                    {% for cert in cat.certs %}
-                    <div class="cert-card reveal reveal--scale">
-                        <div class="cert-card__icon cert-card__icon--{{ cert.color }}">
-                            <i class="fas {{ cert.icon }}" aria-hidden="true"></i>
-                        </div>
-                        <div>
-                            <h4 class="cert-card__name">{{ cert.name }}</h4>
-                            <span class="cert-card__org">{{ cert.org }}</span>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </article>
+                {% for cert in cat.certs %}
+                <span class="cert-pill">
+                    <i class="fas {{ cert.icon }} cert-pill__icon cert-pill__icon--{{ cert.color }}" aria-hidden="true"></i>
+                    <span class="cert-pill__name">{{ cert.name }}</span>
+                    <span class="cert-pill__org">{{ cert.org }}</span>
+                </span>
+                {% endfor %}
             {% endfor %}
         </div>
     </div>
 </section>
 
+{# ============================================================
+   CONTACT — last section, form tertiary
+   ============================================================ #}
 <section class="contact" id="contact">
     <div class="container">
         <div class="contact__card reveal">
@@ -333,7 +359,10 @@ ogImageAlt: "Boglárka Paczari-Horvath — Senior Business Analyst & Digital Tra
                     <p class="contact__lead">{{ co.subhead }}</p>
                     <div class="contact__channels">
                         {% for ch in co.channels %}
-                        <a class="contact__channel" href="{{ ch.href }}"{% if ch.href | first == 'h' %} target="_blank" rel="noopener noreferrer"{% endif %}>
+                        <a class="contact__channel"
+                           href="{{ ch.href }}"
+                           {% if ch.href | first == 'h' %} target="_blank" rel="noopener noreferrer"{% endif %}
+                           data-cta-location="contact_channels">
                             <span class="contact__channel-icon"><i class="{{ ch.icon }}" aria-hidden="true"></i></span>
                             <span class="contact__channel-text">{{ ch.label }}</span>
                         </a>
@@ -365,7 +394,7 @@ ogImageAlt: "Boglárka Paczari-Horvath — Senior Business Analyst & Digital Tra
                         </div>
                         <div class="form__row">
                             <label class="form__label" for="contact-message">Your Message</label>
-                            <textarea class="form__textarea" id="contact-message" name="message" rows="4" required placeholder="How can I help your organization?"></textarea>
+                            <textarea class="form__textarea" id="contact-message" name="message" rows="4" required placeholder="Role / brief / question"></textarea>
                         </div>
 
                         <button class="form__submit" type="submit">

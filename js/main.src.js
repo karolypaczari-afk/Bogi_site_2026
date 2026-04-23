@@ -324,12 +324,21 @@
         }
     }
 
+    // Resolve a CTA location: explicit data-cta-location wins, else section id, else 'unknown'.
+    function ctaLocationFor(el) {
+        return el.getAttribute('data-cta-location') || el.closest('section')?.id || 'unknown';
+    }
+
     function initEventTracking() {
-        // CV download
+        // CV download — also triggers post-download modal
         document.querySelectorAll('a[href$=".pdf"], a[href*="/Bogi_CV"]').forEach((a) => {
             a.addEventListener(
                 'click',
-                () => track('bh_cv_download', { cta_location: a.closest('section')?.id || 'unknown', url: a.href }),
+                () => {
+                    const loc = ctaLocationFor(a);
+                    track('bh_cv_download', { cta_location: loc, url: a.href });
+                    openPostDownloadModal(loc);
+                },
                 { passive: true }
             );
         });
@@ -338,7 +347,7 @@
         document.querySelectorAll('a[href*="linkedin.com"]').forEach((a) => {
             a.addEventListener(
                 'click',
-                () => track('bh_linkedin_click', { cta_location: a.closest('section')?.id || 'unknown' }),
+                () => track('bh_linkedin_click', { cta_location: ctaLocationFor(a) }),
                 { passive: true }
             );
         });
@@ -347,7 +356,7 @@
         document.querySelectorAll('a[href^="mailto:"]').forEach((a) => {
             a.addEventListener(
                 'click',
-                () => track('bh_email_click', { cta_location: a.closest('section')?.id || 'unknown' }),
+                () => track('bh_email_click', { cta_location: ctaLocationFor(a) }),
                 { passive: true }
             );
         });
@@ -383,6 +392,159 @@
         }
     }
 
+    // ---- sticky mobile CTA bar ------------------------------------------
+    function initStickyCta() {
+        const bar = document.querySelector('[data-sticky-cta]');
+        if (!bar) return;
+        document.body.classList.add('has-sticky-cta');
+
+        let impressionFired = false;
+        let rafPending = false;
+        const mql = window.matchMedia('(max-width: 767px)');
+
+        const update = () => {
+            const shouldShow = mql.matches && window.scrollY > 100;
+            bar.classList.toggle('is-visible', shouldShow);
+            if (shouldShow && !impressionFired) {
+                impressionFired = true;
+                track('bh_sticky_bar_impression');
+            }
+            rafPending = false;
+        };
+        const onScroll = () => {
+            if (rafPending) return;
+            rafPending = true;
+            window.requestAnimationFrame(update);
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll, { passive: true });
+        update();
+    }
+
+    // ---- scroll-depth / exit-intent CTA ---------------------------------
+    function initScrollCta() {
+        const card = document.querySelector('[data-scroll-cta]');
+        if (!card) return;
+
+        const STORAGE_KEY = 'bh_scroll_cta_dismissed';
+        try {
+            if (window.sessionStorage.getItem(STORAGE_KEY)) return;
+        } catch (_e) { /* ignore */ }
+
+        const mqlMobile = window.matchMedia('(max-width: 767px)');
+        let fired = false;
+
+        const open = (trigger) => {
+            if (fired) return;
+            fired = true;
+            card.hidden = false;
+            card.setAttribute('aria-hidden', 'false');
+            // next frame for transition
+            requestAnimationFrame(() => card.classList.add('is-open'));
+            track('bh_scroll_cta_shown', { trigger: trigger });
+        };
+
+        const close = (silent) => {
+            card.classList.remove('is-open');
+            card.setAttribute('aria-hidden', 'true');
+            window.setTimeout(() => { card.hidden = true; }, 350);
+            try { window.sessionStorage.setItem(STORAGE_KEY, '1'); } catch (_e) { /* ignore */ }
+            if (!silent) track('bh_scroll_cta_dismissed');
+        };
+
+        // Mobile trigger: 70% scroll depth
+        let rafPending = false;
+        const onScroll = () => {
+            if (fired || !mqlMobile.matches) return;
+            if (rafPending) return;
+            rafPending = true;
+            window.requestAnimationFrame(() => {
+                const doc = document.documentElement;
+                const total = doc.scrollHeight - window.innerHeight;
+                const pct = total > 0 ? window.scrollY / total : 0;
+                if (pct >= 0.7) open('scroll_70');
+                rafPending = false;
+            });
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        // Desktop trigger: mouseleave top edge
+        const onMouseOut = (e) => {
+            if (fired || mqlMobile.matches) return;
+            if (!e.relatedTarget && e.clientY <= 0) open('exit_intent');
+        };
+        document.addEventListener('mouseout', onMouseOut);
+
+        // Close handlers (dismiss/close buttons are tracked as dismissed)
+        card.querySelectorAll('[data-scroll-cta-close], [data-scroll-cta-dismiss]').forEach((btn) => {
+            btn.addEventListener('click', () => close());
+        });
+        // Accept click — track, close the card so post-download modal is unobscured
+        const accept = card.querySelector('[data-scroll-cta-accept]');
+        if (accept) {
+            accept.addEventListener('click', () => {
+                track('bh_scroll_cta_clicked');
+                try { window.sessionStorage.setItem(STORAGE_KEY, '1'); } catch (_e) { /* ignore */ }
+                close(true); // silent — the download counts, don't also log a dismissal
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !card.hidden) close();
+        });
+    }
+
+    // ---- post-download modal --------------------------------------------
+    let postDlEl = null;
+    let postDlTimer = null;
+
+    function openPostDownloadModal(sourceLocation) {
+        // Avoid firing the modal when the click came from within the modal itself
+        if (sourceLocation && sourceLocation.indexOf('post_download_modal') === 0) return;
+        if (!postDlEl) postDlEl = document.querySelector('[data-post-dl]');
+        if (!postDlEl) return;
+        if (postDlTimer) window.clearTimeout(postDlTimer);
+        postDlTimer = window.setTimeout(() => {
+            postDlEl.hidden = false;
+            postDlEl.setAttribute('aria-hidden', 'false');
+            requestAnimationFrame(() => postDlEl.classList.add('is-open'));
+            track('bh_post_download_modal_shown', { source: sourceLocation || 'unknown' });
+        }, 1500);
+    }
+
+    function closePostDownloadModal() {
+        if (!postDlEl) return;
+        postDlEl.classList.remove('is-open');
+        postDlEl.setAttribute('aria-hidden', 'true');
+        window.setTimeout(() => { postDlEl.hidden = true; }, 350);
+    }
+
+    function initPostDownloadModal() {
+        postDlEl = document.querySelector('[data-post-dl]');
+        if (!postDlEl) return;
+
+        postDlEl.querySelectorAll('[data-post-dl-close]').forEach((b) => {
+            b.addEventListener('click', closePostDownloadModal);
+        });
+        const liBtn = postDlEl.querySelector('[data-post-dl-linkedin]');
+        if (liBtn) {
+            liBtn.addEventListener('click', () => {
+                track('bh_post_download_modal_linkedin_clicked');
+                closePostDownloadModal();
+            });
+        }
+        const msgBtn = postDlEl.querySelector('[data-post-dl-message]');
+        if (msgBtn) {
+            msgBtn.addEventListener('click', () => {
+                track('bh_post_download_modal_message_clicked');
+                closePostDownloadModal();
+            });
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && postDlEl.classList.contains('is-open')) closePostDownloadModal();
+        });
+    }
+
     // ---- boot ------------------------------------------------------------
     function boot() {
         initReveals();
@@ -393,7 +555,10 @@
         initBookingModal();
         initReadingProgress();
         initServiceWorker();
+        initPostDownloadModal(); // bind modal handlers before CV click listeners
         initEventTracking();
+        initStickyCta();
+        initScrollCta();
         wrapFormTracking();
     }
 

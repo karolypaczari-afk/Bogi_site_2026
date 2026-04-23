@@ -18,15 +18,10 @@ Philosophy: evidence-based transformation. Every decision backed by data and ali
 
 ## Services
 
-- **Process Optimization** — Unlock savings and drive long-term growth through systematic process improvement.
-- **Process Ownership** — Design, document, and implement efficient processes with full ownership.
-- **Agile Business Analysis** — Evaluate processes, align stakeholders, and deliver strategic analytics.
-- **Process Evaluation** — Comprehensive assessment identifying issues, risks, and benefits.
-- **Performance Reporting** — Define KPIs and build measurement systems that drive accountability.
-- **Requirements Management** — Bridge business stakeholders and technical teams with clarity.
-- **Testing &amp; Feedback** — Facilitate user testing sessions and provide actionable insights.
-- **Change Management** — Guide organizational transitions with proven strategies and adoption frameworks.
-- **Strategic Process Design** — Enhance efficiency and drive business success through redesign initiatives.
+- **Cost &amp; License Consolidation** — Merge duplicate enterprise processes, retire legacy tools. EUR 500k+ license savings delivered at NTT Ltd. by collapsing 3 Opp2Cash workflows into one.
+- **SAP S/4HANA ↔ PEGA Migrations** — Lead the functional side of ERP / workflow transitions end-to-end — discovery, future-state design, migration, and adoption. 20% productivity gain at S.W.I.F.T.
+- **Automation &amp; FTE Recovery** — Ticket-quality automation, variable billing, case-management workflows. 15+ FTE-equivalent capacity created, USD 100k+ annual run-rate at BT.
+- **Process Redesign &amp; Adoption** — Lean Six Sigma redesign plus change management. 50% incident volume reduction (BT hung-line) and 21% adoption uplift on PEGA rollouts.
 
 
 ## Technical stack
@@ -77,12 +72,12 @@ Philosophy: evidence-based transformation. Every decision backed by data and ali
 
 ## Proven impact
 
-- **EUR 700k+ Documented Savings** — Aggregated savings across license optimization, automation ROI, and process waste elimination.
-- **20% Productivity Improvement** — Average throughput increase for order fulfillment teams through lean workflow redesign and SAP S/4HANA to PEGA migration.
-- **15+ FTE Capacity Created** — Automated ticket quality workflows, freeing up high-value specialists for strategic work.
-- **50% Lower Incident Volume** — Eliminated &quot;hung-line&quot; bottlenecks at BT, significantly reducing operational firefighting.
-- **21% Higher Tool Adoption** — Led user-centric change management for PEGA deployments, ensuring digital tool ROI.
-- **5+ Years Remote Leadership** — Successfully leading distributed teams with 100% remote operations, driving cultural change and process adherence across global organizations.
+- **EUR 700k+ Documented Savings** — Aggregated across license consolidation (EUR 500k+ at NTT), automation ROI, and waste elimination — each line item traceable to a named project.
+- **15+ FTE Freed via Automation** — Automated internal ticket-quality workflow at BT — USD 100k+ annual run-rate saving, 10-FTE headcount redirection to strategic work.
+- **50% Incident Volume Cut** — Redesigned BT hung-line ITSM process — halved firefighting and shifted the team from reactive to proactive.
+- **20% Productivity Uplift** — Designed future-state order-fulfilment workflows at S.W.I.F.T. during the SAP S/4HANA to PEGA migration.
+- **21% Higher Tool Adoption** — Drove PEGA workflow adoption at BT via targeted stakeholder engagement — turned a rollout into actual usage.
+- **50% API Reduction (projected)** — Leading E-form optimization and endpoint consolidation at S.W.I.F.T. (2025-present) — cutting complexity and maintenance cost.
 
 
 ## Career timeline

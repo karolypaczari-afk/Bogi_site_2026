@@ -1,13 +1,26 @@
 {
-  "headingLead": "Unlock Your Team's",
-  "headingAccent": "Full Potential",
-  "subhead": "Certified ITIL, 6Sigma & Lean expert delivering <strong>EUR 700k+ in documented cost savings</strong>. 14+ years transforming Telecom, FinTech & ICT operations with 5+ years leading 100% remote global teams.",
-  "skillBadges": [
-    { "text": "SAP S/4HANA", "variant": "accent", "icon": "fa-check-circle" },
-    { "text": "PEGA", "variant": "blue", "icon": "fa-check-circle" },
-    { "text": "AI-Augmented", "variant": "green", "icon": "fa-robot" }
-  ],
+  "headingLead": "EUR 700k+ saved. 15+ FTE automated.",
+  "headingAccent": "50% incidents cut.",
+  "headingTail": "Senior Transformation Lead — available now.",
+  "subhead": "14+ yrs at <strong>S.W.I.F.T., NTT Ltd., British Telecom, T-Systems</strong>. SAP S/4HANA · PEGA · Lean Six Sigma · ITIL · 100% remote. Open to contract &amp; interim roles across Telecom, FinTech, and ICT.",
   "clients": ["S.W.I.F.T.", "NTT Ltd.", "British Telecom", "T-Systems"],
+  "valueStack": {
+    "title": "What's in the 2-page CV",
+    "items": [
+      "Full tenure at S.W.I.F.T., NTT Ltd., British Telecom, T-Systems",
+      "10+ quantified achievements — every € and % traceable to project, client, year",
+      "Tech stack: SAP S/4HANA, PEGA, ServiceNow, ARIS, Power BI, Minitab",
+      "10 certifications: ITIL, PRINCE2, Lean, Six Sigma, Change Mgmt, Business Architect",
+      "Direct contact details — no recruiter gatekeeping"
+    ]
+  },
+  "primaryCta": {
+    "label": "Download CV",
+    "sub": "2 pages · PDF · no signup"
+  },
+  "secondaryCta": {
+    "label": "See 15+ recommendations on LinkedIn"
+  },
   "stats": [
     { "value": "EUR 700k+", "label": "Total Documented", "subLabel": "Cost Savings", "icon": "fa-chart-line" },
     { "value": "20%", "label": "Productivity", "subLabel": "Improvement", "icon": "fa-rocket" },

@@ -1,0 +1,32 @@
+{# Inline CV CTA — repeated between sections for 20%-scroll audience.
+   Usage: {% include "partials/inline-cv-cta.njk" %} with `inlineCtaLocation` set.
+   Optional: inlineCtaHeading, inlineCtaSub #}
+<section class="inline-cta" aria-label="Download Bogi's CV">
+    <div class="container">
+        <div class="inline-cta__card reveal">
+            <div class="inline-cta__text">
+                <h3 class="inline-cta__heading">{{ inlineCtaHeading or "Full details are in the CV." }}</h3>
+                <p class="inline-cta__sub">{{ inlineCtaSub or "EUR 700k+ savings, 10+ case studies, tech stack, 10 certs. 2 pages, no signup." }}</p>
+            </div>
+            <div class="inline-cta__actions">
+                <a class="btn btn--primary inline-cta__btn"
+                   href="{{ site.contact.resume }}"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   data-cta-location="{{ inlineCtaLocation or 'inline' }}">
+                    <i class="far fa-file-pdf" aria-hidden="true"></i>
+                    Download CV
+                    <span class="inline-cta__btn-sub">2 pages · no signup</span>
+                </a>
+                <a class="btn btn--linkedin btn--sm inline-cta__btn-secondary"
+                   href="{{ site.contact.linkedin }}"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   data-cta-location="{{ inlineCtaLocation or 'inline' }}_linkedin">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

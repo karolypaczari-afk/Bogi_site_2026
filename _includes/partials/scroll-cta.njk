@@ -1,0 +1,21 @@
+{# Scroll-depth / exit-intent CTA card — fires once per session.
+   Triggered by JS at 70% scroll (mobile) or mouseleave top (desktop). #}
+<div class="scroll-cta" data-scroll-cta hidden aria-hidden="true" aria-live="polite" role="dialog" aria-modal="false" aria-labelledby="scroll-cta-title">
+    <button class="scroll-cta__close" type="button" data-scroll-cta-close aria-label="Dismiss">
+        <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+    <h3 class="scroll-cta__title" id="scroll-cta-title">Before you go — grab the CV.</h3>
+    <p class="scroll-cta__sub">2-page PDF. No signup, no email wall. EUR 700k+ savings documented with every number traceable.</p>
+    <div class="scroll-cta__actions">
+        <a class="btn btn--primary"
+           href="{{ site.contact.resume }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           data-cta-location="scroll_depth_popup"
+           data-scroll-cta-accept>
+            <i class="far fa-file-pdf" aria-hidden="true"></i>
+            Download CV
+        </a>
+        <button class="btn btn--ghost scroll-cta__dismiss" type="button" data-scroll-cta-dismiss>Not now</button>
+    </div>
+</div>

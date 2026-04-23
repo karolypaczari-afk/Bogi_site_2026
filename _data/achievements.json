@@ -1,13 +1,13 @@
 {
   "eyebrow": "Hard Metrics",
   "heading": "Proven Business Impact",
-  "subhead": "I don't just \"improve processes\"—I deliver measurable financial and operational results that reflect on the bottom line.",
+  "subhead": "Every number below maps to a specific project, client, and year. Full details in the CV.",
   "items": [
-    { "icon": "fa-euro-sign", "title": "EUR 700k+ Documented Savings", "desc": "Aggregated savings across license optimization, automation ROI, and process waste elimination." },
-    { "icon": "fa-bolt", "title": "20% Productivity Improvement", "desc": "Average throughput increase for order fulfillment teams through lean workflow redesign and SAP S/4HANA to PEGA migration." },
-    { "icon": "fa-users-cog", "title": "15+ FTE Capacity Created", "desc": "Automated ticket quality workflows, freeing up high-value specialists for strategic work." },
-    { "icon": "fa-chart-pie", "title": "50% Lower Incident Volume", "desc": "Eliminated \"hung-line\" bottlenecks at BT, significantly reducing operational firefighting." },
-    { "icon": "fa-user-check", "title": "21% Higher Tool Adoption", "desc": "Led user-centric change management for PEGA deployments, ensuring digital tool ROI." },
-    { "icon": "fa-globe", "title": "5+ Years Remote Leadership", "desc": "Successfully leading distributed teams with 100% remote operations, driving cultural change and process adherence across global organizations." }
+    { "icon": "fa-euro-sign",   "title": "EUR 700k+ Documented Savings",   "desc": "Aggregated across license consolidation (EUR 500k+ at NTT), automation ROI, and waste elimination — each line item traceable to a named project." },
+    { "icon": "fa-robot",       "title": "15+ FTE Freed via Automation",   "desc": "Automated internal ticket-quality workflow at BT — USD 100k+ annual run-rate saving, 10-FTE headcount redirection to strategic work." },
+    { "icon": "fa-chart-pie",   "title": "50% Incident Volume Cut",        "desc": "Redesigned BT hung-line ITSM process — halved firefighting and shifted the team from reactive to proactive." },
+    { "icon": "fa-bolt",        "title": "20% Productivity Uplift",        "desc": "Designed future-state order-fulfilment workflows at S.W.I.F.T. during the SAP S/4HANA to PEGA migration." },
+    { "icon": "fa-user-check",  "title": "21% Higher Tool Adoption",       "desc": "Drove PEGA workflow adoption at BT via targeted stakeholder engagement — turned a rollout into actual usage." },
+    { "icon": "fa-chart-line",  "title": "50% API Reduction (projected)",  "desc": "Leading E-form optimization and endpoint consolidation at S.W.I.F.T. (2025-present) — cutting complexity and maintenance cost." }
   ]
 }

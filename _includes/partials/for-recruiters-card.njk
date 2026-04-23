@@ -1,0 +1,38 @@
+{# For Recruiters quick-facts card — renders after hero, before Achievements.
+   Pulls data from site.recruiterFacts. #}
+<section class="recruiter-card" id="for-recruiters" aria-label="Quick facts for recruiters">
+    <div class="container">
+        <div class="recruiter-card__box reveal">
+            <header class="recruiter-card__head">
+                <span class="eyebrow">For recruiters</span>
+                <h2 class="recruiter-card__title">The 10-second scan</h2>
+            </header>
+            <dl class="recruiter-card__grid">
+                {% for row in site.recruiterFacts %}
+                <div class="recruiter-card__row">
+                    <dt class="recruiter-card__label">{{ row.label }}</dt>
+                    <dd class="recruiter-card__value">{{ row.value }}</dd>
+                </div>
+                {% endfor %}
+            </dl>
+            <div class="recruiter-card__actions">
+                <a class="btn btn--primary"
+                   href="{{ site.contact.resume }}"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   data-cta-location="recruiter_card">
+                    <i class="far fa-file-pdf" aria-hidden="true"></i>
+                    Download CV — 2 pages, no signup
+                </a>
+                <a class="btn btn--secondary"
+                   href="{{ site.contact.linkedin }}"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   data-cta-location="recruiter_card_linkedin">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

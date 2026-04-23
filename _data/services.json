@@ -1,16 +1,11 @@
 {
-  "eyebrow": "Services",
-  "heading": "Tailored Solutions for Your Business",
-  "subhead": "From process evaluation to full transformation programs, I offer flexible engagement models to match your needs.",
+  "eyebrow": "What I Do",
+  "heading": "Four ways I create <em>measurable</em> savings",
+  "subhead": "Same playbook across Telecom, FinTech and ICT — every engagement ties to a € or % target agreed up front.",
   "items": [
-    { "num": "01", "title": "Process Optimization", "desc": "Unlock savings and drive long-term growth through systematic process improvement." },
-    { "num": "02", "title": "Process Ownership", "desc": "Design, document, and implement efficient processes with full ownership." },
-    { "num": "03", "title": "Agile Business Analysis", "desc": "Evaluate processes, align stakeholders, and deliver strategic analytics." },
-    { "num": "04", "title": "Process Evaluation", "desc": "Comprehensive assessment identifying issues, risks, and benefits." },
-    { "num": "05", "title": "Performance Reporting", "desc": "Define KPIs and build measurement systems that drive accountability." },
-    { "num": "06", "title": "Requirements Management", "desc": "Bridge business stakeholders and technical teams with clarity." },
-    { "num": "07", "title": "Testing & Feedback", "desc": "Facilitate user testing sessions and provide actionable insights." },
-    { "num": "08", "title": "Change Management", "desc": "Guide organizational transitions with proven strategies and adoption frameworks." },
-    { "num": "09", "title": "Strategic Process Design", "desc": "Enhance efficiency and drive business success through redesign initiatives." }
+    { "num": "01", "title": "Cost & License Consolidation",      "desc": "Merge duplicate enterprise processes, retire legacy tools. EUR 500k+ license savings delivered at NTT Ltd. by collapsing 3 Opp2Cash workflows into one." },
+    { "num": "02", "title": "SAP S/4HANA ↔ PEGA Migrations",      "desc": "Lead the functional side of ERP / workflow transitions end-to-end — discovery, future-state design, migration, and adoption. 20% productivity gain at S.W.I.F.T." },
+    { "num": "03", "title": "Automation & FTE Recovery",          "desc": "Ticket-quality automation, variable billing, case-management workflows. 15+ FTE-equivalent capacity created, USD 100k+ annual run-rate at BT." },
+    { "num": "04", "title": "Process Redesign & Adoption",        "desc": "Lean Six Sigma redesign plus change management. 50% incident volume reduction (BT hung-line) and 21% adoption uplift on PEGA rollouts." }
   ]
 }

@@ -1,0 +1,30 @@
+{# Sticky mobile bottom CTA bar — persistent one-tap access to CV download.
+   Hidden ≥768px via CSS, shown after 100px scroll via JS. #}
+<div class="sticky-cta" data-sticky-cta role="region" aria-label="Quick actions">
+    <a class="sticky-cta__primary"
+       href="{{ site.contact.resume }}"
+       target="_blank"
+       rel="noopener noreferrer"
+       data-cta-location="sticky_mobile"
+       aria-label="Download CV — 2-page PDF, no signup">
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+        <span class="sticky-cta__primary-text">
+            <span class="sticky-cta__primary-label">Download CV</span>
+            <span class="sticky-cta__primary-sub">2 pages · no signup</span>
+        </span>
+    </a>
+    <a class="sticky-cta__icon"
+       href="{{ site.contact.linkedin }}"
+       target="_blank"
+       rel="noopener noreferrer"
+       data-cta-location="sticky_mobile_linkedin"
+       aria-label="Open LinkedIn profile in new tab">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+    </a>
+    <a class="sticky-cta__icon"
+       href="/#contact"
+       data-cta-location="sticky_mobile_contact"
+       aria-label="Jump to contact form">
+        <i class="far fa-envelope" aria-hidden="true"></i>
+    </a>
+</div>

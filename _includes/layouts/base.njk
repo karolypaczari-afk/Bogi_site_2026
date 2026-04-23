@@ -18,6 +18,11 @@
 
 {% include "partials/footer.njk" %}
 {% include "partials/booking-modal.njk" %}
+{% if pageType == "home" %}
+{% include "partials/sticky-mobile-cta.njk" %}
+{% include "partials/scroll-cta.njk" %}
+{% endif %}
+{% include "partials/post-download-modal.njk" %}
 {% include "partials/scripts.njk" %}
 
     <script src="/js/main.js?v={{ buildHash }}" defer></script>

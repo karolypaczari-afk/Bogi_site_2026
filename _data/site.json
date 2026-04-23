@@ -11,8 +11,18 @@
   "keywords": "Business Analyst, Digital Transformation, Process Optimization, SAP S/4HANA, PEGA, Lean Six Sigma, Change Management, Remote Leadership, API Integration, Workflow Automation",
   "author": "Boglarka Paczari Horvath",
   "defaultOgImage": "https://bogihorvath.com/img/bogi-horvath-og-1200x630.webp",
-  "availability": "Available for Senior Business Analyst / Transformation Lead / Process Optimization Expert Roles - 100% Remote",
-  "availabilityShort": "Available for Senior BA / Transformation Lead Roles",
+  "availability": "Available now — accepting 1-2 interim / contract roles (Senior BA · Transformation Lead · Process Optimization). 100% remote.",
+  "availabilityShort": "Available now — 1-2 interim slots open",
+  "recruiterFacts": [
+    { "label": "Role fit",         "value": "Senior BA · Transformation Lead · Process Optimization" },
+    { "label": "Availability",     "value": "Immediate — 1-2 interim / contract slots" },
+    { "label": "Location",         "value": "100% remote (CET ±3)" },
+    { "label": "Work authorization","value": "EU citizen" },
+    { "label": "Notice period",    "value": "Negotiable" },
+    { "label": "Sectors",          "value": "Telecom · FinTech · ICT (preferred)" },
+    { "label": "Languages",        "value": "English (full professional) · German (intermediate) · Hungarian (native)" },
+    { "label": "Response time",    "value": "Under 24 hours" }
+  ],
   "contact": {
     "email": "horvath.boglarka@hotmail.com",
     "emailHref": "mailto:horvath.boglarka@hotmail.com",

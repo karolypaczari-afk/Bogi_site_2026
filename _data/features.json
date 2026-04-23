@@ -1,20 +1,11 @@
 {
-  "eyebrow": "The Approach",
-  "heading": "Bridging Strategy and <em>Execution</em>",
-  "subhead": "I apply Lean Six Sigma, Agile, and ITIL frameworks to build resilient operations that scale effortlessly across global ICT sectors.",
+  "eyebrow": "How I work",
+  "heading": "Strategy and <em>execution</em> — by the same person",
+  "subhead": "Most transformation fails in the handover between strategy deck and delivery team. I do both — discovery, design, migration, rollout, and adoption. No handoff gap.",
   "approach": [
-    { "icon": "fa-chart-line", "title": "Lean Efficiency", "desc": "Identify structural waste and eliminate bottlenecks to increase team velocity by 15-20% consistently." },
-    { "icon": "fa-cogs", "title": "Digital Transformation", "desc": "Modernize tech stacks (S/4HANA, PEGA) with seamless API integrations and process automation." },
-    { "icon": "fa-users", "title": "Change Management", "desc": "Guiding global teams through complex cultural and technical transformations with strategic empathy." },
-    { "icon": "fa-robot", "title": "Workflow Optimization", "desc": "Leveraging AI tools to optimize workflows and documentation processes.", "aiTools": true },
-    { "icon": "fa-layer-group", "title": "Standardization", "desc": "Creating robust, scalable SOPs that remove operational ambiguity and enable rapid organizational scaling." },
-    { "icon": "fa-tachometer-alt", "title": "Data Intelligence", "desc": "Transforming raw operational metrics into actionable KPI dashboards for real-time decision-making." }
-  ],
-  "expertiseHeading": "Core Areas of Focus",
-  "expertise": [
-    { "icon": "fa-chess-board", "title": "Strategic Process Design", "desc": "Translating high-level business goals into executable, scalable process architectures (BPMN, VSM)." },
-    { "icon": "fa-network-wired", "title": "Digital Ecosystems", "desc": "Harmonizing complex IT landscapes (SAP, PEGA, API Layers) to reduce technical debt and improve velocity." },
-    { "icon": "fa-sync-alt", "title": "Continuous Improvement", "desc": "Deploying Lean Six Sigma and Agile frameworks to identify structural waste and optimize performance." },
-    { "icon": "fa-users-cog", "title": "Change Enablement", "desc": "Leading cross-functional teams through cultural and operational shifts with clear communication and empathy." }
+    { "icon": "fa-euro-sign", "title": "Cut EUR 500k+ in license spend", "desc": "Merged 3 enterprise processes and retired legacy tooling at NTT Ltd. — savings hit the P&L in the same fiscal year." },
+    { "icon": "fa-cogs",      "title": "Run SAP S/4HANA ↔ PEGA moves",  "desc": "Future-state design, rating & metering standardization, variable billing operationalization at S.W.I.F.T. and NTT Ltd." },
+    { "icon": "fa-robot",     "title": "Free 15+ FTE via automation",    "desc": "Ticket-quality QA automation at BT — USD 100k+/yr; 20% decreased waiting time on monthly invoicing at NTT.", "aiTools": true },
+    { "icon": "fa-user-check","title": "Drive 21% adoption uplift",      "desc": "Change management on PEGA workflow rollouts at BT — turned rollout into actual daily usage, not shelfware." }
   ]
 }
