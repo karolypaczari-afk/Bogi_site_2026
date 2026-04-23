@@ -1,1 +1,4 @@
-    {# Reserved for future tracking/analytics hooks #}
+    {# Tracking + consent stack (opt-out model, Google Consent Mode v2 compliant) #}
+    <script src="/js/tracking.js?v={{ buildHash }}" defer></script>
+    <script src="/js/tracking-loader.js?v={{ buildHash }}" defer></script>
+    <script src="/js/cookie-consent.js?v={{ buildHash }}" defer></script>

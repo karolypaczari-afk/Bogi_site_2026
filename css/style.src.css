@@ -3425,3 +3425,108 @@ body.no-scroll {
     font-size: 1.125rem;
     margin-bottom: var(--sp-8);
 }
+/* Cookie consent banner — opt-out model */
+.bh-cookie-consent {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    z-index: 1500;
+    background: #0f172a;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(15, 23, 42, 0.35);
+    padding: 20px 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1), transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.bh-cookie-consent.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bh-cookie-consent__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.bh-cookie-consent__copy p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.55;
+    color: #e2e8f0;
+}
+
+.bh-cookie-consent__copy a {
+    color: #6a82ef;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.bh-cookie-consent__copy a:hover {
+    color: #fff;
+}
+
+.bh-cookie-consent__actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.bh-cookie-consent__btn {
+    appearance: none;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+    font-family: inherit;
+}
+
+.bh-cookie-consent__btn:focus-visible {
+    outline: 2px solid #6a82ef;
+    outline-offset: 3px;
+}
+
+.bh-cookie-consent__btn--primary {
+    background: #4b68e9;
+    color: #fff;
+}
+
+.bh-cookie-consent__btn--primary:hover {
+    background: #3b58d9;
+    transform: translateY(-1px);
+}
+
+.bh-cookie-consent__btn--secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bh-cookie-consent__btn--secondary:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-1px);
+}
+
+@media (min-width: 768px) {
+    .bh-cookie-consent__inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .bh-cookie-consent__copy {
+        flex: 1;
+        padding-right: 24px;
+    }
+}

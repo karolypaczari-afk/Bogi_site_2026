@@ -1,0 +1,169 @@
+# ============================================
+# bogihorvath.com — Performance, caching & security
+# ============================================
+
+# --- Custom 404 page ---
+ErrorDocument 404 /404.html
+
+# --- HTTPS canonical + trailing-slash normalisation ---
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Redirect www → apex (or flip both lines if you prefer www canonical)
+  RewriteCond %{HTTP_HOST} ^www\.bogihorvath\.com$ [NC]
+  RewriteRule ^(.*)$ https://bogihorvath.com/$1 [R=301,L]
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  # Add trailing slash to directory-style URLs so /about becomes /about/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]+|/)$
+  RewriteRule ^(.*)$ /$1/ [R=301,L]
+</IfModule>
+
+# --- 301 redirects: legacy React SPA routes → static URLs ---
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # The old React app used hash routes; apply only to bare domain hits.
+  # (Hash fragments never reach the server, so these act only on the
+  # occasional bot that indexed the non-hash form.)
+  RewriteRule ^about/?$ /about/ [R=301,L]
+  RewriteRule ^blog/?$ /blog/ [R=301,L]
+
+  # Admin/login/chatbot dead routes from the old site — 410 Gone so Google drops them
+  RewriteRule ^(admin|login|chat|chatbot)/?$ - [G,L]
+</IfModule>
+
+# --- GZIP / Brotli compression ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/manifest+json
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/atom+xml
+  AddOutputFilterByType DEFLATE text/plain
+</IfModule>
+
+# --- Browser caching ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # HTML — short cache so deploys are visible quickly
+  ExpiresByType text/html "access plus 5 minutes"
+
+  # CSS / JS — long cache, busted by ?v= query string on each build
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+
+  # Images — long cache
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Fonts — long cache
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+
+  # Manifest, feeds
+  ExpiresByType application/manifest+json "access plus 1 week"
+  ExpiresByType application/json "access plus 1 hour"
+  ExpiresByType application/atom+xml "access plus 1 hour"
+  ExpiresByType application/rss+xml "access plus 1 hour"
+
+  # Plain-text LLM files
+  ExpiresByType text/plain "access plus 1 day"
+
+  # PDFs
+  ExpiresByType application/pdf "access plus 1 month"
+</IfModule>
+
+# --- Cache-Control headers ---
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "public, max-age=300, must-revalidate"
+  </FilesMatch>
+
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+
+  <FilesMatch "\.(webp|jpg|jpeg|png|gif|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  <FilesMatch "\.(woff2|woff|ttf|otf|eot)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+
+  <FilesMatch "\.webmanifest$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+
+  <FilesMatch "service-worker\.js$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+
+  <FilesMatch "\.(txt|xml)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+</IfModule>
+
+# --- Security headers ---
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), interest-cohort=()"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+  # Hide server signature
+  Header unset X-Powered-By
+  Header unset Server
+</IfModule>
+
+# --- MIME types ---
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+  AddType image/webp .webp
+  AddType font/woff2 .woff2
+  AddType application/atom+xml .xml
+  AddType text/plain .md
+  AddType text/plain .txt
+</IfModule>
+
+# --- Character set ---
+AddDefaultCharset UTF-8
+
+# --- Block hidden files + sensitive configs ---
+<FilesMatch "^\.(ht|env|git|claude|eleventy|stylelintrc|htmlvalidate)">
+    Require all denied
+</FilesMatch>
+<FilesMatch "(package\.json|package-lock\.json|playwright\.config\.js|biome\.json)$">
+    Require all denied
+</FilesMatch>
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^(_data|_dev|_includes|node_modules|test-results|playwright-report)(/|$) - [F,L]
+</IfModule>
+
+# --- Disable directory listing ---
+Options -Indexes

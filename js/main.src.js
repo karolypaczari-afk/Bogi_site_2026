@@ -295,6 +295,74 @@
         });
     }
 
+    // ---- dataLayer events (consent-gated; BHTracking inserts consent_state) ----
+    function track(name, params) {
+        if (window.BHTracking && typeof window.BHTracking.trackEvent === 'function') {
+            window.BHTracking.trackEvent(name, params);
+        } else {
+            (window.dataLayer = window.dataLayer || []).push(Object.assign({ event: name }, params || {}));
+        }
+    }
+
+    function initEventTracking() {
+        // CV download
+        document.querySelectorAll('a[href$=".pdf"], a[href*="/Bogi_CV"]').forEach((a) => {
+            a.addEventListener(
+                'click',
+                () => track('bh_cv_download', { cta_location: a.closest('section')?.id || 'unknown', url: a.href }),
+                { passive: true }
+            );
+        });
+
+        // LinkedIn click
+        document.querySelectorAll('a[href*="linkedin.com"]').forEach((a) => {
+            a.addEventListener(
+                'click',
+                () => track('bh_linkedin_click', { cta_location: a.closest('section')?.id || 'unknown' }),
+                { passive: true }
+            );
+        });
+
+        // Email click
+        document.querySelectorAll('a[href^="mailto:"]').forEach((a) => {
+            a.addEventListener(
+                'click',
+                () => track('bh_email_click', { cta_location: a.closest('section')?.id || 'unknown' }),
+                { passive: true }
+            );
+        });
+
+        // Contact form interactions
+        const contactForm = document.querySelector('[data-contact-form]');
+        if (contactForm) {
+            contactForm.addEventListener(
+                'focusin',
+                function onFocus() {
+                    track('bh_contact_form_start');
+                    contactForm.removeEventListener('focusin', onFocus);
+                },
+                { once: true }
+            );
+        }
+
+        // Booking modal open
+        document.querySelectorAll('[data-booking-open]').forEach((b) => {
+            b.addEventListener('click', () => track('bh_booking_modal_open'), { passive: true });
+        });
+    }
+
+    // ---- form event wrappers (augment submit handlers) ----
+    function wrapFormTracking() {
+        const contact = document.querySelector('[data-contact-form]');
+        if (contact) {
+            contact.addEventListener('submit', () => track('bh_contact_submit_attempt'));
+        }
+        const booking = document.querySelector('[data-booking-form]');
+        if (booking) {
+            booking.addEventListener('submit', () => track('bh_booking_submit_attempt'));
+        }
+    }
+
     // ---- boot ------------------------------------------------------------
     function boot() {
         initReveals();
@@ -305,6 +373,8 @@
         initBookingModal();
         initReadingProgress();
         initServiceWorker();
+        initEventTracking();
+        wrapFormTracking();
     }
 
     if (document.readyState === 'loading') {
