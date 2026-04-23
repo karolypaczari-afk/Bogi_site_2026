@@ -1,7 +1,7 @@
 # Detecting and Preventing Money Leaks in Your Processes
 
 **Category:** Process Improvement
-**Author:** Boglarka Paczari-Horvath (https://bogihorvath.com/about/)
+**Author:** Boglárka Paczari-Horváth (https://bogihorvath.com/about/)
 **Canonical URL:** https://bogihorvath.com/blog/money-leaks/
 
 > Start with a housekeeping exercise to identify inefficiencies, then implement targeted solutions. This showcases how 6Sigma methodology addressed operational inefficiencies in an Opp2Invoice business process.
@@ -36,4 +36,4 @@ Structured 6 Sigma methodologies and focusing on detailed analysis and proactive
 
 ---
 
-*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/money-leaks/). Written by Boglarka Paczari-Horvath, Senior Business Analyst &amp; Digital Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*
+*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/money-leaks/). Written by Boglárka Paczari-Horváth, Senior Business Analyst &amp; Digital Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*

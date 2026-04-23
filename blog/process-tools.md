@@ -1,7 +1,7 @@
 # My favourite tools to initiate a Complex Process Improvement Project
 
 **Category:** Process Improvement
-**Author:** Boglarka Paczari-Horvath (https://bogihorvath.com/about/)
+**Author:** Boglárka Paczari-Horváth (https://bogihorvath.com/about/)
 **Canonical URL:** https://bogihorvath.com/blog/process-tools/
 
 > Initiating complex process improvement efforts becomes achievable with the right blend of methodologies and strategic steps. This article presents a proven framework for launching and executing impactful initiatives.
@@ -57,4 +57,4 @@ I advocate combining DMAIC (Define, Measure, Analyze, Improve, Control) methodol
 
 ---
 
-*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/process-tools/). Written by Boglarka Paczari-Horvath, Senior Business Analyst &amp; Digital Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*
+*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/process-tools/). Written by Boglárka Paczari-Horváth, Senior Business Analyst &amp; Digital Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*

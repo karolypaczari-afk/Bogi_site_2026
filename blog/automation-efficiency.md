@@ -1,7 +1,7 @@
 # Case Study: Enhancing Process Efficiency through Automation in an IT Multinational Company
 
 **Category:** Case Study
-**Author:** Boglarka Paczari-Horvath (https://bogihorvath.com/about/)
+**Author:** Boglárka Paczari-Horváth (https://bogihorvath.com/about/)
 **Canonical URL:** https://bogihorvath.com/blog/automation-efficiency/
 
 > Serving as a Management Information (MI) Lead at a major IT multinational, I led a transformation initiative focused on improving business processes. The core mission involved analyzing data to identify automation opportunities.
@@ -58,4 +58,4 @@ The successful automation initiative demonstrated how strategic process improvem
 
 ---
 
-*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/automation-efficiency/). Written by Boglarka Paczari-Horvath, Senior Business Analyst &amp; Digital Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*
+*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/automation-efficiency/). Written by Boglárka Paczari-Horváth, Senior Business Analyst &amp; Digital Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*

@@ -1,7 +1,7 @@
 # 3 steps to save $500K+ for Your Company
 
 **Category:** Process Improvement
-**Author:** Boglarka Paczari-Horvath (https://bogihorvath.com/about/)
+**Author:** Boglárka Paczari-Horváth (https://bogihorvath.com/about/)
 **Canonical URL:** https://bogihorvath.com/blog/500k-savings/
 
 > Proven strategies for organizational cost reduction without compromising performance or customer satisfaction. Learn how to achieve up to 30% savings through value stream optimization, platform consolidation, and strategic automation.
@@ -50,4 +50,4 @@ The three-step framework addresses value stream optimization, platform consolida
 
 ---
 
-*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/500k-savings/). Written by Boglarka Paczari-Horvath, Senior Business Analyst &amp; Digital Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*
+*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/500k-savings/). Written by Boglárka Paczari-Horváth, Senior Business Analyst &amp; Digital Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*

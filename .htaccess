@@ -25,18 +25,50 @@ ErrorDocument 404 /404.html
   RewriteRule ^(.*)$ /$1/ [R=301,L]
 </IfModule>
 
-# --- 301 redirects: legacy React SPA routes → static URLs ---
+# --- 301 redirects: legacy WordPress + React SPA URLs → new static URLs ---
+# Rescues link equity from URLs still in Google's index (confirmed via GSC).
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # The old React app used hash routes; apply only to bare domain hits.
-  # (Hash fragments never reach the server, so these act only on the
-  # occasional bot that indexed the non-hash form.)
+  # Legacy WordPress blog slugs (confirmed in Google Search Console)
+  RewriteRule ^3-steps-to-save-500k-for-your-company/?$ /blog/500k-savings/ [R=301,L]
+  RewriteRule ^case-study-driving-adoption-success-how-we-increased-workflow-adoption-by-21/?$ /blog/adoption-success/ [R=301,L]
+  RewriteRule ^detecting-and-preventing-money-leaks-in-your-processes/?$ /blog/money-leaks/ [R=301,L]
+  RewriteRule ^my-favourite-tools-to-initiate-a-complex-process-improvement-project/?$ /blog/process-tools/ [R=301,L]
+  RewriteRule ^case-study-enhancing-process-efficiency-through-automation-in-an-it-multinational-company/?$ /blog/automation-efficiency/ [R=301,L]
+
+  # Generic case-study index page → blog
+  RewriteRule ^case-study/?$ /blog/ [R=301,L]
+
+  # Legacy WP CV uploads → the one canonical PDF (GSC shows 22% CTR on these)
+  RewriteRule ^wp-content/uploads/[0-9]{4}/[0-9]{2}/Bogi-CV-.*\.pdf$ /Bogi_CV.pdf [R=301,L]
+  RewriteRule ^wp-content/uploads/.*\.pdf$ /Bogi_CV.pdf [R=301,L]
+
+  # WordPress taxonomy pages → blog
+  RewriteRule ^category/(.*)$ /blog/ [R=301,L]
+  RewriteRule ^tag/(.*)$ /blog/ [R=301,L]
+  RewriteRule ^author/(.*)$ /about/ [R=301,L]
+
+  # Generic WP artifacts
+  RewriteRule ^wp-content/(.*)$ / [R=301,L]
+  RewriteRule ^wp-includes/(.*)$ / [R=301,L]
+  RewriteRule ^wp-admin/?$ / [R=301,L]
+  RewriteRule ^wp-admin/(.*)$ / [R=301,L]
+  RewriteRule ^wp-login\.php$ / [R=301,L]
+  RewriteRule ^xmlrpc\.php$ / [R=301,L]
+  RewriteRule ^feed/?$ / [R=301,L]
+  RewriteRule ^comments/feed/?$ / [R=301,L]
+
+  # React SPA hash-based routes (shouldn't ever hit server, but 301 any bots)
   RewriteRule ^about/?$ /about/ [R=301,L]
   RewriteRule ^blog/?$ /blog/ [R=301,L]
 
-  # Admin/login/chatbot dead routes from the old site — 410 Gone so Google drops them
+  # Admin/login/chatbot dead routes — 410 Gone so Google drops them fast
   RewriteRule ^(admin|login|chat|chatbot)/?$ - [G,L]
+
+  # Legacy WP query-string URLs (?p=, ?cat=, ?feed=) — 410 Gone
+  RewriteCond %{QUERY_STRING} (^|&)(p|cat|author|feed|paged|s)=[^&]+ [NC]
+  RewriteRule .* - [G,L]
 </IfModule>
 
 # --- GZIP / Brotli compression ---

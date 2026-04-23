@@ -1,7 +1,7 @@
 # Case Study: Driving Adoption Success — How We Increased Workflow Adoption by 21%
 
 **Category:** Case Study
-**Author:** Boglarka Paczari-Horvath (https://bogihorvath.com/about/)
+**Author:** Boglárka Paczari-Horváth (https://bogihorvath.com/about/)
 **Canonical URL:** https://bogihorvath.com/blog/adoption-success/
 
 > As a Business Analyst, I led adoption and deployment efforts for an automated workflow development initiative. Despite being voluntary, we increased adoption from 14% to 21% within two months through proactive engagement and personalized support.
@@ -35,4 +35,4 @@ Success emerged through tailored approaches combining clear communication, proac
 
 ---
 
-*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/adoption-success/). Written by Boglarka Paczari-Horvath, Senior Business Analyst &amp; Digital Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*
+*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/adoption-success/). Written by Boglárka Paczari-Horváth, Senior Business Analyst &amp; Digital Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*
