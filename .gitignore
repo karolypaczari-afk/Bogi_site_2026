@@ -25,6 +25,9 @@ _dev/input/
 # Private / user data
 _data/backups/
 
+# SMTP credentials — upload manually to server, never commit
+api/smtp-config.php
+
 # OS
 .DS_Store
 Thumbs.db

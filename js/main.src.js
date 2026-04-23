@@ -111,12 +111,11 @@
     }
 
     // ---- forms -----------------------------------------------------------
-    const WEB3FORMS_URL = 'https://api.web3forms.com/submit';
+    const SMTP_URL       = '/api/send-mail.php';
+    const WEB3FORMS_URL  = 'https://api.web3forms.com/submit';
     const SERVER_LOG_URL = '/api/save-submission.php';
 
     function logToServer(payload) {
-        // Failover copy saved to server log — runs in parallel to Web3Forms.
-        // Fire-and-forget: any failure is non-fatal for user flow.
         try {
             fetch(SERVER_LOG_URL, {
                 method: 'POST',
@@ -145,40 +144,68 @@
         alert.textContent = message;
     }
 
-    async function submitWeb3Form(form, extraFields) {
+    function buildPayload(form, extraFields) {
         const fd = new FormData(form);
-
-        const honeypot = fd.get('botcheck');
-        if (honeypot) return { success: false, message: 'Bot detected.' };
-
-        const formFields = Object.fromEntries(fd.entries());
-        delete formFields.botcheck;
-
-        const payload = {
-            access_key: form.dataset.accessKey,
+        const fields = Object.fromEntries(fd.entries());
+        delete fields.botcheck;
+        return {
             from_name: form.dataset.fromName || 'Bogi Horvath Website',
-            subject: form.dataset.subject || `New message from ${fd.get('name') || 'the website'}`,
-            cc: form.dataset.cc || '',
-            replyto: fd.get('email') || '',
-            ...formFields,
+            subject:   form.dataset.subject  || `New message from ${fd.get('name') || 'the website'}`,
+            ...fields,
             ...(extraFields || {}),
         };
+    }
 
-        // Fire server-side failover log in parallel (fire-and-forget)
-        logToServer(formFields);
-
-        const response = await fetch(WEB3FORMS_URL, {
+    async function submitSmtp(payload) {
+        const response = await fetch(SMTP_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
             body: JSON.stringify(payload),
+            credentials: 'same-origin',
         });
+        if (!response.ok) return { success: false, message: 'SMTP endpoint error.' };
+        return response.json();
+    }
 
+    async function submitWeb3Form(payload) {
+        const w3payload = {
+            access_key: document.querySelector('[data-access-key]')?.dataset.accessKey || '',
+            cc:         document.querySelector('[data-cc]')?.dataset.cc || '',
+            replyto:    payload.email || '',
+            ...payload,
+        };
+        const response = await fetch(WEB3FORMS_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify(w3payload),
+        });
         if (!response.ok) return { success: false, message: 'Network error.' };
         const result = await response.json();
         return {
             success: Boolean(result.success),
             message: result.message || (result.success ? 'Submitted.' : 'Submission failed.'),
         };
+    }
+
+    async function submitForm(form, extraFields) {
+        const fd = new FormData(form);
+        if (fd.get('botcheck')) return { success: false, message: 'Bot detected.' };
+
+        const payload = buildPayload(form, extraFields);
+        logToServer(payload);
+
+        // Primary: Hostinger SMTP
+        try {
+            const r = await submitSmtp(payload);
+            if (r.success) return r;
+        } catch (_) { /* fall through */ }
+
+        // Fallback: Web3Forms
+        try {
+            return await submitWeb3Form(payload);
+        } catch (_) {
+            return { success: false, message: 'Network error. Please email directly.' };
+        }
     }
 
     function initContactForm() {
@@ -192,7 +219,7 @@
             if (prevAlert) prevAlert.remove();
 
             try {
-                const { success, message } = await submitWeb3Form(form);
+                const { success, message } = await submitForm(form);
                 if (success) {
                     setFormState(form, 'success');
                     const successView = document.querySelector('[data-contact-success]');
@@ -262,7 +289,7 @@
             if (prev) prev.remove();
 
             try {
-                const { success, message } = await submitWeb3Form(form);
+                const { success, message } = await submitForm(form);
                 if (success) {
                     const successView = modal.querySelector('[data-booking-success]');
                     if (successView) {
