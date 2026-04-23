@@ -837,7 +837,7 @@ body.no-scroll {
 
 .hero__availability {
     display: inline-flex;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--sp-2);
     background: linear-gradient(to right, #f0fdf4, #ecfdf5);
     border: 2px solid var(--clr-green-500);
@@ -854,6 +854,8 @@ body.no-scroll {
 .hero__availability .pulse-dot {
     width: 10px;
     height: 10px;
+    margin-top: 3px;
+    flex-shrink: 0;
 }
 
 .hero__headline {
@@ -4642,15 +4644,11 @@ body {
     padding: 10px 18px;
     box-shadow: 0 0 0 4px rgba(255, 90, 60, 0.04);
 }
-.hero__availability .pulse-dot {
+.hero__availability .pulse-dot::before {
     background: var(--clr-signal);
-    box-shadow: 0 0 0 0 rgba(255, 90, 60, 0.6);
-    animation: signal-pulse 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
-@keyframes signal-pulse {
-    0%   { box-shadow: 0 0 0 0 rgba(255, 90, 60, 0.5); }
-    70%  { box-shadow: 0 0 0 10px rgba(255, 90, 60, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255, 90, 60, 0); }
+.hero__availability .pulse-dot::after {
+    background: var(--clr-signal);
 }
 
 /* Trust strip — newspaper masthead cadence */
