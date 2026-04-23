@@ -69,9 +69,18 @@
     --clr-emerald-600: #059669;
     --clr-emerald-700: #047857;
 
-    /* Typography */
-    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
-    --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    /* Typography — editorial-precision upgrade 2026-04-23
+       Fraunces (variable serif with opsz/SOFT/WONK axes) + Inter Tight (tight modern sans) + JetBrains Mono (micro labels) */
+    --font-sans: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
+    --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    /* Editorial signal color — used only on live/urgency moments (availability dot, CV primary action edge) */
+    --clr-signal: #ff5a3c;
+    --clr-signal-subtle: rgba(255, 90, 60, 0.08);
+    --clr-ink: #0a0f1e;
+    --clr-paper: #faf8f3;
+    --clr-paper-alt: #f3efe6;
 
     /* Spacing scale */
     --sp-1: 4px;
@@ -4477,4 +4486,935 @@ button:focus-visible,
     .post-dl__panel {
         transition-duration: 0.001ms !important;
     }
+}
+
+/* ==========================================================================
+   EDITORIAL REFINEMENT LAYER — appended 2026-04-23
+   Fraunces + Inter Tight, oversized tabular numerals, hairline rules,
+   word-stagger hero reveal, cursor spotlight, grain overlay, chapter markers.
+   Layered on top of the conversion layer — does not alter structure or CTAs.
+   ========================================================================== */
+
+/* ---- Typography baseline ---- */
+body {
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11", "cv04";
+    letter-spacing: -0.005em;
+}
+
+/* Fraunces: use opsz axis — large sizes get display optics automatically */
+.hero__headline,
+.section-title,
+.contact__heading,
+.post__title,
+.cta-band__title,
+.page-hero__title,
+.recruiter-card__title,
+.inline-cta__heading,
+.scroll-cta__title,
+.post-dl__title {
+    font-family: var(--font-serif);
+    font-variation-settings: "opsz" 144, "SOFT" 25, "WONK" 0;
+    letter-spacing: -0.025em;
+    font-weight: 500;
+}
+
+.hero__headline em,
+.section-title em,
+.contact__heading em {
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+}
+
+/* Tabular numerals wherever numbers carry meaning */
+.stat-card__value,
+.achievement-card__title,
+.hero__portrait-badge__value,
+.bio__image-badge-value,
+.num,
+[data-countup],
+.timeline-card__date,
+.service-card__num {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum", "lnum";
+}
+
+/* Hero subhead: Inter Tight with refined tracking */
+.hero__subhead {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    max-width: 56ch;
+}
+.hero__subhead strong {
+    font-weight: 700;
+    border-bottom: 0;
+    background: linear-gradient(0deg, rgba(75, 104, 233, 0.18), rgba(75, 104, 233, 0.18)) bottom / 100% 6px no-repeat;
+    padding-bottom: 1px;
+}
+
+/* Eyebrows — JetBrains Mono micro-label, like newspaper section markers */
+.eyebrow,
+.hero__clients-label,
+.recruiter-card__label,
+.stat-card__label,
+.stat-card__sub,
+.sticky-cta__primary-sub,
+.hero__cta-primary-sub,
+.inline-cta__btn-sub {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+/* Section-level eyebrow gets a chapter-marker hairline */
+.section-header .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-3);
+    font-size: 0.6875rem;
+    color: var(--clr-text-muted);
+    margin-bottom: var(--sp-4);
+}
+.section-header .eyebrow::before {
+    content: "";
+    width: 40px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.6;
+    display: inline-block;
+}
+
+/* ---- Hero: word-line stagger reveal ---- */
+.hero__headline {
+    /* Allow reveal-lines to stack; override the earlier headline sizing */
+    font-size: clamp(2.4rem, 7.2vw + 0.5rem, 5.75rem);
+    line-height: 0.98;
+    margin-bottom: var(--sp-6);
+    font-weight: 500;
+}
+
+.hero-line {
+    display: block;
+    overflow: hidden;
+    line-height: 1.02;
+}
+.hero-line > span {
+    display: inline-block;
+    transform: translateY(110%);
+    opacity: 0;
+    animation: editorial-reveal 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    animation-delay: calc(var(--line, 0) * 120ms + 150ms);
+}
+.hero-line--tail > span {
+    font-family: var(--font-sans);
+    font-size: clamp(0.95rem, 1.6vw + 0.25rem, 1.375rem);
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: var(--clr-text-secondary);
+    margin-top: var(--sp-3);
+    display: inline-block;
+}
+.hero-line--accent > span em {
+    background: linear-gradient(120deg, var(--clr-accent) 0%, var(--clr-accent-dark) 70%, var(--clr-ink) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+@keyframes editorial-reveal {
+    0%   { transform: translateY(110%); opacity: 0; }
+    50%  { opacity: 1; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Availability badge — signal dot with soft glow */
+.hero__availability {
+    background: rgba(255, 90, 60, 0.06);
+    border: 1px solid rgba(255, 90, 60, 0.35);
+    color: #c74024;
+    font-family: var(--font-mono);
+    text-transform: none;
+    letter-spacing: 0.005em;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 10px 18px;
+    box-shadow: 0 0 0 4px rgba(255, 90, 60, 0.04);
+}
+.hero__availability .pulse-dot {
+    background: var(--clr-signal);
+    box-shadow: 0 0 0 0 rgba(255, 90, 60, 0.6);
+    animation: signal-pulse 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@keyframes signal-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(255, 90, 60, 0.5); }
+    70%  { box-shadow: 0 0 0 10px rgba(255, 90, 60, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 90, 60, 0); }
+}
+
+/* Trust strip — newspaper masthead cadence */
+.hero__clients--inline {
+    padding: var(--sp-4) 0;
+    margin: var(--sp-5) 0 var(--sp-6);
+    border-top: 1px solid var(--clr-slate-200);
+    border-bottom: 1px solid var(--clr-slate-200);
+    opacity: 1;
+}
+.hero__clients--inline .hero__clients-label {
+    font-size: 0.625rem;
+    color: var(--clr-text-muted);
+}
+.hero__clients--inline .hero__client {
+    font-family: var(--font-serif);
+    font-variation-settings: "opsz" 72, "SOFT" 25;
+    font-weight: 500;
+    color: var(--clr-text);
+    letter-spacing: 0.02em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hero__clients--inline .hero__client:hover {
+    color: var(--clr-accent);
+}
+
+/* Hero primary CTA: tighter, more precise */
+.hero__cta-primary {
+    background: var(--clr-ink);
+    color: #fff;
+    border: 1px solid var(--clr-ink);
+    border-radius: 999px;
+    padding: 18px 28px;
+    min-height: 60px;
+    box-shadow: 0 4px 14px rgba(10, 15, 30, 0.18), 0 0 0 1px rgba(255, 90, 60, 0.12);
+    position: relative;
+    transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 200ms cubic-bezier(0.2, 0.8, 0.2, 1), background 200ms;
+}
+.hero__cta-primary::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    background: radial-gradient(120% 120% at 50% 100%, rgba(255, 90, 60, 0.35), transparent 60%);
+    opacity: 0;
+    transition: opacity 300ms;
+    pointer-events: none;
+}
+.hero__cta-primary:hover {
+    background: var(--clr-ink);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(10, 15, 30, 0.28), 0 0 0 1px var(--clr-signal);
+}
+.hero__cta-primary:hover::after { opacity: 1; }
+
+.hero__cta-primary-label {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: -0.005em;
+}
+.hero__cta-primary-sub {
+    font-size: 0.625rem;
+    letter-spacing: 0.14em;
+    opacity: 0.72;
+}
+
+/* Secondary (LinkedIn) button: pill, fine weight */
+.btn--secondary {
+    border-radius: 999px;
+    border: 1px solid var(--clr-slate-200);
+    padding: 18px 26px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    letter-spacing: -0.005em;
+    transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1), border-color 200ms, color 200ms;
+}
+.btn--secondary:hover {
+    border-color: var(--clr-ink);
+    color: var(--clr-ink);
+    transform: translateY(-2px);
+}
+
+/* Cursor-follow spotlight on hero (desktop, fine pointer only) */
+@media (pointer: fine) {
+    .hero {
+        --mx: 50%;
+        --my: 50%;
+    }
+    .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(420px circle at var(--mx) var(--my), rgba(75, 104, 233, 0.08), transparent 60%);
+        pointer-events: none;
+        z-index: 0;
+        transition: opacity 300ms;
+        opacity: 0;
+    }
+    .hero:hover::before {
+        opacity: 1;
+    }
+}
+
+/* ---- Stat cards → editorial stat figures ---- */
+.hero__stats {
+    margin-top: clamp(2.5rem, 5vw, 5rem);
+    gap: 0;
+    border-top: 1px solid var(--clr-slate-200);
+    border-bottom: 1px solid var(--clr-slate-200);
+}
+.stat-card {
+    background: transparent;
+    border-radius: 0;
+    border: 0;
+    border-right: 1px solid var(--clr-slate-200);
+    box-shadow: none;
+    text-align: left;
+    padding: var(--sp-6) var(--sp-5);
+    position: relative;
+}
+.stat-card:last-child { border-right: 0; }
+.stat-card:hover {
+    background: var(--clr-paper);
+    transform: none;
+    box-shadow: none;
+    border-color: var(--clr-slate-200);
+}
+.stat-card__icon {
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    color: var(--clr-ink);
+    margin: 0 0 var(--sp-3);
+    font-size: 0.9375rem;
+    opacity: 0.6;
+}
+.stat-card:hover .stat-card__icon {
+    transform: none;
+    opacity: 1;
+    color: var(--clr-accent);
+}
+.stat-card__value {
+    font-family: var(--font-serif);
+    font-variation-settings: "opsz" 144, "SOFT" 25;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    color: var(--clr-ink);
+    line-height: 0.92;
+    margin-bottom: var(--sp-3);
+}
+.stat-card:hover .stat-card__value {
+    color: var(--clr-accent);
+}
+.stat-card__label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--clr-text-muted);
+    font-weight: 500;
+    line-height: 1.4;
+}
+.stat-card__sub {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    letter-spacing: 0.1em;
+    color: var(--clr-text-muted);
+    margin-top: 2px;
+}
+
+@media (max-width: 767px) {
+    .hero__stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .stat-card {
+        border-right: 1px solid var(--clr-slate-200);
+        border-bottom: 1px solid var(--clr-slate-200);
+    }
+    .stat-card:nth-child(2n) { border-right: 0; }
+    .stat-card:nth-last-child(-n+2) { border-bottom: 0; }
+}
+
+/* ---- Achievements section → paper-cream backdrop for editorial rhythm ---- */
+.achievements {
+    background: var(--clr-paper);
+    color: var(--clr-ink);
+}
+.achievements__blob {
+    background: rgba(75, 104, 233, 0.08);
+}
+.achievements .section-title,
+.achievements .section-lead {
+    color: var(--clr-ink);
+}
+.achievements .section-lead {
+    color: var(--clr-text-secondary);
+}
+
+/* ---- Achievement cards: editorial metric blocks ---- */
+.achievement-card {
+    background: #fff;
+    border: 1px solid var(--clr-slate-200);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.5rem, 2.5vw, 2.25rem);
+    transition: border-color 250ms cubic-bezier(0.2, 0.8, 0.2, 1), transform 250ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 250ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 1px 0 rgba(10, 15, 30, 0.04);
+}
+.achievement-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--clr-ink);
+    box-shadow: 0 20px 40px rgba(10, 15, 30, 0.1);
+}
+.achievement-card__icon {
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    color: var(--clr-accent);
+    font-size: 1.125rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: var(--sp-4);
+    border-radius: 0;
+}
+.achievement-card__title {
+    font-family: var(--font-serif);
+    font-variation-settings: "opsz" 144, "SOFT" 25;
+    font-size: clamp(1.375rem, 2.6vw, 1.875rem);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--clr-ink);
+    margin-bottom: var(--sp-3);
+}
+.achievement-card__desc {
+    font-size: 0.9375rem;
+    color: var(--clr-text-secondary);
+    line-height: 1.55;
+}
+
+/* ---- Section title refinement ---- */
+.section-title {
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    line-height: 1.02;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    color: var(--clr-ink);
+}
+
+/* ---- Recruiter card: paper + hairlines ---- */
+.recruiter-card__box {
+    background: var(--clr-paper);
+    border: 1px solid var(--clr-slate-200);
+    box-shadow: 0 1px 0 var(--clr-slate-200);
+}
+.recruiter-card__title {
+    font-variation-settings: "opsz" 144, "SOFT" 40;
+    font-size: clamp(1.625rem, 3vw, 2.25rem);
+}
+.recruiter-card__label {
+    color: var(--clr-text-muted);
+    font-size: 0.625rem;
+    letter-spacing: 0.14em;
+}
+.recruiter-card__value {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: var(--clr-ink);
+}
+
+/* ---- Inline CTA card: darker ink, tighter typography ---- */
+.inline-cta__card {
+    background: linear-gradient(135deg, #0a0f1e 0%, #131b30 60%, #0a0f1e 100%);
+}
+.inline-cta__card::before {
+    background: radial-gradient(circle, rgba(255, 90, 60, 0.25), transparent 65%);
+}
+.inline-cta__heading {
+    font-variation-settings: "opsz" 144, "SOFT" 40, "WONK" 1;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+.inline-cta__sub {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.9375rem;
+}
+.inline-cta__btn {
+    border-radius: 999px;
+    background: #fff;
+    color: var(--clr-ink);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    padding: 16px 24px;
+}
+.inline-cta__btn:hover {
+    background: #fff;
+    color: var(--clr-ink);
+    transform: translateY(-2px);
+}
+.inline-cta__btn-sub { color: rgba(10, 15, 30, 0.55); }
+.inline-cta__btn-secondary {
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+.inline-cta__btn-secondary:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* ---- Sticky mobile CTA refinement ---- */
+.sticky-cta__primary {
+    background: var(--clr-ink);
+    box-shadow: 0 4px 14px rgba(10, 15, 30, 0.25), 0 0 0 1px rgba(255, 90, 60, 0.25);
+}
+.sticky-cta__primary-sub {
+    font-family: var(--font-mono);
+    letter-spacing: 0.12em;
+    font-size: 0.625rem;
+}
+
+/* ---- Value stack summary refinement ---- */
+.hero__value-stack {
+    background: var(--clr-paper);
+    border-color: var(--clr-slate-200);
+    border-radius: var(--radius-lg);
+}
+.hero__value-stack-summary {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--clr-text);
+}
+.hero__value-stack-summary > i:first-child {
+    color: var(--clr-signal);
+}
+.hero__value-stack-list li {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--clr-text-secondary);
+    letter-spacing: -0.005em;
+}
+.hero__value-stack-list li::before {
+    color: var(--clr-signal);
+    font-size: 0.75rem;
+    top: 4px;
+}
+
+/* ---- Post-download modal refinement ---- */
+.post-dl__title {
+    font-variation-settings: "opsz" 144, "SOFT" 40;
+}
+.post-dl__check {
+    background: var(--clr-signal-subtle);
+    color: var(--clr-signal);
+}
+
+/* ---- Scroll CTA refinement ---- */
+.scroll-cta {
+    border: 1px solid var(--clr-slate-200);
+    border-radius: var(--radius-lg);
+}
+.scroll-cta__title {
+    font-variation-settings: "opsz" 144, "SOFT" 40;
+    font-size: 1.125rem;
+}
+
+/* ---- For Recruiters card title ---- */
+.recruiter-card__head .eyebrow {
+    justify-content: center;
+    display: flex;
+    font-family: var(--font-mono);
+}
+
+/* ---- Service / Features / Testimonial card polish ---- */
+.approach-card,
+.service-card,
+.testimonial-card,
+.skill-card,
+.cert-category,
+.expertise-card {
+    border-radius: var(--radius-lg);
+    transition: transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1), border-color 250ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.approach-card__title,
+.service-card__title,
+.skill-card__title {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    letter-spacing: -0.01em;
+    color: var(--clr-ink);
+}
+.service-card__num {
+    font-family: var(--font-serif);
+    font-variation-settings: "opsz" 144, "SOFT" 40;
+    font-weight: 500;
+    color: var(--clr-signal);
+    opacity: 0.85;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    letter-spacing: -0.03em;
+}
+.timeline-card__date,
+.timeline-card__company,
+.timeline-card__title {
+    font-family: var(--font-sans);
+}
+.timeline-card__date {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--clr-text-muted);
+}
+.timeline-card__title {
+    font-family: var(--font-serif);
+    font-variation-settings: "opsz" 96, "SOFT" 30;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--clr-ink);
+}
+
+/* Testimonial quote refinement */
+.testimonial-card__quote {
+    font-family: var(--font-serif);
+    font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+    color: var(--clr-accent);
+    opacity: 0.35;
+    font-size: 4rem;
+}
+.testimonial-card__text {
+    font-family: var(--font-serif);
+    font-variation-settings: "opsz" 36, "SOFT" 40;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
+    color: var(--clr-text);
+}
+.testimonial-card__author {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    letter-spacing: -0.005em;
+}
+
+/* Cert pills — editorial tone */
+.cert-pill {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+}
+.cert-pill__org {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* Skills strip — refined rows */
+.skills-strip__title {
+    font-family: var(--font-sans);
+    letter-spacing: -0.005em;
+}
+.skill-tag {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 0.8125rem;
+    letter-spacing: -0.005em;
+}
+.skill-tag--highlight {
+    background: var(--clr-ink);
+    color: #fff;
+}
+
+/* ---- Contact section refinement ---- */
+.contact__heading {
+    font-size: clamp(1.875rem, 4vw, 2.75rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    color: var(--clr-ink);
+}
+.contact__channel {
+    border-radius: var(--radius-md);
+    font-family: var(--font-sans);
+    letter-spacing: -0.005em;
+}
+
+/* ---- Fluid container + section spacing (tightened — no dead-air gaps) ---- */
+.container {
+    padding-left: clamp(1rem, 4vw, 2rem);
+    padding-right: clamp(1rem, 4vw, 2rem);
+}
+
+.features,
+.services,
+.skills,
+.skills--compact,
+.achievements,
+.timeline,
+.testimonials,
+.certs,
+.certs--compact,
+.contact {
+    padding-top: clamp(2.5rem, 4.5vw, 4.5rem);
+    padding-bottom: clamp(2.5rem, 4.5vw, 4.5rem);
+}
+
+/* Recruiter card sits right after hero — tighter top, normal bottom */
+.recruiter-card {
+    padding-top: clamp(1.5rem, 3vw, 2.5rem);
+    padding-bottom: clamp(2.5rem, 4.5vw, 4.5rem);
+}
+
+.inline-cta {
+    padding-top: clamp(1.5rem, 3vw, 2.5rem);
+    padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* Hero — trim the oversized bottom padding at desktop */
+.hero {
+    padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+@media (min-width: 1024px) {
+    .hero {
+        padding-top: clamp(2rem, 4vw, 3.5rem);
+        padding-bottom: clamp(3rem, 5vw, 5rem);
+    }
+}
+
+/* Hero grid — anchor columns to top on desktop (prevents empty gap when content col is shorter) */
+@media (min-width: 1024px) {
+    .hero__grid {
+        align-items: start;
+    }
+    .hero__content {
+        padding-top: clamp(0.5rem, 1vw, 1.5rem);
+    }
+}
+
+/* Hero stats band — sit closer to the fold, less air above */
+.hero__stats {
+    margin-top: clamp(1.5rem, 3vw, 3rem);
+}
+
+/* ---- Alternating section rhythm (light / paper / dark) ---- */
+.features { background: #fff; }
+.services { background: var(--clr-paper); }
+.testimonials { background: #fff; }
+.timeline { background: var(--clr-paper); }
+.skills--compact { background: #fff; }
+.certs--compact { background: var(--clr-paper); }
+.contact {
+    background: #fff;
+}
+
+/* Features/services/skills/certs need dark text after the background flip */
+.features .section-title,
+.services .section-title,
+.skills--compact .section-title,
+.certs--compact .section-title,
+.timeline .section-title,
+.testimonials .section-title {
+    color: var(--clr-ink);
+}
+
+/* Section headers — cut the 64px bottom margin in half */
+.section-header {
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+.section-lead {
+    max-width: 64ch;
+    margin-inline: auto;
+    color: var(--clr-text-secondary);
+    font-size: 1rem;
+}
+
+/* ---- Grain overlay — paper texture without the weight of an image ---- */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.035;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    background-size: 160px 160px;
+}
+
+/* ---- Portrait frame refinement ---- */
+.hero__portrait {
+    border: 6px solid var(--clr-paper);
+    border-radius: 28px;
+    box-shadow: 0 40px 80px rgba(10, 15, 30, 0.18);
+}
+.hero__portrait-frame {
+    border-color: rgba(75, 104, 233, 0.25);
+    border-radius: 34px;
+}
+.hero__portrait-badge {
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--clr-slate-200);
+    background: #fff;
+    box-shadow: 0 20px 60px rgba(10, 15, 30, 0.18);
+}
+.hero__portrait-badge__icon {
+    background: var(--clr-signal-subtle);
+    color: var(--clr-signal);
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+}
+.hero__portrait-badge__value {
+    font-family: var(--font-serif);
+    font-variation-settings: "opsz" 96, "SOFT" 25;
+    font-weight: 500;
+    font-size: 1.375rem;
+    letter-spacing: -0.02em;
+    color: var(--clr-ink);
+}
+.hero__portrait-badge__label {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    letter-spacing: 0.12em;
+}
+
+/* ---- Top bar + header refinement ---- */
+.top-bar {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+}
+.site-header .logo {
+    font-family: var(--font-serif);
+    font-variation-settings: "opsz" 72, "SOFT" 40;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+}
+.nav__link {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    letter-spacing: -0.005em;
+}
+.nav__cta {
+    border-radius: 999px;
+    font-family: var(--font-sans);
+    letter-spacing: -0.005em;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+    font-family: var(--font-sans);
+}
+
+/* ---- Narrow-mobile hero tightening (< 380px) ---- */
+@media (max-width: 380px) {
+    .hero__headline {
+        font-size: clamp(2rem, 10vw, 2.75rem);
+    }
+    .hero__availability {
+        font-size: 0.6875rem;
+        padding: 8px 12px;
+    }
+    .hero__clients--inline {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--sp-2);
+    }
+    .hero__ctas .btn {
+        padding: 14px 18px;
+        font-size: 0.9375rem;
+    }
+    .hero__cta-primary {
+        min-height: 56px;
+    }
+    .stat-card {
+        padding: var(--sp-4) var(--sp-3);
+    }
+    .stat-card__value {
+        font-size: clamp(1.75rem, 8vw, 2.5rem);
+    }
+    .inline-cta__card {
+        padding: var(--sp-6);
+    }
+    .inline-cta__heading {
+        font-size: 1.25rem;
+    }
+}
+
+/* ---- Tablet refinement (768-1023) — wider CTA row + better grid ---- */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero__stats {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .recruiter-card__grid {
+        grid-template-columns: 1fr 1fr;
+        column-gap: var(--sp-8);
+    }
+}
+
+/* ---- Desktop refinement — more whitespace, wider max ---- */
+@media (min-width: 1024px) {
+    .container {
+        max-width: min(1240px, 92vw);
+    }
+    .hero__grid {
+        gap: clamp(3rem, 6vw, 8rem);
+    }
+    .hero__cta-primary {
+        padding: 22px 34px;
+    }
+}
+
+/* ---- Large desktop (1440+) — restrain the line length ---- */
+@media (min-width: 1440px) {
+    .hero__subhead,
+    .section-lead {
+        max-width: 56ch;
+    }
+    .achievements__grid,
+    .features__grid,
+    .services__grid {
+        gap: clamp(1.5rem, 2vw, 2.5rem);
+    }
+}
+
+/* ---- Print: override the grain overlay + sticky bar ---- */
+@media print {
+    body::after { display: none; }
+    .sticky-cta, .scroll-cta, .post-dl { display: none !important; }
+}
+
+/* ---- Reduced-motion: disable the editorial motion layer ---- */
+@media (prefers-reduced-motion: reduce) {
+    .hero-line > span {
+        animation: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+    .hero__availability .pulse-dot {
+        animation: none !important;
+    }
+    .hero::before {
+        opacity: 0 !important;
+        transition: none !important;
+    }
+    body::after { display: none; }
+    [data-countup] {
+        /* count-up JS will short-circuit — no style change needed */
+    }
+}
+
+/* ---- Count-up: freeze at final value until in-view ---- */
+[data-countup] {
+    display: inline-block;
+    font-variant-numeric: tabular-nums;
+}
+[data-countup][data-counting="true"] {
+    color: var(--clr-accent);
+    transition: color 400ms ease;
 }

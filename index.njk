@@ -32,9 +32,9 @@ ogImageAlt: "Boglárka Paczari-Horvath — Senior Business Analyst & Digital Tra
                 </div>
 
                 <h1 class="hero__headline reveal">
-                    {{ h.headingLead }} <br>
-                    <em>{{ h.headingAccent }}</em><br>
-                    <span class="hero__headline-tail">{{ h.headingTail }}</span>
+                    <span class="hero-line" style="--line:0"><span>{{ h.headingLead }}</span></span>
+                    <span class="hero-line hero-line--accent" style="--line:1"><span><em>{{ h.headingAccent }}</em></span></span>
+                    <span class="hero-line hero-line--tail" style="--line:2"><span>{{ h.headingTail }}</span></span>
                 </h1>
 
                 <p class="hero__subhead reveal">{{ h.subhead | safe }}</p>
@@ -103,7 +103,7 @@ ogImageAlt: "Boglárka Paczari-Horvath — Senior Business Analyst & Digital Tra
             {% for stat in h.stats %}
             <div class="stat-card reveal">
                 <div class="stat-card__icon"><i class="fas {{ stat.icon }}" aria-hidden="true"></i></div>
-                <span class="stat-card__value">{{ stat.value }}</span>
+                <span class="stat-card__value" data-countup data-final="{{ stat.value }}">{{ stat.value }}</span>
                 <div class="stat-card__label">{{ stat.label }}</div>
                 <div class="stat-card__sub">{{ stat.subLabel }}</div>
             </div>

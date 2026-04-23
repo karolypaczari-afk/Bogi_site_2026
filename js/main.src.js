@@ -545,6 +545,94 @@
         });
     }
 
+    // ---- count-up animation on stat numbers -----------------------------
+    // Pulls numeric magnitude from data-final (e.g. "EUR 700k+" -> 700).
+    // Preserves prefix/suffix around the animated digit portion. One pass,
+    // respects prefers-reduced-motion (sets final value immediately).
+    function initCountUp() {
+        const els = document.querySelectorAll('[data-countup]');
+        if (!els.length) return;
+
+        if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+            return; // final values already rendered server-side
+        }
+
+        const animate = (el) => {
+            const final = el.getAttribute('data-final') || el.textContent;
+            // Split into prefix, magnitude, suffix. "EUR 700k+" -> ["EUR ", "700", "k+"]
+            const match = final.match(/^(\D*)(\d[\d.,]*)(.*)$/);
+            if (!match) return;
+            const prefix = match[1];
+            const raw = match[2].replace(/[,\s]/g, '');
+            const target = parseFloat(raw);
+            if (!isFinite(target) || target <= 0) return;
+            const suffix = match[3];
+
+            const duration = 1200;
+            const start = performance.now();
+            el.setAttribute('data-counting', 'true');
+            const formatInt = (n) => {
+                // Preserve original number formatting (e.g., keep the integer shape)
+                if (raw.indexOf('.') === -1) return String(Math.round(n));
+                const decimals = raw.split('.')[1].length;
+                return n.toFixed(decimals);
+            };
+            const tick = (now) => {
+                const t = Math.min(1, (now - start) / duration);
+                // easeOutExpo
+                const eased = t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+                const v = target * eased;
+                el.textContent = prefix + formatInt(v) + suffix;
+                if (t < 1) {
+                    requestAnimationFrame(tick);
+                } else {
+                    el.textContent = final;
+                    el.setAttribute('data-counting', 'false');
+                }
+            };
+            requestAnimationFrame(tick);
+        };
+
+        const io = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        animate(entry.target);
+                        io.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.4 }
+        );
+        els.forEach((el) => io.observe(el));
+    }
+
+    // ---- cursor-follow spotlight on hero (desktop only) -----------------
+    function initHeroSpotlight() {
+        const hero = document.querySelector('.hero');
+        if (!hero) return;
+        const fine = window.matchMedia('(pointer: fine)').matches;
+        if (!fine || prefersReducedMotion) return;
+
+        let rafPending = false;
+        let pendingX = 0;
+        let pendingY = 0;
+
+        const apply = () => {
+            hero.style.setProperty('--mx', pendingX + 'px');
+            hero.style.setProperty('--my', pendingY + 'px');
+            rafPending = false;
+        };
+        hero.addEventListener('mousemove', (e) => {
+            const rect = hero.getBoundingClientRect();
+            pendingX = e.clientX - rect.left;
+            pendingY = e.clientY - rect.top;
+            if (rafPending) return;
+            rafPending = true;
+            requestAnimationFrame(apply);
+        }, { passive: true });
+    }
+
     // ---- boot ------------------------------------------------------------
     function boot() {
         initReveals();
@@ -559,6 +647,8 @@
         initEventTracking();
         initStickyCta();
         initScrollCta();
+        initCountUp();
+        initHeroSpotlight();
         wrapFormTracking();
     }
 
