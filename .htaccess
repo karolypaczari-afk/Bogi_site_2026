@@ -160,12 +160,14 @@ ErrorDocument 404 /404.html
 </IfModule>
 
 # --- Security headers ---
+# Note: Referrer-Policy and Permissions-Policy are tuned for max ad/tracking
+# attribution fidelity. interest-cohort is NOT denied so Google Topics API /
+# interest-based Ads targeting remain available.
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
-  Header set Referrer-Policy "strict-origin-when-cross-origin"
-  Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), interest-cohort=()"
-  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "no-referrer-when-downgrade"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
   Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 
   # Hide server signature
