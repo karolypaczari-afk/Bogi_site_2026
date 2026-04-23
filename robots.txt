@@ -1,0 +1,82 @@
+User-agent: *
+Allow: /
+Disallow: /_dev/
+Disallow: /_data/
+Disallow: /_includes/
+Disallow: /node_modules/
+Disallow: /*?utm_*
+Disallow: /*?fbclid=*
+Disallow: /*?gclid=*
+
+# AI / LLM crawlers — explicit allowlist
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Mistral-Bot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: diffbot
+Allow: /
+
+Sitemap: https://bogihorvath.com/sitemap.xml
+
+# LLM-friendly content mirrors (llmstxt.org convention)
+# Summary: https://bogihorvath.com/llms.txt
+# Full content: https://bogihorvath.com/llms-full.txt
+# Each blog post has a plain-text mirror at /blog/{id}.md
+
+Host: https://bogihorvath.com

@@ -1,0 +1,259 @@
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="{{ site.themeColor }}">
+    <meta name="color-scheme" content="light">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="{{ metaRobots or 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' }}">
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>{{ title or (site.name + " | " + site.title) }}</title>
+    <meta name="description" content="{{ description or site.description }}">
+    <meta name="keywords" content="{{ keywords or site.keywords }}">
+    <meta name="author" content="{{ site.author }}">
+    <meta name="publisher" content="{{ site.author }}">
+    <meta name="geo.region" content="BE">
+    <meta name="geo.placename" content="Belgium">
+
+    <link rel="canonical" href="{{ canonical or site.url }}">
+    <link rel="alternate" hreflang="en" href="{{ canonical or site.url }}">
+    <link rel="alternate" hreflang="x-default" href="{{ canonical or site.url }}">
+    <link rel="alternate" type="text/plain" title="LLM-friendly summary" href="{{ site.url }}/llms.txt">
+    <link rel="alternate" type="text/plain" title="LLM-friendly full content" href="{{ site.url }}/llms-full.txt">
+    <link rel="alternate" type="application/rss+xml" title="Bogi Horvath — Blog" href="{{ site.url }}/blog/feed.xml">
+    <link rel="me" href="{{ site.contact.linkedin }}">
+    <link rel="author" href="{{ site.url }}/about/">
+
+    {# Open Graph #}
+    <meta property="og:type" content="{{ ogType or 'website' }}">
+    <meta property="og:url" content="{{ canonical or site.url }}">
+    <meta property="og:title" content="{{ ogTitle or title or (site.name + ' | ' + site.title) }}">
+    <meta property="og:description" content="{{ ogDescription or description or site.descriptionShort }}">
+    <meta property="og:image" content="{{ ogImage or site.defaultOgImage }}">
+    <meta property="og:image:width" content="{{ ogImageWidth or '1200' }}">
+    <meta property="og:image:height" content="{{ ogImageHeight or '630' }}">
+    <meta property="og:image:alt" content="{{ ogImageAlt or (site.fullName + ' — ' + site.title) }}">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:site_name" content="{{ site.name }} Portfolio">
+    <meta property="og:locale" content="en_US">
+    {% if ogType == "article" and blogPost %}
+    <meta property="article:published_time" content="{{ blogPost.date }}T00:00:00Z">
+    <meta property="article:modified_time" content="{{ blogPost.date }}T00:00:00Z">
+    <meta property="article:author" content="{{ site.url }}/about/">
+    <meta property="article:section" content="{{ blogPost.category }}">
+    <meta property="article:tag" content="{{ blogPost.category }}">
+    {% endif %}
+
+    {# Twitter / X #}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ ogTitle or title or (site.name + ' | ' + site.title) }}">
+    <meta name="twitter:description" content="{{ ogDescription or description or site.descriptionShort }}">
+    <meta name="twitter:image" content="{{ ogImage or site.defaultOgImage }}">
+    <meta name="twitter:image:alt" content="{{ ogImageAlt or (site.fullName + ' — ' + site.title) }}">
+    <meta name="twitter:label1" content="Written by"><meta name="twitter:data1" content="{{ site.fullName }}">
+    {% if ogType == "article" and blogPost %}
+    <meta name="twitter:label2" content="Filed under"><meta name="twitter:data2" content="{{ blogPost.category }}">
+    {% endif %}
+
+    {# Favicons #}
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.webmanifest">
+
+    {# Preconnect + resource hints (order matters) #}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.clarity.ms">
+    <link rel="dns-prefetch" href="https://api.web3forms.com">
+
+    <link rel="preload" as="style"
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap">
+
+    {# Font Awesome (async, no-CLS) #}
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </noscript>
+
+    {# Main stylesheet #}
+    <link rel="stylesheet" href="/css/style.css?v={{ buildHash }}">
+
+    {% if preloadHero %}<link rel="preload" as="image" href="{{ preloadHero }}" fetchpriority="high">{% endif %}
+
+    {# Google Tag Manager #}
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', '{{ site.tracking.gtm }}');</script>
+
+    {# GA4 #}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.tracking.ga4 }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', '{{ site.tracking.ga4 }}');
+    </script>
+
+    {# Microsoft Clarity #}
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "{{ site.tracking.clarity }}");
+    </script>
+
+    {# Structured data — Person #}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "{{ site.url }}/#person",
+        "name": "{{ site.fullName }}",
+        "alternateName": ["{{ site.name }}", "Bogi", "Boglarka Horvath"],
+        "jobTitle": "{{ site.title }}",
+        "url": "{{ site.url }}",
+        "image": {
+            "@type": "ImageObject",
+            "url": "{{ site.defaultOgImage }}",
+            "width": 1200,
+            "height": 630
+        },
+        "sameAs": ["{{ site.contact.linkedin }}"],
+        "description": "{{ site.descriptionShort }}",
+        "knowsAbout": {{ site.knowsAbout | dump | safe }},
+        "worksFor": [{ "@type": "Organization", "name": "S.W.I.F.T." }],
+        "knowsLanguage": [
+            { "@type": "Language", "name": "English", "alternateName": "en" },
+            { "@type": "Language", "name": "Hungarian", "alternateName": "hu" },
+            { "@type": "Language", "name": "German", "alternateName": "de" }
+        ],
+        "email": "{{ site.contact.email }}",
+        "nationality": { "@type": "Country", "name": "Hungary" }
+    }
+    </script>
+
+    {# Structured data — WebSite (enables sitelinks search box) #}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "{{ site.url }}/#website",
+        "url": "{{ site.url }}",
+        "name": "{{ site.name }} | Senior Business Analyst Portfolio",
+        "description": "{{ site.descriptionShort }}",
+        "publisher": { "@id": "{{ site.url }}/#person" },
+        "inLanguage": "en-US"
+    }
+    </script>
+
+    {# Structured data — WebPage #}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "{{ canonical or site.url }}#webpage",
+        "url": "{{ canonical or site.url }}",
+        "name": "{{ title or (site.name + ' | ' + site.title) }}",
+        "description": "{{ description or site.descriptionShort }}",
+        "isPartOf": { "@id": "{{ site.url }}/#website" },
+        "primaryImageOfPage": { "@type": "ImageObject", "url": "{{ ogImage or site.defaultOgImage }}" },
+        "inLanguage": "en-US",
+        "author": { "@id": "{{ site.url }}/#person" },
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", ".section-lead", ".hero__subhead", ".post__summary-text"]
+        }
+    }
+    </script>
+
+    {% if pageType == "home" %}
+    {# ProfessionalService + service catalog #}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "@id": "{{ site.url }}/#service",
+        "name": "{{ site.name }} — Digital Transformation Consulting",
+        "provider": { "@id": "{{ site.url }}/#person" },
+        "url": "{{ site.url }}",
+        "image": "{{ site.defaultOgImage }}",
+        "description": "Process optimization, digital transformation, SAP S/4HANA and PEGA consulting, Lean Six Sigma programs, and change management for global ICT organizations.",
+        "areaServed": { "@type": "Place", "name": "Global (remote)" },
+        "serviceType": ["Business Analysis", "Digital Transformation", "Process Optimization", "Change Management"],
+        "priceRange": "$$$",
+        "availableLanguage": ["English", "Hungarian", "German"],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Consulting Services",
+            "itemListElement": [
+                {% for svc in services.items %}
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "{{ svc.title }}", "description": "{{ svc.desc }}" } }{% if not loop.last %},{% endif %}
+                {% endfor %}
+            ]
+        }
+    }
+    </script>
+    {% endif %}
+
+    {% if breadcrumbs %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "{{ canonical }}#breadcrumb",
+        "itemListElement": [
+            {% for crumb in breadcrumbs %}
+            { "@type": "ListItem", "position": {{ loop.index }}, "name": "{{ crumb.name }}", "item": "{{ crumb.url }}" }{% if not loop.last %},{% endif %}
+            {% endfor %}
+        ]
+    }
+    </script>
+    {% endif %}
+
+    {% if ogType == "article" and blogPost %}
+    {# Full BlogPosting schema #}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "@id": "{{ canonical }}#article",
+        "headline": {{ blogPost.title | dump | safe }},
+        "alternativeHeadline": {{ blogPost.title | dump | safe }},
+        "description": {{ blogPost.summary | dump | safe }},
+        "datePublished": "{{ blogPost.date }}",
+        "dateModified": "{{ blogPost.date }}",
+        "author": { "@id": "{{ site.url }}/#person" },
+        "publisher": {
+            "@type": "Person",
+            "name": "{{ site.fullName }}",
+            "url": "{{ site.url }}",
+            "logo": { "@type": "ImageObject", "url": "{{ site.defaultOgImage }}" }
+        },
+        "mainEntityOfPage": { "@id": "{{ canonical }}#webpage" },
+        "articleSection": "{{ blogPost.category }}",
+        "inLanguage": "en-US",
+        "keywords": "{{ blogPost.category }}, Process Optimization, Digital Transformation, Lean Six Sigma, Business Analysis",
+        "image": {
+            "@type": "ImageObject",
+            "url": "{{ site.url }}{{ blogPost.cover }}",
+            "width": 1200,
+            "height": 675
+        },
+        "isPartOf": { "@id": "{{ site.url }}/#website" }
+    }
+    </script>
+    {% endif %}

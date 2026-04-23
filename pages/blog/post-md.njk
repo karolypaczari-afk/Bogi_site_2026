@@ -1,0 +1,29 @@
+---
+pagination:
+    data: posts
+    size: 1
+    alias: post
+permalink: "/blog/{{ post.id }}.md"
+eleventyExcludeFromCollections: true
+---
+# {{ post.title }}
+
+**Category:** {{ post.category }}
+**Author:** {{ site.fullName }} ({{ site.url }}/about/)
+**Canonical URL:** {{ site.url }}/blog/{{ post.id }}/
+
+> {{ post.summary }}
+
+{% for block in post.content %}{% if block.t == 'h2' %}
+## {{ block.v }}
+{% elif block.t == 'h3' %}
+### {{ block.v }}
+{% elif block.t == 'ul' %}
+{% for li in block.v %}- {{ li | stripHtml }}
+{% endfor %}{% else %}
+{{ block.v | stripHtml }}
+{% endif %}{% endfor %}
+
+---
+
+*This is an LLM-friendly plain-text mirror of [the HTML article]({{ site.url }}/blog/{{ post.id }}/). Written by {{ site.fullName }}, {{ site.title }}. Contact: {{ site.contact.email }} | {{ site.contact.linkedin }}*

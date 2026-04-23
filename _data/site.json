@@ -1,0 +1,42 @@
+{
+  "name": "Bogi Horvath",
+  "fullName": "Boglarka Paczari-Horvath",
+  "title": "Senior Business Analyst & Digital Transformation Lead",
+  "shortTitle": "Process Transformation Expert",
+  "url": "https://bogihorvath.com",
+  "locale": "en",
+  "themeColor": "#4b68e9",
+  "description": "Senior Business Analyst & Digital Transformation Lead with 14+ years in global ICT operations. EUR 700k+ documented savings through SAP S/4HANA, PEGA migrations, Lean Six Sigma, and AI-augmented process optimization. Available for remote Senior BA / Transformation Lead roles.",
+  "descriptionShort": "14+ years delivering EUR 700k+ in documented savings through SAP S/4HANA, PEGA, and AI-augmented process optimization.",
+  "keywords": "Business Analyst, Digital Transformation, Process Optimization, SAP S/4HANA, PEGA, Lean Six Sigma, Change Management, Remote Leadership, API Integration, Workflow Automation",
+  "author": "Boglarka Paczari Horvath",
+  "defaultOgImage": "https://bogihorvath.com/img/bogi.png",
+  "availability": "Available for Senior Business Analyst / Transformation Lead / Process Optimization Expert Roles - 100% Remote",
+  "availabilityShort": "Available for Senior BA / Transformation Lead Roles",
+  "contact": {
+    "email": "horvath.boglarka@hotmail.com",
+    "emailHref": "mailto:horvath.boglarka@hotmail.com",
+    "linkedin": "https://www.linkedin.com/in/boglarka-paczari-horvath/",
+    "resume": "/Bogi_CV.pdf"
+  },
+  "forms": {
+    "web3formsAccessKey": "0909516c-58b1-4bb3-80f4-e6f68f1e68ac",
+    "ccRecipients": "karolypaczari@gmail.com,hbogica1987@gmail.com,info@bogihorvath.com"
+  },
+  "tracking": {
+    "gtm": "GTM-W3LHSQ2R",
+    "ga4": "G-W1JERJNXLS",
+    "clarity": "mrbhk2dvb4"
+  },
+  "knowsAbout": [
+    "Business Analysis",
+    "Digital Transformation",
+    "Process Optimization",
+    "Lean Six Sigma",
+    "Change Management",
+    "SAP S/4HANA",
+    "PEGA",
+    "Agile Project Management",
+    "ITIL"
+  ]
+}

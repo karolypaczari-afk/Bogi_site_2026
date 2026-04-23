@@ -1,0 +1,61 @@
+# Bogi Horvath — Senior Business Analyst & Digital Transformation Lead
+
+> Professional portfolio of Boglarka Paczari-Horvath (Bogi Horvath). 14+ years delivering EUR 700k+ in documented savings across SAP S/4HANA, PEGA, and AI-augmented process optimization. Based in Belgium (remote), available for Senior BA / Transformation Lead roles globally.
+
+## Who
+
+- **Name:** Boglarka Paczari-Horvath (Bogi Horvath)
+- **Title:** Senior Business Analyst & Digital Transformation Lead
+- **Location:** Belgium, 100% remote, serves clients globally
+- **Contact:** horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/
+- **Resume (PDF):** https://bogihorvath.com/Bogi_CV.pdf
+- **Languages:** English (full professional), Hungarian (native), German (intermediate)
+
+## Core expertise
+
+Business Analysis, Digital Transformation, Process Optimization, Lean Six Sigma (Green Belt, DMAIC), Agile, ITIL Service Management, PRINCE2, Change Management, SAP S/4HANA, PEGA, API consolidation, AI-augmented productivity (Copilot, ChatGPT, Claude, Gemini).
+
+## Career highlights
+
+- **2025–present — Functional Lead, S.W.I.F.T. (Belgium, remote):** E-form optimization and global API consolidation for financial message handling. Leads 3–5 specialists.
+- **2024–2025 — Senior Order Fulfilment BA, S.W.I.F.T.:** Delivered 20% productivity gain via SAP S/4HANA to PEGA migration.
+- **2024–present — Founder, InnovateIT Consulting:** Six Sigma, Lean & Agile advisory for enterprise clients.
+- **2022–2024 — Principal Business Operations Specialist, NTT Ltd.:** EUR 500k+ SFDC license savings; harmonized Opp2Cash across 12 regional entities; 21% tool adoption increase.
+- **2015–2022 — BT (British Telecom):** $100k+ automation savings; 50% incident volume reduction via PEGA deployments.
+- **2010–2015 — Operations Manager, T-Systems:** 30% reduction in customer escalations via service chain redesign.
+
+## Certifications
+
+Six Sigma Green Belt (ASQ), Lean Practitioner, LeanIT Foundation, PRINCE2 Foundation, Change Management Practitioner (APMG), Agile Scrum Master, ITIL Service Operation / Transition / Continual Service Improvement, Business Architect Certified (BQF), Enterprise Architecture Foundations (TOGAF).
+
+## Services offered
+
+- Process Optimization and value stream mapping
+- Agile Business Analysis
+- Process Evaluation (issues, risks, benefits assessment)
+- Performance Reporting (KPIs, measurement systems)
+- Requirements Management
+- User Testing & Feedback facilitation
+- Change Management (adoption frameworks)
+- Strategic Process Design & redesign
+- Process Ownership (design, document, implement)
+
+## Industries
+
+Telecom, FinTech, ICT, Enterprise SaaS.
+
+## Primary pages
+
+- Home: https://bogihorvath.com/
+- About: https://bogihorvath.com/about/
+- Blog index: https://bogihorvath.com/blog/
+- RSS feed: https://bogihorvath.com/blog/feed.xml
+- Full content mirror: https://bogihorvath.com/llms-full.txt
+
+## Articles
+
+- **3 Steps to Save $500K+ for Your Company** — Value stream optimization, platform consolidation, automation. https://bogihorvath.com/blog/500k-savings/ (markdown: /blog/500k-savings.md)
+- **Case Study: Driving Adoption Success (14% → 21%)** — Voluntary PEGA workflow adoption in bid management. https://bogihorvath.com/blog/adoption-success/ (markdown: /blog/adoption-success.md)
+- **Favourite Tools to Initiate a Complex Process Improvement Project** — Project charter, SIPOC, VSM, swimlane, DMAIC. https://bogihorvath.com/blog/process-tools/ (markdown: /blog/process-tools.md)
+- **Detecting and Preventing Money Leaks in Your Processes** — 6Sigma applied to Opp2Invoice: license decommissioning, pricing triage, CMDB correction. https://bogihorvath.com/blog/money-leaks/ (markdown: /blog/money-leaks.md)
+- **Case Study: Enhancing Process Efficiency through Automation (IT multinational)** — Ticket quality automation, 10 FTEs freed, Deming Cycle. https://bogihorvath.com/blog/automation-efficiency/ (markdown: /blog/automation-efficiency.md)

@@ -1,0 +1,15 @@
+{
+  "eyebrow": "Ready to Scale?",
+  "heading": "Let's Transform Your <em>Operations</em>",
+  "subhead": "I'm currently open to selective consulting engagements and strategic leadership roles. If you're looking for high-impact process optimization, let's start with a conversation.",
+  "channels": [
+    { "icon": "far fa-envelope", "label": "horvath.boglarka@hotmail.com", "href": "mailto:horvath.boglarka@hotmail.com" },
+    { "icon": "fab fa-linkedin-in", "label": "LinkedIn Profile", "href": "https://www.linkedin.com/in/boglarka-paczari-horvath/" },
+    { "icon": "far fa-file-pdf", "label": "Download Resume", "href": "/Bogi_CV.pdf" }
+  ],
+  "formTitle": "Send a Message",
+  "formSubhead": "Start your journey towards operational excellence.",
+  "formFooter": "Responses usually within 24 hours",
+  "successTitle": "Message Sent!",
+  "successMessage": "Thank you for reaching out. Bogi will get back to you shortly."
+}

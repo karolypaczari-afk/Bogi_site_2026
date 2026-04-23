@@ -1,0 +1,64 @@
+    <div class="booking-modal" data-booking-modal role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="booking-modal-title">
+        <div class="booking-modal__overlay" data-booking-overlay></div>
+        <div class="booking-modal__panel">
+            <button class="booking-modal__close" data-booking-close type="button" aria-label="Close booking">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="booking-modal__body">
+                <span class="eyebrow">Free Consultation</span>
+                <h2 id="booking-modal-title" class="section-title" style="text-align:left;margin-bottom:var(--sp-2)">Let's Schedule a Chat</h2>
+                <p class="section-lead" style="text-align:left;margin-bottom:var(--sp-8)">Fill out the details below to request a 30-minute introductory call.</p>
+
+                <form class="form"
+                      data-booking-form
+                      data-access-key="{{ site.forms.web3formsAccessKey }}"
+                      data-cc="{{ site.forms.ccRecipients }}"
+                      data-from-name="Bogi Horvath Website"
+                      data-subject="New Consultation Request"
+                      novalidate>
+                    <input type="text" name="botcheck" class="form__honey" tabindex="-1" autocomplete="off">
+                    <input type="hidden" name="source" value="booking_modal">
+
+                    <div class="form__grid-2">
+                        <div class="form__row">
+                            <label class="form__label" for="booking-name">Name</label>
+                            <input class="form__input" id="booking-name" name="name" type="text" required placeholder="Your Name">
+                        </div>
+                        <div class="form__row">
+                            <label class="form__label" for="booking-email">Email</label>
+                            <input class="form__input" id="booking-email" name="email" type="email" required placeholder="email@company.com">
+                        </div>
+                    </div>
+
+                    <div class="form__row">
+                        <label class="form__label" for="booking-topic">Topic</label>
+                        <select class="form__select" id="booking-topic" name="topic">
+                            <option>Process Optimization</option>
+                            <option>Digital Migration (SAP/PEGA)</option>
+                            <option>Team Training / Leadership</option>
+                            <option>Other Inquiry</option>
+                        </select>
+                    </div>
+
+                    <div class="form__row">
+                        <label class="form__label" for="booking-datetime">Preferred Date &amp; Time</label>
+                        <input class="form__input" id="booking-datetime" name="datetime" type="datetime-local" required>
+                    </div>
+
+                    <div class="form__row">
+                        <label class="form__label" for="booking-message">Brief Context</label>
+                        <textarea class="form__textarea" id="booking-message" name="message" rows="3" required placeholder="What specific challenge are you facing?"></textarea>
+                    </div>
+
+                    <button class="form__submit" type="submit">Confirm Request</button>
+                </form>
+
+                <div class="form__success" data-booking-success hidden>
+                    <div class="form__success-icon"><i class="fas fa-check" aria-hidden="true"></i></div>
+                    <h3 class="form__success-title">Request Received!</h3>
+                    <p class="form__success-text">I have received your consultation request and will confirm the time via email shortly.</p>
+                    <button class="btn btn--primary" type="button" data-booking-close>Close</button>
+                </div>
+            </div>
+        </div>
+    </div>

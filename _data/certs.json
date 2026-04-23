@@ -1,0 +1,43 @@
+{
+  "eyebrow": "Professional Standards",
+  "heading": "Accreditations & Credentials",
+  "subhead": "Industry-recognized certifications demonstrating expertise in process excellence, IT service management, and enterprise transformation",
+  "categories": [
+    {
+      "category": "Process Excellence",
+      "icon": "fa-chart-line",
+      "certs": [
+        { "name": "Six Sigma Green Belt", "icon": "fa-medal", "color": "green", "org": "ASQ" },
+        { "name": "Lean Practitioner", "icon": "fa-layer-group", "color": "blue", "org": "Lean Institute" },
+        { "name": "LeanIT Foundation", "icon": "fa-microchip", "color": "cyan", "org": "LeanIT Association" }
+      ]
+    },
+    {
+      "category": "Project & Change Management",
+      "icon": "fa-project-diagram",
+      "certs": [
+        { "name": "PRINCE2 Foundation", "icon": "fa-crown", "color": "purple", "org": "AXELOS" },
+        { "name": "Change Management Practitioner", "icon": "fa-exchange-alt", "color": "orange", "org": "APMG" },
+        { "name": "Agile Scrum Master", "icon": "fa-sync", "color": "emerald", "org": "Scrum Alliance" }
+      ]
+    },
+    {
+      "category": "ITIL Service Management",
+      "icon": "fa-cogs",
+      "certs": [
+        { "name": "ITIL Service Operation", "icon": "fa-server", "color": "red", "org": "AXELOS" },
+        { "name": "ITIL Service Transition", "icon": "fa-arrow-right", "color": "pink", "org": "AXELOS" },
+        { "name": "ITIL Continual Service Improvement", "icon": "fa-sync-alt", "color": "teal", "org": "AXELOS" }
+      ]
+    },
+    {
+      "category": "Business & Enterprise Architecture",
+      "icon": "fa-sitemap",
+      "certs": [
+        { "name": "Business Architect Certified", "icon": "fa-sitemap", "color": "indigo", "org": "BQF" },
+        { "name": "LeanIT & Business Architecture", "icon": "fa-network-wired", "color": "blue", "org": "LeanIT Association" },
+        { "name": "Enterprise Architecture Foundations", "icon": "fa-building", "color": "slate", "org": "The Open Group" }
+      ]
+    }
+  ]
+}

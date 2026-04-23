@@ -1,0 +1,23 @@
+{
+  "headingLead": "Unlock Your Team's",
+  "headingAccent": "Full Potential",
+  "subhead": "Certified ITIL, 6Sigma & Lean expert delivering <strong>EUR 700k+ in documented cost savings</strong>. 14+ years transforming Telecom, FinTech & ICT operations with 5+ years leading 100% remote global teams.",
+  "skillBadges": [
+    { "text": "SAP S/4HANA", "variant": "accent", "icon": "fa-check-circle" },
+    { "text": "PEGA", "variant": "blue", "icon": "fa-check-circle" },
+    { "text": "AI-Augmented", "variant": "green", "icon": "fa-robot" }
+  ],
+  "clients": ["S.W.I.F.T.", "NTT Ltd.", "British Telecom", "T-Systems"],
+  "stats": [
+    { "value": "EUR 700k+", "label": "Total Documented", "subLabel": "Cost Savings", "icon": "fa-chart-line" },
+    { "value": "20%", "label": "Productivity", "subLabel": "Improvement", "icon": "fa-rocket" },
+    { "value": "15+ FTE", "label": "Equivalent Savings", "subLabel": "via Automation", "icon": "fa-robot" },
+    { "value": "5+ Years", "label": "100% Remote", "subLabel": "Global Teams", "icon": "fa-globe" }
+  ],
+  "portraitSrc": "/img/bogi.png",
+  "portraitAlt": "Boglarka Paczari-Horvath, Senior Business Analyst",
+  "floatingBadge": {
+    "value": "EUR 700k+",
+    "label": "Documented Cost Savings"
+  }
+}

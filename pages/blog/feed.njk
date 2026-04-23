@@ -1,0 +1,29 @@
+---
+permalink: "/blog/feed.xml"
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Bogi Horvath — Blog</title>
+    <subtitle>Real-world case studies and insights into process optimization, digital transformation, and strategic leadership.</subtitle>
+    <link href="{{ site.url }}/blog/feed.xml" rel="self"/>
+    <link href="{{ site.url }}/blog/"/>
+    <updated>{{ posts[0].date }}T00:00:00Z</updated>
+    <id>{{ site.url }}/</id>
+    <author>
+        <name>{{ site.fullName }}</name>
+        <uri>{{ site.url }}</uri>
+        <email>{{ site.contact.email }}</email>
+    </author>
+    {% for post in posts %}
+    <entry>
+        <title>{{ post.title | escape }}</title>
+        <link href="{{ site.url }}/blog/{{ post.id }}/"/>
+        <id>{{ site.url }}/blog/{{ post.id }}/</id>
+        <updated>{{ post.date }}T00:00:00Z</updated>
+        <published>{{ post.date }}T00:00:00Z</published>
+        <category term="{{ post.category }}"/>
+        <summary>{{ post.summary | escape }}</summary>
+    </entry>
+    {% endfor %}
+</feed>

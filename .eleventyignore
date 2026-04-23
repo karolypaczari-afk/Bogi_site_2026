@@ -1,0 +1,10 @@
+node_modules/
+test-results/
+playwright-report/
+blog/*.md
+llms.txt
+llms-full.txt
+robots.txt
+humans.txt
+service-worker.js
+manifest.webmanifest

@@ -1,0 +1,22 @@
+    <footer class="site-footer" role="contentinfo">
+        <div class="container site-footer__inner">
+            <div class="site-footer__social">
+                <a class="social-btn" href="{{ site.contact.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a class="social-btn" href="{{ site.contact.emailHref }}" aria-label="Email">
+                    <i class="far fa-envelope" aria-hidden="true"></i>
+                </a>
+                <a class="social-btn" href="{{ site.contact.resume }}" target="_blank" rel="noopener noreferrer" aria-label="Download CV">
+                    <i class="far fa-file-alt" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="site-footer__copy">
+                <p>&copy; {{ currentYear }} {{ site.fullName }}.</p>
+                <p class="site-footer__tagline">{{ site.shortTitle }}</p>
+                <div class="site-footer__meta">
+                    <p>Designed &amp; Built with <i class="fas fa-heart" style="color:var(--clr-accent)" aria-hidden="true"></i> {{ currentYear }}</p>
+                </div>
+            </div>
+        </div>
+    </footer>

@@ -1,0 +1,61 @@
+{
+  "eyebrow": "LinkedIn Recommendations",
+  "heading": "Trusted by <em>Global Leaders</em>",
+  "subhead": "Top 6 verified recommendations from VPs, Directors, and Senior Leaders across S.W.I.F.T., NTT Ltd., and British Telecom.",
+  "items": [
+    {
+      "summary": "Relentlessly progressing against all odds on complex projects requiring coordination across departments.",
+      "fullReview": "I had the pleasure of working with Bogi during a critical transformation phase at NTT Ltd. Her ability to drive complex projects forward, even when faced with significant organizational challenges, is truly remarkable. Bogi excels at coordinating across multiple departments and stakeholders, ensuring alignment and progress even in the most challenging circumstances. Her relentless dedication to achieving results, combined with her strategic thinking and exceptional communication skills, makes her an invaluable asset to any organization. I would highly recommend Bogi for senior leadership roles in process transformation and business analysis.",
+      "author": "Miquel Herrero",
+      "role": "VP Global Standards",
+      "company": "NTT Ltd.",
+      "relationship": "Miquel managed Bogi directly",
+      "image": "/img/miquel-herrero.png"
+    },
+    {
+      "summary": "Crucial during immense organizational change. Dedicated professional with clever techniques for process management and measurable benefits.",
+      "fullReview": "Bogi was absolutely crucial during one of the most immense organizational changes our division has experienced. Her expertise in process management, combined with her innovative approach to problem-solving, delivered measurable benefits across our entire Opportunity-to-Cash value stream. What impressed me most was her ability to implement clever techniques that not only optimized processes but also gained buy-in from stakeholders at all levels. Bogi's dedication to excellence and her strategic mindset make her a standout professional in the field of business transformation. Any organization would be fortunate to have her leading their transformation initiatives.",
+      "author": "Mark Shepherd",
+      "role": "Global Director",
+      "company": "NTT Ltd.",
+      "relationship": "Mark worked with Bogi on the same team",
+      "image": "/img/mark-sheperd.png"
+    },
+    {
+      "summary": "Energetic, positive, excellent BA and PM. Clear professional communication and a natural problem solver who brings clarity to chaos.",
+      "fullReview": "Working with Bogi has been an absolute pleasure. Her energy and positive attitude are infectious, making even the most challenging projects enjoyable. As a Business Analyst and Project Manager, she demonstrates exceptional clarity in professional communication, which is rare in our field. Bogi has a natural gift for problem-solving—she brings order to chaos and creates actionable solutions where others see only complexity. Her technical expertise, combined with her interpersonal skills, makes her one of the best professionals I've collaborated with in my career. I would not hesitate to work with Bogi again on any future transformation program.",
+      "author": "Justin Strohmenger",
+      "role": "Principal IT Solutions Architect",
+      "company": "British Telecom",
+      "relationship": "Justin worked with Bogi on the same team",
+      "image": "/img/justin-strohmenger.png"
+    },
+    {
+      "summary": "Exceptional leadership, adept problem-solving. Can-do attitude and doesn't shy from challenges. A truly reliable partner for transformation.",
+      "fullReview": "Bogi is an exceptional leader with remarkable problem-solving abilities. Throughout our collaboration on multiple process improvement initiatives, she consistently demonstrated a can-do attitude that inspired the entire team. She never shies away from challenges—instead, she tackles them head-on with strategic thinking and meticulous execution. Her reliability and commitment to delivering results make her a truly invaluable partner in any transformation program. Bogi's expertise in Six Sigma, Lean methodologies, and Agile frameworks, combined with her leadership qualities, position her as one of the top professionals in business process transformation. I highly recommend her for senior roles requiring both strategic vision and hands-on execution.",
+      "author": "Saimah Shakeel",
+      "role": "Project/Program Management Specialist",
+      "company": "British Telecom",
+      "relationship": "Saimah worked with Bogi on the same team",
+      "image": "/img/saimah-shakeel.png"
+    },
+    {
+      "summary": "Patiently worked with globally dispersed SMEs, brokered stakeholder discussions. Attention to detail and organizational skills are second to none.",
+      "fullReview": "Bogi's patience and skill in working with globally dispersed subject matter experts across multiple time zones is truly impressive. She has a unique ability to broker stakeholder discussions, finding common ground even when interests seem divergent. Her attention to detail is exceptional—nothing escapes her notice, which is critical in complex process transformation projects. Her organizational skills are second to none, managing multiple workstreams simultaneously while maintaining quality and meeting deadlines. Bogi's combination of technical expertise, interpersonal skills, and meticulous execution makes her one of the most effective transformation leaders I've worked with. She would be an outstanding addition to any organization pursuing operational excellence.",
+      "author": "Grace Chan",
+      "role": "Chief of Staff",
+      "company": "NTT Ltd.",
+      "relationship": "Grace worked with Bogi on the same team",
+      "image": "/img/grace-chan.png"
+    },
+    {
+      "summary": "Real team player, deeply collaborative, precise. The best from the BA sphere I've worked with in over a decade of process improvement.",
+      "fullReview": "In my over a decade of experience in process improvement, Bogi stands out as the best Business Analyst I have had the privilege to work with. She is a real team player who values collaboration and brings out the best in everyone around her. Her precision in requirements gathering, process mapping, and stakeholder management is unparalleled. Bogi doesn't just document processes—she transforms them. Her deep understanding of Six Sigma, Lean, and ITIL frameworks, combined with her practical approach to implementation, consistently delivers exceptional results. I cannot recommend Bogi highly enough for senior BA or transformation leadership roles.",
+      "author": "Peter Ujfalusi",
+      "role": "Process Design & Improvement",
+      "company": "British Telecom",
+      "relationship": "Peter worked with Bogi on the same team",
+      "image": "/img/peter-ujfalusi.png"
+    }
+  ]
+}

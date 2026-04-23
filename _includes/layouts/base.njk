@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ site.locale }}">
+<head>
+{% include "partials/head.njk" %}
+</head>
+<body>
+    {# GTM noscript fallback #}
+    <noscript><iframe title="Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id={{ site.tracking.gtm }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+{% include "partials/top-bar.njk" %}
+{% include "partials/header.njk" %}
+
+    <main id="main-content">
+        {{ content | safe }}
+    </main>
+
+{% include "partials/footer.njk" %}
+{% include "partials/booking-modal.njk" %}
+{% include "partials/scripts.njk" %}
+
+    <script src="/js/main.js?v={{ buildHash }}" defer></script>
+</body>
+</html>

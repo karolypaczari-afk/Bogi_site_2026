@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Bogi Horvath — Blog</title>
+    <subtitle>Real-world case studies and insights into process optimization, digital transformation, and strategic leadership.</subtitle>
+    <link href="https://bogihorvath.com/blog/feed.xml" rel="self"/>
+    <link href="https://bogihorvath.com/blog/"/>
+    <updated>2024-10-03T00:00:00Z</updated>
+    <id>https://bogihorvath.com/</id>
+    <author>
+        <name>Boglarka Paczari-Horvath</name>
+        <uri>https://bogihorvath.com</uri>
+        <email>horvath.boglarka@hotmail.com</email>
+    </author>
+    
+    <entry>
+        <title>3 steps to save $500K+ for Your Company</title>
+        <link href="https://bogihorvath.com/blog/500k-savings/"/>
+        <id>https://bogihorvath.com/blog/500k-savings/</id>
+        <updated>2024-10-03T00:00:00Z</updated>
+        <published>2024-10-03T00:00:00Z</published>
+        <category term="Process Improvement"/>
+        <summary>Proven strategies for organizational cost reduction without compromising performance or customer satisfaction. Learn how to achieve up to 30% savings through value stream optimization, platform consolidation, and strategic automation.</summary>
+    </entry>
+    
+    <entry>
+        <title>Case Study: Driving Adoption Success — How We Increased Workflow Adoption by 21%</title>
+        <link href="https://bogihorvath.com/blog/adoption-success/"/>
+        <id>https://bogihorvath.com/blog/adoption-success/</id>
+        <updated>2024-06-05T00:00:00Z</updated>
+        <published>2024-06-05T00:00:00Z</published>
+        <category term="Case Study"/>
+        <summary>As a Business Analyst, I led adoption and deployment efforts for an automated workflow development initiative. Despite being voluntary, we increased adoption from 14% to 21% within two months through proactive engagement and personalized support.</summary>
+    </entry>
+    
+    <entry>
+        <title>My favourite tools to initiate a Complex Process Improvement Project</title>
+        <link href="https://bogihorvath.com/blog/process-tools/"/>
+        <id>https://bogihorvath.com/blog/process-tools/</id>
+        <updated>2024-09-17T00:00:00Z</updated>
+        <published>2024-09-17T00:00:00Z</published>
+        <category term="Process Improvement"/>
+        <summary>Initiating complex process improvement efforts becomes achievable with the right blend of methodologies and strategic steps. This article presents a proven framework for launching and executing impactful initiatives.</summary>
+    </entry>
+    
+    <entry>
+        <title>Detecting and Preventing Money Leaks in Your Processes</title>
+        <link href="https://bogihorvath.com/blog/money-leaks/"/>
+        <id>https://bogihorvath.com/blog/money-leaks/</id>
+        <updated>2024-08-01T00:00:00Z</updated>
+        <published>2024-08-01T00:00:00Z</published>
+        <category term="Process Improvement"/>
+        <summary>Start with a housekeeping exercise to identify inefficiencies, then implement targeted solutions. This showcases how 6Sigma methodology addressed operational inefficiencies in an Opp2Invoice business process.</summary>
+    </entry>
+    
+    <entry>
+        <title>Case Study: Enhancing Process Efficiency through Automation in an IT Multinational Company</title>
+        <link href="https://bogihorvath.com/blog/automation-efficiency/"/>
+        <id>https://bogihorvath.com/blog/automation-efficiency/</id>
+        <updated>2024-06-05T00:00:00Z</updated>
+        <published>2024-06-05T00:00:00Z</published>
+        <category term="Case Study"/>
+        <summary>Serving as a Management Information (MI) Lead at a major IT multinational, I led a transformation initiative focused on improving business processes. The core mission involved analyzing data to identify automation opportunities.</summary>
+    </entry>
+    
+</feed>

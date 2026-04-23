@@ -1,0 +1,16 @@
+{
+  "eyebrow": "Services",
+  "heading": "Tailored Solutions for Your Business",
+  "subhead": "From process evaluation to full transformation programs, I offer flexible engagement models to match your needs.",
+  "items": [
+    { "num": "01", "title": "Process Optimization", "desc": "Unlock savings and drive long-term growth through systematic process improvement." },
+    { "num": "02", "title": "Process Ownership", "desc": "Design, document, and implement efficient processes with full ownership." },
+    { "num": "03", "title": "Agile Business Analysis", "desc": "Evaluate processes, align stakeholders, and deliver strategic analytics." },
+    { "num": "04", "title": "Process Evaluation", "desc": "Comprehensive assessment identifying issues, risks, and benefits." },
+    { "num": "05", "title": "Performance Reporting", "desc": "Define KPIs and build measurement systems that drive accountability." },
+    { "num": "06", "title": "Requirements Management", "desc": "Bridge business stakeholders and technical teams with clarity." },
+    { "num": "07", "title": "Testing & Feedback", "desc": "Facilitate user testing sessions and provide actionable insights." },
+    { "num": "08", "title": "Change Management", "desc": "Guide organizational transitions with proven strategies and adoption frameworks." },
+    { "num": "09", "title": "Strategic Process Design", "desc": "Enhance efficiency and drive business success through redesign initiatives." }
+  ]
+}

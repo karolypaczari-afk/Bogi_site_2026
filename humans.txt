@@ -1,0 +1,13 @@
+/* TEAM */
+Owner: Boglarka Paczari-Horvath
+Role: Senior Business Analyst &amp; Digital Transformation Lead
+Contact: horvath.boglarka@hotmail.com
+LinkedIn: https://www.linkedin.com/in/boglarka-paczari-horvath/
+From: Belgium (remote, global)
+
+/* SITE */
+Last update: 2026
+Language: English
+Stack: Static HTML, Eleventy, hand-rolled CSS + vanilla JS
+Doctype: HTML5
+Standards: WCAG 2.1 AA, semantic HTML, structured data (schema.org)

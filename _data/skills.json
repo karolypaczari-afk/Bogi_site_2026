@@ -1,0 +1,84 @@
+{
+  "eyebrow": "Technical Expertise",
+  "heading": "Enterprise-Grade <em>Technology Stack</em>",
+  "subhead": "Hands-on expertise across leading enterprise platforms, process optimization tools, and AI-powered productivity suite.",
+  "categories": [
+    {
+      "title": "ERP & Workflow Platforms",
+      "icon": "fa-server",
+      "color": "blue",
+      "skills": [
+        { "name": "SAP S/4HANA", "highlight": true },
+        { "name": "PEGA", "highlight": true },
+        { "name": "ServiceNow" },
+        { "name": "Salesforce" }
+      ]
+    },
+    {
+      "title": "Process & Design Tools",
+      "icon": "fa-project-diagram",
+      "color": "purple",
+      "skills": [
+        { "name": "ARIS" },
+        { "name": "Visio" },
+        { "name": "Miro" },
+        { "name": "Mural" },
+        { "name": "Confluence" },
+        { "name": "Lucidchart" }
+      ]
+    },
+    {
+      "title": "Project & Agile Management",
+      "icon": "fa-tasks",
+      "color": "green",
+      "skills": [
+        { "name": "Jira" },
+        { "name": "Confluence" },
+        { "name": "MS Project" },
+        { "name": "Azure DevOps" }
+      ]
+    },
+    {
+      "title": "Analytics & Business Intelligence",
+      "icon": "fa-chart-bar",
+      "color": "orange",
+      "skills": [
+        { "name": "Power BI" },
+        { "name": "Qlik" },
+        { "name": "Excel (Advanced)" },
+        { "name": "Minitab" },
+        { "name": "Tableau" }
+      ]
+    },
+    {
+      "title": "AI & Productivity",
+      "icon": "fa-robot",
+      "color": "accent",
+      "skills": [
+        { "name": "Microsoft Copilot", "highlight": true },
+        { "name": "ChatGPT", "highlight": true },
+        { "name": "Claude", "highlight": true },
+        { "name": "Microsoft 365" },
+        { "name": "Gemini" }
+      ]
+    },
+    {
+      "title": "Methodologies & Frameworks",
+      "icon": "fa-book",
+      "color": "red",
+      "skills": [
+        { "name": "Six Sigma", "highlight": true },
+        { "name": "Lean", "highlight": true },
+        { "name": "Agile" },
+        { "name": "ITIL" },
+        { "name": "PRINCE2" },
+        { "name": "DMAIC" }
+      ]
+    }
+  ],
+  "valueProps": [
+    { "icon": "fa-globe", "color": "green", "title": "Global Remote Expert", "desc": "5+ years leading distributed teams with 100% remote operations" },
+    { "icon": "fa-language", "color": "blue", "title": "Multilingual", "desc": "English (Full Professional) | German (Intermediate) | Hungarian (Native)" },
+    { "icon": "fa-industry", "color": "purple", "title": "Industry Focus", "desc": "Telecom, FinTech, ICT, Enterprise SaaS" }
+  ]
+}

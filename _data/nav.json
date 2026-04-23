@@ -1,0 +1,12 @@
+{
+  "main": [
+    { "label": "Home", "href": "/" },
+    { "label": "About Me", "href": "/about/" },
+    { "label": "How I Help", "href": "/#how" },
+    { "label": "Services", "href": "/#services" },
+    { "label": "Results", "href": "/#achievements" },
+    { "label": "Experience", "href": "/#experience" },
+    { "label": "Blog", "href": "/blog/" }
+  ],
+  "cta": { "label": "Let's Talk", "href": "/#contact" }
+}

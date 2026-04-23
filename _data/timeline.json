@@ -1,0 +1,61 @@
+{
+  "eyebrow": "Career Journey",
+  "heading": "14+ Years of Strategic Impact",
+  "subhead": "A track record of driving efficiency and digital transformation across global ICT organizations.",
+  "events": [
+    {
+      "date": "2025 – Present",
+      "title": "Functional Lead — E-form Optimization & API Integration",
+      "company": "S.W.I.F.T. | Belgium (Remote)",
+      "desc": "Leading a team of 3-5 specialists driving high-stakes E-form optimization and global API consolidation for financial message handling. Managing complex stakeholder relationships across global product teams while implementing systematic API rationalization to improve system reliability and reduce technical debt.",
+      "highlights": ["Team Leadership (3-5 specialists)", "Global API Consolidation", "Financial Message Systems"],
+      "logo": "SWIFT",
+      "logoColor": "red"
+    },
+    {
+      "date": "2024 – 2025",
+      "title": "Senior Order Fulfilment BA & Process Optimization Lead",
+      "company": "S.W.I.F.T. | Belgium (Remote)",
+      "desc": "Delivered 20% productivity improvement through comprehensive process redesign of order fulfillment workflows. Led successful SAP S/4HANA to PEGA migration, implementing workflow automation that streamlined operations across the entire order-to-cash cycle.",
+      "highlights": ["20% Productivity Gain", "SAP S/4HANA to PEGA Migration", "Workflow Automation"],
+      "logo": "SWIFT",
+      "logoColor": "red"
+    },
+    {
+      "date": "2024 – Present",
+      "title": "Founder & Process Optimization Expert",
+      "company": "InnovateIT Consulting | Remote",
+      "desc": "Strategic consulting for enterprise clients focusing on Six Sigma, Lean & Agile methodologies to unlock operational capacity. Delivering customized transformation roadmaps that combine proven frameworks with modern AI-augmented workflow optimization techniques.",
+      "highlights": ["Six Sigma & Lean", "Enterprise Consulting", "AI-Augmented Processes"],
+      "logo": "IT",
+      "logoColor": "purple"
+    },
+    {
+      "date": "2022 – 2024",
+      "title": "Principal Business Operations Specialist",
+      "company": "NTT Ltd. | Remote",
+      "desc": "Led global Opportunity-to-Cash value stream standardization across 12 regional entities. Documented EUR 500k+ in SFDC license savings through strategic license optimization and harmonized business processes across diverse geographical markets. Drove adoption of standardized workflows resulting in 21% higher tool adoption rates.",
+      "highlights": ["EUR 500k+ License Savings", "12 Regional Entities", "21% Tool Adoption Increase"],
+      "logo": "NTT",
+      "logoColor": "blue"
+    },
+    {
+      "date": "2015 – 2022",
+      "title": "Business Improvement Specialist to Agile Deployment Lead",
+      "company": "British Telecom | Hungary",
+      "desc": "7 years of progressive career growth from Business Improvement Specialist to Agile Deployment Lead. Delivered $100k+ in automation savings through intelligent ticket quality workflows. Achieved 50% reduction in incident volume by eliminating \"hung-line\" bottlenecks. Led successful PEGA deployments with user-centric change management approach.",
+      "highlights": ["$100k+ Automation Savings", "50% Incident Reduction", "PEGA Deployment Lead"],
+      "logo": "BT",
+      "logoColor": "indigo"
+    },
+    {
+      "date": "2010 – 2015",
+      "title": "Business Operations & Service Chain Operations Manager",
+      "company": "T-Systems | Hungary",
+      "desc": "Managed multiple high-performing operations teams delivering IT services for enterprise clients. Achieved 30% reduction in customer escalations through comprehensive service chain redesign. Built and led cross-functional teams while establishing operational excellence frameworks.",
+      "highlights": ["30% Escalation Reduction", "Service Chain Redesign", "Team Management"],
+      "logo": "T-S",
+      "logoColor": "pink"
+    }
+  ]
+}

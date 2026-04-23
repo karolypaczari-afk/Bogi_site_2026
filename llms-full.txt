@@ -1,0 +1,384 @@
+# Boglarka Paczari-Horvath — Senior Business Analyst &amp; Digital Transformation Lead
+
+> Professional portfolio of Boglarka Paczari-Horvath (Bogi Horvath). 14+ years delivering EUR 700k+ in documented savings across SAP S/4HANA, PEGA, and AI-augmented process optimization. Belgium (remote), available for Senior Business Analyst / Transformation Lead roles globally.
+
+## About
+
+Senior Business Analyst &amp; Digital Transformation Lead with 14+ years in global ICT operations. EUR 700k+ documented savings through SAP S/4HANA, PEGA migrations, Lean Six Sigma, and AI-augmented process optimization. Available for remote Senior BA / Transformation Lead roles.
+
+Bogi's journey: started at T-Systems learning IT service management fundamentals; spent 7 formative years at British Telecom advancing from Business Improvement Specialist to Agile Deployment Lead (Lean Six Sigma, $100k+ automation savings, 50% incident reduction); joined NTT Ltd. as Principal Business Operations Specialist to harmonize Opportunity-to-Cash across 12 regional entities (EUR 500k+ license savings, 21% tool adoption increase); now Functional Lead at S.W.I.F.T. leading E-form optimization and global API consolidation.
+
+Philosophy: evidence-based transformation. Every decision backed by data and aligned with strategic goals. Deeply collaborative — bridges technical teams and business stakeholders so solutions are both theoretically sound and practically executable.
+
+## Contact
+
+- Email: horvath.boglarka@hotmail.com
+- LinkedIn: https://www.linkedin.com/in/boglarka-paczari-horvath/
+- Resume: https://bogihorvath.com/Bogi_CV.pdf
+
+## Services
+
+- **Process Optimization** — Unlock savings and drive long-term growth through systematic process improvement.
+- **Process Ownership** — Design, document, and implement efficient processes with full ownership.
+- **Agile Business Analysis** — Evaluate processes, align stakeholders, and deliver strategic analytics.
+- **Process Evaluation** — Comprehensive assessment identifying issues, risks, and benefits.
+- **Performance Reporting** — Define KPIs and build measurement systems that drive accountability.
+- **Requirements Management** — Bridge business stakeholders and technical teams with clarity.
+- **Testing &amp; Feedback** — Facilitate user testing sessions and provide actionable insights.
+- **Change Management** — Guide organizational transitions with proven strategies and adoption frameworks.
+- **Strategic Process Design** — Enhance efficiency and drive business success through redesign initiatives.
+
+
+## Technical stack
+
+### ERP &amp; Workflow Platforms
+- SAP S/4HANA (highlighted)
+- PEGA (highlighted)
+- ServiceNow
+- Salesforce
+
+### Process &amp; Design Tools
+- ARIS
+- Visio
+- Miro
+- Mural
+- Confluence
+- Lucidchart
+
+### Project &amp; Agile Management
+- Jira
+- Confluence
+- MS Project
+- Azure DevOps
+
+### Analytics &amp; Business Intelligence
+- Power BI
+- Qlik
+- Excel (Advanced)
+- Minitab
+- Tableau
+
+### AI &amp; Productivity
+- Microsoft Copilot (highlighted)
+- ChatGPT (highlighted)
+- Claude (highlighted)
+- Microsoft 365
+- Gemini
+
+### Methodologies &amp; Frameworks
+- Six Sigma (highlighted)
+- Lean (highlighted)
+- Agile
+- ITIL
+- PRINCE2
+- DMAIC
+
+
+
+## Proven impact
+
+- **EUR 700k+ Documented Savings** — Aggregated savings across license optimization, automation ROI, and process waste elimination.
+- **20% Productivity Improvement** — Average throughput increase for order fulfillment teams through lean workflow redesign and SAP S/4HANA to PEGA migration.
+- **15+ FTE Capacity Created** — Automated ticket quality workflows, freeing up high-value specialists for strategic work.
+- **50% Lower Incident Volume** — Eliminated &quot;hung-line&quot; bottlenecks at BT, significantly reducing operational firefighting.
+- **21% Higher Tool Adoption** — Led user-centric change management for PEGA deployments, ensuring digital tool ROI.
+- **5+ Years Remote Leadership** — Successfully leading distributed teams with 100% remote operations, driving cultural change and process adherence across global organizations.
+
+
+## Career timeline
+
+### 2025 – Present — Functional Lead — E-form Optimization &amp; API Integration
+**S.W.I.F.T. | Belgium (Remote)**
+
+Leading a team of 3-5 specialists driving high-stakes E-form optimization and global API consolidation for financial message handling. Managing complex stakeholder relationships across global product teams while implementing systematic API rationalization to improve system reliability and reduce technical debt.
+
+Highlights: Team Leadership (3-5 specialists), Global API Consolidation, Financial Message Systems
+
+### 2024 – 2025 — Senior Order Fulfilment BA &amp; Process Optimization Lead
+**S.W.I.F.T. | Belgium (Remote)**
+
+Delivered 20% productivity improvement through comprehensive process redesign of order fulfillment workflows. Led successful SAP S/4HANA to PEGA migration, implementing workflow automation that streamlined operations across the entire order-to-cash cycle.
+
+Highlights: 20% Productivity Gain, SAP S/4HANA to PEGA Migration, Workflow Automation
+
+### 2024 – Present — Founder &amp; Process Optimization Expert
+**InnovateIT Consulting | Remote**
+
+Strategic consulting for enterprise clients focusing on Six Sigma, Lean &amp; Agile methodologies to unlock operational capacity. Delivering customized transformation roadmaps that combine proven frameworks with modern AI-augmented workflow optimization techniques.
+
+Highlights: Six Sigma &amp; Lean, Enterprise Consulting, AI-Augmented Processes
+
+### 2022 – 2024 — Principal Business Operations Specialist
+**NTT Ltd. | Remote**
+
+Led global Opportunity-to-Cash value stream standardization across 12 regional entities. Documented EUR 500k+ in SFDC license savings through strategic license optimization and harmonized business processes across diverse geographical markets. Drove adoption of standardized workflows resulting in 21% higher tool adoption rates.
+
+Highlights: EUR 500k+ License Savings, 12 Regional Entities, 21% Tool Adoption Increase
+
+### 2015 – 2022 — Business Improvement Specialist to Agile Deployment Lead
+**British Telecom | Hungary**
+
+7 years of progressive career growth from Business Improvement Specialist to Agile Deployment Lead. Delivered $100k+ in automation savings through intelligent ticket quality workflows. Achieved 50% reduction in incident volume by eliminating &quot;hung-line&quot; bottlenecks. Led successful PEGA deployments with user-centric change management approach.
+
+Highlights: $100k+ Automation Savings, 50% Incident Reduction, PEGA Deployment Lead
+
+### 2010 – 2015 — Business Operations &amp; Service Chain Operations Manager
+**T-Systems | Hungary**
+
+Managed multiple high-performing operations teams delivering IT services for enterprise clients. Achieved 30% reduction in customer escalations through comprehensive service chain redesign. Built and led cross-functional teams while establishing operational excellence frameworks.
+
+Highlights: 30% Escalation Reduction, Service Chain Redesign, Team Management
+
+
+
+## Certifications
+
+### Process Excellence
+- Six Sigma Green Belt (ASQ)
+- Lean Practitioner (Lean Institute)
+- LeanIT Foundation (LeanIT Association)
+
+### Project &amp; Change Management
+- PRINCE2 Foundation (AXELOS)
+- Change Management Practitioner (APMG)
+- Agile Scrum Master (Scrum Alliance)
+
+### ITIL Service Management
+- ITIL Service Operation (AXELOS)
+- ITIL Service Transition (AXELOS)
+- ITIL Continual Service Improvement (AXELOS)
+
+### Business &amp; Enterprise Architecture
+- Business Architect Certified (BQF)
+- LeanIT &amp; Business Architecture (LeanIT Association)
+- Enterprise Architecture Foundations (The Open Group)
+
+
+
+## Recommendations
+
+### Miquel Herrero — VP Global Standards, NTT Ltd.
+> I had the pleasure of working with Bogi during a critical transformation phase at NTT Ltd. Her ability to drive complex projects forward, even when faced with significant organizational challenges, is truly remarkable. Bogi excels at coordinating across multiple departments and stakeholders, ensuring alignment and progress even in the most challenging circumstances. Her relentless dedication to achieving results, combined with her strategic thinking and exceptional communication skills, makes her an invaluable asset to any organization. I would highly recommend Bogi for senior leadership roles in process transformation and business analysis.
+
+_Miquel managed Bogi directly._
+
+### Mark Shepherd — Global Director, NTT Ltd.
+> Bogi was absolutely crucial during one of the most immense organizational changes our division has experienced. Her expertise in process management, combined with her innovative approach to problem-solving, delivered measurable benefits across our entire Opportunity-to-Cash value stream. What impressed me most was her ability to implement clever techniques that not only optimized processes but also gained buy-in from stakeholders at all levels. Bogi&#39;s dedication to excellence and her strategic mindset make her a standout professional in the field of business transformation. Any organization would be fortunate to have her leading their transformation initiatives.
+
+_Mark worked with Bogi on the same team._
+
+### Justin Strohmenger — Principal IT Solutions Architect, British Telecom
+> Working with Bogi has been an absolute pleasure. Her energy and positive attitude are infectious, making even the most challenging projects enjoyable. As a Business Analyst and Project Manager, she demonstrates exceptional clarity in professional communication, which is rare in our field. Bogi has a natural gift for problem-solving—she brings order to chaos and creates actionable solutions where others see only complexity. Her technical expertise, combined with her interpersonal skills, makes her one of the best professionals I&#39;ve collaborated with in my career. I would not hesitate to work with Bogi again on any future transformation program.
+
+_Justin worked with Bogi on the same team._
+
+### Saimah Shakeel — Project/Program Management Specialist, British Telecom
+> Bogi is an exceptional leader with remarkable problem-solving abilities. Throughout our collaboration on multiple process improvement initiatives, she consistently demonstrated a can-do attitude that inspired the entire team. She never shies away from challenges—instead, she tackles them head-on with strategic thinking and meticulous execution. Her reliability and commitment to delivering results make her a truly invaluable partner in any transformation program. Bogi&#39;s expertise in Six Sigma, Lean methodologies, and Agile frameworks, combined with her leadership qualities, position her as one of the top professionals in business process transformation. I highly recommend her for senior roles requiring both strategic vision and hands-on execution.
+
+_Saimah worked with Bogi on the same team._
+
+### Grace Chan — Chief of Staff, NTT Ltd.
+> Bogi&#39;s patience and skill in working with globally dispersed subject matter experts across multiple time zones is truly impressive. She has a unique ability to broker stakeholder discussions, finding common ground even when interests seem divergent. Her attention to detail is exceptional—nothing escapes her notice, which is critical in complex process transformation projects. Her organizational skills are second to none, managing multiple workstreams simultaneously while maintaining quality and meeting deadlines. Bogi&#39;s combination of technical expertise, interpersonal skills, and meticulous execution makes her one of the most effective transformation leaders I&#39;ve worked with. She would be an outstanding addition to any organization pursuing operational excellence.
+
+_Grace worked with Bogi on the same team._
+
+### Peter Ujfalusi — Process Design &amp; Improvement, British Telecom
+> In my over a decade of experience in process improvement, Bogi stands out as the best Business Analyst I have had the privilege to work with. She is a real team player who values collaboration and brings out the best in everyone around her. Her precision in requirements gathering, process mapping, and stakeholder management is unparalleled. Bogi doesn&#39;t just document processes—she transforms them. Her deep understanding of Six Sigma, Lean, and ITIL frameworks, combined with her practical approach to implementation, consistently delivers exceptional results. I cannot recommend Bogi highly enough for senior BA or transformation leadership roles.
+
+_Peter worked with Bogi on the same team._
+
+
+
+## Articles
+
+### 3 steps to save $500K+ for Your Company
+**Category:** Process Improvement — **Published:** 2024-10-03
+**URL:** https://bogihorvath.com/blog/500k-savings/
+
+Proven strategies for organizational cost reduction without compromising performance or customer satisfaction. Learn how to achieve up to 30% savings through value stream optimization, platform consolidation, and strategic automation.
+
+The article presents proven strategies for organizational cost reduction without compromising performance or customer satisfaction. Drawing from experience leading large-scale transformation initiatives, I outline approaches that address efficiency, loss prevention, and sustainable growth positioning.
+
+#### Step 1: Dive Deep into Your Value Stream
+Potential Savings: Up to 30% of operational costs
+
+Understanding current business operations is foundational to identifying inefficiencies and hidden expenses. Key inefficiency indicators include:
+
+- Slow Bid Process: Extended timeframes for generating offers cause deal delays
+- Delivery Delays: Extended delivery timelines frustrate clients and expose organizations to penalties and customer loss
+- Misaligned Front and Back Offices: Disconnects between opportunity-to-order and order-to-cash processes create bottlenecks
+I recommend using Value Stream Mapping to evaluate these processes and eliminate bottlenecks for immediate operational and cash flow improvements.
+
+#### Step 2: Evaluate Your Business Platforms
+Potential Savings: 10-20% on software and maintenance costs
+
+Organizations, particularly those with merger/acquisition histories, often maintain redundant legacy systems. I&#39;ve worked with companies maintaining over 20 platforms, including four critical systems generating substantial maintenance costs.
+
+Platform consolidation methodology includes:
+
+- Impact Analysis: Evaluate process dependencies and identify redundancy
+- Business Criticality Review: Measure transaction volume, user activity, and financial contribution
+- IT Partnership: Collaborate on legacy system replacement within integrated platforms
+#### Step 3: Automate for Efficiency and Growth
+Potential Savings: 15-40% on operational costs plus increased revenue
+
+Automation addresses manual task elimination, error reduction, and service acceleration. Implementation steps involve:
+
+- Identify Manual Processes: Locate repetitive, non-value-adding tasks consuming employee time
+- Test Business Impact: Conduct stakeholder interviews to ensure automation doesn&#39;t inadvertently disrupt operations
+- Expert Involvement: Engage data analysts and DevOps specialists for feasibility validation and realistic timelines
+Additional Benefits: Automation improves employee morale, reduces tedious work, and enhances customer satisfaction through accelerated service delivery.
+
+The three-step framework addresses value stream optimization, platform consolidation, and process automation to unlock $500,000+ in organizational savings while maintaining performance standards and customer satisfaction.
+
+
+---
+### Case Study: Driving Adoption Success — How We Increased Workflow Adoption by 21%
+**Category:** Case Study — **Published:** 2024-06-05
+**URL:** https://bogihorvath.com/blog/adoption-success/
+
+As a Business Analyst, I led adoption and deployment efforts for an automated workflow development initiative. Despite being voluntary, we increased adoption from 14% to 21% within two months through proactive engagement and personalized support.
+
+#### Background
+As a Business Analyst, I led adoption and deployment efforts for an automated workflow development initiative. The project aimed to transition the Opportunity to Implementation value stream from manual Excel-based processes to a PEGA-powered system. Key users included bid managers and solution designers. Despite strategic importance, adoption remained voluntary with no mandatory cutover date.
+
+#### The Challenge
+Post-MVP launch adoption rates stood at only 14%. Without enforcement mechanisms or firm deadlines, the team faced a significant hurdle — driving voluntary adoption required demonstrating clear value through seamless user experience and comprehensive requirement fulfillment.
+
+#### Solution Approach
+The strategy involved four key components:
+
+- Comprehensive Adoption Plan and Communication: Weekly steering committee sessions updated stakeholders on progress, presented data-driven reports, and incorporated user feedback to secure executive support.
+- Proactive Monitoring and Engagement: The team monitored Salesforce opportunity queues to identify qualified deals, then directly engaged bid managers to guide PEGA workflow adoption.
+- Knowledge Base Development: Collaboration with SharePoint teams created user guides, automated change request forms, and service escalation processes reducing friction.
+- Focused High-Potential Teams: Special attention to the security bid team — a smaller, high-volume group struggling with spreadsheet transparency — included dedicated feedback sessions and personalized backlog prioritization.
+#### Results
+Within two months, adoption increased to 21%. The security bid team&#39;s enthusiastic participation created positive momentum, with their insights improving workflow functionality and encouraging broader organizational adoption.
+
+#### Key Takeaway
+Success emerged through tailored approaches combining clear communication, proactive engagement, and personalized support that addressed specific user needs while fostering collaborative feedback cultures.
+
+
+---
+### My favourite tools to initiate a Complex Process Improvement Project
+**Category:** Process Improvement — **Published:** 2024-09-17
+**URL:** https://bogihorvath.com/blog/process-tools/
+
+Initiating complex process improvement efforts becomes achievable with the right blend of methodologies and strategic steps. This article presents a proven framework for launching and executing impactful initiatives.
+
+Initiating complex process improvement efforts becomes achievable with the right blend of methodologies and strategic steps. I present a proven framework for launching and executing impactful initiatives.
+
+#### Building a Solid Foundation
+Project Charter: Set the Tone for Success
+
+The project charter is foundational, establishing clarity from inception. Essential components include:
+
+- Problem Statement: Identifies the core issue requiring change
+- Business Justification: Demonstrates organizational value
+- Key Stakeholders: Maps influential parties and affected groups
+- Expected Benefits: Quantifies outcomes through hard metrics (cost reduction, efficiency gains) and soft metrics (workforce morale)
+- Timelines: Establishes realistic milestone targets
+- Objectives: Defines measurable, strategy-aligned goals
+- Scope and Deliverables: Clarifies project boundaries
+Comprehensive charters eliminate ambiguity and foster stakeholder alignment.
+
+#### Measurement and Precision
+Data Gathering: The Heartbeat of Process Improvement
+
+Accurate baseline data collection enables identification of inefficiencies and progress monitoring. I recommend visualization tools including Excel, Minitab, flowcharts, and infographics.
+
+Key implementation strategies:
+
+- Define lead metrics and KPIs (limiting focus to 1-2 metrics)
+- Develop comprehensive project plans with assigned owners and timelines
+Data-driven approaches reduce risk and improve success probability.
+
+#### Process Mapping and Insights
+Collaboration with subject matter experts (SMEs) proves essential for understanding current (As-Is) and desired (Should-Be) processes. Recording sessions enables later review for precision.
+
+Recommended Tools:
+
+- SIPOC diagrams: Capture critical process points, identifying triggers and outcomes
+- Value Stream Mapping: Visualizes processes, quantifies inefficiencies, highlights waste
+- Swimlane Diagrams: Deconstructs complex workflows, clarifies accountability
+I suggest using SIPOC to integrate business platforms for unified input/output visibility.
+
+#### Conclusion
+I advocate combining DMAIC (Define, Measure, Analyze, Improve, Control) methodology with traditional project management disciplines, achieving the best of both worlds — flexibility and thoroughness. This hybrid approach ensures rigorous structure while accommodating organizational uniqueness.
+
+
+---
+### Detecting and Preventing Money Leaks in Your Processes
+**Category:** Process Improvement — **Published:** 2024-08-01
+**URL:** https://bogihorvath.com/blog/money-leaks/
+
+Start with a housekeeping exercise to identify inefficiencies, then implement targeted solutions. This showcases how 6Sigma methodology addressed operational inefficiencies in an Opp2Invoice business process.
+
+Start with a housekeeping exercise to identify inefficiencies, then implement targeted solutions. This showcases how 6Sigma methodology addressed operational inefficiencies in an Opp2Invoice business process.
+
+#### Methodology Employed
+- User interviews with structured questioning
+- Data collection to substantiate problems
+- Project charter documentation
+#### Three Major Projects Implemented
+##### 1. Platform Decommissioning
+Eliminated unused software licenses, achieving $20K+ annual savings through standardization.
+
+##### 2. Pricing Communication Enhancement
+Tackled delayed involvement in pricing decisions and outdated vendor rates that caused significant extra costs ($200-300K for a specific client). Solutions included introducing a triage step and extending price warranty from 30 to 60 days.
+
+##### 3. Cost Data Management
+Corrected inaccurate CMDB entries that created potential money leaks (over $10K) through incorrect cancellation fee calculations.
+
+#### Conclusion
+Structured 6 Sigma methodologies and focusing on detailed analysis and proactive solutions enabled identification and mitigation of financial losses, resulting in improved operational efficiency and profitability.
+
+
+---
+### Case Study: Enhancing Process Efficiency through Automation in an IT Multinational Company
+**Category:** Case Study — **Published:** 2024-06-05
+**URL:** https://bogihorvath.com/blog/automation-efficiency/
+
+Serving as a Management Information (MI) Lead at a major IT multinational, I led a transformation initiative focused on improving business processes. The core mission involved analyzing data to identify automation opportunities.
+
+#### Introduction
+Serving as a Management Information (MI) Lead at a major IT multinational, I led a transformation initiative focused on improving business processes. The core mission involved analyzing data to identify automation opportunities, particularly targeting a bottleneck affecting operations teams.
+
+#### Identifying the Problem
+Initial Observations:
+
+A 10-person team responsible for ticket quality reviews faced significant constraints. The manual process permitted evaluation of only 10-30 tickets per week, limiting data reliability. Weekly reports weren&#39;t effectively utilized during performance discussions, creating a disconnect between analysis and action.
+
+Deep-Dive Analysis:
+
+Investigation revealed multiple weaknesses:
+
+- Manual processes restricted sample sizes and accuracy
+- The team tracked 10 different quality metrics, creating unnecessary complexity
+- No feedback loop existed to drive improvements based on findings
+#### Developing the Solution
+Building the Business Case:
+
+Collaboration with assigned data analysts revealed that 8 out of the 10 metrics could be automated. The team employed Deming Cycle and lean management principles to guide implementation.
+
+Key Implementation Steps:
+
+- Validated metrics reliability
+- Automated manual tasks to expand sample sizes
+- Generated comprehensive reports integrated into operational performance discussions
+- Freed up resources equivalent to 10 FTEs
+#### Results and Impact
+- Enhanced data accuracy through larger sample sizes
+- Increased operational efficiency
+- Established effective feedback mechanisms for performance improvements
+#### Lessons Learned
+- Data-driven decision-making should precede action
+- Use structured observation methods (DILO/WILO) when data gaps exist
+- Engage stakeholders to ensure alignment and feasibility
+- Apply continuous improvement frameworks like Deming Cycle
+#### Conclusion
+The successful automation initiative demonstrated how strategic process improvements, grounded in collaborative problem-solving and data analysis, drive organizational efficiency and support business objectives.
+
+
+---
+

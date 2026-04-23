@@ -1,0 +1,24 @@
+{
+  "id": "/",
+  "name": "Bogi Horvath",
+  "short_name": "BogiHorvath",
+  "description": "Senior Business Analyst & Digital Transformation Lead. 14+ years delivering EUR 700k+ savings across SAP S/4HANA, PEGA, and AI-augmented process optimization.",
+  "lang": "en",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4b68e9",
+  "icons": [
+    {
+      "src": "/img/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

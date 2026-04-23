@@ -1,0 +1,82 @@
+---
+permalink: "/llms-full.txt"
+eleventyExcludeFromCollections: true
+---
+# {{ site.fullName }} — {{ site.title }}
+
+> Professional portfolio of {{ site.fullName }} (Bogi Horvath). 14+ years delivering EUR 700k+ in documented savings across SAP S/4HANA, PEGA, and AI-augmented process optimization. Belgium (remote), available for Senior Business Analyst / Transformation Lead roles globally.
+
+## About
+
+{{ site.description }}
+
+Bogi's journey: started at T-Systems learning IT service management fundamentals; spent 7 formative years at British Telecom advancing from Business Improvement Specialist to Agile Deployment Lead (Lean Six Sigma, $100k+ automation savings, 50% incident reduction); joined NTT Ltd. as Principal Business Operations Specialist to harmonize Opportunity-to-Cash across 12 regional entities (EUR 500k+ license savings, 21% tool adoption increase); now Functional Lead at S.W.I.F.T. leading E-form optimization and global API consolidation.
+
+Philosophy: evidence-based transformation. Every decision backed by data and aligned with strategic goals. Deeply collaborative — bridges technical teams and business stakeholders so solutions are both theoretically sound and practically executable.
+
+## Contact
+
+- Email: {{ site.contact.email }}
+- LinkedIn: {{ site.contact.linkedin }}
+- Resume: {{ site.url }}{{ site.contact.resume }}
+
+## Services
+
+{% for svc in services.items %}- **{{ svc.title }}** — {{ svc.desc }}
+{% endfor %}
+
+## Technical stack
+
+{% for cat in skills.categories %}### {{ cat.title }}
+{% for skill in cat.skills %}- {{ skill.name }}{% if skill.highlight %} (highlighted){% endif %}
+{% endfor %}
+{% endfor %}
+
+## Proven impact
+
+{% for item in achievements.items %}- **{{ item.title }}** — {{ item.desc }}
+{% endfor %}
+
+## Career timeline
+
+{% for event in timeline.events %}### {{ event.date }} — {{ event.title }}
+**{{ event.company }}**
+
+{{ event.desc }}
+
+Highlights: {{ event.highlights | join(', ') }}
+
+{% endfor %}
+
+## Certifications
+
+{% for cat in certs.categories %}### {{ cat.category }}
+{% for cert in cat.certs %}- {{ cert.name }} ({{ cert.org }})
+{% endfor %}
+{% endfor %}
+
+## Recommendations
+
+{% for t in testimonials.items %}### {{ t.author }} — {{ t.role }}, {{ t.company }}
+> {{ t.fullReview }}
+
+_{{ t.relationship }}._
+
+{% endfor %}
+
+## Articles
+
+{% for post in posts %}### {{ post.title }}
+**Category:** {{ post.category }} — **Published:** {{ post.date }}
+**URL:** {{ site.url }}/blog/{{ post.id }}/
+
+{{ post.summary }}
+
+{% for block in post.content %}{% if block.t == 'h2' %}#### {{ block.v }}
+{% elif block.t == 'h3' %}##### {{ block.v }}
+{% elif block.t == 'ul' %}{% for li in block.v %}- {{ li | striptags }}
+{% endfor %}{% else %}{{ block.v | striptags }}
+
+{% endif %}{% endfor %}
+---
+{% endfor %}

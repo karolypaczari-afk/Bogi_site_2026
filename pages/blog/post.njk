@@ -1,0 +1,91 @@
+---
+pagination:
+    data: posts
+    size: 1
+    alias: post
+permalink: "/blog/{{ post.id }}/index.html"
+layout: "base.njk"
+eleventyComputed:
+    title: "{{ post.title }} | Bogi Horvath"
+    description: "{{ post.summary }}"
+    canonical: "https://bogihorvath.com/blog/{{ post.id }}/"
+    ogType: "article"
+    ogImage: "https://bogihorvath.com{{ post.cover }}"
+    ogImageAlt: "{{ post.title }} — article by Bogi Horvath"
+    keywords: "{{ post.category }}, process optimization, digital transformation, Bogi Horvath, case study, business analysis"
+    blogPost: "{{ post }}"
+    pageType: "post"
+    breadcrumbs:
+        - { name: "Home", url: "https://bogihorvath.com/" }
+        - { name: "Blog", url: "https://bogihorvath.com/blog/" }
+        - { name: "{{ post.title }}", url: "https://bogihorvath.com/blog/{{ post.id }}/" }
+---
+<div class="reading-progress" data-reading-progress aria-hidden="true"></div>
+
+<article class="post">
+    <div class="container">
+        <div class="post__inner">
+            <a class="post__back" href="/blog/">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to All Articles
+            </a>
+
+            <span class="post__meta">{{ post.category }} &mdash; {{ post | readingTime }}</span>
+            <h1 class="post__title">{{ post.title }}</h1>
+
+            <div class="post__cover reveal reveal--scale">
+                <img src="{{ post.cover }}" alt="{{ post.title }}" width="1200" height="500" loading="eager" fetchpriority="high">
+            </div>
+
+            <aside class="post__summary-box reveal">
+                <p class="post__summary-label">Executive Summary</p>
+                <p class="post__summary-text">{{ post.summary }}</p>
+            </aside>
+
+            <div class="post__body">
+                {% for block in post.content %}
+                    {% if block.t == 'h2' %}<h2 class="reveal">{{ block.v }}</h2>
+                    {% elif block.t == 'h3' %}<h3 class="reveal">{{ block.v }}</h3>
+                    {% elif block.t == 'ul' %}
+                        <ul class="reveal">
+                        {% for li in block.v %}<li>{{ li | safe }}</li>{% endfor %}
+                        </ul>
+                    {% else %}<p class="reveal">{{ block.v | safe }}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <footer class="post__author reveal">
+                <div class="post__author-info">
+                    <div class="post__author-avatar">
+                        <img src="/img/bogi.png" alt="{{ site.name }}" width="80" height="80" loading="lazy">
+                    </div>
+                    <div>
+                        <div class="post__author-name">{{ site.fullName }}</div>
+                        <div class="post__author-title">Strategic Transformation Expert</div>
+                    </div>
+                </div>
+                <a class="btn btn--primary" href="/#contact">Discuss This Article</a>
+            </footer>
+
+            {% set related = posts | relatedPosts(post.id, 3) %}
+            {% if related.length %}
+            <section class="post__related reveal" aria-labelledby="related-heading">
+                <h2 id="related-heading" class="post__related-title">Related articles</h2>
+                <div class="post__related-grid">
+                    {% for rp in related %}
+                    <a class="post__related-card" href="/blog/{{ rp.id }}/">
+                        <span class="post__related-cat">{{ rp.category }}</span>
+                        <span class="post__related-card-title">{{ rp.title }}</span>
+                        <span class="post__related-card-read">{{ rp | readingTime }} &rarr;</span>
+                    </a>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+            <p class="post__llm-link">
+                <a href="/blog/{{ post.id }}.md">Plain-text (Markdown) version for AI crawlers</a>
+            </p>
+        </div>
+    </div>
+</article>

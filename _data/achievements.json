@@ -1,0 +1,13 @@
+{
+  "eyebrow": "Hard Metrics",
+  "heading": "Proven Business Impact",
+  "subhead": "I don't just \"improve processes\"—I deliver measurable financial and operational results that reflect on the bottom line.",
+  "items": [
+    { "icon": "fa-euro-sign", "title": "EUR 700k+ Documented Savings", "desc": "Aggregated savings across license optimization, automation ROI, and process waste elimination." },
+    { "icon": "fa-bolt", "title": "20% Productivity Improvement", "desc": "Average throughput increase for order fulfillment teams through lean workflow redesign and SAP S/4HANA to PEGA migration." },
+    { "icon": "fa-users-cog", "title": "15+ FTE Capacity Created", "desc": "Automated ticket quality workflows, freeing up high-value specialists for strategic work." },
+    { "icon": "fa-chart-pie", "title": "50% Lower Incident Volume", "desc": "Eliminated \"hung-line\" bottlenecks at BT, significantly reducing operational firefighting." },
+    { "icon": "fa-user-check", "title": "21% Higher Tool Adoption", "desc": "Led user-centric change management for PEGA deployments, ensuring digital tool ROI." },
+    { "icon": "fa-globe", "title": "5+ Years Remote Leadership", "desc": "Successfully leading distributed teams with 100% remote operations, driving cultural change and process adherence across global organizations." }
+  ]
+}
