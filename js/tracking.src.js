@@ -12,7 +12,7 @@
 
     var defaultVendors = {
         gtmId: 'GTM-W3LHSQ2R',
-        gaMeasurementId: 'G-T517HQQTEQ',
+        gaMeasurementId: 'G-W1JERJNXLS',
         gAdsId: '',
         gAdsLabel: '',
         clarityId: 'mrbhk2dvb4',
