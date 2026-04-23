@@ -3530,3 +3530,287 @@ body.no-scroll {
         padding-right: 24px;
     }
 }
+
+/* ==========================================================================
+   26. 2026 DESIGN REFINEMENT LAYER
+   Fluid typography, atmospheric texture, refined micro-interactions,
+   container queries, better motion curves.
+   ========================================================================== */
+
+/* Fluid type scale */
+:root {
+    --fs-xs: clamp(0.75rem, 0.72rem + 0.12vw, 0.8125rem);
+    --fs-sm: clamp(0.875rem, 0.85rem + 0.125vw, 0.9375rem);
+    --fs-base: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
+    --fs-md: clamp(1.0625rem, 1rem + 0.3vw, 1.125rem);
+    --fs-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.25rem);
+    --fs-xl: clamp(1.25rem, 1.1rem + 0.65vw, 1.5rem);
+    --fs-2xl: clamp(1.5rem, 1.3rem + 0.9vw, 2rem);
+    --fs-3xl: clamp(1.875rem, 1.6rem + 1.3vw, 2.625rem);
+    --fs-4xl: clamp(2.25rem, 1.8rem + 2vw, 3.5rem);
+    --fs-hero: clamp(2.75rem, 2rem + 4vw, 5.5rem);
+    --sp-section: clamp(3.5rem, 2rem + 5vw, 7rem);
+    --ease-out-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+    --t-quick: 180ms;
+    --t-base: 280ms;
+    --t-slow-2: 520ms;
+}
+
+/* Apply fluid sizes */
+.hero__headline {
+    font-size: var(--fs-hero);
+    letter-spacing: -0.025em;
+    line-height: 1.02;
+}
+
+.section-title,
+.cta-band__title,
+.contact__heading {
+    font-size: var(--fs-3xl);
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+}
+
+.page-hero__title,
+.post__title {
+    font-size: var(--fs-4xl);
+    letter-spacing: -0.022em;
+}
+
+.hero__subhead,
+.section-lead,
+.page-hero__lead {
+    font-size: var(--fs-md);
+    line-height: 1.68;
+}
+
+.post__body { font-size: var(--fs-md); line-height: 1.82; }
+.post__body h2 { font-size: var(--fs-2xl); }
+.post__body h3 { font-size: var(--fs-xl); }
+.bio__text { font-size: var(--fs-md); }
+
+/* Fluid section padding */
+.hero, .features, .services, .skills, .achievements,
+.timeline, .testimonials, .certs, .contact, .bio,
+.values, .cta-band, .blog, .post {
+    padding-top: var(--sp-section);
+    padding-bottom: var(--sp-section);
+}
+
+/* Atmospheric noise for dark sections */
+.achievements::before,
+.values::before,
+.contact__card::before,
+.site-footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("/img/noise.svg");
+    background-size: 160px 160px;
+    z-index: 0;
+}
+
+.achievements, .values, .contact__card, .site-footer {
+    position: relative;
+}
+
+.achievements > *,
+.values > *,
+.contact__card > *,
+.site-footer > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Subtle grid behind hero */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.55;
+    background:
+        linear-gradient(to right, rgba(75, 104, 233, 0.04) 1px, transparent 1px) 0 0 / 64px 64px,
+        linear-gradient(to bottom, rgba(75, 104, 233, 0.04) 1px, transparent 1px) 0 0 / 64px 64px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, rgba(0, 0, 0, 0.7), transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, rgba(0, 0, 0, 0.7), transparent 85%);
+    z-index: 0;
+}
+
+.hero > .container { position: relative; z-index: 2; }
+
+/* Refined micro-interactions */
+.btn {
+    transition: transform var(--t-quick) var(--ease-out-smooth),
+                box-shadow var(--t-base) var(--ease-out-smooth),
+                background-color var(--t-quick) var(--ease-out-smooth),
+                color var(--t-quick) var(--ease-out-smooth),
+                border-color var(--t-quick) var(--ease-out-smooth);
+}
+
+.btn:active:not([disabled]) {
+    transform: translateY(-2px) scale(0.98);
+    transition-duration: 80ms;
+}
+
+.form__input:focus,
+.form__textarea:focus,
+.form__select:focus {
+    transition: border-color var(--t-quick) var(--ease-out-smooth),
+                box-shadow var(--t-base) var(--ease-out-smooth);
+    box-shadow: 0 0 0 4px rgba(75, 104, 233, 0.1);
+}
+
+.blog-card {
+    transition: transform var(--t-base) var(--ease-out-smooth),
+                box-shadow var(--t-base) var(--ease-out-smooth);
+}
+
+.blog-card:hover { transform: translateY(-10px); }
+
+.service-card:hover,
+.expertise-card:hover,
+.approach-card:hover {
+    transition-timing-function: var(--ease-spring);
+}
+
+.nav__link::after { transition: width var(--t-base) var(--ease-soft); }
+
+.reveal {
+    transition: opacity var(--t-slow-2) var(--ease-soft),
+                transform var(--t-slow-2) var(--ease-soft);
+}
+
+/* Container queries for card grids */
+.services__grid,
+.skills__grid,
+.certs__list {
+    container-type: inline-size;
+}
+
+@container (min-width: 720px) {
+    .service-card, .skill-card { padding: 2.25rem; }
+}
+
+/* Touch targets: min 44x44 on mobile */
+.top-bar__contact a,
+.mobile-nav__contact a,
+.contact__channel,
+.social-btn,
+.skill-tag,
+.highlight-pill {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-toggle,
+.mobile-nav__close,
+.booking-modal__close {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.form__input,
+.form__textarea,
+.form__select {
+    min-height: 48px;
+    font-size: 16px;
+}
+
+.form__textarea { min-height: 120px; }
+
+/* Scrollbar */
+html {
+    scrollbar-color: var(--clr-slate-300) transparent;
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+    background: var(--clr-slate-300);
+    border-radius: 8px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--clr-accent-light);
+    background-clip: padding-box;
+    border: 3px solid transparent;
+}
+
+/* Selection */
+::selection { background: rgba(75, 104, 233, 0.22); color: var(--clr-text); }
+
+/* Focus-visible */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+    outline: 2px solid var(--clr-accent);
+    outline-offset: 3px;
+    border-radius: 8px;
+}
+
+/* Aspect-ratio-based image cards */
+.blog-card__cover {
+    aspect-ratio: 16 / 10;
+    height: auto;
+}
+
+.blog-card__cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post__cover {
+    aspect-ratio: 16 / 8;
+    height: auto;
+}
+
+/* Testimonial card motion */
+.testimonial-card {
+    transition: transform var(--t-base) var(--ease-out-smooth),
+                border-color var(--t-base) var(--ease-out-smooth),
+                box-shadow var(--t-base) var(--ease-out-smooth);
+}
+
+/* Mobile hero tightening */
+@media (max-width: 639px) {
+    .hero { padding-top: clamp(1.5rem, 4vw, 3rem); }
+    .hero__headline { line-height: 1.05; }
+    .hero__availability { padding: 10px 16px; font-size: 0.75rem; }
+    .hero__stats { gap: var(--sp-4); }
+    .stat-card { padding: var(--sp-6); }
+}
+
+/* Print styles */
+@media print {
+    .top-bar, .site-header, .mobile-nav, .booking-modal,
+    .bh-cookie-consent, .contact__form-card,
+    .site-footer__social, script {
+        display: none !important;
+    }
+    body { background: #fff; color: #000; }
+    a { color: #000; text-decoration: underline; }
+}
+
+/* Strong reduced-motion override */
+@media (prefers-reduced-motion: reduce) {
+    .hero-blob,
+    .achievements__blob,
+    .contact__blob,
+    .hero__portrait-badge {
+        animation: none !important;
+    }
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
