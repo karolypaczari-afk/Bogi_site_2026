@@ -187,15 +187,21 @@ ErrorDocument 404 /404.html
 AddDefaultCharset UTF-8
 
 # --- Block hidden files + sensitive configs ---
-<FilesMatch "^\.(ht|env|git|claude|eleventy|stylelintrc|htmlvalidate)">
+# Broad deny on all dotfiles — covers .mcp.json, .ht*, .env*, .git*, .claude*, etc.
+<FilesMatch "^\.">
     Require all denied
 </FilesMatch>
-<FilesMatch "(package\.json|package-lock\.json|playwright\.config\.js|biome\.json)$">
+<FilesMatch "(package\.json|package-lock\.json|playwright\.config\.js|biome\.json|composer\.json|composer\.lock|\.mcp\.json)$">
     Require all denied
 </FilesMatch>
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  # Dev/build/test directories
   RewriteRule ^(_data|_dev|_includes|node_modules|test-results|playwright-report)(/|$) - [F,L]
+  # Archived React site — defense-in-depth if ever synced to server
+  RewriteRule ^_archive(/|$) - [F,L]
+  # API internal directories (rate/, events/, submissions/ logs)
+  RewriteRule ^api/(events|submissions|rate)(/|$) - [F,L]
 </IfModule>
 
 # --- Disable directory listing ---

@@ -32,17 +32,41 @@
         banner.className = 'bh-cookie-consent';
         banner.setAttribute('role', 'dialog');
         banner.setAttribute('aria-label', 'Cookie consent');
-        banner.innerHTML =
-            '<div class="bh-cookie-consent__inner">' +
-            '  <div class="bh-cookie-consent__copy">' +
-            '    <p>This site uses cookies for analytics and to improve your experience. ' +
-            'See the <a href="' + (config.cookiePolicyUrl || '/#contact') + '">contact page</a> for details.</p>' +
-            '  </div>' +
-            '  <div class="bh-cookie-consent__actions">' +
-            '    <button type="button" class="bh-cookie-consent__btn bh-cookie-consent__btn--primary" data-bh-consent="accept">Accept</button>' +
-            '    <button type="button" class="bh-cookie-consent__btn bh-cookie-consent__btn--secondary" data-bh-consent="reject">Reject</button>' +
-            '  </div>' +
-            '</div>';
+
+        var inner = document.createElement('div');
+        inner.className = 'bh-cookie-consent__inner';
+
+        var copy = document.createElement('div');
+        copy.className = 'bh-cookie-consent__copy';
+        var p = document.createElement('p');
+        p.appendChild(document.createTextNode(
+            'This site uses cookies for analytics and to improve your experience. See the '
+        ));
+        var link = document.createElement('a');
+        link.setAttribute('href', config.cookiePolicyUrl || '/#contact');
+        link.appendChild(document.createTextNode('contact page'));
+        p.appendChild(link);
+        p.appendChild(document.createTextNode(' for details.'));
+        copy.appendChild(p);
+
+        var actions = document.createElement('div');
+        actions.className = 'bh-cookie-consent__actions';
+        var btnAccept = document.createElement('button');
+        btnAccept.type = 'button';
+        btnAccept.className = 'bh-cookie-consent__btn bh-cookie-consent__btn--primary';
+        btnAccept.setAttribute('data-bh-consent', 'accept');
+        btnAccept.appendChild(document.createTextNode('Accept'));
+        var btnReject = document.createElement('button');
+        btnReject.type = 'button';
+        btnReject.className = 'bh-cookie-consent__btn bh-cookie-consent__btn--secondary';
+        btnReject.setAttribute('data-bh-consent', 'reject');
+        btnReject.appendChild(document.createTextNode('Reject'));
+        actions.appendChild(btnAccept);
+        actions.appendChild(btnReject);
+
+        inner.appendChild(copy);
+        inner.appendChild(actions);
+        banner.appendChild(inner);
 
         document.body.appendChild(banner);
         tracking.trackEvent('bh_cookie_banner_view', { banner_variant: 'opt-out' });

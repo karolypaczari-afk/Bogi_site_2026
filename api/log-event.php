@@ -44,11 +44,6 @@ $ok = false;
 foreach ($allowedOrigins as $a) {
     if (str_starts_with($origin, $a) || str_starts_with($referer, $a)) { $ok = true; break; }
 }
-// sendBeacon often omits Origin/Referer on cross-navigation — be lenient if neither header present
-// (same-origin by default unless proven foreign)
-if (!$ok && $origin === '' && !str_starts_with($referer, 'http')) {
-    $ok = true;
-}
 if (!$ok) {
     http_response_code(403);
     echo json_encode(['ok' => false, 'error' => 'forbidden_origin']);
