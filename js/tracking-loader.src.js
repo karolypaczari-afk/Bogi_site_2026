@@ -236,24 +236,93 @@
         return state.consentGranted;
     }
 
+    // 1st-party session ID — stable per browser, survives page navigations for the session
+    function getSessionId() {
+        try {
+            var k = 'bh_sess';
+            var v = window.sessionStorage.getItem(k);
+            if (!v) {
+                v = Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
+                window.sessionStorage.setItem(k, v);
+            }
+            return v;
+        } catch (_e) { return 'nosess'; }
+    }
+    function getClientId() {
+        try {
+            var k = 'bh_cid';
+            var v = window.localStorage.getItem(k);
+            if (!v) {
+                v = Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 12);
+                window.localStorage.setItem(k, v);
+            }
+            return v;
+        } catch (_e) { return 'nocid'; }
+    }
+
+    // Server-side failover — sendBeacon survives page unload (vital for CV download clicks
+    // that navigate away before fetch() could complete). Fire-and-forget.
+    function sendBeaconFailover(eventName, params, payload) {
+        try {
+            var body = {
+                event: eventName,
+                session: getSessionId(),
+                client: getClientId(),
+                page_path: payload.page_path,
+                page_title: payload.page_title,
+                referrer: document.referrer || '',
+                cta_location: (params && params.cta_location) || '',
+                consent_state: payload.consent_state,
+                params: params || {},
+            };
+            var serialized = JSON.stringify(body);
+            if (navigator && typeof navigator.sendBeacon === 'function') {
+                // Use Blob with text/plain — avoids CORS preflight; PHP parses raw body.
+                var blob = new Blob([serialized], { type: 'application/json' });
+                navigator.sendBeacon('/api/log-event.php', blob);
+            } else if (typeof fetch === 'function') {
+                fetch('/api/log-event.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: serialized,
+                    keepalive: true,
+                    credentials: 'same-origin',
+                }).catch(function () { /* silent */ });
+            }
+        } catch (_e) { /* never break the page over analytics */ }
+    }
+
     function trackEvent(eventName, params) {
-        pushDataLayerEvent(eventName, params);
-        if (!hasValue(vendors.gtmId) && typeof window.gtag === 'function' && hasValue(vendors.gaMeasurementId)) {
-            window.gtag('event', eventName, Object.assign({ send_to: vendors.gaMeasurementId }, params || {}));
+        // Channel 1 — dataLayer.push (GTM triggers / Clarity / any listener).
+        var enriched = pushDataLayerEvent(eventName, params);
+
+        // Channel 2 — gtag() direct to GA4. Sends the event regardless of whether
+        // a matching GTM "GA4 Event" tag exists — fixes the container-empty state.
+        if (typeof window.gtag === 'function' && hasValue(vendors.gaMeasurementId)) {
+            try {
+                window.gtag('event', eventName, Object.assign({ send_to: vendors.gaMeasurementId }, params || {}));
+            } catch (_e) { /* gtag not ready — dataLayer push is still queued */ }
         }
+
+        // Channel 3 — same-origin server beacon. Guaranteed delivery even when
+        // ad blockers silence Google domains or consent is denied.
+        sendBeaconFailover(eventName, params, enriched || {});
+
         return true;
     }
 
     ensureDataLayer();
 
-    // Google Consent Mode v2 defaults (denied until user accepts; security_storage always granted)
+    // Google Consent Mode v2 defaults — opt-out model: all granted by default.
+    // Only flips to denied if the visitor explicitly rejects via the banner (stored as bh_cookie_consent=rejected).
+    // Matches the default already set inline in head.njk so there's no brief denied window.
     ensureGtag()('consent', 'default', {
-        ad_storage: 'denied',
-        ad_user_data: 'denied',
-        ad_personalization: 'denied',
-        analytics_storage: 'denied',
-        functionality_storage: 'denied',
-        personalization_storage: 'denied',
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted',
+        analytics_storage: 'granted',
+        functionality_storage: 'granted',
+        personalization_storage: 'granted',
         security_storage: 'granted',
         wait_for_update: 500,
     });

@@ -63,12 +63,13 @@ ErrorDocument 404 /404.html
   RewriteRule ^about/?$ /about/ [R=301,L]
   RewriteRule ^blog/?$ /blog/ [R=301,L]
 
-  # Admin/login/chatbot dead routes — 410 Gone so Google drops them fast
+  # Admin/login/chatbot dead routes — 410 Gone so Google drops them fast.
+  # These are bot-trap paths from the previous WordPress install — no legitimate visitor hits them.
   RewriteRule ^(admin|login|chat|chatbot)/?$ - [G,L]
 
-  # Legacy WP query-string URLs (?p=, ?cat=, ?feed=) — 410 Gone
-  RewriteCond %{QUERY_STRING} (^|&)(p|cat|author|feed|paged|s)=[^&]+ [NC]
-  RewriteRule .* - [G,L]
+  # NOTE: Removed the legacy WP query-string 410 Gone rule (was blocking ?p=, ?cat=, ?s= etc).
+  # Modern campaign tracking (utm_*, gclid, fbclid, _ga, wbraid) was never affected, but the
+  # rule could in theory 410 any legitimate bookmark/share with those params. Safer to drop it.
 </IfModule>
 
 # --- GZIP / Brotli compression ---

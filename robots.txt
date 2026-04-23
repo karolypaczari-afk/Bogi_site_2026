@@ -4,9 +4,9 @@ Disallow: /_dev/
 Disallow: /_data/
 Disallow: /_includes/
 Disallow: /node_modules/
-Disallow: /*?utm_*
-Disallow: /*?fbclid=*
-Disallow: /*?gclid=*
+# Campaign-tagged URLs (utm_*, gclid, fbclid, wbraid, _ga) intentionally NOT disallowed —
+# blocking them prevented paid-campaign landing pages from being attributed in Search Console
+# without actually helping SEO (modern Google canonicalizes them anyway via rel=canonical).
 
 # AI / LLM crawlers — explicit allowlist
 User-agent: GPTBot

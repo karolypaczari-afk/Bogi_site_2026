@@ -5389,6 +5389,63 @@ body::after {
     .sticky-cta, .scroll-cta, .post-dl { display: none !important; }
 }
 
+/* ---- Header CV CTA — pill with dual-line label + file metadata ---- */
+.nav__link--accent {
+    color: var(--clr-text-secondary);
+    font-weight: 600;
+}
+.nav__link--accent::after { display: none; }
+.nav__link--accent:hover { color: var(--clr-ink); }
+
+.nav__cta {
+    background: var(--clr-ink);
+    color: #fff;
+    border-radius: 999px;
+    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    box-shadow: 0 4px 12px rgba(10, 15, 30, 0.18), 0 0 0 1px rgba(255, 90, 60, 0.12);
+    transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 200ms, background 200ms;
+}
+.nav__cta:hover {
+    background: var(--clr-ink);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(10, 15, 30, 0.28), 0 0 0 1px var(--clr-signal);
+}
+.nav__cta i {
+    font-size: 0.9375rem;
+    color: #fff;
+}
+.nav__cta-text {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.1;
+}
+.nav__cta-label {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: -0.005em;
+}
+.nav__cta-sub {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.5625rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.72;
+}
+
+/* Tablet and below — hide the secondary contact link + sub-label to save space */
+@media (max-width: 1023px) {
+    .nav__link--accent { display: none; }
+    .nav__cta-sub { display: none; }
+    .nav__cta { padding: 8px 14px; }
+}
+
 /* ---- Reduced-motion: disable the editorial motion layer ---- */
 @media (prefers-reduced-motion: reduce) {
     .hero-line > span {

@@ -18,8 +18,10 @@
 
 {% include "partials/footer.njk" %}
 {% include "partials/booking-modal.njk" %}
-{% if pageType == "home" %}
+{# Sticky CTA bar: every page — CV is one tap from anywhere, primary conversion goal #}
 {% include "partials/sticky-mobile-cta.njk" %}
+{# Scroll-depth / exit-intent popup: home page only (don't interrupt blog reading) #}
+{% if pageType == "home" %}
 {% include "partials/scroll-cta.njk" %}
 {% endif %}
 {% include "partials/post-download-modal.njk" %}
