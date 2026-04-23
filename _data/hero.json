@@ -14,7 +14,7 @@
     { "value": "15+ FTE", "label": "Equivalent Savings", "subLabel": "via Automation", "icon": "fa-robot" },
     { "value": "5+ Years", "label": "100% Remote", "subLabel": "Global Teams", "icon": "fa-globe" }
   ],
-  "portraitSrc": "/img/bogi.png",
+  "portraitSrc": "/img/bogi-horvath-portrait.webp",
   "portraitAlt": "Boglarka Paczari-Horvath, Senior Business Analyst",
   "floatingBadge": {
     "value": "EUR 700k+",

@@ -112,6 +112,21 @@
 
     // ---- forms -----------------------------------------------------------
     const WEB3FORMS_URL = 'https://api.web3forms.com/submit';
+    const SERVER_LOG_URL = '/api/save-submission.php';
+
+    function logToServer(payload) {
+        // Failover copy saved to server log — runs in parallel to Web3Forms.
+        // Fire-and-forget: any failure is non-fatal for user flow.
+        try {
+            fetch(SERVER_LOG_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+                credentials: 'same-origin',
+                keepalive: true,
+            }).catch(() => {});
+        } catch (err) { /* silent */ }
+    }
 
     function setFormState(form, state) {
         form.setAttribute('data-state', state);
@@ -136,16 +151,21 @@
         const honeypot = fd.get('botcheck');
         if (honeypot) return { success: false, message: 'Bot detected.' };
 
+        const formFields = Object.fromEntries(fd.entries());
+        delete formFields.botcheck;
+
         const payload = {
             access_key: form.dataset.accessKey,
             from_name: form.dataset.fromName || 'Bogi Horvath Website',
             subject: form.dataset.subject || `New message from ${fd.get('name') || 'the website'}`,
             cc: form.dataset.cc || '',
             replyto: fd.get('email') || '',
-            ...Object.fromEntries(fd.entries()),
+            ...formFields,
             ...(extraFields || {}),
         };
-        delete payload.botcheck;
+
+        // Fire server-side failover log in parallel (fire-and-forget)
+        logToServer(formFields);
 
         const response = await fetch(WEB3FORMS_URL, {
             method: 'POST',

@@ -5,7 +5,7 @@
         "category": "Process Improvement",
         "date": "2024-10-03",
         "summary": "Proven strategies for organizational cost reduction without compromising performance or customer satisfaction. Learn how to achieve up to 30% savings through value stream optimization, platform consolidation, and strategic automation.",
-        "cover": "/img/blog-500k-savings.jpg",
+        "cover": "/img/blog-500k-savings.webp",
         "content": [
             { "t": "p", "v": "The article presents proven strategies for organizational cost reduction without compromising performance or customer satisfaction. Drawing from experience leading large-scale transformation initiatives, I outline approaches that address efficiency, loss prevention, and sustainable growth positioning." },
             { "t": "h2", "v": "Step 1: Dive Deep into Your Value Stream" },
@@ -44,7 +44,7 @@
         "category": "Case Study",
         "date": "2024-06-05",
         "summary": "As a Business Analyst, I led adoption and deployment efforts for an automated workflow development initiative. Despite being voluntary, we increased adoption from 14% to 21% within two months through proactive engagement and personalized support.",
-        "cover": "/img/blog-adoption-success.jpg",
+        "cover": "/img/blog-adoption-success.webp",
         "content": [
             { "t": "h2", "v": "Background" },
             { "t": "p", "v": "As a Business Analyst, I led adoption and deployment efforts for an automated workflow development initiative. The project aimed to transition the Opportunity to Implementation value stream from manual Excel-based processes to a PEGA-powered system. Key users included bid managers and solution designers. Despite strategic importance, adoption remained voluntary with no mandatory cutover date." },
@@ -70,7 +70,7 @@
         "category": "Process Improvement",
         "date": "2024-09-17",
         "summary": "Initiating complex process improvement efforts becomes achievable with the right blend of methodologies and strategic steps. This article presents a proven framework for launching and executing impactful initiatives.",
-        "cover": "/img/blog-process-tools.png",
+        "cover": "/img/blog-process-tools.webp",
         "content": [
             { "t": "p", "v": "Initiating complex process improvement efforts becomes achievable with the right blend of methodologies and strategic steps. I present a proven framework for launching and executing impactful initiatives." },
             { "t": "h2", "v": "Building a Solid Foundation" },
@@ -114,7 +114,7 @@
         "category": "Process Improvement",
         "date": "2024-08-01",
         "summary": "Start with a housekeeping exercise to identify inefficiencies, then implement targeted solutions. This showcases how 6Sigma methodology addressed operational inefficiencies in an Opp2Invoice business process.",
-        "cover": "/img/blog-money-leaks.jpg",
+        "cover": "/img/blog-money-leaks.webp",
         "content": [
             { "t": "p", "v": "Start with a housekeeping exercise to identify inefficiencies, then implement targeted solutions. This showcases how 6Sigma methodology addressed operational inefficiencies in an Opp2Invoice business process." },
             { "t": "h2", "v": "Methodology Employed" },
@@ -140,7 +140,7 @@
         "category": "Case Study",
         "date": "2024-06-05",
         "summary": "Serving as a Management Information (MI) Lead at a major IT multinational, I led a transformation initiative focused on improving business processes. The core mission involved analyzing data to identify automation opportunities.",
-        "cover": "/img/blog-automation-efficiency.png",
+        "cover": "/img/blog-automation-efficiency.webp",
         "content": [
             { "t": "h2", "v": "Introduction" },
             { "t": "p", "v": "Serving as a Management Information (MI) Lead at a major IT multinational, I led a transformation initiative focused on improving business processes. The core mission involved analyzing data to identify automation opportunities, particularly targeting a bottleneck affecting operations teams." },

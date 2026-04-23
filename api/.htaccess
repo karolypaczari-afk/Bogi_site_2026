@@ -1,0 +1,11 @@
+# Protect API directory — only the .php endpoint is reachable
+<FilesMatch "\.(log|txt|jsonl|json|md)$">
+    Require all denied
+</FilesMatch>
+
+# Block the submissions + rate dirs entirely
+RewriteEngine On
+RewriteRule ^(submissions|rate)(/.*)?$ - [F,L]
+
+# Block directory indexing
+Options -Indexes
