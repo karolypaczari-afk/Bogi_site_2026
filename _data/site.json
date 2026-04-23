@@ -31,7 +31,7 @@
   },
   "forms": {
     "web3formsAccessKey": "0909516c-58b1-4bb3-80f4-e6f68f1e68ac",
-    "ccRecipients": "karolypaczari@gmail.com,hbogica1987@gmail.com,info@bogihorvath.com"
+    "ccRecipients": "karolypaczari@gmail.com;hbogica1987@gmail.com;info@bogihorvath.com"
   },
   "tracking": {
     "gtm": "GTM-W3LHSQ2R",

@@ -1325,7 +1325,7 @@ body.no-scroll {
 
 @media (min-width: 1024px) {
     .features__grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     .expertise__grid {
         grid-template-columns: repeat(4, 1fr);
@@ -1394,7 +1394,7 @@ body.no-scroll {
 
 @media (min-width: 1024px) {
     .services__grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -1594,7 +1594,7 @@ body.no-scroll {
 ----------------------------------------------------------------- */
 .achievements {
     position: relative;
-    padding: var(--sp-24) 0;
+    padding: var(--sp-12) 0 var(--sp-24);
     background: var(--clr-bg-dark);
     overflow: hidden;
     color: #fff;
@@ -5135,7 +5135,7 @@ body {
     font-size: clamp(1.875rem, 4vw, 2.75rem);
     line-height: 1.02;
     letter-spacing: -0.03em;
-    color: var(--clr-ink);
+    color: #fff;
 }
 .contact__channel {
     border-radius: var(--radius-md);
