@@ -5,6 +5,7 @@
     "no-trailing-whitespace": "off",
     "prefer-native-element": "off",
     "void-style": "off",
-    "no-redundant-role": "off"
+    "no-redundant-role": "off",
+    "long-title": ["error", { "maxlength": 90 }]
   }
 }

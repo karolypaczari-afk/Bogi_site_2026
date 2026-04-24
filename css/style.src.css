@@ -2524,6 +2524,27 @@ body.no-scroll {
     opacity: 0.65;
 }
 
+.site-footer__links {
+    margin-top: var(--sp-4);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--sp-3) var(--sp-5);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+.site-footer__links a {
+    color: var(--clr-slate-400);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color var(--t-fast);
+}
+.site-footer__links a:hover,
+.site-footer__links a:focus-visible {
+    color: var(--clr-accent-light);
+}
+
 .site-footer__meta {
     margin-top: var(--sp-8);
     padding-top: var(--sp-8);

@@ -30,15 +30,17 @@ module.exports = defineConfig({
     projects: [
         {
             name: 'chromium',
-            testIgnore: /00-ios-smoke\.spec\.js/,
             use: {
                 browserName: 'chromium',
                 viewport: { width: 1280, height: 720 },
             },
         },
         {
+            // iPhone 13 webkit — runs smoke + mobile-nav + responsive specs
+            // Visual regression manages its own viewports via test.use, so we
+            // skip it here to avoid duplicate snapshot diffs.
             name: 'webkit-ios',
-            testMatch: /00-ios-smoke\.spec\.js/,
+            testMatch: /(00-smoke|06-mobile-nav|07-responsive)\.spec\.js/,
             use: {
                 browserName: 'webkit',
                 ...devices['iPhone 13'],

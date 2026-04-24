@@ -8,7 +8,7 @@
     "dev": "npx @11ty/eleventy --watch",
     "biome:check": "biome check biome.json .htmlvalidate.json .stylelintrc.json package.json playwright.config.js",
     "biome:format": "biome format --write biome.json .htmlvalidate.json .stylelintrc.json package.json playwright.config.js",
-    "htmlvalidate:check": "html-validate index.html \"pages/**/index.html\"",
+    "htmlvalidate:check": "html-validate index.html about/index.html privacy/index.html cookies/index.html recruiters/index.html blog/index.html \"blog/*/index.html\" 404.html",
     "lint:css": "stylelint \"css/**/*.src.css\"",
     "check": "npm run biome:check && npm run htmlvalidate:check && npm run lint:css",
     "test": "npx playwright test",

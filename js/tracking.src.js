@@ -26,7 +26,7 @@
             consentCookieDays: 365,
             requireConsent: true,
             showBannerWithoutVendors: false,
-            cookiePolicyUrl: '/#contact',
+            cookiePolicyUrl: '/cookies/',
             crossDomainDomains: ['bogihorvath.com', 'www.bogihorvath.com'],
             debug: false,
         },

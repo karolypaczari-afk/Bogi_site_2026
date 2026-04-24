@@ -653,6 +653,53 @@
         initHeroSpotlight();
         wrapFormTracking();
         initWebVitals();
+        initScrollDepth();
+    }
+
+    // ---- scroll-depth tracking ------------------------------------------
+    // Fires bh_scroll_depth dataLayer events at 25/50/75/100% of page reach.
+    // Once per threshold per page load. Validates the "recruiters only
+    // scroll 20%" assumption with live telemetry over time.
+    function initScrollDepth() {
+        if (!window.dataLayer) return;
+        const thresholds = [25, 50, 75, 100];
+        const fired = new Set();
+        let rafPending = false;
+
+        const measure = () => {
+            rafPending = false;
+            const doc = document.documentElement;
+            const pageH = Math.max(doc.scrollHeight, document.body.scrollHeight);
+            const viewH = window.innerHeight || doc.clientHeight;
+            const scrollable = pageH - viewH;
+            if (scrollable <= 0) return;
+            const scrolled = window.scrollY || doc.scrollTop;
+            const pct = Math.min(100, Math.round((scrolled / scrollable) * 100));
+            for (const t of thresholds) {
+                if (pct >= t && !fired.has(t)) {
+                    fired.add(t);
+                    try {
+                        window.dataLayer.push({
+                            event: 'bh_scroll_depth',
+                            scroll_pct: t,
+                            page_path: location.pathname,
+                        });
+                    } catch (_) { /* noop */ }
+                }
+            }
+            if (fired.size === thresholds.length) {
+                window.removeEventListener('scroll', onScroll);
+            }
+        };
+
+        const onScroll = () => {
+            if (rafPending) return;
+            rafPending = true;
+            requestAnimationFrame(measure);
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        measure(); // in case landing already exceeds a threshold
     }
 
     // ---- Core Web Vitals → dataLayer (LCP / CLS / INP / FID) -------------
