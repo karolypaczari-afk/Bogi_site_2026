@@ -17,10 +17,10 @@
     --clr-text: #0f172a;
     --clr-text-secondary: #475569;
     --clr-text-muted: #64748b;
-    --clr-text-inverse: #ffffff;
+    --clr-text-inverse: #fff;
 
     /* Backgrounds */
-    --clr-bg: #ffffff;
+    --clr-bg: #fff;
     --clr-bg-alt: #f8fafc;
     --clr-bg-muted: #f1f5f9;
     --clr-bg-dark: #0f172a;
@@ -1853,7 +1853,7 @@ body.no-scroll {
 
 .highlight-pill::before {
     content: '\f058';
-    font-family: 'Font Awesome 6 Free';
+    font-family: 'Font Awesome 6 Free', sans-serif;
     font-weight: 900;
     font-size: 0.625rem;
 }
@@ -2275,7 +2275,7 @@ body.no-scroll {
     padding-bottom: 4px;
     transition: color var(--t-fast);
     color: #fff;
-    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .contact__channel:hover .contact__channel-text {

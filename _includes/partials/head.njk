@@ -34,7 +34,7 @@
     <meta property="og:image:width" content="{{ ogImageWidth or '1200' }}">
     <meta property="og:image:height" content="{{ ogImageHeight or '630' }}">
     <meta property="og:image:alt" content="{{ ogImageAlt or (site.fullName + ' — ' + site.title) }}">
-    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:type" content="image/webp">
     <meta property="og:site_name" content="{{ site.name }} Portfolio">
     <meta property="og:locale" content="en_US">
     {% if ogType == "article" and blogPost %}
@@ -127,14 +127,37 @@
         "sameAs": ["{{ site.contact.linkedin }}"],
         "description": "{{ site.descriptionShort }}",
         "knowsAbout": {{ site.knowsAbout | dump | safe }},
-        "worksFor": [{ "@type": "Organization", "name": "S.W.I.F.T." }],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "S.W.I.F.T.",
+            "url": "https://www.swift.com/",
+            "sameAs": "https://en.wikipedia.org/wiki/SWIFT"
+        },
+        "alumniOf": [
+            { "@type": "Organization", "name": "NTT Ltd.",        "url": "https://services.global.ntt/" },
+            { "@type": "Organization", "name": "British Telecom", "url": "https://www.bt.com/",          "sameAs": "https://en.wikipedia.org/wiki/BT_Group" },
+            { "@type": "Organization", "name": "T-Systems",       "url": "https://www.t-systems.com/",   "sameAs": "https://en.wikipedia.org/wiki/T-Systems" }
+        ],
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Senior Business Analyst & Digital Transformation Lead",
+            "occupationLocation": { "@type": "Country", "name": "Belgium" },
+            "occupationalCategory": "13-1111.00",
+            "skills": {{ site.knowsAbout | dump | safe }},
+            "experienceRequirements": "14+ years in global ICT operations, enterprise SaaS, telecom, and FinTech."
+        },
+        "seeks": {
+            "@type": "Demand",
+            "name": "Senior BA / Transformation Lead / Process Optimization — interim, contract, or full-time remote"
+        },
         "knowsLanguage": [
             { "@type": "Language", "name": "English", "alternateName": "en" },
             { "@type": "Language", "name": "Hungarian", "alternateName": "hu" },
             { "@type": "Language", "name": "German", "alternateName": "de" }
         ],
         "email": "{{ site.contact.email }}",
-        "nationality": { "@type": "Country", "name": "Hungary" }
+        "nationality": { "@type": "Country", "name": "Hungary" },
+        "homeLocation": { "@type": "Country", "name": "Belgium" }
     }
     </script>
 

@@ -12,3 +12,8 @@ module.exports.PAGES = [
 ];
 
 module.exports.SITE_URL = 'https://bogihorvath.com';
+
+module.exports.VISUAL_BREAKPOINTS = [
+    { name: 'mobile', width: 375 },
+    { name: 'desktop', width: 1280 },
+];

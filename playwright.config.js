@@ -1,5 +1,5 @@
 // @ts-check
-const os = require('os');
+const os = require('node:os');
 const { defineConfig, devices } = require('@playwright/test');
 
 const cpuCount = os.cpus().length;

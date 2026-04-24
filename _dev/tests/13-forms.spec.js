@@ -23,7 +23,7 @@ test('@smoke contact form posts to Web3Forms and shows success', async ({ page }
     await page.locator('[data-contact-form] [type="submit"]').click();
 
     await expect(page.locator('[data-contact-success]')).toBeVisible();
-    await expect(page.locator('[data-contact-success]')).toContainText('Message Sent');
+    await expect(page.locator('[data-contact-success]')).toContainText(/Message sent/i);
 });
 
 test('@smoke contact form shows error on failed submission', async ({ page }) => {

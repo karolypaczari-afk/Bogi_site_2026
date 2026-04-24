@@ -1,4 +1,4 @@
-    <div class="booking-modal" data-booking-modal role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="booking-modal-title">
+    <div class="booking-modal" data-booking-modal role="dialog" aria-modal="true" aria-labelledby="booking-modal-title" inert>
         <div class="booking-modal__overlay" data-booking-overlay></div>
         <div class="booking-modal__panel">
             <button class="booking-modal__close" data-booking-close type="button" aria-label="Close booking">
@@ -16,7 +16,7 @@
                       data-from-name="Bogi Horvath Website"
                       data-subject="New Consultation Request"
                       novalidate>
-                    <input type="text" name="botcheck" class="form__honey" tabindex="-1" autocomplete="off">
+                    <input type="text" name="botcheck" class="form__honey" tabindex="-1" autocomplete="off" aria-hidden="true" aria-label="Do not fill this field">
                     <input type="hidden" name="source" value="booking_modal">
 
                     <div class="form__grid-2">

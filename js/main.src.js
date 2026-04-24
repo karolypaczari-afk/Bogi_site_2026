@@ -236,6 +236,7 @@
         const overlay = modal.querySelector('[data-booking-overlay]');
 
         const open = () => {
+            modal.removeAttribute('inert');
             modal.classList.add('is-open');
             document.body.classList.add('no-scroll');
             const firstInput = modal.querySelector('input');
@@ -243,6 +244,7 @@
         };
         const shut = () => {
             modal.classList.remove('is-open');
+            modal.setAttribute('inert', '');
             document.body.classList.remove('no-scroll');
         };
 
@@ -650,6 +652,74 @@
         initCountUp();
         initHeroSpotlight();
         wrapFormTracking();
+        initWebVitals();
+    }
+
+    // ---- Core Web Vitals → dataLayer (LCP / CLS / INP / FID) -------------
+    // Uses PerformanceObserver directly — no web-vitals npm dependency.
+    // GTM can forward `bh_web_vital` dataLayer events into GA4 as a custom event.
+    function initWebVitals() {
+        if (!('PerformanceObserver' in window) || !window.dataLayer) return;
+
+        const push = (name, value, extra) => {
+            try {
+                window.dataLayer.push(Object.assign({
+                    event: 'bh_web_vital',
+                    vital_name: name,
+                    vital_value: Math.round(value),
+                    page_path: location.pathname,
+                }, extra || {}));
+            } catch (_) { /* noop */ }
+        };
+
+        // LCP — fires at pagehide so we capture the final value after user interaction.
+        let lastLcp = 0;
+        try {
+            new PerformanceObserver((list) => {
+                const entries = list.getEntries();
+                lastLcp = entries[entries.length - 1].startTime;
+            }).observe({ type: 'largest-contentful-paint', buffered: true });
+        } catch (_) {}
+
+        // CLS — cumulative, reported at pagehide.
+        let cls = 0;
+        try {
+            new PerformanceObserver((list) => {
+                for (const e of list.getEntries()) {
+                    if (!e.hadRecentInput) cls += e.value;
+                }
+            }).observe({ type: 'layout-shift', buffered: true });
+        } catch (_) {}
+
+        // FID — first input latency, one-shot.
+        try {
+            new PerformanceObserver((list) => {
+                for (const e of list.getEntries()) {
+                    push('FID', e.processingStart - e.startTime);
+                }
+            }).observe({ type: 'first-input', buffered: true });
+        } catch (_) {}
+
+        // INP — largest interaction so far; reported at pagehide.
+        let worstInp = 0;
+        try {
+            new PerformanceObserver((list) => {
+                for (const e of list.getEntries()) {
+                    if (e.duration > worstInp) worstInp = e.duration;
+                }
+            }).observe({ type: 'event', buffered: true, durationThreshold: 40 });
+        } catch (_) {}
+
+        // Dispatch accumulated metrics on pagehide (or visibilitychange hidden for Safari).
+        const flush = () => {
+            push('LCP', lastLcp);
+            push('CLS', cls * 1000); // × 1000 so dataLayer carries an integer
+            if (worstInp) push('INP', worstInp);
+        };
+        addEventListener('pagehide', flush, { once: true });
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'hidden') flush();
+        }, { once: true });
     }
 
     if (document.readyState === 'loading') {
