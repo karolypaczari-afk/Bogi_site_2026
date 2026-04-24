@@ -64,27 +64,24 @@
     <link rel="manifest" href="/manifest.webmanifest">
 
     {# Preconnect + resource hints (order matters) #}
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
     <link rel="dns-prefetch" href="https://www.clarity.ms">
     <link rel="dns-prefetch" href="https://api.web3forms.com">
 
-    {# Self-hosted fonts — see /fonts/ and _dev/fonts-pipeline/ for regeneration notes.
-       Preload the 2 latin woff2 files that cover above-the-fold text
-       (Fraunces headline + Inter Tight body). Browser auto-filters subsets by
-       unicode-range, so serving latin-ext/cyrillic/greek/vietnamese costs
-       nothing for visitors who don't need them. #}
+    {# Self-hosted Google Fonts + Font Awesome (previously cdnjs + fonts.googleapis.com).
+       Fraunces + Inter Tight: browser auto-filters subsets via unicode-range.
+       Font Awesome: full ~100 KB CSS served here; woff2 files preload below. #}
     <link rel="preload" as="font" type="font/woff2" href="/fonts/fraunces-6NUV8FyLNQOQZAnv9ZwIlOk.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/fonts/intertight-NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2" crossorigin>
     <link rel="stylesheet" href="/fonts/fonts.css?v={{ buildHash }}">
 
-    {# Font Awesome (async, no-CLS) #}
-    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    {# Font Awesome 6.5.1 Free — self-hosted at /fonts/fa.css + /fonts/fa-*.woff2.
+       Async-loaded via media="print" onload swap so it never render-blocks. #}
+    <link rel="stylesheet" href="/fonts/fa.css?v={{ buildHash }}"
           media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="/fonts/fa.css?v={{ buildHash }}">
     </noscript>
 
     {# Main stylesheet #}
