@@ -78,10 +78,10 @@
 
     {# Font Awesome 6.5.1 Free — self-hosted at /fonts/fa.css + /fonts/fa-*.woff2.
        Async-loaded via media="print" onload swap so it never render-blocks. #}
-    <link rel="stylesheet" href="/fonts/fa.css?v={{ buildHash }}"
+    <link rel="stylesheet" href="/fonts/fa-subset.css?v={{ buildHash }}"
           media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet" href="/fonts/fa.css?v={{ buildHash }}">
+        <link rel="stylesheet" href="/fonts/fa-subset.css?v={{ buildHash }}">
     </noscript>
 
     {# Main stylesheet #}
