@@ -37,7 +37,7 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Boglárka Paczari-Horvath — Senior Business Analyst &amp; Digital Transformation Lead">
-    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:type" content="image/webp">
     <meta property="og:site_name" content="Bogi Horvath Portfolio">
     <meta property="og:locale" content="en_US">
     
@@ -59,29 +59,25 @@
     <link rel="manifest" href="/manifest.webmanifest">
 
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
     <link rel="dns-prefetch" href="https://www.clarity.ms">
     <link rel="dns-prefetch" href="https://api.web3forms.com">
 
-    <link rel="preload" as="style"
-          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+    
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/fraunces-6NUV8FyLNQOQZAnv9ZwIlOk.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/intertight-NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2" crossorigin>
+    <link rel="stylesheet" href="/fonts/fonts.css?v=mocjydqx">
 
     
-    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    <link rel="stylesheet" href="/fonts/fa-subset.css?v=mocjydqx"
           media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="/fonts/fa-subset.css?v=mocjydqx">
     </noscript>
 
     
-    <link rel="stylesheet" href="/css/style.css?v=mobdzksb">
+    <link rel="stylesheet" href="/css/style.css?v=mocjydqx">
 
     <link rel="preload" as="image" href="/img/bogi-horvath-portrait.webp" fetchpriority="high">
 
@@ -122,14 +118,37 @@
         "sameAs": ["https://www.linkedin.com/in/boglarka-paczari-horvath/"],
         "description": "14+ years delivering EUR 700k+ in documented savings through SAP S/4HANA, PEGA, and AI-augmented process optimization.",
         "knowsAbout": ["Business Analysis","Digital Transformation","Process Optimization","Lean Six Sigma","Change Management","SAP S/4HANA","PEGA","Agile Project Management","ITIL"],
-        "worksFor": [{ "@type": "Organization", "name": "S.W.I.F.T." }],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "S.W.I.F.T.",
+            "url": "https://www.swift.com/",
+            "sameAs": "https://en.wikipedia.org/wiki/SWIFT"
+        },
+        "alumniOf": [
+            { "@type": "Organization", "name": "NTT Ltd.",        "url": "https://services.global.ntt/" },
+            { "@type": "Organization", "name": "British Telecom", "url": "https://www.bt.com/",          "sameAs": "https://en.wikipedia.org/wiki/BT_Group" },
+            { "@type": "Organization", "name": "T-Systems",       "url": "https://www.t-systems.com/",   "sameAs": "https://en.wikipedia.org/wiki/T-Systems" }
+        ],
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Senior Business Analyst & Digital Transformation Lead",
+            "occupationLocation": { "@type": "Country", "name": "Belgium" },
+            "occupationalCategory": "13-1111.00",
+            "skills": ["Business Analysis","Digital Transformation","Process Optimization","Lean Six Sigma","Change Management","SAP S/4HANA","PEGA","Agile Project Management","ITIL"],
+            "experienceRequirements": "14+ years in global ICT operations, enterprise SaaS, telecom, and FinTech."
+        },
+        "seeks": {
+            "@type": "Demand",
+            "name": "Senior BA / Transformation Lead / Process Optimization — interim, contract, or full-time remote"
+        },
         "knowsLanguage": [
             { "@type": "Language", "name": "English", "alternateName": "en" },
             { "@type": "Language", "name": "Hungarian", "alternateName": "hu" },
             { "@type": "Language", "name": "German", "alternateName": "de" }
         ],
         "email": "horvath.boglarka@hotmail.com",
-        "nationality": { "@type": "Country", "name": "Hungary" }
+        "nationality": { "@type": "Country", "name": "Hungary" },
+        "homeLocation": { "@type": "Country", "name": "Belgium" }
     }
     </script>
 
@@ -242,7 +261,7 @@
 
     <header class="site-header">
         <div class="container site-header__inner">
-            <a class="logo" href="/" aria-label="Bogi Horvath — home">
+            <a class="logo" href="/">
                 Bogi<span>Horvath</span>
             </a>
 
@@ -592,7 +611,7 @@
 
 
 
-<section class="inline-cta" aria-label="Download Bogi's CV">
+<section class="inline-cta" aria-label="Download Bogi's CV — inline_after_achievements">
     <div class="container">
         <div class="inline-cta__card reveal">
             <div class="inline-cta__text">
@@ -647,7 +666,7 @@
                         <img src="/img/miquel-herrero.webp" alt="Miquel Herrero" width="56" height="56" loading="lazy">
                     </div>
                     <div>
-                        <h4 class="testimonial-card__author">Miquel Herrero</h4>
+                        <h3 class="testimonial-card__author">Miquel Herrero</h3>
                         <p class="testimonial-card__role">VP Global Standards</p>
                         <p class="testimonial-card__company">NTT Ltd.</p>
                         <p class="testimonial-card__relationship">Miquel managed Bogi directly</p>
@@ -669,7 +688,7 @@
                         <img src="/img/mark-shepherd.webp" alt="Mark Shepherd" width="56" height="56" loading="lazy">
                     </div>
                     <div>
-                        <h4 class="testimonial-card__author">Mark Shepherd</h4>
+                        <h3 class="testimonial-card__author">Mark Shepherd</h3>
                         <p class="testimonial-card__role">Global Director</p>
                         <p class="testimonial-card__company">NTT Ltd.</p>
                         <p class="testimonial-card__relationship">Mark worked with Bogi on the same team</p>
@@ -691,7 +710,7 @@
                         <img src="/img/justin-strohmenger.webp" alt="Justin Strohmenger" width="56" height="56" loading="lazy">
                     </div>
                     <div>
-                        <h4 class="testimonial-card__author">Justin Strohmenger</h4>
+                        <h3 class="testimonial-card__author">Justin Strohmenger</h3>
                         <p class="testimonial-card__role">Principal IT Solutions Architect</p>
                         <p class="testimonial-card__company">British Telecom</p>
                         <p class="testimonial-card__relationship">Justin worked with Bogi on the same team</p>
@@ -713,7 +732,7 @@
                         <img src="/img/saimah-shakeel.webp" alt="Saimah Shakeel" width="56" height="56" loading="lazy">
                     </div>
                     <div>
-                        <h4 class="testimonial-card__author">Saimah Shakeel</h4>
+                        <h3 class="testimonial-card__author">Saimah Shakeel</h3>
                         <p class="testimonial-card__role">Project/Program Management Specialist</p>
                         <p class="testimonial-card__company">British Telecom</p>
                         <p class="testimonial-card__relationship">Saimah worked with Bogi on the same team</p>
@@ -735,7 +754,7 @@
                         <img src="/img/grace-chan.webp" alt="Grace Chan" width="56" height="56" loading="lazy">
                     </div>
                     <div>
-                        <h4 class="testimonial-card__author">Grace Chan</h4>
+                        <h3 class="testimonial-card__author">Grace Chan</h3>
                         <p class="testimonial-card__role">Chief of Staff</p>
                         <p class="testimonial-card__company">NTT Ltd.</p>
                         <p class="testimonial-card__relationship">Grace worked with Bogi on the same team</p>
@@ -757,7 +776,7 @@
                         <img src="/img/peter-ujfalusi.webp" alt="Peter Ujfalusi" width="56" height="56" loading="lazy">
                     </div>
                     <div>
-                        <h4 class="testimonial-card__author">Peter Ujfalusi</h4>
+                        <h3 class="testimonial-card__author">Peter Ujfalusi</h3>
                         <p class="testimonial-card__role">Process Design &amp; Improvement</p>
                         <p class="testimonial-card__company">British Telecom</p>
                         <p class="testimonial-card__relationship">Peter worked with Bogi on the same team</p>
@@ -780,7 +799,7 @@
 
 
 
-<section class="inline-cta" aria-label="Download Bogi's CV">
+<section class="inline-cta" aria-label="Download Bogi's CV — inline_after_testimonials">
     <div class="container">
         <div class="inline-cta__card reveal">
             <div class="inline-cta__text">
@@ -1005,12 +1024,12 @@
                 <h3 class="approach-card__title">Free 15+ FTE via automation</h3>
                 <p class="approach-card__desc">Ticket-quality QA automation at BT — USD 100k+/yr; 20% decreased waiting time on monthly invoicing at NTT.</p>
                 
-                <div class="approach-card__ai-tools" aria-label="AI tools">
-                    <span class="ai-tool ai-tool--chatgpt" title="ChatGPT">CG</span>
-                    <span class="ai-tool ai-tool--copilot" title="Microsoft Copilot"><i class="fab fa-microsoft" aria-hidden="true"></i></span>
-                    <span class="ai-tool ai-tool--claude" title="Claude">C</span>
-                    <span class="ai-tool ai-tool--gemini" title="Gemini">G</span>
-                </div>
+                <ul class="approach-card__ai-tools" role="list" aria-label="AI tools used">
+                    <li class="ai-tool ai-tool--chatgpt" title="ChatGPT">CG</li>
+                    <li class="ai-tool ai-tool--copilot" title="Microsoft Copilot"><i class="fab fa-microsoft" aria-hidden="true"></i></li>
+                    <li class="ai-tool ai-tool--claude" title="Claude">C</li>
+                    <li class="ai-tool ai-tool--gemini" title="Gemini">G</li>
+                </ul>
                 
             </article>
             
@@ -1068,7 +1087,7 @@
 
 
 
-<section class="inline-cta" aria-label="Download Bogi's CV">
+<section class="inline-cta" aria-label="Download Bogi's CV — inline_after_services">
     <div class="container">
         <div class="inline-cta__card reveal">
             <div class="inline-cta__text">
@@ -1384,11 +1403,11 @@
                     <form class="form"
                           data-contact-form
                           data-access-key="0909516c-58b1-4bb3-80f4-e6f68f1e68ac"
-                          data-cc="karolypaczari@gmail.com;hbogica1987@gmail.com;info@bogihorvath.com"
+                          data-cc="karolypaczari@gmail.com,hbogica1987@gmail.com,info@bogihorvath.com"
                           data-from-name="Bogi Horvath Website"
                           data-subject="New Contact Message from website"
                           novalidate>
-                        <input type="text" name="botcheck" class="form__honey" tabindex="-1" autocomplete="off">
+                        <input type="text" name="botcheck" class="form__honey" tabindex="-1" autocomplete="off" aria-hidden="true" aria-label="Do not fill this field">
                         <input type="hidden" name="source" value="contact_form">
 
                         <div class="form__row">
@@ -1441,6 +1460,14 @@
             <div class="site-footer__copy">
                 <p>&copy; 2026 Boglárka Paczari-Horváth.</p>
                 <p class="site-footer__tagline">Process Transformation Expert</p>
+                <nav class="site-footer__links" aria-label="Site navigation">
+                    <a href="/">Home</a>
+                    <a href="/about/">About</a>
+                    <a href="/recruiters/">For recruiters</a>
+                    <a href="/blog/">Blog</a>
+                    <a href="/privacy/">Privacy</a>
+                    <a href="/cookies/">Cookies</a>
+                </nav>
                 <div class="site-footer__meta">
                     <p>Designed &amp; Built with <i class="fas fa-heart" style="color:var(--clr-accent)" aria-hidden="true"></i> 2026</p>
                 </div>
@@ -1448,7 +1475,7 @@
         </div>
     </footer>
 
-    <div class="booking-modal" data-booking-modal role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="booking-modal-title">
+    <div class="booking-modal" data-booking-modal role="dialog" aria-modal="true" aria-labelledby="booking-modal-title" inert>
         <div class="booking-modal__overlay" data-booking-overlay></div>
         <div class="booking-modal__panel">
             <button class="booking-modal__close" data-booking-close type="button" aria-label="Close booking">
@@ -1462,11 +1489,11 @@
                 <form class="form"
                       data-booking-form
                       data-access-key="0909516c-58b1-4bb3-80f4-e6f68f1e68ac"
-                      data-cc="karolypaczari@gmail.com;hbogica1987@gmail.com;info@bogihorvath.com"
+                      data-cc="karolypaczari@gmail.com,hbogica1987@gmail.com,info@bogihorvath.com"
                       data-from-name="Bogi Horvath Website"
                       data-subject="New Consultation Request"
                       novalidate>
-                    <input type="text" name="botcheck" class="form__honey" tabindex="-1" autocomplete="off">
+                    <input type="text" name="botcheck" class="form__honey" tabindex="-1" autocomplete="off" aria-hidden="true" aria-label="Do not fill this field">
                     <input type="hidden" name="source" value="booking_modal">
 
                     <div class="form__grid-2">
@@ -1600,11 +1627,11 @@
 </div>
 
     
-    <script src="/js/tracking.js?v=mobdzksb" defer></script>
-    <script src="/js/tracking-loader.js?v=mobdzksb" defer></script>
-    <script src="/js/cookie-consent.js?v=mobdzksb" defer></script>
+    <script src="/js/tracking.js?v=mocjydqx" defer></script>
+    <script src="/js/tracking-loader.js?v=mocjydqx" defer></script>
+    <script src="/js/cookie-consent.js?v=mocjydqx" defer></script>
 
 
-    <script src="/js/main.js?v=mobdzksb" defer></script>
+    <script src="/js/main.js?v=mocjydqx" defer></script>
 </body>
 </html>

@@ -1,0 +1,112 @@
+---
+layout: "base.njk"
+title: "Privacy Policy | Bogi Horvath"
+description: "How bogihorvath.com handles visitor data: analytics, consent mode, form submissions, and your rights. Last updated 2026-04-24."
+canonical: "https://bogihorvath.com/privacy/"
+permalink: "/privacy/index.html"
+pageType: "legal"
+keywords: "privacy policy, GDPR, data protection, bogihorvath.com"
+metaRobots: "index, follow, max-snippet:-1"
+breadcrumbs:
+    - { name: "Home", url: "https://bogihorvath.com/" }
+    - { name: "Privacy", url: "https://bogihorvath.com/privacy/" }
+---
+
+<section class="page-hero">
+    <div class="page-hero__blob" aria-hidden="true"></div>
+    <div class="container page-hero__content reveal">
+        <span class="eyebrow">Last updated: 2026-04-24</span>
+        <h1 class="page-hero__title">Privacy <em>Policy</em></h1>
+        <p class="page-hero__lead">
+            How this site handles visitor data. Written in plain English, because legal boilerplate helps nobody.
+        </p>
+    </div>
+</section>
+
+<section class="bio">
+    <div class="container">
+        <div class="bio__text" style="max-width:760px;margin:0 auto">
+            <div class="reveal">
+                <h2>Who I am</h2>
+                <p>
+                    This site is run by <strong>Boglárka Paczari-Horváth</strong> (trading as "Bogi Horvath"), a Senior Business Analyst based in Belgium. Contact:
+                    <a href="{{ site.contact.emailHref }}">{{ site.contact.email }}</a>.
+                </p>
+            </div>
+
+            <div class="reveal">
+                <h2>What I collect</h2>
+                <p>The site uses three categories of tools that touch visitor data:</p>
+                <ol>
+                    <li>
+                        <strong>Analytics (Google Analytics 4 + Microsoft Clarity):</strong>
+                        page views, referrer, device class, interaction events
+                        (<code>bh_cv_download</code>, <code>bh_linkedin_click</code>,
+                        <code>bh_web_vital</code>, <code>bh_scroll_depth</code>). No personally identifying information.
+                        Clarity records anonymous session replays with text and form fields masked by default.
+                    </li>
+                    <li>
+                        <strong>Server-side event log (<code>/api/log-event.php</code>):</strong>
+                        a same-origin failover that stores the same event names as GA4, plus a
+                        SHA-256 hash of your IP address. Used only when the client-side channel is blocked.
+                        Retained for 30 days.
+                    </li>
+                    <li>
+                        <strong>Contact &amp; booking forms (Web3Forms):</strong>
+                        whatever you type — name, email, message. Sent to
+                        <code>horvath.boglarka@hotmail.com</code> via Web3Forms' relay.
+                        I don't store it anywhere else and I don't add you to any mailing list
+                        (I don't have one).
+                    </li>
+                </ol>
+            </div>
+
+            <div class="reveal">
+                <h2>Consent Mode</h2>
+                <p>
+                    The site implements <strong>Google Consent Mode v2 with granted defaults</strong>.
+                    Analytics cookies are set on first visit unless you click "Reject" in the
+                    consent banner. Your choice is stored in a first-party cookie
+                    (<code>bh_cookie_consent</code>) for 365 days. Details of every cookie
+                    and how to revoke consent are in the <a href="/cookies/">Cookie Policy</a>.
+                </p>
+            </div>
+
+            <div class="reveal">
+                <h2>Your rights (GDPR)</h2>
+                <p>You can email me at <a href="{{ site.contact.emailHref }}">{{ site.contact.email }}</a> to:</p>
+                <ul>
+                    <li>Request a copy of any data tied to your contact form submission.</li>
+                    <li>Ask me to delete your form submission from my inbox.</li>
+                    <li>Opt out of all analytics (or just use the consent banner's "Reject" option).</li>
+                </ul>
+                <p>
+                    I respond to these under 24 hours on weekdays. For analytics data, I only
+                    hold aggregate reports — there is no user-level record on my end because
+                    GA4 stores pseudonymous IDs, not email addresses.
+                </p>
+            </div>
+
+            <div class="reveal">
+                <h2>Third-party sub-processors</h2>
+                <ul>
+                    <li><strong>Google</strong> — Analytics + Tag Manager. Data may transfer to the US.</li>
+                    <li><strong>Microsoft</strong> — Clarity session analytics. Data may transfer to the US.</li>
+                    <li><strong>Web3Forms</strong> — form relay. Data routed to my inbox and not retained by them after delivery.</li>
+                    <li><strong>Hostinger</strong> — web hosting. Standard server logs with IP retention per their policy.</li>
+                    <li><strong>Cloudflare / cdnjs</strong> — asset CDN (fonts, icons).</li>
+                </ul>
+            </div>
+
+            <div class="reveal">
+                <h2>Changes</h2>
+                <p>
+                    When this policy changes, the "Last updated" date at the top will change.
+                    Substantive changes will also be noted in the
+                    <a href="/blog/">blog</a>. No retroactive changes to data handling will be applied
+                    without a fresh banner.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

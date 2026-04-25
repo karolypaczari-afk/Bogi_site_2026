@@ -6,7 +6,7 @@ pagination:
 permalink: "/blog/{{ post.id }}/index.html"
 layout: "base.njk"
 eleventyComputed:
-    title: "{{ post.title }} | Bogi Horvath"
+    title: "{{ post.title }}"
     description: "{{ post.summary }}"
     canonical: "https://bogihorvath.com/blog/{{ post.id }}/"
     ogType: "article"
@@ -54,6 +54,12 @@ eleventyComputed:
                 {% endfor %}
             </div>
 
+            {# ---- Blog-footer conversion CTA — CV primary, LinkedIn secondary ---- #}
+            {% set inlineCtaLocation = "blog_footer" %}
+            {% set inlineCtaHeading = "Want the full playbook behind this?" %}
+            {% set inlineCtaSub = "14+ years of results, EUR 700k+ savings documented. 2 pages, no signup." %}
+            {% include "partials/inline-cv-cta.njk" %}
+
             <footer class="post__author reveal">
                 <div class="post__author-info">
                     <div class="post__author-avatar">
@@ -64,7 +70,7 @@ eleventyComputed:
                         <div class="post__author-title">Strategic Transformation Expert</div>
                     </div>
                 </div>
-                <a class="btn btn--primary" href="/#contact">Discuss This Article</a>
+                <a class="btn btn--primary" href="/#contact" data-cta-location="blog_footer_contact">Discuss This Article</a>
             </footer>
 
             {% set related = posts | relatedPosts(post.id, 3) %}

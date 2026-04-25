@@ -1,0 +1,112 @@
+---
+layout: "base.njk"
+title: "Cookie Policy | Bogi Horvath"
+description: "Cookies and similar storage used on bogihorvath.com: names, purpose, retention, and how to opt out. Last updated 2026-04-24."
+canonical: "https://bogihorvath.com/cookies/"
+permalink: "/cookies/index.html"
+pageType: "legal"
+keywords: "cookie policy, tracking, GDPR, analytics cookies, bogihorvath.com"
+metaRobots: "index, follow, max-snippet:-1"
+breadcrumbs:
+    - { name: "Home", url: "https://bogihorvath.com/" }
+    - { name: "Cookies", url: "https://bogihorvath.com/cookies/" }
+---
+
+<section class="page-hero">
+    <div class="page-hero__blob" aria-hidden="true"></div>
+    <div class="container page-hero__content reveal">
+        <span class="eyebrow">Last updated: 2026-04-24</span>
+        <h1 class="page-hero__title">Cookie <em>Policy</em></h1>
+        <p class="page-hero__lead">
+            What cookies and local storage this site uses, why, and how to turn them off.
+        </p>
+    </div>
+</section>
+
+<section class="bio">
+    <div class="container">
+        <div class="bio__text" style="max-width:860px;margin:0 auto">
+            <div class="reveal">
+                <h2>What a cookie is (30-second version)</h2>
+                <p>
+                    A cookie is a tiny text file that the browser stores on your device so a site
+                    can recognise you on the next page view. Some cookies are essential (session
+                    management); others track analytics or marketing attribution. This site uses
+                    a narrow set described below.
+                </p>
+            </div>
+
+            <div class="reveal">
+                <h2>Cookies this site sets</h2>
+                <div style="overflow-x:auto">
+                    <table style="width:100%;border-collapse:collapse;margin:var(--sp-4) 0">
+                        <thead>
+                            <tr style="border-bottom:2px solid var(--clr-border)">
+                                <th style="padding:var(--sp-2);text-align:left">Name</th>
+                                <th style="padding:var(--sp-2);text-align:left">Set by</th>
+                                <th style="padding:var(--sp-2);text-align:left">Purpose</th>
+                                <th style="padding:var(--sp-2);text-align:left">Lifetime</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom:1px solid var(--clr-border-subtle)">
+                                <td style="padding:var(--sp-2)"><code>bh_cookie_consent</code></td>
+                                <td style="padding:var(--sp-2)">First-party</td>
+                                <td style="padding:var(--sp-2)">Remembers your Accept / Reject choice on the consent banner.</td>
+                                <td style="padding:var(--sp-2)">365 days</td>
+                            </tr>
+                            <tr style="border-bottom:1px solid var(--clr-border-subtle)">
+                                <td style="padding:var(--sp-2)"><code>_ga</code>, <code>_ga_*</code></td>
+                                <td style="padding:var(--sp-2)">Google Analytics 4</td>
+                                <td style="padding:var(--sp-2)">Distinguishes unique visitors. Aggregate traffic + event analytics.</td>
+                                <td style="padding:var(--sp-2)">2 years</td>
+                            </tr>
+                            <tr style="border-bottom:1px solid var(--clr-border-subtle)">
+                                <td style="padding:var(--sp-2)"><code>_gid</code></td>
+                                <td style="padding:var(--sp-2)">Google Analytics 4</td>
+                                <td style="padding:var(--sp-2)">Distinguishes unique visitors within a 24-hour window.</td>
+                                <td style="padding:var(--sp-2)">24 hours</td>
+                            </tr>
+                            <tr style="border-bottom:1px solid var(--clr-border-subtle)">
+                                <td style="padding:var(--sp-2)"><code>_clck</code>, <code>_clsk</code>, <code>CLID</code></td>
+                                <td style="padding:var(--sp-2)">Microsoft Clarity</td>
+                                <td style="padding:var(--sp-2)">Session replay + heatmap analytics (text and form fields masked).</td>
+                                <td style="padding:var(--sp-2)">1 year</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="reveal">
+                <h2>Consent Mode v2</h2>
+                <p>
+                    Categories used by this site: <code>analytics_storage</code>,
+                    <code>ad_storage</code>, <code>ad_user_data</code>,
+                    <code>ad_personalization</code>, <code>functionality_storage</code>,
+                    <code>personalization_storage</code>, <code>security_storage</code>.
+                    Default state is <strong>granted</strong> (opt-out model). The consent
+                    banner flips every category except <code>security_storage</code> to
+                    <strong>denied</strong> if you click "Reject".
+                </p>
+            </div>
+
+            <div class="reveal">
+                <h2>How to turn tracking off</h2>
+                <ol>
+                    <li>Click <strong>Reject</strong> on the consent banner if it appears. If it's already dismissed, clear <code>bh_cookie_consent</code> from your browser cookies and reload — the banner will re-appear.</li>
+                    <li>Or use your browser's "Do Not Track" / cookie-blocking settings.</li>
+                    <li>Or install a content-blocker like uBlock Origin or Privacy Badger — this site does not try to detect or circumvent them.</li>
+                </ol>
+            </div>
+
+            <div class="reveal">
+                <h2>Questions</h2>
+                <p>
+                    Email <a href="{{ site.contact.emailHref }}">{{ site.contact.email }}</a>.
+                    For the full data-handling picture see the <a href="/privacy/">Privacy Policy</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

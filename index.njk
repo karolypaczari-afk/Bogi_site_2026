@@ -172,7 +172,7 @@ ogImageAlt: "Boglárka Paczari-Horvath — Senior Business Analyst & Digital Tra
                         <img src="{{ item.image }}" alt="{{ item.author }}" width="56" height="56" loading="lazy">
                     </div>
                     <div>
-                        <h4 class="testimonial-card__author">{{ item.author }}</h4>
+                        <h3 class="testimonial-card__author">{{ item.author }}</h3>
                         <p class="testimonial-card__role">{{ item.role }}</p>
                         <p class="testimonial-card__company">{{ item.company }}</p>
                         <p class="testimonial-card__relationship">{{ item.relationship }}</p>
@@ -251,12 +251,12 @@ ogImageAlt: "Boglárka Paczari-Horvath — Senior Business Analyst & Digital Tra
                 <h3 class="approach-card__title">{{ card.title }}</h3>
                 <p class="approach-card__desc">{{ card.desc }}</p>
                 {% if card.aiTools %}
-                <div class="approach-card__ai-tools" aria-label="AI tools">
-                    <span class="ai-tool ai-tool--chatgpt" title="ChatGPT">CG</span>
-                    <span class="ai-tool ai-tool--copilot" title="Microsoft Copilot"><i class="fab fa-microsoft" aria-hidden="true"></i></span>
-                    <span class="ai-tool ai-tool--claude" title="Claude">C</span>
-                    <span class="ai-tool ai-tool--gemini" title="Gemini">G</span>
-                </div>
+                <ul class="approach-card__ai-tools" role="list" aria-label="AI tools used">
+                    <li class="ai-tool ai-tool--chatgpt" title="ChatGPT">CG</li>
+                    <li class="ai-tool ai-tool--copilot" title="Microsoft Copilot"><i class="fab fa-microsoft" aria-hidden="true"></i></li>
+                    <li class="ai-tool ai-tool--claude" title="Claude">C</li>
+                    <li class="ai-tool ai-tool--gemini" title="Gemini">G</li>
+                </ul>
                 {% endif %}
             </article>
             {% endfor %}
@@ -381,7 +381,7 @@ ogImageAlt: "Boglárka Paczari-Horvath — Senior Business Analyst & Digital Tra
                           data-from-name="Bogi Horvath Website"
                           data-subject="New Contact Message from website"
                           novalidate>
-                        <input type="text" name="botcheck" class="form__honey" tabindex="-1" autocomplete="off">
+                        <input type="text" name="botcheck" class="form__honey" tabindex="-1" autocomplete="off" aria-hidden="true" aria-label="Do not fill this field">
                         <input type="hidden" name="source" value="contact_form">
 
                         <div class="form__row">

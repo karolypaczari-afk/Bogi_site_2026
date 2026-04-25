@@ -166,7 +166,7 @@ ErrorDocument 404 /404.html
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
-  Header set Referrer-Policy "no-referrer-when-downgrade"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
   Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
   Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 

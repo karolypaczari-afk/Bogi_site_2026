@@ -25,7 +25,7 @@ for (const page of PAGES) {
             pw.on('console', (msg) => {
                 if (msg.type() === 'error') errors.push(msg.text());
             });
-            await pw.goto(page.path, { waitUntil: 'networkidle' });
+            await pw.goto(page.path, { waitUntil: 'load' });
             // Allow tracking script noise from missing GTM/Clarity hosts in dev
             const hardErrors = errors.filter(
                 (e) =>

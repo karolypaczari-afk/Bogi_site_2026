@@ -1,0 +1,157 @@
+---
+layout: "base.njk"
+title: "For Recruiters | Bogi Horvath — Senior BA & Transformation Lead"
+description: "Everything a recruiter needs in 30 seconds: role fit, availability, work authorisation, sector focus, notice period, response time. Direct CV download, no gatekeeping."
+canonical: "https://bogihorvath.com/recruiters/"
+permalink: "/recruiters/index.html"
+pageType: "recruiters"
+keywords: "hire business analyst, senior BA available, transformation lead remote, SAP S/4HANA contract, PEGA BA, Lean Six Sigma consultant Belgium, remote senior BA contract"
+ogTitle: "Hire Bogi Horvath | Senior BA / Transformation Lead — Available Now"
+ogDescription: "14+ yrs at S.W.I.F.T., NTT, BT, T-Systems. EUR 700k+ documented savings. Remote, EU citizen, under-24h response."
+ogImageAlt: "For recruiters — hire Bogi Horvath as Senior BA or Transformation Lead"
+breadcrumbs:
+    - { name: "Home", url: "https://bogihorvath.com/" }
+    - { name: "For recruiters", url: "https://bogihorvath.com/recruiters/" }
+---
+
+<section class="page-hero">
+    <div class="page-hero__blob" aria-hidden="true"></div>
+    <div class="container page-hero__content reveal">
+        <span class="eyebrow">For recruiters &mdash; 30-second scan</span>
+        <h1 class="page-hero__title">Hire <em>Bogi</em> &mdash; Senior BA &middot; Transformation Lead.</h1>
+        <p class="page-hero__lead">
+            14+ years at <strong>S.W.I.F.T., NTT Ltd., British Telecom, T-Systems</strong>.
+            EUR 700k+ documented savings. 100% remote, EU citizen, under-24h response.
+        </p>
+        <div class="page-hero__ctas">
+            <a class="btn btn--primary"
+               href="{{ site.contact.resume }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               data-cta-location="recruiters_hero">
+                <i class="far fa-file-pdf" aria-hidden="true"></i>
+                Download CV &mdash; 2 pages, no signup
+            </a>
+            <a class="btn btn--secondary"
+               href="{{ site.contact.linkedin }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               data-cta-location="recruiters_hero_linkedin">
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                LinkedIn &mdash; 15+ recommendations
+            </a>
+        </div>
+    </div>
+</section>
+
+{# 10-second scan card — same data source as homepage, rendered here long-form #}
+<section class="recruiter-card" aria-label="Recruiter quick facts">
+    <div class="container">
+        <div class="recruiter-card__box reveal">
+            <header class="recruiter-card__head">
+                <span class="eyebrow">The facts</span>
+                <h2 class="recruiter-card__title">Role fit at a glance</h2>
+            </header>
+            <dl class="recruiter-card__grid">
+                {% for row in site.recruiterFacts %}
+                <div class="recruiter-card__row">
+                    <dt class="recruiter-card__label">{{ row.label }}</dt>
+                    <dd class="recruiter-card__value">{{ row.value }}</dd>
+                </div>
+                {% endfor %}
+            </dl>
+            <div class="recruiter-card__actions">
+                <a class="btn btn--primary"
+                   href="{{ site.contact.resume }}"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   data-cta-location="recruiters_facts">
+                    <i class="far fa-file-pdf" aria-hidden="true"></i>
+                    Send the CV to the hiring manager
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bio">
+    <div class="container">
+        <div class="bio__text" style="max-width:860px;margin:0 auto">
+            <div class="reveal">
+                <h2>What I do (in one sentence)</h2>
+                <p>
+                    I turn messy, fragmented enterprise operations into value streams with measurable ROI &mdash;
+                    typically <strong>5-7 figure annual savings</strong> inside 12 months. Evidence, not theatre.
+                </p>
+            </div>
+
+            <div class="reveal">
+                <h2>Stack I lead with</h2>
+                <p>
+                    SAP S/4HANA &middot; PEGA &middot; ServiceNow &middot; ARIS &middot; Power BI &middot; Minitab.
+                    Methods: Lean Six Sigma (Green Belt, DMAIC), Agile, ITIL, PRINCE2, Change Management (APMG).
+                    AI-augmented delivery with Copilot / ChatGPT / Claude / Gemini &mdash; practical, not hype.
+                </p>
+            </div>
+
+            <div class="reveal">
+                <h2>Recent receipts</h2>
+                <ul>
+                    <li><strong>S.W.I.F.T. &middot; 2024 &rarr; present:</strong> Functional Lead. E-form optimisation &amp; API consolidation; 20% productivity gain via SAP S/4HANA &rarr; PEGA migration.</li>
+                    <li><strong>NTT Ltd. &middot; 2022 &rarr; 2024:</strong> Principal Business Ops. EUR 500k+ SFDC license savings. Opp2Cash harmonised across 12 regional entities. 21% tool adoption uplift.</li>
+                    <li><strong>British Telecom &middot; 2015 &rarr; 2022:</strong> $100k+ automation savings. 50% incident-volume reduction via PEGA deployments.</li>
+                    <li><strong>T-Systems &middot; 2010 &rarr; 2015:</strong> Operations Manager. 30% reduction in customer escalations via service-chain redesign.</li>
+                </ul>
+                <p>Every number is traceable to project, client, and year in the CV.</p>
+            </div>
+
+            <div class="reveal">
+                <h2>How the engagement works</h2>
+                <ol>
+                    <li><strong>Send the role.</strong> Brief, JD, salary range. Email or LinkedIn InMail.</li>
+                    <li><strong>I reply in under 24 h</strong> with fit assessment, notice, and calendar windows.</li>
+                    <li><strong>One intro call</strong> (30 min). No "tell me about yourself" theatre &mdash; straight to role-match.</li>
+                    <li><strong>Client interviews</strong> on your timeline, not mine.</li>
+                </ol>
+                <p>
+                    Contract, interim, full-time &mdash; open to all three.
+                    Working hours: CET &plusmn; 3. No visa sponsorship needed (EU citizen).
+                </p>
+            </div>
+
+            <div class="reveal">
+                <h2>What I don't do</h2>
+                <ul>
+                    <li>On-site roles requiring &gt; 4 travel days / month.</li>
+                    <li>"Anything BA" listings without a defined transformation remit.</li>
+                    <li>Roles below Senior level.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-band">
+    <div class="container reveal reveal--scale">
+        <h2 class="cta-band__title">Next step: send the CV to your hiring manager.</h2>
+        <p class="cta-band__lead">Two pages, PDF, no signup. Direct contact details inside.</p>
+        <div class="page-hero__ctas">
+            <a class="btn btn--primary"
+               href="{{ site.contact.resume }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               data-cta-location="recruiters_footer">
+                <i class="far fa-file-pdf" aria-hidden="true"></i>
+                Download CV
+            </a>
+            <a class="btn btn--ghost"
+               href="{{ site.contact.linkedin }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               data-cta-location="recruiters_footer_linkedin">
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                Check 15+ recommendations
+            </a>
+        </div>
+    </div>
+</section>

@@ -1,7 +1,7 @@
 {# Inline CV CTA — repeated between sections for 20%-scroll audience.
    Usage: {% include "partials/inline-cv-cta.njk" %} with `inlineCtaLocation` set.
    Optional: inlineCtaHeading, inlineCtaSub #}
-<section class="inline-cta" aria-label="Download Bogi's CV">
+<section class="inline-cta" aria-label="Download Bogi's CV — {{ inlineCtaLocation or 'inline' }}">
     <div class="container">
         <div class="inline-cta__card reveal">
             <div class="inline-cta__text">

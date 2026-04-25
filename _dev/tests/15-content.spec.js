@@ -4,13 +4,13 @@ const { test, expect } = require('@playwright/test');
 test('@smoke home renders hero, services, skills, achievements, timeline, testimonials, certs, contact', async ({ page }) => {
     await page.goto('/');
 
-    await expect(page.locator('.hero__headline')).toContainText(/Unlock Your Team/);
-    await expect(page.locator('#services .service-card')).toHaveCount(9);
-    await expect(page.locator('#skills .skill-card')).toHaveCount(6);
+    await expect(page.locator('.hero__headline')).toContainText(/EUR 700k\+ saved/);
+    await expect(page.locator('#services .service-card')).toHaveCount(4);
+    await expect(page.locator('#skills .skills-strip__row').first()).toBeVisible();
     await expect(page.locator('#achievements .achievement-card')).toHaveCount(6);
     await expect(page.locator('#experience .timeline__item')).toHaveCount(6);
     await expect(page.locator('#references .testimonial-card')).toHaveCount(6);
-    await expect(page.locator('#certifications .cert-category')).toHaveCount(4);
+    await expect(page.locator('#certifications .cert-pill').first()).toBeVisible();
     await expect(page.locator('#contact [data-contact-form]')).toBeVisible();
 });
 
