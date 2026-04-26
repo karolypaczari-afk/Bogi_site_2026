@@ -1,11 +1,11 @@
 {
-  "eyebrow": "How I work",
-  "heading": "Strategy and <em>execution</em> — by the same person",
-  "subhead": "Most transformation fails in the handover between strategy deck and delivery team. I do both — discovery, design, migration, rollout, and adoption. No handoff gap.",
-  "approach": [
-    { "icon": "fa-euro-sign", "title": "Cut EUR 500k+ in license spend", "desc": "Merged 3 enterprise processes and retired legacy tooling at NTT Ltd. — savings hit the P&L in the same fiscal year." },
-    { "icon": "fa-cogs",      "title": "Run SAP S/4HANA ↔ PEGA moves",  "desc": "Future-state design, rating & metering standardization, variable billing operationalization at S.W.I.F.T. and NTT Ltd." },
-    { "icon": "fa-robot",     "title": "Free 15+ FTE via automation",    "desc": "Ticket-quality QA automation at BT — USD 100k+/yr; 20% decreased waiting time on monthly invoicing at NTT.", "aiTools": true },
-    { "icon": "fa-user-check","title": "Drive 21% adoption uplift",      "desc": "Change management on PEGA workflow rollouts at BT — turned rollout into actual daily usage, not shelfware." }
-  ]
+    "eyebrow": "How I work",
+    "heading": "Production AI <em>plus</em> audit-grade governance — by the same person",
+    "subhead": "Most AI projects fail in the gap between innovation lab and regulated enterprise. I run AI inside Tier-1 financial services and telecom — fast enough to ship, careful enough to pass audit. No handoff gap between strategy, delivery, and compliance.",
+    "approach": [
+        { "icon": "fa-euro-sign", "title": "Cut EUR 500k+ in license spend", "desc": "Merged 3 enterprise processes and retired legacy tooling at NTT Ltd. — savings hit the P&L in the same fiscal year." },
+        { "icon": "fa-cogs",      "title": "Run SAP S/4HANA ↔ PEGA moves",  "desc": "Future-state design, rating & metering standardization, variable billing operationalization at S.W.I.F.T. and NTT Ltd." },
+        { "icon": "fa-robot",     "title": "Ship AI inside regulated workflows", "desc": "60% documentation-time savings at SWIFT via Claude Code + MCP source-code analysis. AI documentation that engineering, product and audit all signed off without rework.", "aiTools": true },
+        { "icon": "fa-shield-halved", "title": "Keep audit and compliance intact", "desc": "EU AI Act fluent. Govern AI shipping with model risk lineage, transparency obligations, and conformity assessment baked in — not bolted on." }
+    ]
 }

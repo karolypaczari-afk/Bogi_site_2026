@@ -1,11 +1,11 @@
 ---
 layout: "base.njk"
-title: "Bogi Horvath — Senior Business Analyst & Transformation Lead"
-ogTitle: "Bogi Horvath | Senior BA & Digital Transformation Lead | SAP, PEGA, AI"
+title: "Bogi Horvath — AI-Augmented Process Transformation Lead"
+ogTitle: "Bogi Horvath | AI-Augmented Process Transformation Lead | SWIFT, NTT, BT — €1.1M+ saved"
 canonical: "https://bogihorvath.com/"
 preloadHero: "/img/bogi-horvath-portrait.webp"
 pageType: "home"
-ogImageAlt: "Boglárka Paczari-Horvath — Senior Business Analyst & Digital Transformation Lead"
+ogImageAlt: "Boglárka Paczari-Horvath — AI-Augmented Process Transformation Lead, ex-SWIFT/NTT/BT"
 ---
 {% set h = hero %}
 {% set f = features %}
@@ -36,6 +36,10 @@ ogImageAlt: "Boglárka Paczari-Horvath — Senior Business Analyst & Digital Tra
                     <span class="hero-line hero-line--accent" style="--line:1"><span><em>{{ h.headingAccent }}</em></span></span>
                     <span class="hero-line hero-line--tail" style="--line:2"><span>{{ h.headingTail }}</span></span>
                 </h1>
+
+                {% if site.secondaryTitle %}
+                <p class="hero__credentials reveal">{{ site.secondaryTitle }}</p>
+                {% endif %}
 
                 <p class="hero__subhead reveal">{{ h.subhead | safe }}</p>
 

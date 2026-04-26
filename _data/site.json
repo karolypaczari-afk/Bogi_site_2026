@@ -1,52 +1,60 @@
 {
-  "name": "Bogi Horvath",
-  "fullName": "Boglárka Paczari-Horváth",
-  "title": "Senior Business Analyst & Digital Transformation Lead",
-  "shortTitle": "Process Transformation Expert",
-  "url": "https://bogihorvath.com",
-  "locale": "en",
-  "themeColor": "#4b68e9",
-  "description": "Senior Business Analyst & Digital Transformation Lead with 14+ years in global ICT operations. EUR 700k+ documented savings through SAP S/4HANA, PEGA migrations, Lean Six Sigma, and AI-augmented process optimization. Available for remote Senior BA / Transformation Lead roles.",
-  "descriptionShort": "14+ years delivering EUR 700k+ in documented savings through SAP S/4HANA, PEGA, and AI-augmented process optimization.",
-  "keywords": "Business Analyst, Digital Transformation, Process Optimization, SAP S/4HANA, PEGA, Lean Six Sigma, Change Management, Remote Leadership, API Integration, Workflow Automation",
-  "author": "Boglarka Paczari Horvath",
-  "defaultOgImage": "https://bogihorvath.com/img/bogi-horvath-og-1200x630.webp",
-  "availability": "Available now — accepting 1-2 interim / contract roles (Senior BA · Transformation Lead · Process Optimization). 100% remote.",
-  "availabilityShort": "Available now — 1-2 interim slots open",
-  "recruiterFacts": [
-    { "label": "Role fit",         "value": "Senior BA · Transformation Lead · Process Optimization" },
-    { "label": "Availability",     "value": "Immediate — 1-2 interim / contract slots" },
-    { "label": "Location",         "value": "100% remote (CET ±3)" },
-    { "label": "Work authorization","value": "EU citizen" },
-    { "label": "Notice period",    "value": "Negotiable" },
-    { "label": "Sectors",          "value": "Telecom · FinTech · ICT (preferred)" },
-    { "label": "Languages",        "value": "English (full professional) · German (intermediate) · Hungarian (native)" },
-    { "label": "Response time",    "value": "Under 24 hours" }
-  ],
-  "contact": {
-    "email": "horvath.boglarka@hotmail.com",
-    "emailHref": "mailto:horvath.boglarka@hotmail.com",
-    "linkedin": "https://www.linkedin.com/in/boglarka-paczari-horvath/",
-    "resume": "/Bogi_CV.pdf"
-  },
-  "forms": {
-    "web3formsAccessKey": "0909516c-58b1-4bb3-80f4-e6f68f1e68ac",
-    "ccRecipients": "karolypaczari@gmail.com,hbogica1987@gmail.com,info@bogihorvath.com"
-  },
-  "tracking": {
-    "gtm": "GTM-W3LHSQ2R",
-    "ga4": "G-W1JERJNXLS",
-    "clarity": "mrbhk2dvb4"
-  },
-  "knowsAbout": [
-    "Business Analysis",
-    "Digital Transformation",
-    "Process Optimization",
-    "Lean Six Sigma",
-    "Change Management",
-    "SAP S/4HANA",
-    "PEGA",
-    "Agile Project Management",
-    "ITIL"
-  ]
+    "name": "Bogi Horvath",
+    "fullName": "Boglárka Paczari-Horváth",
+    "title": "AI-Augmented Process Transformation Lead",
+    "shortTitle": "AI-Augmented Process Transformation Lead",
+    "secondaryTitle": "Certified ITIL, 6Sigma & Lean Business Process Improvement Expert",
+    "url": "https://bogihorvath.com",
+    "locale": "en",
+    "themeColor": "#4b68e9",
+    "description": "AI-Augmented Process Transformation Lead with 14+ years at SWIFT, NTT, BT, T-Systems. EUR 1.1M+ documented cost savings, 15+ FTE freed via automation. Daily production user of Claude Code CLI + MCP, ChatGPT Enterprise, Microsoft Copilot Studio, Celonis, SAP Signavio. EU AI Act fluent. Available for remote contract and interim Head-of-AI / Process Transformation Lead mandates.",
+    "descriptionShort": "14+ years at SWIFT, NTT, BT delivering EUR 1.1M+ in documented savings — operationalising AI in regulated Tier-1 enterprises with audit-grade governance.",
+    "keywords": "AI Transformation, Head of AI, AI-Augmented Process Transformation, Process Optimization, Claude Code, Model Context Protocol, MCP, Microsoft Copilot Studio, Celonis, SAP Signavio, Process Mining, EU AI Act, SAP S/4HANA, PEGA, Lean Six Sigma, ITIL, PRINCE2, Change Management, API Integration, Workflow Automation, Audit-grade AI, Regulated Enterprises, Tier-1, Remote Leadership",
+    "author": "Boglarka Paczari Horvath",
+    "defaultOgImage": "https://bogihorvath.com/img/bogi-horvath-og-1200x630.webp",
+    "availability": "Available now — booking remote contract and interim mandates at Head-of-AI, Process Transformation Lead, or Senior Business Analyst / Team Lead level. EU / UK primary, US Eastern Time compatible.",
+    "availabilityShort": "Available now — booking next Head-of-AI / Transformation Lead mandate",
+    "recruiterFacts": [
+        { "label": "Role fit",          "value": "Head of AI · Process Transformation Lead · AI-augmented BPM" },
+        { "label": "Engagement",        "value": "Remote contract or interim · B2B via InnovateIT Kft · perm if structurable" },
+        { "label": "Availability",      "value": "Immediate — booking next 12-18 month mandate" },
+        { "label": "Location",          "value": "100% remote (EU/UK primary, US Eastern compatible)" },
+        { "label": "Work authorization","value": "EU citizen" },
+        { "label": "AI stack (daily)",  "value": "Claude Code CLI + MCP · ChatGPT Enterprise · Microsoft Copilot Studio · Celonis · SAP Signavio · n8n" },
+        { "label": "Governance",        "value": "EU AI Act fluent · audit-grade controls · ISO/IEC 42001-aware" },
+        { "label": "Sectors",           "value": "Financial Services · FinTech · Telecom · ICT · Regulated enterprise" },
+        { "label": "Languages",         "value": "English (full professional) · German (intermediate) · Hungarian (native)" },
+        { "label": "Response time",     "value": "Under 24 hours" }
+    ],
+    "contact": {
+        "email": "horvath.boglarka@hotmail.com",
+        "emailHref": "mailto:horvath.boglarka@hotmail.com",
+        "linkedin": "https://www.linkedin.com/in/boglarka-paczari-horvath/",
+        "resume": "/Bogi_CV.pdf"
+    },
+    "forms": {
+        "web3formsAccessKey": "0909516c-58b1-4bb3-80f4-e6f68f1e68ac",
+        "ccRecipients": "karolypaczari@gmail.com,hbogica1987@gmail.com,info@bogihorvath.com"
+    },
+    "tracking": {
+        "gtm": "GTM-W3LHSQ2R",
+        "ga4": "G-W1JERJNXLS",
+        "clarity": "mrbhk2dvb4"
+    },
+    "knowsAbout": [
+        "AI-Augmented Process Transformation",
+        "AI Transformation Strategy",
+        "Model Context Protocol (MCP)",
+        "EU AI Act",
+        "Process Mining",
+        "Business Analysis",
+        "Digital Transformation",
+        "Process Optimization",
+        "Lean Six Sigma",
+        "Change Management",
+        "SAP S/4HANA",
+        "PEGA",
+        "Agile Project Management",
+        "ITIL"
+    ]
 }

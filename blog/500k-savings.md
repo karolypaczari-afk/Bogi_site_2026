@@ -1,13 +1,13 @@
-# 3 steps to save $500K+ for Your Company
+# 3 Steps to Save EUR 500k+ for Your Company
 
 **Category:** Process Improvement
 **Author:** Boglárka Paczari-Horváth (https://bogihorvath.com/about/)
 **Canonical URL:** https://bogihorvath.com/blog/500k-savings/
 
-> Proven strategies for organizational cost reduction without compromising performance or customer satisfaction. Learn how to achieve up to 30% savings through value stream optimization, platform consolidation, and strategic automation.
+> Proven strategies for organizational cost reduction without compromising performance or customer satisfaction. Learn how to achieve up to 30% savings through value stream optimization, platform consolidation, and strategic automation — the same playbook that delivered EUR 500k+ license consolidation at NTT.
 
 
-The article presents proven strategies for organizational cost reduction without compromising performance or customer satisfaction. Drawing from experience leading large-scale transformation initiatives, I outline approaches that address efficiency, loss prevention, and sustainable growth positioning.
+The article presents proven strategies for organizational cost reduction without compromising performance or customer satisfaction. Drawing from experience leading large-scale transformation initiatives — including a EUR 500k+ license consolidation at NTT and aggregate EUR 1.1M+ documented savings across 14+ years — I outline approaches that address efficiency, loss prevention, and sustainable growth positioning.
 
 ## Step 1: Dive Deep into Your Value Stream
 
@@ -19,7 +19,7 @@ Understanding current business operations is foundational to identifying ineffic
 - Delivery Delays: Extended delivery timelines frustrate clients and expose organizations to penalties and customer loss
 - Misaligned Front and Back Offices: Disconnects between opportunity-to-order and order-to-cash processes create bottlenecks
 
-I recommend using Value Stream Mapping to evaluate these processes and eliminate bottlenecks for immediate operational and cash flow improvements.
+I recommend Value Stream Mapping — and increasingly, AI-augmented process mining via Celonis or SAP Signavio — to evaluate these processes and eliminate bottlenecks for immediate operational and cash flow improvements.
 
 ## Step 2: Evaluate Your Business Platforms
 
@@ -37,7 +37,7 @@ Platform consolidation methodology includes:
 
 Potential Savings: 15-40% on operational costs plus increased revenue
 
-Automation addresses manual task elimination, error reduction, and service acceleration. Implementation steps involve:
+Automation addresses manual task elimination, error reduction, and service acceleration. Modern automation now extends from RPA into AI-augmented workflows — Microsoft Copilot Studio, n8n orchestration, and Claude Code CLI for code-level automation. Implementation steps involve:
 
 - Identify Manual Processes: Locate repetitive, non-value-adding tasks consuming employee time
 - Test Business Impact: Conduct stakeholder interviews to ensure automation doesn&#39;t inadvertently disrupt operations
@@ -45,9 +45,9 @@ Automation addresses manual task elimination, error reduction, and service accel
 
 Additional Benefits: Automation improves employee morale, reduces tedious work, and enhances customer satisfaction through accelerated service delivery.
 
-The three-step framework addresses value stream optimization, platform consolidation, and process automation to unlock $500,000+ in organizational savings while maintaining performance standards and customer satisfaction.
+The three-step framework addresses value stream optimization, platform consolidation, and process automation — the same approach that aggregates to EUR 1.1M+ in documented savings across SWIFT, NTT, BT, and T-Systems.
 
 
 ---
 
-*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/500k-savings/). Written by Boglárka Paczari-Horváth, Senior Business Analyst &amp; Digital Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*
+*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/500k-savings/). Written by Boglárka Paczari-Horváth, AI-Augmented Process Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*

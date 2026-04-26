@@ -1,13 +1,13 @@
 {
-  "eyebrow": "Hard Metrics",
-  "heading": "Proven Business Impact",
-  "subhead": "Every number below maps to a specific project, client, and year. Full details in the CV.",
-  "items": [
-    { "icon": "fa-euro-sign",   "title": "EUR 700k+ Documented Savings",   "desc": "Aggregated across license consolidation (EUR 500k+ at NTT), automation ROI, and waste elimination — each line item traceable to a named project." },
-    { "icon": "fa-robot",       "title": "15+ FTE Freed via Automation",   "desc": "Automated internal ticket-quality workflow at BT — USD 100k+ annual run-rate saving, 10-FTE headcount redirection to strategic work." },
-    { "icon": "fa-chart-pie",   "title": "50% Incident Volume Cut",        "desc": "Redesigned BT hung-line ITSM process — halved firefighting and shifted the team from reactive to proactive." },
-    { "icon": "fa-bolt",        "title": "20% Productivity Uplift",        "desc": "Designed future-state order-fulfilment workflows at S.W.I.F.T. during the SAP S/4HANA to PEGA migration." },
-    { "icon": "fa-user-check",  "title": "21% Higher Tool Adoption",       "desc": "Drove PEGA workflow adoption at BT via targeted stakeholder engagement — turned a rollout into actual usage." },
-    { "icon": "fa-chart-line",  "title": "50% API Reduction (projected)",  "desc": "Leading E-form optimization and endpoint consolidation at S.W.I.F.T. (2025-present) — cutting complexity and maintenance cost." }
-  ]
+    "eyebrow": "Hard Metrics",
+    "heading": "Proven Business Impact",
+    "subhead": "Every number below maps to a specific project, client, and year. Full details in the CV.",
+    "items": [
+        { "icon": "fa-euro-sign",   "title": "EUR 1.1M+ Documented Savings",   "desc": "Aggregated across 14+ years at SWIFT, NTT, BT, T-Systems — license consolidation (EUR 500k+ at NTT), automation ROI, and waste elimination. Each line item traceable to a named project." },
+        { "icon": "fa-robot",       "title": "60% Documentation Time Saved",   "desc": "Built an AI-assisted documentation workflow at S.W.I.F.T. ingesting source code + API specs — produced trusted, management-friendly technical docs that engineering, product and audit signed off without rework." },
+        { "icon": "fa-chart-pie",   "title": "50% Incident Volume Cut",        "desc": "Redesigned BT hung-line ITSM process — halved firefighting and shifted the team from reactive to proactive." },
+        { "icon": "fa-bolt",        "title": "15+ FTE Freed via Automation",   "desc": "Automated internal ticket-quality workflow at BT — USD 100k+ annual run-rate saving, 10-FTE headcount redirection to strategic work." },
+        { "icon": "fa-user-check",  "title": "21% Higher Tool Adoption",       "desc": "Drove PEGA workflow adoption at BT via targeted stakeholder engagement — turned a rollout into actual usage." },
+        { "icon": "fa-chart-line",  "title": "50% API Reduction (projected)",  "desc": "Leading E-form optimization and endpoint consolidation at S.W.I.F.T. (2025-present) — cutting complexity and maintenance cost." }
+    ]
 }

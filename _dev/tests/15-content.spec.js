@@ -4,7 +4,7 @@ const { test, expect } = require('@playwright/test');
 test('@smoke home renders hero, services, skills, achievements, timeline, testimonials, certs, contact', async ({ page }) => {
     await page.goto('/');
 
-    await expect(page.locator('.hero__headline')).toContainText(/EUR 700k\+ saved/);
+    await expect(page.locator('.hero__headline')).toContainText(/EUR 1\.1M\+ saved/);
     await expect(page.locator('#services .service-card')).toHaveCount(4);
     await expect(page.locator('#skills .skills-strip__row').first()).toBeVisible();
     await expect(page.locator('#achievements .achievement-card')).toHaveCount(6);

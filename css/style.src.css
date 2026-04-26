@@ -887,6 +887,22 @@ body.no-scroll {
     border-bottom: 2px solid rgba(75, 104, 233, 0.25);
 }
 
+.hero__credentials {
+    font-family: var(--font-sans);
+    font-size: clamp(0.8125rem, 1vw, 0.9375rem);
+    color: var(--clr-text-muted);
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: calc(var(--sp-3) * -1) auto var(--sp-5) auto;
+    max-width: 56ch;
+    border-top: 1px solid var(--clr-slate-200);
+    border-bottom: 1px solid var(--clr-slate-200);
+    padding: var(--sp-3) 0;
+    text-align: center;
+}
+
 .hero__badges {
     display: flex;
     flex-wrap: wrap;

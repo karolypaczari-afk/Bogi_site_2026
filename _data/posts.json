@@ -1,13 +1,59 @@
 [
     {
-        "id": "500k-savings",
-        "title": "3 steps to save $500K+ for Your Company",
-        "category": "Process Improvement",
-        "date": "2024-10-03",
-        "summary": "Proven strategies for organizational cost reduction without compromising performance or customer satisfaction. Learn how to achieve up to 30% savings through value stream optimization, platform consolidation, and strategic automation.",
+        "id": "ai-documentation-swift",
+        "title": "60% Documentation-Time Savings via AI-Assisted Source-Code Analysis at SWIFT",
+        "category": "AI Transformation",
+        "date": "2026-04-15",
+        "summary": "Production case study: how Claude Code CLI + Model Context Protocol (MCP) cut technical-documentation time by 60% on a Tier-1 financial-messaging API consolidation programme — and got engineering, product, and audit to sign off without rework.",
         "cover": "/img/blog-500k-savings.webp",
         "content": [
-            { "t": "p", "v": "The article presents proven strategies for organizational cost reduction without compromising performance or customer satisfaction. Drawing from experience leading large-scale transformation initiatives, I outline approaches that address efficiency, loss prevention, and sustainable growth positioning." },
+            { "t": "p", "v": "Most enterprise AI projects stall in the gap between innovation lab and production audit. This case study shows how I shipped production AI inside a regulated Tier-1 financial-messaging environment — fast enough to ship, careful enough to pass audit." },
+            { "t": "h2", "v": "The Problem" },
+            { "t": "p", "v": "An E-form optimisation and API consolidation programme at S.W.I.F.T. required updated technical documentation post-API-change. Traditional documentation cycles ran 3–4 weeks per release: engineering writes, product reviews, audit reviews, rework, repeat. The bottleneck wasn't the writing — it was alignment across three stakeholder groups, each with different expectations." },
+            { "t": "h2", "v": "The AI-Augmented Approach" },
+            { "t": "p", "v": "I built an AI-assisted documentation workflow on Claude Code CLI plus Model Context Protocol (MCP) — the same agentic stack I run daily. The pipeline:" },
+            { "t": "ul", "v": [
+                "<strong>Source-code ingest:</strong> Claude Code CLI reads the changed code paths via GitHub MCP server",
+                "<strong>API spec ingest:</strong> the API design specs feed in via Context7 MCP for current-state documentation",
+                "<strong>Cross-reference:</strong> Claude generates documentation drafts that map code changes to spec changes — surfacing every audit-relevant difference",
+                "<strong>Stakeholder-tailored output:</strong> three views of the same content — engineering (technical depth), product (business impact), audit (compliance and traceability)"
+            ]},
+            { "t": "h2", "v": "Governance Built In" },
+            { "t": "p", "v": "EU AI Act fluency is not optional for regulated enterprises. Every output ran through:" },
+            { "t": "ul", "v": [
+                "<strong>Provenance tracking:</strong> every documentation claim cited the underlying code or spec line",
+                "<strong>Hallucination guard:</strong> structured outputs (JSON schema + Pydantic validation) refused to ship docs that referenced non-existent code paths",
+                "<strong>Human-in-the-loop sign-off:</strong> AI drafted, humans reviewed and approved — never the reverse"
+            ]},
+            { "t": "h2", "v": "Results" },
+            { "t": "ul", "v": [
+                "<strong>60% documentation-time savings</strong> — cycle time cut from 3–4 weeks to under 1 week per release",
+                "<strong>Zero rework loops</strong> — engineering, product and audit signed off on the AI-drafted docs in their first review",
+                "<strong>Auditable trail</strong> — every doc line traceable to source code or spec, satisfying audit requirements baked into the workflow",
+                "<strong>Stakeholder confidence</strong> — the documentation became the canonical reference, not an afterthought"
+            ]},
+            { "t": "h2", "v": "What This Means for Tier-1 AI Adoption" },
+            { "t": "p", "v": "The lesson isn't that Claude or MCP is magic. The lesson is that <strong>production AI inside regulated enterprises requires the same discipline as production code:</strong> versioned inputs, structured outputs, traceability, and human sign-off. Lean Six Sigma + ITIL methodology fluency translates directly into AI risk management — that's the differentiator versus AI-lab researchers parachuting into banks." },
+            { "t": "h2", "v": "Stack Used" },
+            { "t": "ul", "v": [
+                "<strong>Agentic AI:</strong> Claude Code CLI, Anthropic SDK, Model Context Protocol",
+                "<strong>MCP servers:</strong> GitHub (code retrieval), Context7 (live API docs), Tavily (research)",
+                "<strong>Validation:</strong> JSON schema, Pydantic structured outputs",
+                "<strong>Governance frame:</strong> EU AI Act mapping, ISO/IEC 42001 alignment"
+            ]},
+            { "t": "h2", "v": "Conclusion" },
+            { "t": "p", "v": "AI in regulated Tier-1 enterprises ships when methodology and governance come first — and tools come second. EUR 1.1M+ saved across 14+ years tells me the same playbook works whether the lever is Lean Six Sigma, SAP S/4HANA, PEGA, or now Claude Code + MCP." }
+        ]
+    },
+    {
+        "id": "500k-savings",
+        "title": "3 Steps to Save EUR 500k+ for Your Company",
+        "category": "Process Improvement",
+        "date": "2024-10-03",
+        "summary": "Proven strategies for organizational cost reduction without compromising performance or customer satisfaction. Learn how to achieve up to 30% savings through value stream optimization, platform consolidation, and strategic automation — the same playbook that delivered EUR 500k+ license consolidation at NTT.",
+        "cover": "/img/blog-500k-savings.webp",
+        "content": [
+            { "t": "p", "v": "The article presents proven strategies for organizational cost reduction without compromising performance or customer satisfaction. Drawing from experience leading large-scale transformation initiatives — including a EUR 500k+ license consolidation at NTT and aggregate EUR 1.1M+ documented savings across 14+ years — I outline approaches that address efficiency, loss prevention, and sustainable growth positioning." },
             { "t": "h2", "v": "Step 1: Dive Deep into Your Value Stream" },
             { "t": "p", "v": "<strong>Potential Savings:</strong> Up to 30% of operational costs" },
             { "t": "p", "v": "Understanding current business operations is foundational to identifying inefficiencies and hidden expenses. Key inefficiency indicators include:" },
@@ -16,7 +62,7 @@
                 "<strong>Delivery Delays:</strong> Extended delivery timelines frustrate clients and expose organizations to penalties and customer loss",
                 "<strong>Misaligned Front and Back Offices:</strong> Disconnects between opportunity-to-order and order-to-cash processes create bottlenecks"
             ]},
-            { "t": "p", "v": "I recommend using Value Stream Mapping to evaluate these processes and eliminate bottlenecks for immediate operational and cash flow improvements." },
+            { "t": "p", "v": "I recommend Value Stream Mapping — and increasingly, AI-augmented process mining via Celonis or SAP Signavio — to evaluate these processes and eliminate bottlenecks for immediate operational and cash flow improvements." },
             { "t": "h2", "v": "Step 2: Evaluate Your Business Platforms" },
             { "t": "p", "v": "<strong>Potential Savings:</strong> 10-20% on software and maintenance costs" },
             { "t": "p", "v": "Organizations, particularly those with merger/acquisition histories, often maintain redundant legacy systems. I've worked with companies maintaining over 20 platforms, including four critical systems generating substantial maintenance costs." },
@@ -28,14 +74,14 @@
             ]},
             { "t": "h2", "v": "Step 3: Automate for Efficiency and Growth" },
             { "t": "p", "v": "<strong>Potential Savings:</strong> 15-40% on operational costs plus increased revenue" },
-            { "t": "p", "v": "Automation addresses manual task elimination, error reduction, and service acceleration. Implementation steps involve:" },
+            { "t": "p", "v": "Automation addresses manual task elimination, error reduction, and service acceleration. Modern automation now extends from RPA into AI-augmented workflows — Microsoft Copilot Studio, n8n orchestration, and Claude Code CLI for code-level automation. Implementation steps involve:" },
             { "t": "ul", "v": [
                 "<strong>Identify Manual Processes:</strong> Locate repetitive, non-value-adding tasks consuming employee time",
                 "<strong>Test Business Impact:</strong> Conduct stakeholder interviews to ensure automation doesn't inadvertently disrupt operations",
                 "<strong>Expert Involvement:</strong> Engage data analysts and DevOps specialists for feasibility validation and realistic timelines"
             ]},
             { "t": "p", "v": "<strong>Additional Benefits:</strong> Automation improves employee morale, reduces tedious work, and enhances customer satisfaction through accelerated service delivery." },
-            { "t": "p", "v": "The three-step framework addresses value stream optimization, platform consolidation, and process automation to unlock $500,000+ in organizational savings while maintaining performance standards and customer satisfaction." }
+            { "t": "p", "v": "The three-step framework addresses value stream optimization, platform consolidation, and process automation — the same approach that aggregates to EUR 1.1M+ in documented savings across SWIFT, NTT, BT, and T-Systems." }
         ]
     },
     {
@@ -61,7 +107,7 @@
             { "t": "h2", "v": "Results" },
             { "t": "p", "v": "Within two months, adoption increased to 21%. The security bid team's enthusiastic participation created positive momentum, with their insights improving workflow functionality and encouraging broader organizational adoption." },
             { "t": "h2", "v": "Key Takeaway" },
-            { "t": "p", "v": "Success emerged through tailored approaches combining clear communication, proactive engagement, and personalized support that addressed specific user needs while fostering collaborative feedback cultures." }
+            { "t": "p", "v": "Success emerged through tailored approaches combining clear communication, proactive engagement, and personalized support that addressed specific user needs while fostering collaborative feedback cultures. The same playbook now applies to AI tool adoption: voluntary uptake of Copilot, Claude Code, or n8n inside an enterprise depends entirely on whether early-adopter teams see real, tangible value in week one." }
         ]
     },
     {
@@ -72,7 +118,7 @@
         "summary": "Initiating complex process improvement efforts becomes achievable with the right blend of methodologies and strategic steps. This article presents a proven framework for launching and executing impactful initiatives.",
         "cover": "/img/blog-process-tools.webp",
         "content": [
-            { "t": "p", "v": "Initiating complex process improvement efforts becomes achievable with the right blend of methodologies and strategic steps. I present a proven framework for launching and executing impactful initiatives." },
+            { "t": "p", "v": "Initiating complex process improvement efforts becomes achievable with the right blend of methodologies and strategic steps. I present a proven framework for launching and executing impactful initiatives — the same framework I now augment with AI tooling (Celonis, SAP Signavio, Claude Code) on engagements." },
             { "t": "h2", "v": "Building a Solid Foundation" },
             { "t": "p", "v": "<strong>Project Charter:</strong> Set the Tone for Success" },
             { "t": "p", "v": "The project charter is foundational, establishing clarity from inception. Essential components include:" },
@@ -88,7 +134,7 @@
             { "t": "p", "v": "Comprehensive charters eliminate ambiguity and foster stakeholder alignment." },
             { "t": "h2", "v": "Measurement and Precision" },
             { "t": "p", "v": "<strong>Data Gathering:</strong> The Heartbeat of Process Improvement" },
-            { "t": "p", "v": "Accurate baseline data collection enables identification of inefficiencies and progress monitoring. I recommend visualization tools including Excel, Minitab, flowcharts, and infographics." },
+            { "t": "p", "v": "Accurate baseline data collection enables identification of inefficiencies and progress monitoring. Traditional tooling: Excel, Minitab, flowcharts, infographics. Modern process mining (Celonis EMS, SAP Signavio) extracts the as-is process directly from system logs — turning weeks of interviews into days of data." },
             { "t": "p", "v": "Key implementation strategies:" },
             { "t": "ul", "v": [
                 "Define lead metrics and KPIs (limiting focus to 1-2 metrics)",
@@ -96,7 +142,7 @@
             ]},
             { "t": "p", "v": "Data-driven approaches reduce risk and improve success probability." },
             { "t": "h2", "v": "Process Mapping and Insights" },
-            { "t": "p", "v": "Collaboration with subject matter experts (SMEs) proves essential for understanding current (As-Is) and desired (Should-Be) processes. Recording sessions enables later review for precision." },
+            { "t": "p", "v": "Collaboration with subject matter experts (SMEs) proves essential for understanding current (As-Is) and desired (Should-Be) processes. Recording sessions enables later review for precision — and increasingly, LLM-assisted SOP extraction directly from those recordings." },
             { "t": "p", "v": "<strong>Recommended Tools:</strong>" },
             { "t": "ul", "v": [
                 "<strong>SIPOC diagrams:</strong> Capture critical process points, identifying triggers and outcomes",
@@ -116,7 +162,7 @@
         "summary": "Start with a housekeeping exercise to identify inefficiencies, then implement targeted solutions. This showcases how 6Sigma methodology addressed operational inefficiencies in an Opp2Invoice business process.",
         "cover": "/img/blog-money-leaks.webp",
         "content": [
-            { "t": "p", "v": "Start with a housekeeping exercise to identify inefficiencies, then implement targeted solutions. This showcases how 6Sigma methodology addressed operational inefficiencies in an Opp2Invoice business process." },
+            { "t": "p", "v": "Start with a housekeeping exercise to identify inefficiencies, then implement targeted solutions. This showcases how 6Sigma methodology addressed operational inefficiencies in an Opp2Invoice business process — the same diagnostic approach that aggregates to EUR 1.1M+ in documented savings across enterprise engagements." },
             { "t": "h2", "v": "Methodology Employed" },
             { "t": "ul", "v": [
                 "User interviews with structured questioning",
@@ -131,7 +177,7 @@
             { "t": "h3", "v": "3. Cost Data Management" },
             { "t": "p", "v": "Corrected inaccurate CMDB entries that created potential money leaks (over $10K) through incorrect cancellation fee calculations." },
             { "t": "h2", "v": "Conclusion" },
-            { "t": "p", "v": "Structured 6 Sigma methodologies and focusing on detailed analysis and proactive solutions enabled identification and mitigation of financial losses, resulting in improved operational efficiency and profitability." }
+            { "t": "p", "v": "Structured 6 Sigma methodologies and focusing on detailed analysis and proactive solutions enabled identification and mitigation of financial losses, resulting in improved operational efficiency and profitability. The same diagnostic muscle now powers AI-augmented process mining work — Celonis and SAP Signavio surface the leaks faster, but the methodology stays Six Sigma." }
         ]
     },
     {
@@ -143,7 +189,7 @@
         "cover": "/img/blog-automation-efficiency.webp",
         "content": [
             { "t": "h2", "v": "Introduction" },
-            { "t": "p", "v": "Serving as a Management Information (MI) Lead at a major IT multinational, I led a transformation initiative focused on improving business processes. The core mission involved analyzing data to identify automation opportunities, particularly targeting a bottleneck affecting operations teams." },
+            { "t": "p", "v": "Serving as a Management Information (MI) Lead at a major IT multinational, I led a transformation initiative focused on improving business processes. The core mission involved analyzing data to identify automation opportunities, particularly targeting a bottleneck affecting operations teams. Today the same playbook ships AI-augmented automation — Microsoft Copilot Studio, n8n, and Claude Code for code-level workflows — but the discovery and Lean methodology stays the same." },
             { "t": "h2", "v": "Identifying the Problem" },
             { "t": "p", "v": "<strong>Initial Observations:</strong>" },
             { "t": "p", "v": "A 10-person team responsible for ticket quality reviews faced significant constraints. The manual process permitted evaluation of only 10-30 tickets per week, limiting data reliability. Weekly reports weren't effectively utilized during performance discussions, creating a disconnect between analysis and action." },
@@ -168,7 +214,8 @@
             { "t": "ul", "v": [
                 "Enhanced data accuracy through larger sample sizes",
                 "Increased operational efficiency",
-                "Established effective feedback mechanisms for performance improvements"
+                "Established effective feedback mechanisms for performance improvements",
+                "$100k+ annual run-rate saving — part of the EUR 1.1M+ aggregate documented across 14+ years"
             ]},
             { "t": "h2", "v": "Lessons Learned" },
             { "t": "ul", "v": [
@@ -178,7 +225,7 @@
                 "Apply continuous improvement frameworks like Deming Cycle"
             ]},
             { "t": "h2", "v": "Conclusion" },
-            { "t": "p", "v": "The successful automation initiative demonstrated how strategic process improvements, grounded in collaborative problem-solving and data analysis, drive organizational efficiency and support business objectives." }
+            { "t": "p", "v": "The successful automation initiative demonstrated how strategic process improvements, grounded in collaborative problem-solving and data analysis, drive organizational efficiency and support business objectives. AI tooling now accelerates each step — but the methodology, governance, and stakeholder muscle stay the differentiator." }
         ]
     }
 ]

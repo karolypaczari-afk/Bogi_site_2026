@@ -1,11 +1,11 @@
 {
-  "eyebrow": "What I Do",
-  "heading": "Four ways I create <em>measurable</em> savings",
-  "subhead": "Same playbook across Telecom, FinTech and ICT — every engagement ties to a € or % target agreed up front.",
-  "items": [
-    { "num": "01", "title": "Cost & License Consolidation",      "desc": "Merge duplicate enterprise processes, retire legacy tools. EUR 500k+ license savings delivered at NTT Ltd. by collapsing 3 Opp2Cash workflows into one." },
-    { "num": "02", "title": "SAP S/4HANA ↔ PEGA Migrations",      "desc": "Lead the functional side of ERP / workflow transitions end-to-end — discovery, future-state design, migration, and adoption. 20% productivity gain at S.W.I.F.T." },
-    { "num": "03", "title": "Automation & FTE Recovery",          "desc": "Ticket-quality automation, variable billing, case-management workflows. 15+ FTE-equivalent capacity created, USD 100k+ annual run-rate at BT." },
-    { "num": "04", "title": "Process Redesign & Adoption",        "desc": "Lean Six Sigma redesign plus change management. 50% incident volume reduction (BT hung-line) and 21% adoption uplift on PEGA rollouts." }
-  ]
+    "eyebrow": "What I Do",
+    "heading": "Four ways I ship <em>audit-grade AI</em> into regulated enterprises",
+    "subhead": "Same playbook across Financial Services, Telecom, and ICT — every engagement ties to a € or % target agreed up front, with EU AI Act compliance baked in.",
+    "items": [
+        { "num": "01", "title": "AI-Augmented Process Transformation",      "desc": "Daily production stack: Claude Code CLI + Model Context Protocol (MCP), ChatGPT Enterprise, Microsoft Copilot Studio, Google Antigravity, n8n. 60% documentation-time savings on E-form transformation at S.W.I.F.T." },
+        { "num": "02", "title": "Process Mining & SOP Extraction",          "desc": "Celonis EMS and SAP Signavio for end-to-end process discovery; LLM-assisted SOP extraction from source code, tickets, and audit logs. Find your three highest-ROI AI bets in 30 days." },
+        { "num": "03", "title": "Cost & License Consolidation",             "desc": "Merge duplicate enterprise processes, retire legacy tools. EUR 500k+ license savings delivered at NTT Ltd. by collapsing 3 Opp2Cash workflows into one. Aggregate EUR 1.1M+ across engagements." },
+        { "num": "04", "title": "AI Governance & EU AI Act Readiness",      "desc": "Audit-grade AI shipping: model risk lineage, transparency obligations, conformity assessment. Lean Six Sigma + ITIL governance fluency keeps regulated enterprises compliant while AI ships." }
+    ]
 }

@@ -7,7 +7,7 @@
 > Initiating complex process improvement efforts becomes achievable with the right blend of methodologies and strategic steps. This article presents a proven framework for launching and executing impactful initiatives.
 
 
-Initiating complex process improvement efforts becomes achievable with the right blend of methodologies and strategic steps. I present a proven framework for launching and executing impactful initiatives.
+Initiating complex process improvement efforts becomes achievable with the right blend of methodologies and strategic steps. I present a proven framework for launching and executing impactful initiatives — the same framework I now augment with AI tooling (Celonis, SAP Signavio, Claude Code) on engagements.
 
 ## Building a Solid Foundation
 
@@ -29,7 +29,7 @@ Comprehensive charters eliminate ambiguity and foster stakeholder alignment.
 
 Data Gathering: The Heartbeat of Process Improvement
 
-Accurate baseline data collection enables identification of inefficiencies and progress monitoring. I recommend visualization tools including Excel, Minitab, flowcharts, and infographics.
+Accurate baseline data collection enables identification of inefficiencies and progress monitoring. Traditional tooling: Excel, Minitab, flowcharts, infographics. Modern process mining (Celonis EMS, SAP Signavio) extracts the as-is process directly from system logs — turning weeks of interviews into days of data.
 
 Key implementation strategies:
 
@@ -40,7 +40,7 @@ Data-driven approaches reduce risk and improve success probability.
 
 ## Process Mapping and Insights
 
-Collaboration with subject matter experts (SMEs) proves essential for understanding current (As-Is) and desired (Should-Be) processes. Recording sessions enables later review for precision.
+Collaboration with subject matter experts (SMEs) proves essential for understanding current (As-Is) and desired (Should-Be) processes. Recording sessions enables later review for precision — and increasingly, LLM-assisted SOP extraction directly from those recordings.
 
 Recommended Tools:
 
@@ -57,4 +57,4 @@ I advocate combining DMAIC (Define, Measure, Analyze, Improve, Control) methodol
 
 ---
 
-*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/process-tools/). Written by Boglárka Paczari-Horváth, Senior Business Analyst &amp; Digital Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*
+*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/process-tools/). Written by Boglárka Paczari-Horváth, AI-Augmented Process Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*
