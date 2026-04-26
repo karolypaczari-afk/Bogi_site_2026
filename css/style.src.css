@@ -5513,3 +5513,324 @@ body::after {
     color: var(--clr-accent);
     transition: color 400ms ease;
 }
+
+/* ==========================================================================
+   EDITORIAL POLISH (v2 — Tier-1 boardroom aesthetic)
+   Additive overrides for hero + stats. Senior-recruiter / executive-search tier.
+   Bloomberg / FT / Economist gravitas. Deep navy + warm gold + paper warmth.
+   ========================================================================== */
+:root {
+    --clr-navy: #0f2742;
+    --clr-navy-700: #1a3a5c;
+    --clr-navy-500: #2a4d72;
+    --clr-gold: #b8956a;
+    --clr-gold-light: #c9a66b;
+    --clr-gold-bright: #d4b27a;
+    --clr-paper-warm: #fbfaf6;
+    --clr-paper-tone: #f3efe6;
+    --clr-rule: rgba(15, 39, 66, 0.12);
+    --clr-rule-strong: rgba(15, 39, 66, 0.22);
+}
+
+/* ---- Hero: replace startup-blob noise with editorial paper warmth ---- */
+.hero {
+    background: linear-gradient(180deg, var(--clr-paper-warm) 0%, #fff 65%);
+    border-top: 1px solid var(--clr-rule);
+    position: relative;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        var(--clr-gold) 28%,
+        var(--clr-gold-bright) 50%,
+        var(--clr-gold) 72%,
+        transparent 100%);
+    z-index: 2;
+    opacity: 0.6;
+}
+.hero-blob--1,
+.hero-blob--2 {
+    opacity: 0.04;
+    filter: blur(120px);
+}
+.hero-blob--1 {
+    background: var(--clr-navy);
+}
+.hero-blob--2 {
+    background: var(--clr-gold);
+}
+
+/* ---- Availability pill: refine from neon-green to dateline editorial ---- */
+.hero .hero__availability {
+    background: #fff;
+    border: 1px solid var(--clr-rule-strong);
+    color: var(--clr-navy);
+    font-weight: 600;
+    font-size: 0.8125rem;
+    letter-spacing: 0.02em;
+    box-shadow: 0 1px 2px rgba(15, 39, 66, 0.06), 0 4px 12px rgba(15, 39, 66, 0.04);
+    padding: var(--sp-2) var(--sp-5);
+    border-radius: 4px;
+}
+.hero .hero__availability .pulse-dot {
+    background: var(--clr-gold-bright);
+    box-shadow: 0 0 0 0 var(--clr-gold-bright);
+}
+
+/* ---- Headline: tighten + accent-line in editorial gold ---- */
+.hero__headline {
+    color: var(--clr-navy);
+    letter-spacing: -0.025em;
+    line-height: 0.98;
+}
+.hero__headline em {
+    color: var(--clr-gold);
+    font-style: italic;
+    font-feature-settings: "ss01", "cv11";
+}
+
+/* ---- Credentials line: editorial caps with double rule ---- */
+.hero__credentials {
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 0.6875rem;
+    color: var(--clr-navy-500);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-top: 1px solid var(--clr-rule);
+    border-bottom: 1px solid var(--clr-rule);
+    padding: var(--sp-3) var(--sp-4);
+    max-width: 52ch;
+    margin: 0 auto var(--sp-6) auto;
+}
+
+/* ---- Subhead bold underline: gold instead of indigo ---- */
+.hero__subhead strong {
+    border-bottom-color: rgba(184, 149, 106, 0.4);
+}
+
+/* ---- Clients label: more editorial, less startup ---- */
+.hero__clients-label {
+    color: var(--clr-navy-500);
+    font-family: var(--font-mono, ui-monospace, monospace);
+    letter-spacing: 0.25em;
+    font-weight: 500;
+}
+.hero__client {
+    color: var(--clr-navy);
+    font-weight: 600;
+}
+
+/* ---- Portrait: editorial frame in gold ---- */
+.hero__portrait {
+    border-radius: var(--radius-lg);
+    border-width: 6px;
+}
+.hero__portrait-frame {
+    border-color: var(--clr-gold);
+    border-radius: var(--radius-lg);
+    opacity: 0.4;
+}
+.hero__portrait-badge {
+    background: var(--clr-navy);
+    color: #fff;
+    border-radius: 4px;
+    padding: var(--sp-4) var(--sp-5);
+}
+.hero__portrait-badge__icon {
+    background: rgba(212, 178, 122, 0.18);
+    color: var(--clr-gold-bright);
+}
+.hero__portrait-badge__value {
+    color: #fff;
+    font-family: var(--font-serif);
+    font-weight: 700;
+}
+.hero__portrait-badge__label {
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.16em;
+    font-weight: 500;
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 0.625rem;
+}
+
+/* ---- CTA primary: more refined navy fill ---- */
+.hero__ctas .btn--primary {
+    background: var(--clr-navy);
+    border: 1px solid var(--clr-navy);
+    box-shadow: 0 2px 6px rgba(15, 39, 66, 0.18), 0 8px 24px rgba(15, 39, 66, 0.12);
+}
+.hero__ctas .btn--primary:hover {
+    background: var(--clr-navy-700);
+    border-color: var(--clr-navy-700);
+    box-shadow: 0 4px 12px rgba(15, 39, 66, 0.22), 0 16px 36px rgba(15, 39, 66, 0.16);
+}
+.hero__ctas .btn--secondary {
+    border: 1px solid var(--clr-rule-strong);
+    color: var(--clr-navy);
+    background: #fff;
+}
+.hero__ctas .btn--secondary:hover {
+    background: var(--clr-paper-tone);
+    border-color: var(--clr-navy-500);
+}
+
+/* ---- Stats cards: editorial newspaper-sidebar treatment ---- */
+.hero__stats {
+    margin-top: var(--sp-16);
+    gap: 0;
+    border-top: 1px solid var(--clr-rule);
+    border-bottom: 1px solid var(--clr-rule);
+}
+.hero__stats .stat-card {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: var(--sp-8) var(--sp-5);
+    position: relative;
+    text-align: left;
+}
+.hero__stats .stat-card::before {
+    content: "";
+    position: absolute;
+    top: var(--sp-8);
+    left: 0;
+    width: 24px;
+    height: 1px;
+    background: var(--clr-gold);
+}
+.hero__stats .stat-card:hover {
+    transform: none;
+    box-shadow: none;
+    border: 0;
+    background: var(--clr-paper-warm);
+}
+.hero__stats .stat-card:hover::before {
+    width: 48px;
+    transition: width var(--t-mid);
+}
+.hero__stats .stat-card__icon {
+    display: none;
+}
+.hero__stats .stat-card__value {
+    font-family: var(--font-serif);
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    line-height: 1;
+    font-weight: 600;
+    color: var(--clr-navy);
+    letter-spacing: -0.02em;
+    margin-top: var(--sp-4);
+    margin-bottom: var(--sp-3);
+    font-feature-settings: "ss01", "cv11", "lnum", "tnum";
+}
+.hero__stats .stat-card:hover .stat-card__value {
+    color: var(--clr-navy);
+}
+.hero__stats .stat-card__label {
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--clr-navy-500);
+    font-weight: 500;
+    line-height: 1.4;
+}
+.hero__stats .stat-card__sub {
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--clr-text-muted);
+    font-weight: 500;
+    margin-top: 6px;
+}
+
+/* ---- Vertical hairline dividers between stat cards on tablet+ ---- */
+@media (min-width: 640px) {
+    .hero__stats .stat-card + .stat-card {
+        border-left: 1px solid var(--clr-rule);
+    }
+}
+
+/* ---- Mobile rhythm: tighter hero, generous breathing for stats ---- */
+@media (max-width: 767px) {
+    .hero {
+        padding: var(--sp-6) 0 var(--sp-16);
+    }
+    .hero__headline {
+        margin-bottom: var(--sp-6);
+    }
+    .hero__credentials {
+        font-size: 0.625rem;
+        letter-spacing: 0.14em;
+        padding: var(--sp-2) var(--sp-3);
+        margin-bottom: var(--sp-5);
+    }
+    .hero__subhead {
+        font-size: 1.0625rem;
+        margin-bottom: var(--sp-6);
+    }
+    .hero__stats {
+        margin-top: var(--sp-12);
+        grid-template-columns: 1fr;
+    }
+    .hero__stats .stat-card + .stat-card {
+        border-top: 1px solid var(--clr-rule);
+    }
+    .hero__stats .stat-card {
+        padding: var(--sp-6) var(--sp-3);
+    }
+    .hero__stats .stat-card::before {
+        top: var(--sp-6);
+    }
+    .hero__portrait-wrap {
+        max-width: 320px;
+        margin-top: var(--sp-8);
+    }
+    .hero__portrait img {
+        min-height: 360px;
+    }
+    .hero__portrait-badge {
+        bottom: -24px;
+        left: -12px;
+        padding: var(--sp-3) var(--sp-4);
+    }
+    .hero__portrait-badge__value {
+        font-size: 1.125rem;
+    }
+}
+
+/* ---- Tablet (768-1023): 4-up stats keeps newspaper rhythm ---- */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero__stats {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ---- Desktop: lift the hero ::before accent above the gradient ---- */
+@media (min-width: 1024px) {
+    .hero__stats .stat-card {
+        padding: var(--sp-10) var(--sp-6);
+    }
+    .hero__stats .stat-card::before {
+        top: var(--sp-10);
+    }
+    .hero__credentials {
+        max-width: 56ch;
+    }
+}
+
+/* ---- Reduce motion: kill blob breathing animations ---- */
+@media (prefers-reduced-motion: reduce) {
+    .hero-blob--1,
+    .hero-blob--2 {
+        animation: none;
+    }
+}
