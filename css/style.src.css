@@ -5834,3 +5834,71 @@ body::after {
         animation: none;
     }
 }
+
+/* ==========================================================================
+   CTA TEXT FIX: never truncate, wrap gracefully on small viewports
+   ========================================================================== */
+
+/* Allow long CTA text to wrap (override base .btn { white-space: nowrap }) */
+.btn {
+    text-align: center;
+    max-width: 100%;
+}
+
+.hero__ctas .btn,
+.page-hero__ctas .btn,
+.cta-band .btn,
+.inline-cta__btn,
+.recruiter-card__actions .btn {
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: anywhere;
+    min-width: 0;
+    flex-shrink: 1;
+}
+
+/* Primary CTA inner text: the two-line label/sub stack stays compact */
+.hero__cta-primary-text {
+    min-width: 0;
+    flex-shrink: 1;
+    text-align: left;
+}
+.hero__cta-primary-label,
+.hero__cta-primary-sub {
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+/* Mobile: tighter button padding so labels fit */
+@media (max-width: 480px) {
+    .btn {
+        padding: var(--sp-4) var(--sp-6);
+        font-size: 1rem;
+    }
+    .hero__cta-primary {
+        padding: var(--sp-4) var(--sp-6);
+    }
+    .hero__cta-primary-label {
+        font-size: 1rem;
+    }
+    .hero__cta-primary-sub {
+        font-size: 0.6875rem;
+    }
+    .hero__ctas {
+        gap: var(--sp-3);
+    }
+    /* Make the icons in CTAs flex-shrink so the text gets priority */
+    .hero__ctas .btn > i,
+    .page-hero__ctas .btn > i {
+        flex-shrink: 0;
+    }
+}
+
+/* Very narrow viewports (< 360px — old phones) */
+@media (max-width: 359px) {
+    .btn {
+        padding: var(--sp-3) var(--sp-4);
+        font-size: 0.9375rem;
+        gap: var(--sp-2);
+    }
+}
