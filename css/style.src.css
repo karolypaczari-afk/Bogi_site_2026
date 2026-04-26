@@ -832,7 +832,7 @@ body.no-scroll {
 
 .hero__content {
     text-align: center;
-    order: 2;
+    order: 1;
 }
 
 .hero__availability {
@@ -986,7 +986,7 @@ body.no-scroll {
     position: relative;
     max-width: 440px;
     margin: 0 auto;
-    order: 1;
+    order: 2;
 }
 
 .hero__portrait {
