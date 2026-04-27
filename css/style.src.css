@@ -5640,15 +5640,15 @@ body::after {
 /* ---- Credentials line: editorial caps with double rule ---- */
 .hero__credentials {
     font-family: var(--font-mono, ui-monospace, monospace);
-    font-size: 0.6875rem;
-    color: var(--clr-navy-500);
-    letter-spacing: 0.18em;
+    font-size: clamp(0.8125rem, 0.6vw + 0.6rem, 1rem);
+    color: var(--clr-navy);
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
     border-top: 1px solid var(--clr-rule);
     border-bottom: 1px solid var(--clr-rule);
-    padding: var(--sp-3) var(--sp-4);
-    max-width: 52ch;
+    padding: var(--sp-4) var(--sp-5);
+    max-width: 64ch;
     margin: 0 auto var(--sp-6) auto;
 }
 
@@ -5810,9 +5810,9 @@ body::after {
         margin-bottom: var(--sp-6);
     }
     .hero__credentials {
-        font-size: 0.625rem;
-        letter-spacing: 0.14em;
-        padding: var(--sp-2) var(--sp-3);
+        font-size: 0.8125rem;
+        letter-spacing: 0.1em;
+        padding: var(--sp-3) var(--sp-4);
         margin-bottom: var(--sp-5);
     }
     .hero__subhead {
@@ -5865,7 +5865,7 @@ body::after {
         top: var(--sp-10);
     }
     .hero__credentials {
-        max-width: 56ch;
+        max-width: 64ch;
     }
 }
 
