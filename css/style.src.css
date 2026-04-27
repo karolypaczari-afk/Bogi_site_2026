@@ -5595,6 +5595,48 @@ body::after {
     font-feature-settings: "ss01", "cv11";
 }
 
+/* ---- Hero line 2 (accent): editorial stat-byline, NOT massive H1 size ----
+       Visual hierarchy: line 1 (identity, big serif) > line 2 (stat-bar,
+       restrained sans) > line 3 (CTA, smaller sans). Override the
+       inherited H1 clamp + the legacy indigo gradient on the <em>. */
+.hero-line--accent {
+    margin-top: var(--sp-4);
+}
+.hero-line--accent > span {
+    font-family: var(--font-sans);
+    font-size: clamp(1.0625rem, 1.8vw + 0.4rem, 1.5rem);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+}
+.hero-line--accent > span em {
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: var(--clr-navy-500);
+    font-style: normal;
+    font-weight: 600;
+}
+/* Pre-stat gold tick: visual anchor that says "here's the proof" */
+.hero-line--accent > span::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--clr-gold);
+    vertical-align: middle;
+    margin-right: var(--sp-3);
+    transform: translateY(-2px);
+}
+
+/* ---- Hero line 3 (tail): tighter spacing under the stat byline ---- */
+.hero-line--tail {
+    margin-top: var(--sp-2);
+}
+.hero-line--tail > span {
+    color: var(--clr-navy);
+}
+
 /* ---- Credentials line: editorial caps with double rule ---- */
 .hero__credentials {
     font-family: var(--font-mono, ui-monospace, monospace);
