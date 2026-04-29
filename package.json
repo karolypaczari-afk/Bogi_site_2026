@@ -2,7 +2,7 @@
   "name": "bogi-horvath-site",
   "version": "1.0.0",
   "private": true,
-  "description": "Static site for bogihorvath.com - Senior Business Analyst & Digital Transformation Lead portfolio",
+  "description": "Static site for bogihorvath.com - AI-Augmented Process Transformation Lead portfolio",
   "scripts": {
     "eleventy": "npx @11ty/eleventy",
     "dev": "npx @11ty/eleventy --watch",

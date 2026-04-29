@@ -4,7 +4,7 @@ Project guidance for any AI assistant (Claude Code or otherwise) working on this
 
 ## What this project is
 
-Personal portfolio for **Boglárka Paczari-Horváth** ("Bogi Horvath"), Senior Business Analyst & Digital Transformation Lead. Live at `https://bogihorvath.com`.
+Personal portfolio for **Boglárka Paczari-Horváth** ("Bogi Horvath"), AI-Augmented Process Transformation Lead. Live at `https://bogihorvath.com`.
 
 Built on **Eleventy 2.0.1** (Nunjucks templates). Zero frontend framework. Vanilla CSS/JS with a small `_dev/build.js` that minifies `*.src.css` / `*.src.js` and injects a `buildHash` for cache-busting. Deployed to **Hostinger** via a `git push origin main` webhook auto-pull (expect ~1 min propagation).
 

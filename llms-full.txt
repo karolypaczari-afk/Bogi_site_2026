@@ -1,10 +1,10 @@
-# Boglárka Paczari-Horváth — Senior Business Analyst &amp; Digital Transformation Lead
+# Boglárka Paczari-Horváth — AI-Augmented Process Transformation Lead
 
-> Professional portfolio of Boglárka Paczari-Horváth (Bogi Horvath). 14+ years delivering EUR 700k+ in documented savings across SAP S/4HANA, PEGA, and AI-augmented process optimization. Belgium (remote), available for Senior Business Analyst / Transformation Lead roles globally.
+> Professional portfolio of Boglárka Paczari-Horváth (Bogi Horvath). AI-Augmented Process Transformation Lead with 14+ years at SWIFT, NTT, BT, T-Systems delivering EUR 1.1M+ in documented savings. Operationalises AI in regulated Tier-1 enterprises with audit-grade governance — daily production user of Claude Code CLI + Model Context Protocol (MCP), ChatGPT Enterprise, Microsoft Copilot Studio, Celonis, SAP Signavio. EU AI Act fluent. Belgium (remote), available for remote contract and interim Head-of-AI / Process Transformation Lead mandates globally.
 
 ## About
 
-Senior Business Analyst &amp; Digital Transformation Lead with 14+ years in global ICT operations. EUR 700k+ documented savings through SAP S/4HANA, PEGA migrations, Lean Six Sigma, and AI-augmented process optimization. Available for remote Senior BA / Transformation Lead roles.
+AI-Augmented Process Transformation Lead with 14+ years at SWIFT, NTT, BT, T-Systems. EUR 1.1M+ documented cost savings, 15+ FTE freed via automation. Daily production user of Claude Code CLI + MCP, ChatGPT Enterprise, Microsoft Copilot Studio, Celonis, SAP Signavio. EU AI Act fluent. Available for remote contract and interim Head-of-AI / Process Transformation Lead mandates.
 
 Bogi's journey: started at T-Systems learning IT service management fundamentals; spent 7 formative years at British Telecom advancing from Business Improvement Specialist to Agile Deployment Lead (Lean Six Sigma, $100k+ automation savings, 50% incident reduction); joined NTT Ltd. as Principal Business Operations Specialist to harmonize Opportunity-to-Cash across 12 regional entities (EUR 500k+ license savings, 21% tool adoption increase); now Functional Lead at S.W.I.F.T. leading E-form optimization and global API consolidation.
 
@@ -18,13 +18,38 @@ Philosophy: evidence-based transformation. Every decision backed by data and ali
 
 ## Services
 
-- **Cost &amp; License Consolidation** — Merge duplicate enterprise processes, retire legacy tools. EUR 500k+ license savings delivered at NTT Ltd. by collapsing 3 Opp2Cash workflows into one.
-- **SAP S/4HANA ↔ PEGA Migrations** — Lead the functional side of ERP / workflow transitions end-to-end — discovery, future-state design, migration, and adoption. 20% productivity gain at S.W.I.F.T.
-- **Automation &amp; FTE Recovery** — Ticket-quality automation, variable billing, case-management workflows. 15+ FTE-equivalent capacity created, USD 100k+ annual run-rate at BT.
-- **Process Redesign &amp; Adoption** — Lean Six Sigma redesign plus change management. 50% incident volume reduction (BT hung-line) and 21% adoption uplift on PEGA rollouts.
+- **AI-Augmented Process Transformation** — Daily production stack: Claude Code CLI + Model Context Protocol (MCP), ChatGPT Enterprise, Microsoft Copilot Studio, Google Antigravity, n8n. 60% documentation-time savings on E-form transformation at S.W.I.F.T.
+- **Process Mining &amp; SOP Extraction** — Celonis EMS and SAP Signavio for end-to-end process discovery; LLM-assisted SOP extraction from source code, tickets, and audit logs. Find your three highest-ROI AI bets in 30 days.
+- **Cost &amp; License Consolidation** — Merge duplicate enterprise processes, retire legacy tools. EUR 500k+ license savings delivered at NTT Ltd. by collapsing 3 Opp2Cash workflows into one. Aggregate EUR 1.1M+ across engagements.
+- **AI Governance &amp; EU AI Act Readiness** — Audit-grade AI shipping: model risk lineage, transparency obligations, conformity assessment. Lean Six Sigma + ITIL governance fluency keeps regulated enterprises compliant while AI ships.
 
 
 ## Technical stack
+
+### Enterprise AI Platforms
+- ChatGPT Enterprise (highlighted)
+- Claude Projects (highlighted)
+- Microsoft Copilot Studio (highlighted)
+- Celonis EMS + AgentC (highlighted)
+- SAP Signavio Process AI (highlighted)
+- Azure OpenAI Service
+- OpenAI / Anthropic APIs
+
+### Agentic AI &amp; MCP
+- Claude Code CLI (highlighted)
+- Anthropic SDK + Model Context Protocol (highlighted)
+- MCP servers: Tavily / Context7 / GitHub (highlighted)
+- Google Antigravity (highlighted)
+- n8n workflow orchestration (highlighted)
+- CLI-based AI workflows (highlighted)
+- LangChain / LangGraph
+
+### AI Governance &amp; Risk
+- EU AI Act mapping
+- ISO/IEC 42001 (AI MS)
+- NIST AI RMF
+- SR 11-7 model risk lineage
+- Guardrails AI / Lakera
 
 ### ERP &amp; Workflow Platforms
 - SAP S/4HANA (highlighted)
@@ -53,13 +78,6 @@ Philosophy: evidence-based transformation. Every decision backed by data and ali
 - Minitab
 - Tableau
 
-### AI &amp; Productivity
-- Microsoft Copilot (highlighted)
-- ChatGPT (highlighted)
-- Claude (highlighted)
-- Microsoft 365
-- Gemini
-
 ### Methodologies &amp; Frameworks
 - Six Sigma (highlighted)
 - Lean (highlighted)
@@ -72,10 +90,10 @@ Philosophy: evidence-based transformation. Every decision backed by data and ali
 
 ## Proven impact
 
-- **EUR 700k+ Documented Savings** — Aggregated across license consolidation (EUR 500k+ at NTT), automation ROI, and waste elimination — each line item traceable to a named project.
-- **15+ FTE Freed via Automation** — Automated internal ticket-quality workflow at BT — USD 100k+ annual run-rate saving, 10-FTE headcount redirection to strategic work.
+- **EUR 1.1M+ Documented Savings** — Aggregated across 14+ years at SWIFT, NTT, BT, T-Systems — license consolidation (EUR 500k+ at NTT), automation ROI, and waste elimination. Each line item traceable to a named project.
+- **60% Documentation Time Saved** — Built an AI-assisted documentation workflow at S.W.I.F.T. ingesting source code + API specs — produced trusted, management-friendly technical docs that engineering, product and audit signed off without rework.
 - **50% Incident Volume Cut** — Redesigned BT hung-line ITSM process — halved firefighting and shifted the team from reactive to proactive.
-- **20% Productivity Uplift** — Designed future-state order-fulfilment workflows at S.W.I.F.T. during the SAP S/4HANA to PEGA migration.
+- **15+ FTE Freed via Automation** — Automated internal ticket-quality workflow at BT — USD 100k+ annual run-rate saving, 10-FTE headcount redirection to strategic work.
 - **21% Higher Tool Adoption** — Drove PEGA workflow adoption at BT via targeted stakeholder engagement — turned a rollout into actual usage.
 - **50% API Reduction (projected)** — Leading E-form optimization and endpoint consolidation at S.W.I.F.T. (2025-present) — cutting complexity and maintenance cost.
 
@@ -186,13 +204,55 @@ _Peter worked with Bogi on the same team._
 
 ## Articles
 
-### 3 steps to save $500K+ for Your Company
+### 60% Documentation-Time Savings via AI-Assisted Source-Code Analysis at SWIFT
+**Category:** AI Transformation — **Published:** 2026-04-15
+**URL:** https://bogihorvath.com/blog/ai-documentation-swift/
+
+Production case study: how Claude Code CLI + Model Context Protocol (MCP) cut technical-documentation time by 60% on a Tier-1 financial-messaging API consolidation programme — and got engineering, product, and audit to sign off without rework.
+
+Most enterprise AI projects stall in the gap between innovation lab and production audit. This case study shows how I shipped production AI inside a regulated Tier-1 financial-messaging environment — fast enough to ship, careful enough to pass audit.
+
+#### The Problem
+An E-form optimisation and API consolidation programme at S.W.I.F.T. required updated technical documentation post-API-change. Traditional documentation cycles ran 3–4 weeks per release: engineering writes, product reviews, audit reviews, rework, repeat. The bottleneck wasn&#39;t the writing — it was alignment across three stakeholder groups, each with different expectations.
+
+#### The AI-Augmented Approach
+I built an AI-assisted documentation workflow on Claude Code CLI plus Model Context Protocol (MCP) — the same agentic stack I run daily. The pipeline:
+
+- Source-code ingest: Claude Code CLI reads the changed code paths via GitHub MCP server
+- API spec ingest: the API design specs feed in via Context7 MCP for current-state documentation
+- Cross-reference: Claude generates documentation drafts that map code changes to spec changes — surfacing every audit-relevant difference
+- Stakeholder-tailored output: three views of the same content — engineering (technical depth), product (business impact), audit (compliance and traceability)
+#### Governance Built In
+EU AI Act fluency is not optional for regulated enterprises. Every output ran through:
+
+- Provenance tracking: every documentation claim cited the underlying code or spec line
+- Hallucination guard: structured outputs (JSON schema + Pydantic validation) refused to ship docs that referenced non-existent code paths
+- Human-in-the-loop sign-off: AI drafted, humans reviewed and approved — never the reverse
+#### Results
+- 60% documentation-time savings — cycle time cut from 3–4 weeks to under 1 week per release
+- Zero rework loops — engineering, product and audit signed off on the AI-drafted docs in their first review
+- Auditable trail — every doc line traceable to source code or spec, satisfying audit requirements baked into the workflow
+- Stakeholder confidence — the documentation became the canonical reference, not an afterthought
+#### What This Means for Tier-1 AI Adoption
+The lesson isn&#39;t that Claude or MCP is magic. The lesson is that production AI inside regulated enterprises requires the same discipline as production code: versioned inputs, structured outputs, traceability, and human sign-off. Lean Six Sigma + ITIL methodology fluency translates directly into AI risk management — that&#39;s the differentiator versus AI-lab researchers parachuting into banks.
+
+#### Stack Used
+- Agentic AI: Claude Code CLI, Anthropic SDK, Model Context Protocol
+- MCP servers: GitHub (code retrieval), Context7 (live API docs), Tavily (research)
+- Validation: JSON schema, Pydantic structured outputs
+- Governance frame: EU AI Act mapping, ISO/IEC 42001 alignment
+#### Conclusion
+AI in regulated Tier-1 enterprises ships when methodology and governance come first — and tools come second. EUR 1.1M+ saved across 14+ years tells me the same playbook works whether the lever is Lean Six Sigma, SAP S/4HANA, PEGA, or now Claude Code + MCP.
+
+
+---
+### 3 Steps to Save EUR 500k+ for Your Company
 **Category:** Process Improvement — **Published:** 2024-10-03
 **URL:** https://bogihorvath.com/blog/500k-savings/
 
-Proven strategies for organizational cost reduction without compromising performance or customer satisfaction. Learn how to achieve up to 30% savings through value stream optimization, platform consolidation, and strategic automation.
+Proven strategies for organizational cost reduction without compromising performance or customer satisfaction. Learn how to achieve up to 30% savings through value stream optimization, platform consolidation, and strategic automation — the same playbook that delivered EUR 500k+ license consolidation at NTT.
 
-The article presents proven strategies for organizational cost reduction without compromising performance or customer satisfaction. Drawing from experience leading large-scale transformation initiatives, I outline approaches that address efficiency, loss prevention, and sustainable growth positioning.
+The article presents proven strategies for organizational cost reduction without compromising performance or customer satisfaction. Drawing from experience leading large-scale transformation initiatives — including a EUR 500k+ license consolidation at NTT and aggregate EUR 1.1M+ documented savings across 14+ years — I outline approaches that address efficiency, loss prevention, and sustainable growth positioning.
 
 #### Step 1: Dive Deep into Your Value Stream
 Potential Savings: Up to 30% of operational costs
@@ -202,7 +262,7 @@ Understanding current business operations is foundational to identifying ineffic
 - Slow Bid Process: Extended timeframes for generating offers cause deal delays
 - Delivery Delays: Extended delivery timelines frustrate clients and expose organizations to penalties and customer loss
 - Misaligned Front and Back Offices: Disconnects between opportunity-to-order and order-to-cash processes create bottlenecks
-I recommend using Value Stream Mapping to evaluate these processes and eliminate bottlenecks for immediate operational and cash flow improvements.
+I recommend Value Stream Mapping — and increasingly, AI-augmented process mining via Celonis or SAP Signavio — to evaluate these processes and eliminate bottlenecks for immediate operational and cash flow improvements.
 
 #### Step 2: Evaluate Your Business Platforms
 Potential Savings: 10-20% on software and maintenance costs
@@ -217,14 +277,14 @@ Platform consolidation methodology includes:
 #### Step 3: Automate for Efficiency and Growth
 Potential Savings: 15-40% on operational costs plus increased revenue
 
-Automation addresses manual task elimination, error reduction, and service acceleration. Implementation steps involve:
+Automation addresses manual task elimination, error reduction, and service acceleration. Modern automation now extends from RPA into AI-augmented workflows — Microsoft Copilot Studio, n8n orchestration, and Claude Code CLI for code-level automation. Implementation steps involve:
 
 - Identify Manual Processes: Locate repetitive, non-value-adding tasks consuming employee time
 - Test Business Impact: Conduct stakeholder interviews to ensure automation doesn&#39;t inadvertently disrupt operations
 - Expert Involvement: Engage data analysts and DevOps specialists for feasibility validation and realistic timelines
 Additional Benefits: Automation improves employee morale, reduces tedious work, and enhances customer satisfaction through accelerated service delivery.
 
-The three-step framework addresses value stream optimization, platform consolidation, and process automation to unlock $500,000+ in organizational savings while maintaining performance standards and customer satisfaction.
+The three-step framework addresses value stream optimization, platform consolidation, and process automation — the same approach that aggregates to EUR 1.1M+ in documented savings across SWIFT, NTT, BT, and T-Systems.
 
 
 ---
@@ -251,7 +311,7 @@ The strategy involved four key components:
 Within two months, adoption increased to 21%. The security bid team&#39;s enthusiastic participation created positive momentum, with their insights improving workflow functionality and encouraging broader organizational adoption.
 
 #### Key Takeaway
-Success emerged through tailored approaches combining clear communication, proactive engagement, and personalized support that addressed specific user needs while fostering collaborative feedback cultures.
+Success emerged through tailored approaches combining clear communication, proactive engagement, and personalized support that addressed specific user needs while fostering collaborative feedback cultures. The same playbook now applies to AI tool adoption: voluntary uptake of Copilot, Claude Code, or n8n inside an enterprise depends entirely on whether early-adopter teams see real, tangible value in week one.
 
 
 ---
@@ -261,7 +321,7 @@ Success emerged through tailored approaches combining clear communication, proac
 
 Initiating complex process improvement efforts becomes achievable with the right blend of methodologies and strategic steps. This article presents a proven framework for launching and executing impactful initiatives.
 
-Initiating complex process improvement efforts becomes achievable with the right blend of methodologies and strategic steps. I present a proven framework for launching and executing impactful initiatives.
+Initiating complex process improvement efforts becomes achievable with the right blend of methodologies and strategic steps. I present a proven framework for launching and executing impactful initiatives — the same framework I now augment with AI tooling (Celonis, SAP Signavio, Claude Code) on engagements.
 
 #### Building a Solid Foundation
 Project Charter: Set the Tone for Success
@@ -280,7 +340,7 @@ Comprehensive charters eliminate ambiguity and foster stakeholder alignment.
 #### Measurement and Precision
 Data Gathering: The Heartbeat of Process Improvement
 
-Accurate baseline data collection enables identification of inefficiencies and progress monitoring. I recommend visualization tools including Excel, Minitab, flowcharts, and infographics.
+Accurate baseline data collection enables identification of inefficiencies and progress monitoring. Traditional tooling: Excel, Minitab, flowcharts, infographics. Modern process mining (Celonis EMS, SAP Signavio) extracts the as-is process directly from system logs — turning weeks of interviews into days of data.
 
 Key implementation strategies:
 
@@ -289,7 +349,7 @@ Key implementation strategies:
 Data-driven approaches reduce risk and improve success probability.
 
 #### Process Mapping and Insights
-Collaboration with subject matter experts (SMEs) proves essential for understanding current (As-Is) and desired (Should-Be) processes. Recording sessions enables later review for precision.
+Collaboration with subject matter experts (SMEs) proves essential for understanding current (As-Is) and desired (Should-Be) processes. Recording sessions enables later review for precision — and increasingly, LLM-assisted SOP extraction directly from those recordings.
 
 Recommended Tools:
 
@@ -309,7 +369,7 @@ I advocate combining DMAIC (Define, Measure, Analyze, Improve, Control) methodol
 
 Start with a housekeeping exercise to identify inefficiencies, then implement targeted solutions. This showcases how 6Sigma methodology addressed operational inefficiencies in an Opp2Invoice business process.
 
-Start with a housekeeping exercise to identify inefficiencies, then implement targeted solutions. This showcases how 6Sigma methodology addressed operational inefficiencies in an Opp2Invoice business process.
+Start with a housekeeping exercise to identify inefficiencies, then implement targeted solutions. This showcases how 6Sigma methodology addressed operational inefficiencies in an Opp2Invoice business process — the same diagnostic approach that aggregates to EUR 1.1M+ in documented savings across enterprise engagements.
 
 #### Methodology Employed
 - User interviews with structured questioning
@@ -326,7 +386,7 @@ Tackled delayed involvement in pricing decisions and outdated vendor rates that 
 Corrected inaccurate CMDB entries that created potential money leaks (over $10K) through incorrect cancellation fee calculations.
 
 #### Conclusion
-Structured 6 Sigma methodologies and focusing on detailed analysis and proactive solutions enabled identification and mitigation of financial losses, resulting in improved operational efficiency and profitability.
+Structured 6 Sigma methodologies and focusing on detailed analysis and proactive solutions enabled identification and mitigation of financial losses, resulting in improved operational efficiency and profitability. The same diagnostic muscle now powers AI-augmented process mining work — Celonis and SAP Signavio surface the leaks faster, but the methodology stays Six Sigma.
 
 
 ---
@@ -337,7 +397,7 @@ Structured 6 Sigma methodologies and focusing on detailed analysis and proactive
 Serving as a Management Information (MI) Lead at a major IT multinational, I led a transformation initiative focused on improving business processes. The core mission involved analyzing data to identify automation opportunities.
 
 #### Introduction
-Serving as a Management Information (MI) Lead at a major IT multinational, I led a transformation initiative focused on improving business processes. The core mission involved analyzing data to identify automation opportunities, particularly targeting a bottleneck affecting operations teams.
+Serving as a Management Information (MI) Lead at a major IT multinational, I led a transformation initiative focused on improving business processes. The core mission involved analyzing data to identify automation opportunities, particularly targeting a bottleneck affecting operations teams. Today the same playbook ships AI-augmented automation — Microsoft Copilot Studio, n8n, and Claude Code for code-level workflows — but the discovery and Lean methodology stays the same.
 
 #### Identifying the Problem
 Initial Observations:
@@ -366,13 +426,14 @@ Key Implementation Steps:
 - Enhanced data accuracy through larger sample sizes
 - Increased operational efficiency
 - Established effective feedback mechanisms for performance improvements
+- $100k+ annual run-rate saving — part of the EUR 1.1M+ aggregate documented across 14+ years
 #### Lessons Learned
 - Data-driven decision-making should precede action
 - Use structured observation methods (DILO/WILO) when data gaps exist
 - Engage stakeholders to ensure alignment and feasibility
 - Apply continuous improvement frameworks like Deming Cycle
 #### Conclusion
-The successful automation initiative demonstrated how strategic process improvements, grounded in collaborative problem-solving and data analysis, drive organizational efficiency and support business objectives.
+The successful automation initiative demonstrated how strategic process improvements, grounded in collaborative problem-solving and data analysis, drive organizational efficiency and support business objectives. AI tooling now accelerates each step — but the methodology, governance, and stakeholder muscle stay the differentiator.
 
 
 ---

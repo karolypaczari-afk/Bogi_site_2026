@@ -9,7 +9,7 @@
 
 ## Introduction
 
-Serving as a Management Information (MI) Lead at a major IT multinational, I led a transformation initiative focused on improving business processes. The core mission involved analyzing data to identify automation opportunities, particularly targeting a bottleneck affecting operations teams.
+Serving as a Management Information (MI) Lead at a major IT multinational, I led a transformation initiative focused on improving business processes. The core mission involved analyzing data to identify automation opportunities, particularly targeting a bottleneck affecting operations teams. Today the same playbook ships AI-augmented automation — Microsoft Copilot Studio, n8n, and Claude Code for code-level workflows — but the discovery and Lean methodology stays the same.
 
 ## Identifying the Problem
 
@@ -43,6 +43,7 @@ Key Implementation Steps:
 - Enhanced data accuracy through larger sample sizes
 - Increased operational efficiency
 - Established effective feedback mechanisms for performance improvements
+- $100k+ annual run-rate saving — part of the EUR 1.1M+ aggregate documented across 14+ years
 
 ## Lessons Learned
 
@@ -53,9 +54,9 @@ Key Implementation Steps:
 
 ## Conclusion
 
-The successful automation initiative demonstrated how strategic process improvements, grounded in collaborative problem-solving and data analysis, drive organizational efficiency and support business objectives.
+The successful automation initiative demonstrated how strategic process improvements, grounded in collaborative problem-solving and data analysis, drive organizational efficiency and support business objectives. AI tooling now accelerates each step — but the methodology, governance, and stakeholder muscle stay the differentiator.
 
 
 ---
 
-*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/automation-efficiency/). Written by Boglárka Paczari-Horváth, Senior Business Analyst &amp; Digital Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*
+*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/automation-efficiency/). Written by Boglárka Paczari-Horváth, AI-Augmented Process Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*

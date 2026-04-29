@@ -7,7 +7,7 @@
 > Start with a housekeeping exercise to identify inefficiencies, then implement targeted solutions. This showcases how 6Sigma methodology addressed operational inefficiencies in an Opp2Invoice business process.
 
 
-Start with a housekeeping exercise to identify inefficiencies, then implement targeted solutions. This showcases how 6Sigma methodology addressed operational inefficiencies in an Opp2Invoice business process.
+Start with a housekeeping exercise to identify inefficiencies, then implement targeted solutions. This showcases how 6Sigma methodology addressed operational inefficiencies in an Opp2Invoice business process — the same diagnostic approach that aggregates to EUR 1.1M+ in documented savings across enterprise engagements.
 
 ## Methodology Employed
 
@@ -31,9 +31,9 @@ Corrected inaccurate CMDB entries that created potential money leaks (over $10K)
 
 ## Conclusion
 
-Structured 6 Sigma methodologies and focusing on detailed analysis and proactive solutions enabled identification and mitigation of financial losses, resulting in improved operational efficiency and profitability.
+Structured 6 Sigma methodologies and focusing on detailed analysis and proactive solutions enabled identification and mitigation of financial losses, resulting in improved operational efficiency and profitability. The same diagnostic muscle now powers AI-augmented process mining work — Celonis and SAP Signavio surface the leaks faster, but the methodology stays Six Sigma.
 
 
 ---
 
-*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/money-leaks/). Written by Boglárka Paczari-Horváth, Senior Business Analyst &amp; Digital Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*
+*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/money-leaks/). Written by Boglárka Paczari-Horváth, AI-Augmented Process Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*

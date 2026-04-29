@@ -1,36 +1,37 @@
 {
-  "headingLead": "EUR 700k+ saved. 15+ FTE automated.",
-  "headingAccent": "50% incidents cut.",
-  "headingTail": "Senior Transformation Lead — available now.",
-  "subhead": "14+ yrs at <strong>S.W.I.F.T., NTT Ltd., British Telecom, T-Systems</strong>. SAP S/4HANA · PEGA · Lean Six Sigma · ITIL · 100% remote. Open to contract &amp; interim roles across Telecom, FinTech, and ICT.",
-  "clients": ["S.W.I.F.T.", "NTT Ltd.", "British Telecom", "T-Systems"],
-  "valueStack": {
-    "title": "What's in the 2-page CV",
-    "items": [
-      "Full tenure at S.W.I.F.T., NTT Ltd., British Telecom, T-Systems",
-      "10+ quantified achievements — every € and % traceable to project, client, year",
-      "Tech stack: SAP S/4HANA, PEGA, ServiceNow, ARIS, Power BI, Minitab",
-      "10 certifications: ITIL, PRINCE2, Lean, Six Sigma, Change Mgmt, Business Architect",
-      "Direct contact details — no recruiter gatekeeping"
-    ]
-  },
-  "primaryCta": {
-    "label": "Download CV",
-    "sub": "2 pages · PDF · no signup"
-  },
-  "secondaryCta": {
-    "label": "See 15+ recommendations on LinkedIn"
-  },
-  "stats": [
-    { "value": "EUR 700k+", "label": "Total Documented", "subLabel": "Cost Savings", "icon": "fa-chart-line" },
-    { "value": "20%", "label": "Productivity", "subLabel": "Improvement", "icon": "fa-rocket" },
-    { "value": "15+ FTE", "label": "Equivalent Savings", "subLabel": "via Automation", "icon": "fa-robot" },
-    { "value": "5+ Years", "label": "100% Remote", "subLabel": "Global Teams", "icon": "fa-globe" }
-  ],
-  "portraitSrc": "/img/bogi-horvath-portrait.webp",
-  "portraitAlt": "Boglarka Paczari-Horvath, Senior Business Analyst",
-  "floatingBadge": {
-    "value": "EUR 700k+",
-    "label": "Documented Cost Savings"
-  }
+    "headingLead": "AI-Augmented Process Transformation Lead.",
+    "headingAccent": "EUR 1.1M+ saved · 14+ years · SWIFT · NTT · BT · T-Systems",
+    "headingTail": "Booking next Head-of-AI · Director-AI Transformation · Process Transformation Lead mandate.",
+    "subhead": "Operationalising production AI inside regulated Tier-1 enterprises — <strong>fast enough to ship, careful enough to pass audit</strong>. Daily production user of <strong>Claude Code CLI + MCP</strong>, ChatGPT Enterprise, Microsoft Copilot Studio, Celonis &amp; SAP Signavio. EU AI Act fluent.",
+    "clients": ["S.W.I.F.T.", "NTT Ltd.", "British Telecom", "T-Systems"],
+    "valueStack": {
+        "title": "What's in the 2-page CV",
+        "items": [
+            "Full tenure at S.W.I.F.T., NTT Ltd., British Telecom, T-Systems",
+            "EUR 1.1M+ in documented savings — every € traceable to project, client, year",
+            "AI stack in daily production: Claude Code CLI + MCP, ChatGPT Enterprise, Copilot Studio, Celonis, SAP Signavio",
+            "Enterprise stack: SAP S/4HANA, PEGA, ServiceNow, ARIS, Power BI",
+            "EU AI Act fluent · audit-grade governance · 10 certifications (ITIL, PRINCE2, Lean, Six Sigma)",
+            "Direct contact details — no recruiter gatekeeping"
+        ]
+    },
+    "primaryCta": {
+        "label": "Download CV",
+        "sub": "2 pages · PDF · no signup"
+    },
+    "secondaryCta": {
+        "label": "See 15+ recommendations on LinkedIn"
+    },
+    "stats": [
+        { "value": "EUR 1.1M+", "label": "Total Documented", "subLabel": "Cost Savings", "icon": "fa-chart-line" },
+        { "value": "60%", "label": "AI-Accelerated", "subLabel": "Documentation", "icon": "fa-rocket" },
+        { "value": "15+ FTE", "label": "Equivalent Savings", "subLabel": "via Automation", "icon": "fa-robot" },
+        { "value": "14+ Years", "label": "Tier-1 Enterprise", "subLabel": "SWIFT · NTT · BT", "icon": "fa-building-columns" }
+    ],
+    "portraitSrc": "/img/bogi-horvath-portrait.webp",
+    "portraitAlt": "Boglarka Paczari-Horvath, AI-Augmented Process Transformation Lead",
+    "floatingBadge": {
+        "value": "EUR 1.1M+",
+        "label": "Documented Cost Savings"
+    }
 }
