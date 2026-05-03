@@ -9,7 +9,8 @@
       "certs": [
         { "name": "Six Sigma Green Belt", "icon": "fa-medal", "color": "green", "org": "ASQ" },
         { "name": "Lean Practitioner", "icon": "fa-layer-group", "color": "blue", "org": "Lean Institute" },
-        { "name": "LeanIT Foundation", "icon": "fa-microchip", "color": "cyan", "org": "LeanIT Association" }
+        { "name": "LeanIT Foundation", "icon": "fa-microchip", "color": "cyan", "org": "LeanIT Association" },
+        { "name": "Celonis AI Foundation", "icon": "fa-robot", "color": "amber", "org": "Celonis" }
       ]
     },
     {

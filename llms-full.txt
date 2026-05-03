@@ -103,9 +103,9 @@ Philosophy: evidence-based transformation. Every decision backed by data and ali
 ### 2025 – Present — Functional Lead — E-form Optimization &amp; API Integration
 **S.W.I.F.T. | Belgium (Remote)**
 
-Leading a team of 3-5 specialists driving high-stakes E-form optimization and global API consolidation for financial message handling. Managing complex stakeholder relationships across global product teams while implementing systematic API rationalization to improve system reliability and reduce technical debt.
+Leading a team of 3-5 specialists on E-form optimisation and global API consolidation in the Tier-1 financial-messaging transformation programme. 50% API reduction projected for 2026 via endpoint redesign. 60% documentation-time saved through an AI-assisted workflow that ingests source code + API specs and produces audit-ready write-ups — engineering, product and audit signed off without rework.
 
-Highlights: Team Leadership (3-5 specialists), Global API Consolidation, Financial Message Systems
+Highlights: 50% API Reduction (projected), 60% Doc Time Saved (AI-assisted), Team Lead (3-5)
 
 ### 2024 – 2025 — Senior Order Fulfilment BA &amp; Process Optimization Lead
 **S.W.I.F.T. | Belgium (Remote)**
@@ -114,12 +114,12 @@ Delivered 20% productivity improvement through comprehensive process redesign of
 
 Highlights: 20% Productivity Gain, SAP S/4HANA to PEGA Migration, Workflow Automation
 
-### 2024 – Present — Founder &amp; Process Optimization Expert
-**InnovateIT Consulting | Remote**
+### 2024 – Present — Process Transformation Consultant — AI &amp; Lean Six Sigma
+**InnovateIT Consulting (Own Consultancy) | Remote**
 
-Strategic consulting for enterprise clients focusing on Six Sigma, Lean &amp; Agile methodologies to unlock operational capacity. Delivering customized transformation roadmaps that combine proven frameworks with modern AI-augmented workflow optimization techniques.
+Strategic process-optimisation consulting for global clients using Six Sigma, Lean and Agile. AI-augmented BPM advisory: process mining (Celonis, SAP Signavio), LLM-assisted SOP extraction, and EU AI Act governance framing. B2B engagement vehicle for single-client deep transformations (12-18 months).
 
-Highlights: Six Sigma &amp; Lean, Enterprise Consulting, AI-Augmented Processes
+Highlights: AI-Augmented BPM, Process Mining (Celonis · SAP Signavio), EU AI Act Governance
 
 ### 2022 – 2024 — Principal Business Operations Specialist
 **NTT Ltd. | Remote**
@@ -150,6 +150,7 @@ Highlights: 30% Escalation Reduction, Service Chain Redesign, Team Management
 - Six Sigma Green Belt (ASQ)
 - Lean Practitioner (Lean Institute)
 - LeanIT Foundation (LeanIT Association)
+- Celonis AI Foundation (Celonis)
 
 ### Project &amp; Change Management
 - PRINCE2 Foundation (AXELOS)

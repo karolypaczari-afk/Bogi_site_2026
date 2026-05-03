@@ -56,7 +56,7 @@ Lean Six Sigma (Green Belt, DMAIC) · ITIL (Service Operation, Service Transitio
 
 - **2025 → present — Functional Lead, S.W.I.F.T. (Belgium, remote):** E-form optimisation + API consolidation in Tier-1 financial-messaging transformation programme. 50% API reduction projected. 60% documentation-time savings via AI-assisted analysis.
 - **2024 → 2025 — Senior Order Fulfilment BA & Process Optimization Lead, S.W.I.F.T.:** 20% productivity improvement; SAP S/4HANA → PEGA migration; 15% process efficiency gain.
-- **2024 → present — Founder & Process Optimization Expert, InnovateIT Consulting:** AI-augmented BPM advisory. Process mining (Celonis, SAP Signavio), LLM-assisted SOP extraction, EU AI Act governance framing. B2B engagement vehicle for single-client deep transformations (12-18 months).
+- **2024 → present — Process Transformation Consultant — AI & Lean Six Sigma, InnovateIT Consulting:** AI-augmented BPM advisory. Process mining (Celonis, SAP Signavio), LLM-assisted SOP extraction, EU AI Act governance framing. B2B engagement vehicle for single-client deep transformations (12-18 months).
 - **2022 → 2024 — Principal Business Operations Specialist, NTT Ltd.:** EUR 500k+ license consolidation; Opp2Cash harmonisation across 12 regional entities; 2 FTE saved on monthly invoicing; 20% decreased order intake waiting time.
 - **2021 → 2022 — Agile Deployment and Adoption Lead, British Telecom:** 20% process efficiency uplift via workflow automation; 25% reduction in manual tasks; 21% PEGA adoption rate increase.
 - **2015 → 2021 — Business Improvement Specialist, British Telecom:** $100k+ annual automation savings (10 FTE redirected); 50% incident ticket volume reduction; 3 FTE saved on field-services optimisation.
