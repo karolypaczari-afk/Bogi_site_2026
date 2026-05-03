@@ -101,17 +101,17 @@ ogImageAlt: "Boglárka Paczari-Horvath — AI-Augmented Process Transformation L
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="hero__stats" data-stagger>
-            {% for stat in h.stats %}
-            <div class="stat-card reveal">
-                <div class="stat-card__icon"><i class="fas {{ stat.icon }}" aria-hidden="true"></i></div>
-                <span class="stat-card__value" data-countup data-final="{{ stat.value }}">{{ stat.value }}</span>
-                <div class="stat-card__label">{{ stat.label }}</div>
-                <div class="stat-card__sub">{{ stat.subLabel }}</div>
+            <div class="hero__stats" data-stagger>
+                {% for stat in h.stats %}
+                <div class="stat-card reveal">
+                    <div class="stat-card__icon"><i class="fas {{ stat.icon }}" aria-hidden="true"></i></div>
+                    <span class="stat-card__value" data-countup data-final="{{ stat.value }}">{{ stat.value }}</span>
+                    <div class="stat-card__label">{{ stat.label }}</div>
+                    <div class="stat-card__sub">{{ stat.subLabel }}</div>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </div>
 </section>

@@ -1067,10 +1067,12 @@ body.no-scroll {
 }
 
 .hero__stats {
-    margin-top: var(--sp-24);
+    margin-top: var(--sp-12);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--sp-6);
+    gap: var(--sp-4);
+    /* Stats render last in single-col layouts (mobile/tablet); on desktop, grid-template-areas overrides */
+    order: 3;
 }
 
 .stat-card {
@@ -1150,8 +1152,9 @@ body.no-scroll {
     .hero__ctas {
         justify-content: flex-start;
     }
+    /* Floating portrait badge hidden — its EUR 1.1M+ value is now duplicated by the first hero__stats card directly under the portrait */
     .hero__portrait-badge {
-        display: inline-flex;
+        display: none;
     }
 }
 
@@ -1159,18 +1162,26 @@ body.no-scroll {
     .hero {
         padding: var(--sp-16) 0 var(--sp-24);
     }
+    /* Two-column hero grid with stats placed under portrait in the right column,
+       so the right column visually balances the tall left text column. */
     .hero__grid {
         grid-template-columns: 7fr 5fr;
-        gap: var(--sp-16);
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            "content portrait"
+            "content stats";
+        gap: var(--sp-12) var(--sp-16);
+        align-items: start;
     }
-    .hero__content {
-        order: 1;
-    }
+    .hero__content { grid-area: content; }
     .hero__portrait-wrap {
-        order: 2;
+        grid-area: portrait;
+        max-width: none;
     }
     .hero__stats {
-        grid-template-columns: repeat(4, 1fr);
+        grid-area: stats;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 0;
     }
 }
 
@@ -5854,13 +5865,31 @@ body::after {
     }
 }
 
-/* ---- Desktop: lift the hero ::before accent above the gradient ---- */
+/* ---- Desktop: stats now sit in the narrow right-column under portrait,
+       so trim padding + value font to fit the column without wrapping ---- */
 @media (min-width: 1024px) {
     .hero__stats .stat-card {
-        padding: var(--sp-10) var(--sp-6);
+        padding: var(--sp-6) var(--sp-4);
     }
     .hero__stats .stat-card::before {
-        top: var(--sp-10);
+        top: var(--sp-6);
+    }
+    .hero__stats .stat-card__value {
+        font-size: clamp(1.625rem, 1.8vw, 2.25rem);
+    }
+    .hero__stats .stat-card__label {
+        font-size: 0.625rem;
+        letter-spacing: 0.14em;
+    }
+    .hero__stats .stat-card + .stat-card {
+        border-left: 1px solid var(--clr-rule);
+    }
+    /* On desktop the stats are 2x2 inside the right column — give the bottom row a top hairline */
+    .hero__stats .stat-card:nth-child(n+3) {
+        border-top: 1px solid var(--clr-rule);
+    }
+    .hero__stats .stat-card:nth-child(2n+1) {
+        border-left: 0;
     }
     .hero__credentials {
         max-width: 64ch;
