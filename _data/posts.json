@@ -2,8 +2,11 @@
     {
         "id": "ai-documentation-swift",
         "title": "60% Documentation-Time Savings via AI-Assisted Source-Code Analysis at a Tier-1 Financial-Messaging Firm",
+        "metaTitle": "60% Doc-Time Cut with Offline Copilot — Tier-1 Finance Case Study",
         "category": "AI Transformation",
         "date": "2026-04-15",
+        "lastModified": "2026-05-04",
+        "keywords": "AI Transformation, GitHub Copilot offline, GitHub Copilot Enterprise, in-tenant AI, AI-assisted documentation, regulated AI, EU AI Act, ISO/IEC 42001, Tier-1 financial messaging, API consolidation, audit-grade AI, source-code analysis, AI governance, tenant boundary, Bogi Horvath, case study",
         "summary": "Production case study: how an offline GitHub Copilot deployment — running inside the enterprise tenant boundary — cut technical-documentation time by 60% on a Tier-1 financial-messaging API consolidation programme, and got engineering, product, and audit to sign off without rework.",
         "cover": "/img/blog-500k-savings.webp",
         "content": [

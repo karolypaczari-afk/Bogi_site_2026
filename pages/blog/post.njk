@@ -6,14 +6,14 @@ pagination:
 permalink: "/blog/{{ post.id }}/index.html"
 layout: "base.njk"
 eleventyComputed:
-    title: "{{ post.title }}"
+    title: "{% if post.metaTitle %}{{ post.metaTitle }}{% else %}{{ post.title }}{% endif %}"
+    ogTitle: "{% if post.metaTitle %}{{ post.metaTitle }}{% else %}{{ post.title }}{% endif %}"
     description: "{{ post.summary }}"
     canonical: "https://bogihorvath.com/blog/{{ post.id }}/"
     ogType: "article"
     ogImage: "https://bogihorvath.com{{ post.cover }}"
     ogImageAlt: "{{ post.title }} — article by Bogi Horvath"
-    keywords: "{{ post.category }}, process optimization, digital transformation, Bogi Horvath, case study, business analysis"
-    blogPost: "{{ post }}"
+    keywords: "{% if post.keywords %}{{ post.keywords }}{% else %}{{ post.category }}, AI-Augmented Process Transformation, Process Optimization, Digital Transformation, Lean Six Sigma, Business Analysis, Head of AI, EU AI Act, Process Mining, Bogi Horvath, case study{% endif %}"
     pageType: "post"
     breadcrumbs:
         - { name: "Home", url: "https://bogihorvath.com/" }

@@ -27,9 +27,9 @@ eleventyExcludeFromCollections: true
     {% for post in posts %}
     <url>
         <loc>{{ site.url }}/blog/{{ post.id }}/</loc>
-        <lastmod>{{ post.date }}</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
+        <lastmod>{{ post.lastModified or post.date }}</lastmod>
+        <changefreq>{% if post.lastModified %}monthly{% else %}yearly{% endif %}</changefreq>
+        <priority>{% if post.lastModified %}0.8{% else %}0.6{% endif %}</priority>
     </url>
     {% endfor %}
 </urlset>
