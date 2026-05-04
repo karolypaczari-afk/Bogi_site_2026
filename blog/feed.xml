@@ -13,13 +13,13 @@
     </author>
     
     <entry>
-        <title>60% Documentation-Time Savings via AI-Assisted Source-Code Analysis at SWIFT</title>
+        <title>60% Documentation-Time Savings via AI-Assisted Source-Code Analysis at a Tier-1 Financial-Messaging Firm</title>
         <link href="https://bogihorvath.com/blog/ai-documentation-swift/"/>
         <id>https://bogihorvath.com/blog/ai-documentation-swift/</id>
         <updated>2026-04-15T00:00:00Z</updated>
         <published>2026-04-15T00:00:00Z</published>
         <category term="AI Transformation"/>
-        <summary>Production case study: how Claude Code CLI + Model Context Protocol (MCP) cut technical-documentation time by 60% on a Tier-1 financial-messaging API consolidation programme — and got engineering, product, and audit to sign off without rework.</summary>
+        <summary>Production case study: how an offline GitHub Copilot deployment — running inside the enterprise tenant boundary — cut technical-documentation time by 60% on a Tier-1 financial-messaging API consolidation programme, and got engineering, product, and audit to sign off without rework.</summary>
     </entry>
     
     <entry>
