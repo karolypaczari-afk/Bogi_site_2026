@@ -27,14 +27,14 @@
         { "label": "Response time",     "value": "Under 24 hours" }
     ],
     "contact": {
-        "email": "horvath.boglarka@hotmail.com",
-        "emailHref": "mailto:horvath.boglarka@hotmail.com",
+        "email": "info@bogihorvath.com",
+        "emailHref": "mailto:info@bogihorvath.com",
         "linkedin": "https://www.linkedin.com/in/boglarka-paczari-horvath/",
         "resume": "/Bogi_CV.pdf"
     },
     "forms": {
         "web3formsAccessKey": "0909516c-58b1-4bb3-80f4-e6f68f1e68ac",
-        "ccRecipients": "karolypaczari@gmail.com;hbogica1987@gmail.com;info@bogihorvath.com"
+        "ccRecipients": "info@bogihorvath.com;karolypaczari@gmail.com;hbogica1987@gmail.com"
     },
     "tracking": {
         "gtm": "GTM-W3LHSQ2R",

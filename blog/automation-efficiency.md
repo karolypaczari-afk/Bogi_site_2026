@@ -59,4 +59,4 @@ The successful automation initiative demonstrated how strategic process improvem
 
 ---
 
-*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/automation-efficiency/). Written by Boglárka Paczari-Horváth, AI-Augmented Process Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*
+*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/automation-efficiency/). Written by Boglárka Paczari-Horváth, AI-Augmented Process Transformation Lead. Contact: info@bogihorvath.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*

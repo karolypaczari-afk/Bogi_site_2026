@@ -5,7 +5,7 @@
   "channels": [
     { "icon": "far fa-file-pdf",    "label": "Download CV — 2 pages, no signup", "href": "/Bogi_CV.pdf" },
     { "icon": "fab fa-linkedin-in", "label": "See 15+ recommendations on LinkedIn", "href": "https://www.linkedin.com/in/boglarka-paczari-horvath/" },
-    { "icon": "far fa-envelope",    "label": "horvath.boglarka@hotmail.com", "href": "mailto:horvath.boglarka@hotmail.com" }
+    { "icon": "far fa-envelope",    "label": "info@bogihorvath.com", "href": "mailto:info@bogihorvath.com" }
   ],
   "formTitle": "Send a message",
   "formSubhead": "Role / brief / question — I reply in under 24 hours.",

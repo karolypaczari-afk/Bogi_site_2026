@@ -35,4 +35,4 @@ Success emerged through tailored approaches combining clear communication, proac
 
 ---
 
-*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/adoption-success/). Written by Boglárka Paczari-Horváth, AI-Augmented Process Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*
+*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/adoption-success/). Written by Boglárka Paczari-Horváth, AI-Augmented Process Transformation Lead. Contact: info@bogihorvath.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*

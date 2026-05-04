@@ -57,4 +57,4 @@ I advocate combining DMAIC (Define, Measure, Analyze, Improve, Control) methodol
 
 ---
 
-*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/process-tools/). Written by Boglárka Paczari-Horváth, AI-Augmented Process Transformation Lead. Contact: horvath.boglarka@hotmail.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*
+*This is an LLM-friendly plain-text mirror of [the HTML article](https://bogihorvath.com/blog/process-tools/). Written by Boglárka Paczari-Horváth, AI-Augmented Process Transformation Lead. Contact: info@bogihorvath.com | https://www.linkedin.com/in/boglarka-paczari-horvath/*
