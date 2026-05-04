@@ -1,10 +1,15 @@
 {
-  "main": [
+  "pages": [
     { "label": "Home", "href": "/" },
     { "label": "About", "href": "/about/" },
+    { "label": "For Recruiters", "href": "/recruiters/" },
+    { "label": "Blog", "href": "/blog/" }
+  ],
+  "sections": [
     { "label": "Results", "href": "/#achievements" },
     { "label": "Experience", "href": "/#experience" },
-    { "label": "Blog", "href": "/blog/" }
+    { "label": "How I Work", "href": "/#how" },
+    { "label": "Contact", "href": "/#contact" }
   ],
   "cta": { "label": "Download CV", "href": "/Bogi_CV.pdf", "sub": "2 pages · no signup" },
   "ctaSecondary": { "label": "Contact", "href": "/#contact" }

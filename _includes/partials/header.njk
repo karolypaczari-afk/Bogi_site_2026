@@ -5,12 +5,28 @@
             </a>
 
             <nav class="nav" aria-label="Main navigation">
-                {% for item in nav.main %}
-                <a class="nav__link" href="{{ item.href }}">{{ item.label }}</a>
-                {% endfor %}
-                {% if nav.ctaSecondary %}
-                <a class="nav__link nav__link--accent" href="{{ nav.ctaSecondary.href }}">{{ nav.ctaSecondary.label }}</a>
+                <ul class="nav__group nav__group--pages">
+                    {% for item in nav.pages %}
+                    {% set isActive = (page.url == item.href) or (item.href != '/' and page.url and page.url.startsWith(item.href)) %}
+                    <li>
+                        <a class="nav__link{% if isActive %} is-active{% endif %}" href="{{ item.href }}"{% if isActive %} aria-current="page"{% endif %}>{{ item.label }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+                {% if nav.sections and nav.sections.length %}
+                <span class="nav__divider" aria-hidden="true"></span>
+                <ul class="nav__group nav__group--sections">
+                    {% for item in nav.sections %}
+                    <li>
+                        <a class="nav__link nav__link--section" href="{{ item.href }}">
+                            <span class="nav__hash" aria-hidden="true">#</span>{{ item.label }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
                 {% endif %}
+
                 <a class="nav__cta"
                    href="{{ nav.cta.href }}"
                    {% if nav.cta.href | first == '/' and '.pdf' in nav.cta.href %}target="_blank" rel="noopener noreferrer"{% endif %}
@@ -37,11 +53,33 @@
             </button>
         </div>
         <div class="mobile-nav__body">
-            <div class="mobile-nav__links">
-                {% for item in nav.main %}
-                <a class="mobile-nav__link" href="{{ item.href }}">{{ item.label }}</a>
-                {% endfor %}
+            <div class="mobile-nav__group">
+                <span class="mobile-nav__group-label">Pages</span>
+                <div class="mobile-nav__links">
+                    {% for item in nav.pages %}
+                    {% set isActive = (page.url == item.href) or (item.href != '/' and page.url and page.url.startsWith(item.href)) %}
+                    <a class="mobile-nav__link{% if isActive %} is-active{% endif %}" href="{{ item.href }}"{% if isActive %} aria-current="page"{% endif %}>
+                        <span class="mobile-nav__link-label">{{ item.label }}</span>
+                        <i class="fas fa-arrow-right mobile-nav__link-arrow" aria-hidden="true"></i>
+                    </a>
+                    {% endfor %}
+                </div>
             </div>
+
+            {% if nav.sections and nav.sections.length %}
+            <div class="mobile-nav__group">
+                <span class="mobile-nav__group-label">On the home page</span>
+                <div class="mobile-nav__links mobile-nav__links--sections">
+                    {% for item in nav.sections %}
+                    <a class="mobile-nav__link mobile-nav__link--section" href="{{ item.href }}">
+                        <span class="mobile-nav__link-hash" aria-hidden="true">#</span>
+                        <span class="mobile-nav__link-label">{{ item.label }}</span>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
             <div class="mobile-nav__ctas">
                 <a class="mobile-nav__cta mobile-nav__cta--primary" href="{{ site.contact.resume }}" target="_blank" rel="noopener noreferrer" data-cta-location="mobile_nav">
                     <i class="far fa-file-pdf" aria-hidden="true"></i>

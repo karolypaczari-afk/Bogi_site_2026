@@ -14,15 +14,27 @@ breadcrumbs:
     - { name: "For recruiters", url: "https://bogihorvath.com/recruiters/" }
 ---
 
-<section class="page-hero">
+<section class="page-hero recruiter-hero">
     <div class="page-hero__blob" aria-hidden="true"></div>
     <div class="container page-hero__content reveal">
+        <div class="recruiter-hero__status">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <span>Booking <strong>1 mandate at a time</strong> &middot; reply under 24 h</span>
+        </div>
         <span class="eyebrow">For recruiters &mdash; 30-second scan</span>
         <h1 class="page-hero__title">Hire <em>Bogi</em> &mdash; AI-Augmented Process Transformation Lead.</h1>
         <p class="page-hero__lead">
             14+ years at <strong>S.W.I.F.T., NTT Ltd., British Telecom, T-Systems</strong>.
             EUR 1.1M+ documented savings. Operationalising AI in regulated Tier-1 enterprises &mdash; fast enough to ship, careful enough to pass audit. 100% remote, EU citizen, under-24h response.
         </p>
+
+        <ul class="recruiter-hero__proof">
+            <li><span class="recruiter-hero__proof-value">EUR 1.1M+</span><span class="recruiter-hero__proof-label">Documented savings</span></li>
+            <li><span class="recruiter-hero__proof-value">14+ yrs</span><span class="recruiter-hero__proof-label">Tier-1 enterprises</span></li>
+            <li><span class="recruiter-hero__proof-value">15+</span><span class="recruiter-hero__proof-label">LinkedIn recommendations</span></li>
+            <li><span class="recruiter-hero__proof-value">&lt; 24 h</span><span class="recruiter-hero__proof-label">First reply</span></li>
+        </ul>
+
         <div class="page-hero__ctas">
             <a class="btn btn--primary"
                href="{{ site.contact.resume }}"
@@ -41,11 +53,24 @@ breadcrumbs:
                 LinkedIn &mdash; 15+ recommendations
             </a>
         </div>
+
+        <p class="recruiter-hero__signal">
+            Already screened? Skip ahead:
+            <a href="#facts" data-cta-location="recruiters_jump_facts">Role fit</a>
+            &middot;
+            <a href="#different" data-cta-location="recruiters_jump_different">What makes me different</a>
+            &middot;
+            <a href="#receipts" data-cta-location="recruiters_jump_receipts">Receipts</a>
+            &middot;
+            <a href="#process" data-cta-location="recruiters_jump_process">Process</a>
+            &middot;
+            <a href="#faq" data-cta-location="recruiters_jump_faq">FAQ</a>
+        </p>
     </div>
 </section>
 
 {# 10-second scan card — same data source as homepage, rendered here long-form #}
-<section class="recruiter-card" aria-label="Recruiter quick facts">
+<section class="recruiter-card" id="facts" aria-label="Recruiter quick facts">
     <div class="container">
         <div class="recruiter-card__box reveal">
             <header class="recruiter-card__head">
@@ -74,7 +99,45 @@ breadcrumbs:
     </div>
 </section>
 
-<section class="bio">
+{# ---- Differentiator grid — answers "why this person, not the other 50?" ---- #}
+<section class="recruiter-diff" id="different">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="eyebrow">What makes me different</span>
+            <h2 class="section-title">Most candidates can show one of these. I can show all four.</h2>
+            <p class="section-lead">
+                The recruiter shortlist usually splits into "AI-curious BAs" and "veteran transformation leads." I'm the rare seat where the two overlap &mdash; and the audit posture is already there.
+            </p>
+        </div>
+        <div class="recruiter-diff__grid" data-stagger>
+            <article class="recruiter-diff__card reveal">
+                <div class="recruiter-diff__icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+                <h3 class="recruiter-diff__title">Daily production AI &mdash; not pilots</h3>
+                <p class="recruiter-diff__desc">Claude Code CLI + MCP, ChatGPT Enterprise, Microsoft Copilot Studio, Google Antigravity, n8n &mdash; used in regulated work, not demos. 60% documentation-time savings on a Tier-1 financial-messaging programme.</p>
+            </article>
+            <article class="recruiter-diff__card reveal">
+                <div class="recruiter-diff__icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
+                <h3 class="recruiter-diff__title">EU AI Act + ISO/IEC 42001 fluent</h3>
+                <p class="recruiter-diff__desc">Audit-grade controls baked in from day one. Procurement, InfoSec, and Legal get answers in their language &mdash; not after a 6-week loop.</p>
+            </article>
+            <article class="recruiter-diff__card reveal">
+                <div class="recruiter-diff__icon"><i class="fas fa-coins" aria-hidden="true"></i></div>
+                <h3 class="recruiter-diff__title">EUR 1.1M+ in receipts &mdash; sourced</h3>
+                <p class="recruiter-diff__desc">Every saving traces to a project, client, and year in the CV. SWIFT 60% docs, NTT EUR 500k+ licenses, BT 50% incident reduction, T-Systems 30% escalation cut.</p>
+            </article>
+            <article class="recruiter-diff__card reveal">
+                <div class="recruiter-diff__icon"><i class="fas fa-layer-group" aria-hidden="true"></i></div>
+                <h3 class="recruiter-diff__title">Process mining &times; AI &times; LSS</h3>
+                <p class="recruiter-diff__desc">Celonis &middot; SAP Signavio for the diagnosis. AI-augmented workflow for the build. Lean Six Sigma DMAIC for the discipline. One stack, one operator.</p>
+            </article>
+        </div>
+        <p class="recruiter-diff__deeper">
+            Want the full positioning narrative? <a href="/about/" data-cta-location="recruiters_diff_about">Read the longer "About" page</a> or <a href="/" data-cta-location="recruiters_diff_home">see the live results breakdown on the home page</a>.
+        </p>
+    </div>
+</section>
+
+<section class="bio" id="receipts">
     <div class="container">
         <div class="bio__text" style="max-width:860px;margin:0 auto">
             <div class="reveal">
@@ -106,7 +169,19 @@ breadcrumbs:
                 </ul>
                 <p>Aggregate: <strong>EUR 1.1M+ documented savings</strong>. Every number is traceable to project, client, and year in the CV.</p>
             </div>
+        </div>
+    </div>
+</section>
 
+{# ---- Inline CTA — after receipts, before process ---- #}
+{% set inlineCtaLocation = "recruiters_inline_after_receipts" %}
+{% set inlineCtaHeading = "Receipts read. Forward this to the hiring manager." %}
+{% set inlineCtaSub = "2-page PDF, direct contact details inside, no signup wall." %}
+{% include "partials/inline-cv-cta.njk" %}
+
+<section class="bio" id="process">
+    <div class="container">
+        <div class="bio__text" style="max-width:860px;margin:0 auto">
             <div class="reveal">
                 <h2>How the engagement works</h2>
                 <ol>
@@ -134,6 +209,97 @@ breadcrumbs:
     </div>
 </section>
 
+{# ---- FAQ — objection-handling block ---- #}
+<section class="recruiter-faq" id="faq">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="eyebrow">FAQ</span>
+            <h2 class="section-title">Quick answers to the questions I get every week.</h2>
+            <p class="section-lead">If your hiring manager has a sharper one, send it &mdash; you'll have the answer before your next stand-up.</p>
+        </div>
+        <div class="recruiter-faq__list reveal">
+            <details class="recruiter-faq__item">
+                <summary>What's your typical day rate / package range?</summary>
+                <div class="recruiter-faq__answer">
+                    <p>I keep ranges off the public page on purpose &mdash; banding depends on scope, sector, contract structure (B2B vs PAYE vs perm), and IR35/equivalent treatment. Send the brief and I'll come back with a number that fits. Reply &lt; 24 h.</p>
+                </div>
+            </details>
+            <details class="recruiter-faq__item">
+                <summary>Notice period and earliest start?</summary>
+                <div class="recruiter-faq__answer">
+                    <p>Booking the next 12&ndash;18-month mandate now. Exact start depends on the current engagement; 2&ndash;6 weeks is realistic for most contract roles. Get the JD across and I'll confirm the date in the same reply.</p>
+                </div>
+            </details>
+            <details class="recruiter-faq__item">
+                <summary>IR35 / contract structure?</summary>
+                <div class="recruiter-faq__answer">
+                    <p>Standard B2B via <strong>InnovateIT Kft</strong> (Hungary). Inside-IR35 PAYE umbrella also workable for UK roles. Permanent if it can be structured to match the scope. EU citizen &mdash; no sponsorship needed.</p>
+                </div>
+            </details>
+            <details class="recruiter-faq__item">
+                <summary>Is this a real "Head of AI" candidate or a BA who saw the news?</summary>
+                <div class="recruiter-faq__answer">
+                    <p>Daily production AI in regulated work, not pilots. SWIFT shipped <strong>60% documentation-time savings</strong> using AI-assisted source-code &amp; API analysis. EU AI Act and ISO/IEC 42001 are baseline knowledge. Process mining (Celonis, SAP Signavio) underneath. Read the <a href="/recruiters/#different" data-cta-location="recruiters_faq_diff_link">differentiator block</a>, then the CV.</p>
+                </div>
+            </details>
+            <details class="recruiter-faq__item">
+                <summary>On-site requirements?</summary>
+                <div class="recruiter-faq__answer">
+                    <p>100% remote primary. Up to ~4 travel days per month for kick-offs, audits, and stakeholder workshops. Anything beyond that is a no &mdash; the family base is in Belgium.</p>
+                </div>
+            </details>
+            <details class="recruiter-faq__item">
+                <summary>Languages and working time-zones?</summary>
+                <div class="recruiter-faq__answer">
+                    <p>English (full professional), German (intermediate), Hungarian (native). EU/UK working hours primary; US Eastern Time compatible.</p>
+                </div>
+            </details>
+            <details class="recruiter-faq__item">
+                <summary>Can you bring references on the first call?</summary>
+                <div class="recruiter-faq__answer">
+                    <p>15+ recommendations are public on <a href="{{ site.contact.linkedin }}" target="_blank" rel="noopener noreferrer" data-cta-location="recruiters_faq_linkedin">LinkedIn</a> &mdash; from line managers, peers, and clients across SWIFT, NTT, BT, T-Systems. Direct phone references on request after the intro call.</p>
+                </div>
+            </details>
+        </div>
+    </div>
+</section>
+
+{# ---- Cross-links — make navigation easy from this page ---- #}
+<section class="recruiter-also">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="eyebrow">Keep digging</span>
+            <h2 class="section-title">Other places to look before you forward this.</h2>
+        </div>
+        <div class="recruiter-also__grid reveal">
+            <a class="recruiter-also__card" href="/" data-cta-location="recruiters_also_home">
+                <div class="recruiter-also__icon"><i class="fas fa-house" aria-hidden="true"></i></div>
+                <h3>Home page</h3>
+                <p>Hero, hard numbers, testimonials, full timeline, services, skills, certifications.</p>
+                <span class="recruiter-also__more">Open <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </a>
+            <a class="recruiter-also__card" href="/about/" data-cta-location="recruiters_also_about">
+                <div class="recruiter-also__icon"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
+                <h3>About</h3>
+                <p>Long-form positioning narrative &mdash; how the AI-augmented operating model actually works.</p>
+                <span class="recruiter-also__more">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </a>
+            <a class="recruiter-also__card" href="/blog/" data-cta-location="recruiters_also_blog">
+                <div class="recruiter-also__icon"><i class="fas fa-pen-nib" aria-hidden="true"></i></div>
+                <h3>Blog</h3>
+                <p>Field notes on AI-augmented transformation, MCP, EU AI Act, process mining.</p>
+                <span class="recruiter-also__more">Browse <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </a>
+            <a class="recruiter-also__card" href="/#references" data-cta-location="recruiters_also_references">
+                <div class="recruiter-also__icon"><i class="fas fa-quote-right" aria-hidden="true"></i></div>
+                <h3>Testimonials</h3>
+                <p>Direct quotes from line managers and peers at SWIFT, NTT, BT, T-Systems.</p>
+                <span class="recruiter-also__more">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </a>
+        </div>
+    </div>
+</section>
+
 <section class="cta-band">
     <div class="container reveal reveal--scale">
         <h2 class="cta-band__title">Next step: send the CV to your hiring manager.</h2>
@@ -154,6 +320,12 @@ breadcrumbs:
                data-cta-location="recruiters_footer_linkedin">
                 <i class="fab fa-linkedin" aria-hidden="true"></i>
                 Check 15+ recommendations
+            </a>
+            <a class="btn btn--ghost"
+               href="/#contact"
+               data-cta-location="recruiters_footer_contact">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                Send the brief instead
             </a>
         </div>
     </div>
